@@ -1,0 +1,118 @@
+---
+import { Code } from "astro:components";
+import { CodeBlockToolbar } from "./code-block-toolbar";
+
+interface Props {
+  code: string;
+  lang?: "tsx" | "ts" | "jsx" | "js" | "bash" | "css" | "json";
+}
+
+const { code, lang = "tsx" } = Astro.props;
+const lines = code.split("\n").length;
+const collapsible = lines > 20;
+const collapsed = collapsible;
+---
+
+<div class='not-prose code-block relative group'>
+  <div
+    class='code-block-actions absolute top-2 right-2 z-10 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity'
+  >
+    <CodeBlockToolbar
+      client:load
+      code={code}
+      collapsible={collapsible}
+      initialCollapsed={collapsed}
+    />
+  </div>
+
+  <div class='code-block-content' data-collapsed={String(collapsed)}>
+    <Code
+      code={code}
+      lang={lang}
+      themes={{
+        light: "github-light",
+        dark: "vesper",
+      }}
+      defaultColor={false}
+    />
+  </div>
+
+  {
+    collapsible && (
+      <div class='code-block-fade' data-visible={String(collapsed)} />
+    )
+  }
+</div>
+
+<style is:global>
+  .code-block {
+    --shiki-light-bg: #fff;
+    --shiki-dark-bg: #101010;
+  }
+
+  .code-block .astro-code {
+    padding: 1rem;
+    margin: 0;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    overflow-x: auto;
+  }
+
+  .code-block .astro-code,
+  .code-block .astro-code span {
+    color: var(--shiki-light) !important;
+    background-color: var(--shiki-light-bg) !important;
+  }
+
+  /* Dark mode - use dark theme colors */
+  [data-mode="dark"] .code-block .astro-code,
+  [data-mode="dark"] .code-block .astro-code span {
+    color: var(--shiki-dark) !important;
+    background-color: var(--shiki-dark-bg) !important;
+  }
+
+  .code-block-content[data-collapsed="true"] {
+    max-height: 12rem;
+    overflow: hidden;
+    border-radius: 0.75rem;
+    border: 1px solid var(--color-gray-200);
+  }
+
+  .code-block-content[data-collapsed="true"] pre.astro-code {
+    border: none;
+    border-radius: 0;
+  }
+
+  [data-mode="dark"] .code-block-content[data-collapsed="true"] {
+    border-color: var(--color-gray-800);
+  }
+
+  /* Collapsed blocks inside component-example should connect to the preview above */
+  .component-example-code .code-block-content[data-collapsed="true"] {
+    border-top: none;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+
+  .code-block-fade {
+    position: absolute;
+    bottom: 1px;
+    left: 1px;
+    right: 1px;
+    height: 4rem;
+    pointer-events: none;
+    border-bottom-left-radius: 0.75rem;
+    border-bottom-right-radius: 0.75rem;
+    background: linear-gradient(to bottom, transparent, var(--shiki-light-bg));
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
+  .code-block-fade[data-visible="true"] {
+    opacity: 1;
+  }
+
+  [data-mode="dark"] .code-block-fade {
+    background: linear-gradient(to bottom, transparent, var(--shiki-dark-bg));
+  }
+</style>

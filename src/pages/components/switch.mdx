@@ -1,0 +1,69 @@
+---
+layout: ~/layouts/mdx-doc-layout.astro
+title: "Switch"
+description: "A toggle control that lets the user turn a setting on or off."
+baseUIComponent: "switch"
+---
+
+import { Switch } from "@registry/components/ui/switch";
+import {
+  SwitchExample,
+  SwitchCheckedExample,
+  SwitchDisabledExample,
+  SwitchControlledExample,
+} from "@registry/example/switch-example";
+import ComponentExample from "~/components/docs/component-example.astro";
+import ComponentSection from "~/components/docs/component-section.astro";
+import PropsTable from "~/components/docs/props-table.astro";
+import CodeBlock from "~/components/docs/code-block.astro";
+import switchSource from "@registry/components/ui/switch?raw";
+
+<ComponentSection>
+  <ComponentExample demo="SwitchExample">
+    <SwitchExample client:load />
+  </ComponentExample>
+</ComponentSection>
+
+## Examples
+
+### Default checked
+
+Use `defaultChecked` to set the initial state without controlling the component.
+
+<ComponentSection>
+  <ComponentExample demo="SwitchCheckedExample">
+    <SwitchCheckedExample client:load />
+  </ComponentExample>
+</ComponentSection>
+
+### Disabled
+
+Use the `disabled` prop to prevent interaction.
+
+<ComponentSection>
+  <ComponentExample demo="SwitchDisabledExample">
+    <SwitchDisabledExample client:load />
+  </ComponentExample>
+</ComponentSection>
+
+### Controlled
+
+Manage the checked state with React state using `checked` and `onCheckedChange`.
+
+<ComponentSection>
+  <ComponentExample demo="SwitchControlledExample">
+    <SwitchControlledExample client:load />
+  </ComponentExample>
+</ComponentSection>
+
+## Installation
+
+Copy the source code below into your project:
+
+<CodeBlock code={switchSource} lang="tsx" />
+
+## API Reference
+
+### Switch
+
+<PropsTable component="Switch" />

@@ -1,0 +1,107 @@
+---
+layout: ~/layouts/mdx-doc-layout.astro
+title: "Select"
+description: "Displays a dropdown list of options for the user to pick from."
+baseUIComponent: "select"
+---
+
+import {
+  Select,
+  SelectTrigger,
+  SelectContent,
+  SelectItem,
+  SelectValue,
+  SelectSeparator,
+} from "@registry/components/ui/select";
+import {
+  SelectExample,
+  SelectVariantsExample,
+  SelectWithGroupsExample,
+  SelectControlledExample,
+  SelectWithItemsExample,
+} from "@registry/example/select-example";
+import ComponentExample from "~/components/docs/component-example.astro";
+import ComponentSection from "~/components/docs/component-section.astro";
+import PropsTable from "~/components/docs/props-table.astro";
+import CodeBlock from "~/components/docs/code-block.astro";
+import selectSource from "@registry/components/ui/select?raw";
+
+<ComponentSection>
+  <ComponentExample demo="SelectExample">
+    <SelectExample client:load />
+  </ComponentExample>
+</ComponentSection>
+
+## Examples
+
+### Trigger variants
+
+The trigger supports the same `variant` and `size` props as `Button`.
+
+<ComponentSection>
+  <ComponentExample demo="SelectVariantsExample">
+    <SelectVariantsExample client:load />
+  </ComponentExample>
+</ComponentSection>
+
+### With separator
+
+Use `SelectSeparator` to visually group related options.
+
+<ComponentSection>
+  <ComponentExample demo="SelectWithGroupsExample">
+    <SelectWithGroupsExample client:load />
+  </ComponentExample>
+</ComponentSection>
+
+### Controlled
+
+Manage the selected value with React state.
+
+<ComponentSection>
+  <ComponentExample demo="SelectControlledExample">
+    <SelectControlledExample client:load />
+  </ComponentExample>
+</ComponentSection>
+
+### With items prop
+
+Pass an `items` array to `Select` so `SelectValue` renders the matching label instead of the raw value.
+
+<ComponentSection>
+  <ComponentExample demo="SelectWithItemsExample">
+    <SelectWithItemsExample client:load />
+  </ComponentExample>
+</ComponentSection>
+
+## Installation
+
+Copy the source code below into your project:
+
+<CodeBlock code={selectSource} lang="tsx" />
+
+## API Reference
+
+### Select
+
+<PropsTable component="Select" />
+
+### SelectTrigger
+
+<PropsTable component="SelectTrigger" />
+
+### SelectContent
+
+<PropsTable component="SelectContent" />
+
+### SelectItem
+
+<PropsTable component="SelectItem" />
+
+### SelectValue
+
+<PropsTable component="SelectValue" />
+
+### SelectSeparator
+
+<PropsTable component="SelectSeparator" />

@@ -1,0 +1,83 @@
+---
+layout: ~/layouts/mdx-doc-layout.astro
+title: "Colors"
+description: "Semantic color tokens used throughout the design system."
+---
+
+import ColorScale from "~/components/docs/color-scale.astro";
+import ColorToken from "~/components/docs/color-token.astro";
+import CodeBlock from "~/components/docs/code-block.astro";
+import inkCssSource from "@registry/styles/ink.css?raw";
+
+The theme uses a warm gray and orange color palette defined in `registry/styles/ink.css`, slightly different from the default Tailwind palette. These tokens are available as CSS custom properties and are consumed by Tailwind CSS v4.
+
+## Gray
+
+A warm gray scale is used for text, backgrounds, borders, and subtle fills across light and dark modes.
+
+<ColorScale name="gray" />
+
+## Red
+
+A red scale is used for destructive actions, errors, and warning states.
+
+<ColorScale name="red" />
+
+## Orange
+
+Orange is used as the primary accent color for focus rings, active states, and blockquote accents.
+
+<ColorScale name="orange" />
+
+## Semantic tokens
+
+These CSS variables map to the scales above and adapt between light and dark modes via the `data-mode` attribute.
+
+### Backgrounds
+
+<div class="not-prose grid grid-cols-1 gap-2 sm:grid-cols-2">
+  <ColorToken name="background" description="Page background" />
+  <ColorToken name="foreground" description="Primary text color" />
+  <ColorToken name="card" description="Card surface background" />
+  <ColorToken name="card-foreground" description="Text on card surfaces" />
+  <ColorToken name="popover" description="Popover surface background" />
+  <ColorToken name="popover-foreground" description="Text inside popovers" />
+  <ColorToken name="dialog" description="Dialog surface background" />
+  <ColorToken name="dialog-foreground" description="Text inside dialogs" />
+</div>
+
+### Actions
+
+<div class="not-prose grid grid-cols-1 gap-2 sm:grid-cols-2">
+  <ColorToken name="primary" description="Primary button / action background" />
+  <ColorToken name="primary-foreground" description="Text on primary actions" />
+  <ColorToken name="secondary" description="Secondary button / muted action background" />
+  <ColorToken name="secondary-foreground" description="Text on secondary actions" />
+</div>
+
+### States
+
+<div class="not-prose grid grid-cols-1 gap-2 sm:grid-cols-2">
+  <ColorToken name="muted" description="Muted / subtle background" />
+  <ColorToken name="muted-foreground" description="Text on muted backgrounds" />
+  <ColorToken name="accent" description="Accent highlight background" />
+  <ColorToken name="accent-foreground" description="Text on accent highlights" />
+  <ColorToken name="destructive" description="Destructive action background" />
+  <ColorToken name="destructive-foreground" description="Text on destructive actions" />
+</div>
+
+### Borders & focus
+
+<div class="not-prose grid grid-cols-1 gap-2 sm:grid-cols-2">
+  <ColorToken name="border" description="Default border color" />
+  <ColorToken name="input" description="Form input border color" />
+  <ColorToken name="ring" description="Focus ring color" />
+</div>
+
+Common Tailwind utilities like `text-gray-500`, `bg-gray-100`, `border-gray-200`, and `dark:` variants are mapped to the underlying ink theme tokens.
+
+## Installation
+
+Copy the CSS code into your global stylesheet, and ensure they are wrapped in a selector that applies the appropriate color scheme based on the `data-mode` attribute.
+
+<CodeBlock code={inkCssSource} lang="css" />

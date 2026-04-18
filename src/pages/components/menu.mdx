@@ -1,0 +1,178 @@
+---
+layout: ~/layouts/mdx-doc-layout.astro
+title: "Menu"
+description: "Displays a menu to the user — typically a list of actions or links triggered by a button."
+baseUIComponent: "menu"
+---
+
+import {
+  Menu,
+  MenuTrigger,
+  MenuContent,
+  MenuItem,
+  MenuItemLabel,
+  MenuItemLeadingIcon,
+  MenuItemTrailingIcon,
+  MenuGroup,
+  MenuGroupLabel,
+  MenuSeparator,
+  MenuCheckboxItem,
+  MenuRadioGroup,
+  MenuRadioItem,
+  MenuSubmenu,
+  MenuSubmenuTrigger,
+} from "@registry/components/ui/menu";
+import {
+  MenuExample,
+  MenuWithIconsExample,
+  MenuWithGroupsExample,
+  MenuCheckboxExample,
+  MenuRadioExample,
+  MenuDestructiveExample,
+  MenuSubmenuExample,
+} from "@registry/example/menu-example";
+import ComponentExample from "~/components/docs/component-example.astro";
+import ComponentSection from "~/components/docs/component-section.astro";
+import PropsTable from "~/components/docs/props-table.astro";
+import CodeBlock from "~/components/docs/code-block.astro";
+import menuSource from "@registry/components/ui/menu?raw";
+
+<ComponentSection>
+  <ComponentExample demo="MenuExample">
+    <MenuExample client:load />
+  </ComponentExample>
+</ComponentSection>
+
+## Examples
+
+### With icons
+
+Add icons to menu items using `MenuItemLeadingIcon` and `MenuItemTrailingIcon`.
+
+<ComponentSection>
+  <ComponentExample demo="MenuWithIconsExample">
+    <MenuWithIconsExample client:load />
+  </ComponentExample>
+</ComponentSection>
+
+### With groups
+
+Group related items with `MenuGroup` and `MenuGroupLabel`.
+
+<ComponentSection>
+  <ComponentExample demo="MenuWithGroupsExample">
+    <MenuWithGroupsExample client:load />
+  </ComponentExample>
+</ComponentSection>
+
+### Checkbox items
+
+Use `MenuCheckboxItem` for toggleable options.
+
+<ComponentSection>
+  <ComponentExample demo="MenuCheckboxExample">
+    <MenuCheckboxExample client:load />
+  </ComponentExample>
+</ComponentSection>
+
+### Radio items
+
+Use `MenuRadioGroup` and `MenuRadioItem` for mutually exclusive options.
+
+<ComponentSection>
+  <ComponentExample demo="MenuRadioExample">
+    <MenuRadioExample client:load />
+  </ComponentExample>
+</ComponentSection>
+
+### Destructive item
+
+Use the `destructive` variant on `MenuItem` for destructive actions like delete.
+
+<ComponentSection>
+  <ComponentExample demo="MenuDestructiveExample">
+    <MenuDestructiveExample client:load />
+  </ComponentExample>
+</ComponentSection>
+
+### Submenu
+
+Nest menus with `MenuSubmenu` and `MenuSubmenuTrigger`.
+
+<ComponentSection>
+  <ComponentExample demo="MenuSubmenuExample">
+    <MenuSubmenuExample client:load />
+  </ComponentExample>
+</ComponentSection>
+
+## Installation
+
+Copy the source code below into your project:
+
+<CodeBlock code={menuSource} lang="tsx" />
+
+## API Reference
+
+### Menu
+
+<PropsTable component="Menu" />
+
+### MenuTrigger
+
+<PropsTable component="MenuTrigger" />
+
+### MenuContent
+
+<PropsTable component="MenuContent" />
+
+### MenuItem
+
+<PropsTable component="MenuItem" />
+
+### MenuLinkItem
+
+<PropsTable component="MenuLinkItem" />
+
+### MenuGroup
+
+<PropsTable component="MenuGroup" />
+
+### MenuGroupLabel
+
+<PropsTable component="MenuGroupLabel" />
+
+### MenuSeparator
+
+<PropsTable component="MenuSeparator" />
+
+### MenuItemLeadingIcon
+
+<PropsTable component="MenuItemLeadingIcon" />
+
+### MenuItemTrailingIcon
+
+<PropsTable component="MenuItemTrailingIcon" />
+
+### MenuItemLabel
+
+<PropsTable component="MenuItemLabel" />
+
+### MenuSubmenu
+
+<PropsTable component="MenuSubmenu" />
+
+### MenuSubmenuTrigger
+
+<PropsTable component="MenuSubmenuTrigger" />
+
+### MenuRadioGroup
+
+<PropsTable component="MenuRadioGroup" />
+
+### MenuRadioItem
+
+<PropsTable component="MenuRadioItem" />
+
+### MenuCheckboxItem
+
+<PropsTable component="MenuCheckboxItem" />

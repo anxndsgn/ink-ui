@@ -1,0 +1,112 @@
+@theme {
+  /* gray */
+  --color-gray-50: oklch(0.98559 0.002 48.697);
+  --color-gray-100: oklch(0.95 0.001 48.697);
+  --color-gray-200: oklch(0.925 0.002 48.697);
+  --color-gray-300: oklch(0.84598 0.002 48.697);
+  --color-gray-400: oklch(0.7374 0.002 48.697);
+  --color-gray-500: oklch(0.585 0.003 48.697);
+  --color-gray-600: oklch(0.46 0.002 48.697);
+  --color-gray-700: oklch(0.37 0.002 48.697);
+  --color-gray-800: oklch(0.31 0.001 48.697);
+  --color-gray-900: oklch(0.265 0.001 48.697);
+  --color-gray-950: oklch(0.21 0.002 48.697);
+
+  /* red */
+  --color-red-50: oklch(0.96453 0.015 24);
+  --color-red-100: oklch(0.95036 0.03 24);
+  --color-red-200: oklch(0.92601 0.045 24);
+  --color-red-300: oklch(0.8455 0.07 24);
+  --color-red-400: oklch(0.73813 0.135 24);
+  --color-red-500: oklch(0.63497 0.18 24);
+  --color-red-600: oklch(0.50144 0.15 24);
+  --color-red-700: oklch(0.38998 0.125 24);
+  --color-red-800: oklch(0.30985 0.095 24);
+  --color-red-900: oklch(0.26461 0.06 24);
+  --color-red-950: oklch(0.21016 0.04 24);
+
+  /* orange */
+  --color-orange-50: oklch(0.96453 0.02 41.5);
+  --color-orange-100: oklch(0.95036 0.025 41.5);
+  --color-orange-200: oklch(0.92601 0.03 41.5);
+  --color-orange-300: oklch(0.8455 0.07 41.5);
+  --color-orange-400: oklch(0.73813 0.14 41.5);
+  --color-orange-500: oklch(0.63497 0.17 41.5);
+  --color-orange-600: oklch(0.50144 0.135 41.5);
+  --color-orange-700: oklch(0.38998 0.08 41.5);
+  --color-orange-800: oklch(0.30985 0.065 41.5);
+  --color-orange-900: oklch(0.26461 0.055 41.5);
+  --color-orange-950: oklch(0.21016 0.04 41.5);
+}
+
+:root {
+  --background: oklch(0.98559 0.002 48.697);
+  --foreground: oklch(0.265 0.001 48.697);
+  --card: oklch(0.95 0.001 48.697);
+  --card-foreground: oklch(0.265 0.001 48.697);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.265 0.001 48.697);
+  --dialog: oklch(0.98559 0.002 48.697);
+  --dialog-foreground: oklch(0.265 0.001 48.697);
+  --primary: oklch(0.265 0.001 48.697);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.21 0.002 48.697 / 0.08);
+  --secondary-foreground: oklch(0.265 0.001 48.697);
+  --muted: oklch(0.95 0.001 48.697);
+  --muted-foreground: oklch(0.585 0.003 48.697);
+  --accent: oklch(0.63497 0.17 41.5);
+  --accent-foreground: oklch(1 0 0);
+  --destructive: oklch(0.63497 0.18 24);
+  --destructive-foreground: oklch(1 0 0);
+  --border: oklch(0.21 0.002 48.697 / 0.1);
+  --input: oklch(0.21 0.002 48.697 / 0.1);
+  --ring: oklch(0.63497 0.17 41.5 / 0.3);
+}
+
+[data-mode="dark"] {
+  --background: oklch(0.21 0.002 48.697);
+  --foreground: oklch(0.95 0.001 48.697);
+  --card: oklch(0.21 0.002 48.697);
+  --card-foreground: oklch(0.95 0.001 48.697);
+  --popover: oklch(0.265 0.001 48.697);
+  --popover-foreground: oklch(0.95 0.001 48.697);
+  --dialog: oklch(0.265 0.001 48.697);
+  --dialog-foreground: oklch(0.95 0.001 48.697);
+  --primary: oklch(0.95 0.001 48.697);
+  --primary-foreground: oklch(0.265 0.001 48.697);
+  --secondary: oklch(0.98559 0.002 48.697 / 0.08);
+  --secondary-foreground: oklch(0.95 0.001 48.697);
+  --muted: oklch(0.31 0.001 48.697);
+  --muted-foreground: oklch(0.7374 0.002 48.697);
+  --accent: oklch(0.50144 0.135 41.5);
+  --accent-foreground: oklch(1 0 0);
+  --destructive: oklch(0.63497 0.18 24);
+  --destructive-foreground: oklch(1 0 0);
+  --border: oklch(0.98559 0.002 48.697 / 0.1);
+  --input: oklch(0.98559 0.002 48.697 / 0.1);
+  --ring: oklch(0.63497 0.17 41.5 / 0.3);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-dialog: var(--dialog);
+  --color-dialog-foreground: var(--dialog-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+}

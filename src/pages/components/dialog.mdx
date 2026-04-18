@@ -1,0 +1,108 @@
+---
+layout: ~/layouts/mdx-doc-layout.astro
+title: "Dialog"
+description: "A window overlaid on either the primary window or another dialog window."
+baseUIComponent: "dialog"
+---
+
+import {
+  Dialog,
+  DialogBody,
+  DialogClose,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@registry/components/ui/dialog";
+import {
+  DialogExample,
+  DialogNoCloseButtonExample,
+  DialogRowFooterExample,
+} from "@registry/example/dialog-example";
+import ComponentExample from "~/components/docs/component-example.astro";
+import ComponentSection from "~/components/docs/component-section.astro";
+import PropsTable from "~/components/docs/props-table.astro";
+import CodeBlock from "~/components/docs/code-block.astro";
+import dialogSource from "@registry/components/ui/dialog?raw";
+
+<ComponentSection>
+  <ComponentExample demo="DialogExample">
+    <DialogExample client:load />
+  </ComponentExample>
+</ComponentSection>
+
+## Examples
+
+### Without close button
+
+Set `closeButton={false}` on `DialogHeader` to hide the default close button.
+
+<ComponentSection>
+  <ComponentExample demo="DialogNoCloseButtonExample">
+    <DialogNoCloseButtonExample client:load />
+  </ComponentExample>
+</ComponentSection>
+
+### Row footer
+
+Use `direction="row"` on `DialogFooter` to align buttons horizontally.
+
+<ComponentSection>
+  <ComponentExample demo="DialogRowFooterExample">
+    <DialogRowFooterExample client:load />
+  </ComponentExample>
+</ComponentSection>
+
+## Installation
+
+Copy the source code below into your project:
+
+<CodeBlock code={dialogSource} lang="tsx" />
+
+## API Reference
+
+### Dialog
+
+<PropsTable component="Dialog" />
+
+### DialogTrigger
+
+<PropsTable component="DialogTrigger" />
+
+### DialogContent
+
+<PropsTable component="DialogContent" />
+
+### DialogHeader
+
+<PropsTable component="DialogHeader" />
+
+### DialogBody
+
+<PropsTable component="DialogBody" />
+
+### DialogFooter
+
+<PropsTable component="DialogFooter" />
+
+### DialogTitle
+
+<PropsTable component="DialogTitle" />
+
+### DialogDescription
+
+<PropsTable component="DialogDescription" />
+
+### DialogBackdrop
+
+<PropsTable component="DialogBackdrop" />
+
+### DialogClose
+
+<PropsTable component="DialogClose" />
+
+### DialogPortal
+
+<PropsTable component="DialogPortal" />

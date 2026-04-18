@@ -1,0 +1,58 @@
+---
+layout: ~/layouts/mdx-doc-layout.astro
+title: "Input"
+description: "A text field that allows users to enter and edit text."
+baseUIComponent: "input"
+---
+
+import { Input } from "@registry/components/ui/input";
+import {
+  InputExample,
+  OutlineInputExample,
+  InlineInputExample,
+} from "@registry/example/input-example";
+import ComponentExample from "~/components/docs/component-example.astro";
+import ComponentSection from "~/components/docs/component-section.astro";
+import PropsTable from "~/components/docs/props-table.astro";
+import CodeBlock from "~/components/docs/code-block.astro";
+import inputSource from "@registry/components/ui/input?raw";
+
+<ComponentSection>
+  <ComponentExample demo="InputExample">
+    <InputExample />
+  </ComponentExample>
+</ComponentSection>
+
+## Examples
+
+### Variants
+
+Available variants: `default`, `outline`.
+
+#### Outline
+
+<ComponentSection>
+  <ComponentExample demo="OutlineInputExample">
+    <OutlineInputExample />
+  </ComponentExample>
+</ComponentSection>
+
+### Width
+
+By default, the input stretches to fill its container (`block={true}`). Pass `block={false}` to constrain the width.
+
+<ComponentSection>
+  <ComponentExample demo="InlineInputExample">
+    <InlineInputExample />
+  </ComponentExample>
+</ComponentSection>
+
+## Installation
+
+Copy the source code below into your project:
+
+<CodeBlock code={inputSource} lang="tsx" />
+
+## API Reference
+
+<PropsTable component="Input" />

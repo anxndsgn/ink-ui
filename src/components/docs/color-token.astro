@@ -1,0 +1,29 @@
+---
+interface Props {
+  /** Token name, e.g. "background" */
+  name: string;
+  /** Description of the token's purpose */
+  description?: string;
+}
+
+const { name, description } = Astro.props;
+---
+
+<div
+  class='not-prose flex items-center gap-3 rounded-lg border border-border p-3'
+>
+  <div
+    class='h-10 w-10 shrink-0 rounded-md border border-black/5 dark:border-white/5'
+    style={`background-color: var(--${name});`}
+  >
+  </div>
+  <div class='flex min-w-0 flex-col'>
+    <span class='text-sm font-medium text-foreground'>{name}</span>
+    {
+      description && (
+        <span class='text-xs text-muted-foreground'>{description}</span>
+      )
+    }
+  </div>
+  <!-- <code class='ml-auto text-[11px] text-muted-foreground'>var(--{name})</code> -->
+</div>

@@ -1,0 +1,103 @@
+---
+import MainLayout from "./main-layout.astro";
+import { StickyDocHeader } from "../components/docs/sticky-doc-header";
+import { CopyPageButton } from "../components/docs/copy-page-button";
+import { BaseUIIcon } from "../components/docs/icons/base-ui-icon";
+import { TableOfContents } from "../components/docs/table-of-contents";
+
+interface Props {
+  title: string;
+  description: string;
+  baseUIComponent?: string;
+  headings?: Array<{
+    depth: number;
+    slug: string;
+    text: string;
+  }>;
+}
+
+const { title, description, baseUIComponent, headings = [] } = Astro.props;
+
+const baseUIUrl = baseUIComponent
+  ? `https://base-ui.com/react/components/${baseUIComponent}`
+  : null;
+---
+
+<MainLayout title={`${title} - ink-ui`} description={description}>
+  <div class='flex flex-col'>
+    <StickyDocHeader title={title} baseUIUrl={baseUIUrl} client:load />
+
+    <!-- Page Header -->
+    <div id='page-header'>
+      <div class='mx-auto border-b border-border'>
+        <div class='mx-auto max-w-7xl p-12'>
+          <!-- Mobile: Copy page button above title -->
+          <div class='mb-3 md:hidden'>
+            <CopyPageButton align='center' client:idle />
+          </div>
+          <div class='mb-3 flex items-center gap-3'>
+            <h1 class='text-4xl font-bold text-foreground'>
+              {title}
+            </h1>
+            {
+              baseUIUrl && (
+                <a
+                  href={baseUIUrl}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  class='text-muted-foreground hover:text-foreground'
+                  title='View Base UI documentation'
+                  aria-label='View Base UI documentation'
+                >
+                  <BaseUIIcon size={28} />
+                </a>
+              )
+            }
+            <!-- Desktop: Copy page button on far right -->
+            <div class='hidden md:block md:ml-auto'>
+              <CopyPageButton client:idle />
+            </div>
+          </div>
+          <p class='text-lg text-muted-foreground'>
+            {description}
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Content -->
+    <main class='flex grow flex-col'>
+      <div class='mx-auto w-full grow'>
+        <!-- Select TOC: visible below xl, hidden at xl+ where sidebar takes over -->
+        <div
+          class='xl:hidden sticky top-24 md:top-12 z-1 border-b border-border bg-background'
+        >
+          <div class='mx-auto max-w-7xl px-2 md:px-3 py-3'>
+            <TableOfContents
+              layout='select'
+              headings={headings.length > 0 ? headings : undefined}
+              client:load
+            />
+          </div>
+        </div>
+
+        <div class='mx-auto max-w-7xl p-12 pr-10'>
+          <div class='grid grid-cols-1 gap-16 xl:grid-cols-[3fr_1fr]'>
+            <div class='ink-prose prose max-w-none min-w-0'>
+              <slot />
+            </div>
+            <!-- Sidebar TOC: only at xl+ -->
+            <aside class='hidden xl:block min-w-0'>
+              <div class='sticky top-24'>
+                <TableOfContents
+                  headings={headings.length > 0 ? headings : undefined}
+                  client:load
+                />
+              </div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</MainLayout>

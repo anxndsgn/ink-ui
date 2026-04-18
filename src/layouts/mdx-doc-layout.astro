@@ -1,0 +1,36 @@
+---
+/**
+ * MdxDocLayout — Layout for MDX doc pages.
+ *
+ * Usage in MDX frontmatter:
+ *   layout: ~/layouts/mdx-doc-layout.astro
+ *   title: "Button"
+ *   description: "Displays a button or a component that looks like a button."
+ *   baseUIComponent: "button"                # optional — links to Base UI docs
+ */
+import DocLayout from "./doc-layout.astro";
+
+interface Props {
+  frontmatter: {
+    title: string;
+    description: string;
+    baseUIComponent?: string;
+  };
+  headings?: Array<{
+    depth: number;
+    slug: string;
+    text: string;
+  }>;
+}
+
+const { frontmatter, headings = [] } = Astro.props;
+---
+
+<DocLayout
+  title={frontmatter.title}
+  description={frontmatter.description}
+  baseUIComponent={frontmatter.baseUIComponent}
+  headings={headings}
+>
+  <slot />
+</DocLayout>

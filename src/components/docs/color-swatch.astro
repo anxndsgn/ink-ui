@@ -1,0 +1,20 @@
+---
+interface Props {
+  /** Background color value (OKLCH string or CSS var) */
+  bg: string;
+  /** Label shown on the swatch, e.g. "500" */
+  label: string;
+  /** Text color class for contrast on the swatch */
+  textColor?: string;
+}
+
+const { bg, label, textColor = "text-white" } = Astro.props;
+---
+
+<div
+  class='flex h-16 w-full items-center justify-center rounded-lg border border-black/5 dark:border-white/5'
+  style={`background-color: ${bg};`}
+>
+  <span class:list={["text-sm font-bold tabular-nums", textColor]}>{label}</span
+  >
+</div>

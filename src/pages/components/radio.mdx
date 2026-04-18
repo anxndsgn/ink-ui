@@ -1,0 +1,73 @@
+---
+layout: ~/layouts/mdx-doc-layout.astro
+title: "Radio"
+description: "A set of mutually exclusive options where only one can be selected at a time."
+baseUIComponent: "radio"
+---
+
+import { RadioGroup, Radio, RadioGroupItem } from "@registry/components/ui/radio";
+import {
+  RadioExample,
+  RadioDisabledExample,
+  RadioControlledExample,
+  RadioGroupItemExample,
+} from "@registry/example/radio-example";
+import ComponentExample from "~/components/docs/component-example.astro";
+import ComponentSection from "~/components/docs/component-section.astro";
+import PropsTable from "~/components/docs/props-table.astro";
+import CodeBlock from "~/components/docs/code-block.astro";
+import radioSource from "@registry/components/ui/radio?raw";
+
+<ComponentSection>
+  <ComponentExample demo="RadioExample">
+    <RadioExample client:load />
+  </ComponentExample>
+</ComponentSection>
+
+## Examples
+
+### Disabled
+
+Use the `disabled` prop on individual radio items to prevent interaction.
+
+<ComponentSection>
+  <ComponentExample demo="RadioDisabledExample">
+    <RadioDisabledExample client:load />
+  </ComponentExample>
+</ComponentSection>
+
+### Controlled
+
+Manage the selected value with React state using `value` and `onValueChange` on the group.
+
+<ComponentSection>
+  <ComponentExample demo="RadioControlledExample">
+    <RadioControlledExample client:load />
+  </ComponentExample>
+</ComponentSection>
+
+### RadioGroupItem
+
+The `RadioGroupItem` alias is also available if you prefer that naming convention.
+
+<ComponentSection>
+  <ComponentExample demo="RadioGroupItemExample">
+    <RadioGroupItemExample client:load />
+  </ComponentExample>
+</ComponentSection>
+
+## Installation
+
+Copy the source code below into your project:
+
+<CodeBlock code={radioSource} lang="tsx" />
+
+## API Reference
+
+### RadioGroup
+
+<PropsTable component="RadioGroup" />
+
+### Radio
+
+<PropsTable component="Radio" />

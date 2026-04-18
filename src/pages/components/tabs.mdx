@@ -1,0 +1,81 @@
+---
+layout: ~/layouts/mdx-doc-layout.astro
+title: "Tabs"
+description: "A set of layered sections of content, known as tab panels, that display one panel of content at a time."
+baseUIComponent: "tabs"
+---
+
+import { Tabs, TabsList, TabsTab, TabsPanel } from "@registry/components/ui/tabs";
+import {
+  TabsExample,
+  TabsUnderlineExample,
+  TabsSizesExample,
+  TabsVerticalExample,
+} from "@registry/example/tabs-example";
+import ComponentExample from "~/components/docs/component-example.astro";
+import ComponentSection from "~/components/docs/component-section.astro";
+import PropsTable from "~/components/docs/props-table.astro";
+import CodeBlock from "~/components/docs/code-block.astro";
+import tabsSource from "@registry/components/ui/tabs?raw";
+
+<ComponentSection>
+  <ComponentExample demo="TabsExample">
+    <TabsExample client:load />
+  </ComponentExample>
+</ComponentSection>
+
+## Examples
+
+### Underline variant
+
+Use the `underline` variant for a minimal, border-based indicator style.
+
+<ComponentSection>
+  <ComponentExample demo="TabsUnderlineExample">
+    <TabsUnderlineExample client:load />
+  </ComponentExample>
+</ComponentSection>
+
+### Sizes
+
+Available sizes: `default`, `sm`, `lg`.
+
+<ComponentSection>
+  <ComponentExample demo="TabsSizesExample">
+    <TabsSizesExample client:load />
+  </ComponentExample>
+</ComponentSection>
+
+### Vertical orientation
+
+Set `orientation="vertical"` on `Tabs` to arrange tabs and panels side by side.
+
+<ComponentSection>
+  <ComponentExample demo="TabsVerticalExample">
+    <TabsVerticalExample client:load />
+  </ComponentExample>
+</ComponentSection>
+
+## Installation
+
+Copy the source code below into your project:
+
+<CodeBlock code={tabsSource} lang="tsx" />
+
+## API Reference
+
+### Tabs
+
+<PropsTable component="Tabs" />
+
+### TabsList
+
+<PropsTable component="TabsList" />
+
+### TabsTab
+
+<PropsTable component="TabsTab" />
+
+### TabsPanel
+
+<PropsTable component="TabsPanel" />

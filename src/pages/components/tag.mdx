@@ -1,0 +1,75 @@
+---
+layout: ~/layouts/mdx-doc-layout.astro
+title: "Tag"
+description: "Displays a badge or a label component."
+---
+
+import { Tag } from "@registry/components/ui/tag";
+import {
+  TagExample,
+  SecondaryTagExample,
+  OutlineTagExample,
+  TagSizesExample,
+  TagInMenuExample,
+} from "@registry/example/tag-example";
+import ComponentExample from "~/components/docs/component-example.astro";
+import ComponentSection from "~/components/docs/component-section.astro";
+import PropsTable from "~/components/docs/props-table.astro";
+import CodeBlock from "~/components/docs/code-block.astro";
+import tagSource from "@registry/components/ui/tag?raw";
+
+<ComponentSection>
+  <ComponentExample demo="TagExample">
+    <TagExample />
+  </ComponentExample>
+</ComponentSection>
+
+## Examples
+
+### Variants
+
+#### Secondary
+
+<ComponentSection>
+  <ComponentExample demo="SecondaryTagExample">
+    <SecondaryTagExample />
+  </ComponentExample>
+</ComponentSection>
+
+#### Outline
+
+<ComponentSection>
+  <ComponentExample demo="OutlineTagExample">
+    <OutlineTagExample />
+  </ComponentExample>
+</ComponentSection>
+
+### Sizes
+
+Available sizes: `default`, `sm`, `lg`.
+
+<ComponentSection>
+  <ComponentExample demo="TagSizesExample">
+    <TagSizesExample />
+  </ComponentExample>
+</ComponentSection>
+
+### In menu
+
+Use a tag inside a `MenuItem` to highlight status or labels.
+
+<ComponentSection>
+  <ComponentExample demo="TagInMenuExample">
+    <TagInMenuExample client:load />
+  </ComponentExample>
+</ComponentSection>
+
+## Installation
+
+Copy the source code below into your project:
+
+<CodeBlock code={tagSource} lang="tsx" />
+
+## API Reference
+
+<PropsTable component="Tag" />

@@ -1,0 +1,85 @@
+---
+import { propsRegistry } from "~/lib/props-registry";
+
+interface Props {
+  component: string;
+  hideDescription?: boolean;
+}
+
+const { component, hideDescription = false } = Astro.props;
+
+const entry = propsRegistry[component];
+---
+
+{
+  entry ? (
+    <div class="not-prose">
+      {entry.props.length === 0 && entry.extends ? (
+        <p class="text-sm text-muted-foreground">
+          This component does not add any props on top of{" "}
+          <a
+            href={entry.extends.href}
+            class="text-orange-600 underline underline-offset-2 hover:text-orange-700 dark:text-orange-400 dark:hover:text-orange-300"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {entry.extends.name}
+          </a>
+          . See the Base UI docs for the full API reference.
+        </p>
+      ) : (
+        <>
+          {entry.extends && !hideDescription && (
+            <p class="mb-4 text-sm text-gray-600 dark:text-gray-400">
+              The <code>{component}</code> component extends the{" "}
+              <a
+                href={entry.extends.href}
+                class="text-orange-600 underline underline-offset-2 hover:text-orange-700 dark:text-orange-400 dark:hover:text-orange-300"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {entry.extends.name}
+              </a>{" "}
+              props and adds the following:
+            </p>
+          )}
+
+          <div class="overflow-x-auto rounded-lg border border-border">
+            <table class="w-full text-left text-sm">
+              <thead class="bg-muted text-xs font-medium text-muted-foreground uppercase">
+                <tr>
+                  <th class="px-4 py-3">Prop</th>
+                  <th class="px-4 py-3">Type</th>
+                  <th class="px-4 py-3">Default</th>
+                  <th class="px-4 py-3">Description</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-border">
+                {entry.props.map((prop) => (
+                  <tr>
+                    <td class="px-4 py-3 font-mono text-xs font-medium text-foreground">
+                      {prop.name}
+                    </td>
+                    <td class="px-4 py-3 font-mono text-xs text-orange-600 dark:text-orange-400">
+                      {prop.type}
+                    </td>
+                    <td class="px-4 py-3 font-mono text-xs text-muted-foreground">
+                      {prop.defaultValue ?? "—"}
+                    </td>
+                    <td class="px-4 py-3 text-muted-foreground">
+                      {prop.description}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </>
+      )}
+    </div>
+  ) : (
+    <div class="not-prose text-sm text-muted-foreground">
+      PropsTable not available for <code>{component}</code>.
+    </div>
+  )
+}

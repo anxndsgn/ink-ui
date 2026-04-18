@@ -1,0 +1,11 @@
+---
+interface Props {
+  type?: "info" | "warning" | "error";
+}
+
+const { type = "info" } = Astro.props;
+---
+
+<div class="my-6 border-l-2 border-border pl-4 text-muted-foreground">
+  <slot />
+</div>

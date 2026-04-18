@@ -1,0 +1,96 @@
+---
+layout: ~/layouts/mdx-doc-layout.astro
+title: "Alert Dialog"
+description: "A modal dialog that interrupts the user with important content and expects a response."
+baseUIComponent: "alert-dialog"
+---
+
+import {
+  AlertDialog,
+  AlertDialogClose,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@registry/components/ui/alert-dialog";
+import {
+  AlertDialogExample,
+  AlertDialogDestructiveExample,
+} from "@registry/example/alert-dialog-example";
+import ComponentExample from "~/components/docs/component-example.astro";
+import ComponentSection from "~/components/docs/component-section.astro";
+import PropsTable from "~/components/docs/props-table.astro";
+import CodeBlock from "~/components/docs/code-block.astro";
+import alertDialogSource from "@registry/components/ui/alert-dialog?raw";
+
+<ComponentSection>
+  <ComponentExample demo="AlertDialogExample">
+    <AlertDialogExample client:load />
+  </ComponentExample>
+</ComponentSection>
+
+## Examples
+
+### Destructive action
+
+Use a destructive button for actions that cannot be undone, such as deleting data.
+
+<ComponentSection>
+  <ComponentExample demo="AlertDialogDestructiveExample">
+    <AlertDialogDestructiveExample client:load />
+  </ComponentExample>
+</ComponentSection>
+
+## Installation
+
+Copy the source code below into your project:
+
+<CodeBlock code={alertDialogSource} lang="tsx" />
+
+## API Reference
+
+### AlertDialog
+
+<PropsTable component="AlertDialog" />
+
+### AlertDialogTrigger
+
+<PropsTable component="AlertDialogTrigger" />
+
+### AlertDialogContent
+
+<PropsTable component="AlertDialogContent" />
+
+### AlertDialogHeader
+
+<PropsTable component="AlertDialogHeader" />
+
+### AlertDialogFooter
+
+<PropsTable component="AlertDialogFooter" />
+
+### AlertDialogTitle
+
+<PropsTable component="AlertDialogTitle" />
+
+### AlertDialogDescription
+
+<PropsTable component="AlertDialogDescription" />
+
+### AlertDialogBackdrop
+
+<PropsTable component="AlertDialogBackdrop" />
+
+### AlertDialogClose
+
+<PropsTable component="AlertDialogClose" />
+
+### AlertDialogCloseButton
+
+<PropsTable component="AlertDialogCloseButton" />
+
+### AlertDialogPortal
+
+<PropsTable component="AlertDialogPortal" />

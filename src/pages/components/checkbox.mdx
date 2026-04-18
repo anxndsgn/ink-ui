@@ -1,0 +1,106 @@
+---
+layout: ~/layouts/mdx-doc-layout.astro
+title: "Checkbox"
+description: "A control that lets the user toggle between checked, unchecked, and indeterminate states."
+baseUIComponent: "checkbox"
+---
+
+import { Checkbox, CheckboxGroup } from "@registry/components/ui/checkbox";
+import {
+  CheckboxExample,
+  CheckboxCheckedExample,
+  CheckboxDisabledExample,
+  CheckboxControlledExample,
+  CheckboxGroupExample,
+  CheckboxGroupControlledExample,
+  CheckboxGroupIndeterminateExample,
+} from "@registry/example/checkbox-example";
+import ComponentExample from "~/components/docs/component-example.astro";
+import ComponentSection from "~/components/docs/component-section.astro";
+import PropsTable from "~/components/docs/props-table.astro";
+import CodeBlock from "~/components/docs/code-block.astro";
+import checkboxSource from "@registry/components/ui/checkbox?raw";
+
+<ComponentSection>
+  <ComponentExample demo="CheckboxExample">
+    <CheckboxExample client:load />
+  </ComponentExample>
+</ComponentSection>
+
+## Examples
+
+### Default checked
+
+Use `defaultChecked` to set the initial state without controlling the component.
+
+<ComponentSection>
+  <ComponentExample demo="CheckboxCheckedExample">
+    <CheckboxCheckedExample client:load />
+  </ComponentExample>
+</ComponentSection>
+
+### Disabled
+
+Use the `disabled` prop to prevent interaction.
+
+<ComponentSection>
+  <ComponentExample demo="CheckboxDisabledExample">
+    <CheckboxDisabledExample client:load />
+  </ComponentExample>
+</ComponentSection>
+
+### Controlled
+
+Manage the checked state with React state using `checked` and `onCheckedChange`.
+
+<ComponentSection>
+  <ComponentExample demo="CheckboxControlledExample">
+    <CheckboxControlledExample client:load />
+  </ComponentExample>
+</ComponentSection>
+
+### Group
+
+Use `CheckboxGroup` to manage multiple related checkboxes. Each child checkbox uses a `value` prop that matches the group's value array.
+
+<ComponentSection>
+  <ComponentExample demo="CheckboxGroupExample">
+    <CheckboxGroupExample client:load />
+  </ComponentExample>
+</ComponentSection>
+
+### Controlled group
+
+Manage the group's selected values with React state using `value` and `onValueChange`.
+
+<ComponentSection>
+  <ComponentExample demo="CheckboxGroupControlledExample">
+    <CheckboxGroupControlledExample client:load />
+  </ComponentExample>
+</ComponentSection>
+
+### Parent checkbox
+
+Use a parent checkbox with the `parent` prop to control a group of child checkboxes. Pass `allValues` to `CheckboxGroup` so the parent can toggle all children. The parent automatically shows an indeterminate state when some children are selected.
+
+<ComponentSection>
+  <ComponentExample demo="CheckboxGroupIndeterminateExample">
+    <CheckboxGroupIndeterminateExample client:load />
+  </ComponentExample>
+</ComponentSection>
+
+## Installation
+
+Copy the source code below into your project:
+
+<CodeBlock code={checkboxSource} lang="tsx" />
+
+## API Reference
+
+### Checkbox
+
+<PropsTable component="Checkbox" />
+
+### CheckboxGroup
+
+<PropsTable component="CheckboxGroup" />

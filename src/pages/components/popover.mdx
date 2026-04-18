@@ -1,0 +1,94 @@
+---
+layout: ~/layouts/mdx-doc-layout.astro
+title: "Popover"
+description: "An accessible popup anchored to a button."
+baseUIComponent: "popover"
+---
+
+import {
+  Popover,
+  PopoverBody,
+  PopoverClose,
+  PopoverContent,
+  PopoverHeader,
+  PopoverTitle,
+  PopoverTrigger,
+} from "@registry/components/ui/popover";
+import {
+  PopoverExample,
+  PopoverNoCloseButtonExample,
+  PopoverWithPositionerPropsExample,
+} from "@registry/example/popover-example";
+import ComponentExample from "~/components/docs/component-example.astro";
+import ComponentSection from "~/components/docs/component-section.astro";
+import PropsTable from "~/components/docs/props-table.astro";
+import CodeBlock from "~/components/docs/code-block.astro";
+import popoverSource from "@registry/components/ui/popover?raw";
+
+<ComponentSection>
+  <ComponentExample demo="PopoverExample">
+    <PopoverExample client:load />
+  </ComponentExample>
+</ComponentSection>
+
+## Examples
+
+### Without close button
+
+Set `closeButton={false}` on `PopoverHeader` to hide the default close button.
+
+<ComponentSection>
+  <ComponentExample demo="PopoverNoCloseButtonExample">
+    <PopoverNoCloseButtonExample client:load />
+  </ComponentExample>
+</ComponentSection>
+
+### Custom positioning
+
+Pass `positionerProps` to `PopoverContent` to customize the popup position.
+
+<ComponentSection>
+  <ComponentExample demo="PopoverWithPositionerPropsExample">
+    <PopoverWithPositionerPropsExample client:load />
+  </ComponentExample>
+</ComponentSection>
+
+## Installation
+
+Copy the source code below into your project:
+
+<CodeBlock code={popoverSource} lang="tsx" />
+
+## API Reference
+
+### Popover
+
+<PropsTable component="Popover" />
+
+### PopoverTrigger
+
+<PropsTable component="PopoverTrigger" />
+
+### PopoverContent
+
+<PropsTable component="PopoverContent" />
+
+### PopoverHeader
+
+<PropsTable component="PopoverHeader" />
+
+### PopoverBody
+
+<PropsTable component="PopoverBody" />
+
+### PopoverTitle
+
+<PropsTable component="PopoverTitle" />
+
+### PopoverClose
+
+<PropsTable component="PopoverClose" />
+
+### PopoverPortal
+
+<PropsTable component="PopoverPortal" />

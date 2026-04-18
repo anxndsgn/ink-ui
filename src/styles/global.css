@@ -1,0 +1,243 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+@import "../../registry/styles/ink.css";
+
+@custom-variant dark (&:where([data-mode="dark"], [data-mode="dark"] *));
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@theme {
+  --font-sans:
+    "Inter", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Prevent CLS from font loading */
+html {
+  font-display: optional;
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* ==========================================================================
+   Ink Prose — Tailwind Typography overrides
+   Used on .ink-prose wrapper in DocLayout and MdxDocLayout
+   ========================================================================== */
+
+.ink-prose {
+  /* Base typography token overrides (light) */
+  --tw-prose-body: var(--color-gray-700);
+  --tw-prose-headings: var(--color-gray-900);
+  --tw-prose-lead: var(--color-gray-700);
+  --tw-prose-links: var(--color-gray-800);
+  --tw-prose-bold: var(--color-gray-900);
+  --tw-prose-counters: var(--color-gray-500);
+  --tw-prose-bullets: var(--color-gray-700);
+  --tw-prose-hr: var(--color-gray-200);
+  --tw-prose-quotes: var(--color-gray-900);
+  --tw-prose-quote-borders: var(--color-gray-200);
+  --tw-prose-captions: var(--color-gray-500);
+  --tw-prose-kbd: var(--color-gray-900);
+  --tw-prose-kbd-shadows: transparent;
+  --tw-prose-code: var(--color-gray-900);
+  --tw-prose-pre-code: var(--color-gray-900);
+  --tw-prose-pre-bg: var(--color-gray-50);
+  --tw-prose-th-borders: var(--color-gray-200);
+  --tw-prose-td-borders: var(--color-gray-200);
+}
+
+[data-mode="dark"] .ink-prose {
+  /* Dark mode — override the same variables so prose reads dark colors */
+  --tw-prose-body: var(--color-gray-300);
+  --tw-prose-headings: var(--color-gray-100);
+  --tw-prose-lead: var(--color-gray-300);
+  --tw-prose-links: var(--color-gray-200);
+  --tw-prose-bold: var(--color-gray-100);
+  --tw-prose-counters: var(--color-gray-500);
+  --tw-prose-bullets: var(--color-gray-300);
+  --tw-prose-hr: var(--color-gray-800);
+  --tw-prose-quotes: var(--color-gray-100);
+  --tw-prose-quote-borders: var(--color-gray-800);
+  --tw-prose-captions: var(--color-gray-500);
+  --tw-prose-kbd: var(--color-gray-100);
+  --tw-prose-kbd-shadows: transparent;
+  --tw-prose-code: var(--color-gray-100);
+  --tw-prose-pre-code: var(--color-gray-100);
+  --tw-prose-pre-bg: var(--color-gray-900);
+  --tw-prose-th-borders: var(--color-gray-800);
+  --tw-prose-td-borders: var(--color-gray-800);
+}
+
+/* Inline code styling — match existing site style */
+.ink-prose :where(code):not(:where(pre code)) {
+  font-weight: 500;
+  font-size: 0.875em;
+  background-color: var(--color-gray-100);
+  border: 1px solid var(--color-gray-200);
+  border-radius: 0.25rem;
+  padding: 0.125rem 0.375rem;
+  font-family:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
+    monospace;
+}
+
+[data-mode="dark"] .ink-prose :where(code):not(:where(pre code)) {
+  background-color: var(--color-gray-800);
+  border-color: var(--color-gray-700);
+}
+
+/* Remove backtick decoration from inline code */
+.ink-prose :where(code):not(:where(pre code))::before,
+.ink-prose :where(code):not(:where(pre code))::after {
+  content: none;
+}
+
+/* Links — underline on hover only (skip .not-prose where components control their own styles) */
+.ink-prose :where(a):not(:where(.not-prose, .not-prose *)) {
+  text-decoration: none;
+}
+.ink-prose :where(a):not(:where(.not-prose, .not-prose *)):hover {
+  text-decoration: underline;
+}
+
+/* Headings — use Heading component anchor style where possible */
+.ink-prose :where(h2, h3, h4):not(:where(.not-prose, .not-prose *)) {
+  scroll-margin-top: 6rem;
+  margin-bottom: 1rem 0;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+/* Typography Styling */
+.ink-prose :where(h2):not(:where(.not-prose, .not-prose *)) {
+  font-size: 1.5rem;
+}
+
+.ink-prose :where(h3):not(:where(.not-prose, .not-prose *)) {
+  font-size: 1.25rem;
+}
+
+.ink-prose :where(p):not(:where(.not-prose, .not-prose *)) {
+  margin: 0.5rem 0;
+}
+
+.ink-prose :where(ul):not(:where(.not-prose, .not-prose *)) {
+  margin: 0;
+  margin-bottom: 1rem;
+}
+
+/* Divider styling */
+.ink-prose :where(hr) {
+  justify-self: center;
+  width: 100%;
+  margin: 4rem 0;
+  padding: 0;
+}
+
+/* kbd styling */
+.ink-prose :where(kbd) {
+  background-color: var(--color-gray-100);
+  border: 1px solid var(--color-gray-200);
+  border-radius: 0.25rem;
+  padding: 0.125rem 0.375rem;
+  font-size: 0.875em;
+  box-shadow: none;
+}
+
+[data-mode="dark"] .ink-prose :where(kbd) {
+  background-color: var(--color-gray-800);
+  border-color: var(--color-gray-700);
+}
+
+/* Pre / code blocks — don't interfere with our CodeBlock component */
+.ink-prose :where(pre) {
+  border-radius: 0.5rem;
+}
+
+/* Table styling */
+.ink-prose :where(table) {
+  width: 100%;
+}
+.ink-prose :where(thead) {
+  border-bottom-color: var(--color-gray-200);
+}
+.ink-prose :where(thead th) {
+  color: var(--color-gray-900);
+  font-weight: 600;
+}
+
+[data-mode="dark"] .ink-prose :where(thead) {
+  border-bottom-color: var(--color-gray-800);
+}
+[data-mode="dark"] .ink-prose :where(thead th) {
+  color: var(--color-gray-100);
+}
+
+/* Blockquote */
+.ink-prose :where(blockquote) {
+  border-left-color: var(--color-orange-500);
+  color: var(--color-gray-700);
+  font-style: normal;
+}
+
+[data-mode="dark"] .ink-prose :where(blockquote) {
+  border-left-color: var(--color-orange-400);
+  color: var(--color-gray-300);
+}
+
+/* Non-prose sections inside prose (ComponentExample, Callout, etc.)
+   These opt out of prose styling via not-prose */
+.ink-prose :where(.not-prose) {
+  /* Reset any inherited typography transforms */
+  font-size: inherit;
+  line-height: inherit;
+}
+
+/* ==========================================================================
+   Shiki code blocks — markdown code blocks use .astro-code class
+   Dual theme support: light (github-light) and dark (vesper)
+   ========================================================================== */
+
+/* Container styling for all code blocks (markdown + CodeBlock component) */
+pre.astro-code {
+  overflow: hidden;
+  border-radius: 0.75rem;
+  border: 1px solid var(--color-gray-200);
+  margin: 1rem 0;
+}
+
+[data-mode="dark"] pre.astro-code {
+  border-color: var(--color-gray-800);
+}
+
+/* Light mode (default) */
+.astro-code,
+.astro-code span {
+  color: var(--shiki-light) !important;
+  background-color: var(--shiki-light-bg) !important;
+}
+
+/* Dark mode — toggle via data-mode attribute */
+[data-mode="dark"] .astro-code,
+[data-mode="dark"] .astro-code span {
+  color: var(--shiki-dark) !important;
+  background-color: var(--shiki-dark-bg) !important;
+}

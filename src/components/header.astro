@@ -1,0 +1,24 @@
+---
+import { ThemeToggle } from "./theme-toggle";
+---
+
+<header
+  class='sticky top-0 z-10 h-12 border-b border-border hidden md:flex bg-background'
+>
+  <div
+    class='flex min-w-0 flex-1 items-center justify-end border-r border-border px-4'
+  >
+    <a
+      href='https://github.com/anxndsgn/ink-ui'
+      target='_blank'
+      rel='noopener noreferrer'
+      class='font-mono text-sm text-muted-foreground hover:text-foreground'
+    >
+      @anxndsgn/ink-ui
+    </a>
+  </div>
+
+  <div class='flex w-12 shrink-0 items-center justify-center'>
+    <ThemeToggle client:only='react' />
+  </div>
+</header>

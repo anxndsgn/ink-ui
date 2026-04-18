@@ -1,0 +1,102 @@
+---
+layout: ~/layouts/mdx-doc-layout.astro
+title: "Card"
+description: "A container for grouping related content and actions."
+---
+
+import {
+  Card,
+  CardAction,
+  CardBody,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@registry/components/ui/card";
+import {
+  CardExample,
+  CardWithActionExample,
+  CardColumnFooterExample,
+  CardMotionFooterExample,
+} from "@registry/example/card-example";
+import ComponentExample from "~/components/docs/component-example.astro";
+import ComponentSection from "~/components/docs/component-section.astro";
+import PropsTable from "~/components/docs/props-table.astro";
+import CodeBlock from "~/components/docs/code-block.astro";
+import cardSource from "@registry/components/ui/card?raw";
+
+<ComponentSection>
+  <ComponentExample demo="CardExample">
+    <CardExample client:load />
+  </ComponentExample>
+</ComponentSection>
+
+## Examples
+
+### With action
+
+Use `CardAction` to place an action button in the header.
+
+<ComponentSection>
+  <ComponentExample demo="CardWithActionExample">
+    <CardWithActionExample client:load />
+  </ComponentExample>
+</ComponentSection>
+
+### Column footer
+
+Use `direction="column"` on `CardFooter` to stack buttons vertically.
+
+<ComponentSection>
+  <ComponentExample demo="CardColumnFooterExample">
+    <CardColumnFooterExample client:load />
+  </ComponentExample>
+</ComponentSection>
+
+### Motion footer
+
+You can wrap the footer in `motion.div` with `AnimatePresence` to animate it in and out when conditions change.
+
+<ComponentSection>
+  <ComponentExample demo="CardMotionFooterExample">
+    <CardMotionFooterExample client:load />
+  </ComponentExample>
+</ComponentSection>
+
+## Installation
+
+Copy the source code below into your project:
+
+<CodeBlock code={cardSource} lang="tsx" />
+
+## API Reference
+
+### Card
+
+<PropsTable component="Card" />
+
+### CardHeader
+
+<PropsTable component="CardHeader" />
+
+### CardTitle
+
+<PropsTable component="CardTitle" />
+
+### CardDescription
+
+<PropsTable component="CardDescription" />
+
+### CardAction
+
+<PropsTable component="CardAction" />
+
+### CardBody
+
+`CardBody` is an alias for `CardPanel`.
+
+<PropsTable component="CardPanel" />
+
+### CardFooter
+
+<PropsTable component="CardFooter" />

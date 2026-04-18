@@ -1,0 +1,114 @@
+---
+layout: ~/layouts/mdx-doc-layout.astro
+title: "Button"
+description: "Displays a button or a component that looks like a button."
+baseUIComponent: "button"
+---
+
+import { Button } from "@registry/components/ui/button";
+import {
+  LoadingButtonExample,
+  ButtonExample,
+  SecondaryButtonExample,
+  OutlineButtonExample,
+  GhostButtonExample,
+  DestructiveButtonExample,
+  RevertButtonExample,
+  IconButtonExample,
+  ButtonSizesExample,
+} from "@registry/example/button-example";
+import ComponentExample from "~/components/docs/component-example.astro";
+import ComponentSection from "~/components/docs/component-section.astro";
+import PropsTable from "~/components/docs/props-table.astro";
+import CodeBlock from "~/components/docs/code-block.astro";
+import buttonSource from "@registry/components/ui/button?raw";
+
+<ComponentSection>
+  <ComponentExample demo="ButtonExample">
+    <ButtonExample />
+  </ComponentExample>
+</ComponentSection>
+
+## Examples
+
+### Variants
+
+#### Secondary
+
+<ComponentSection>
+  <ComponentExample demo="SecondaryButtonExample">
+    <SecondaryButtonExample />
+  </ComponentExample>
+</ComponentSection>
+
+#### Outline
+
+<ComponentSection>
+  <ComponentExample demo="OutlineButtonExample">
+    <OutlineButtonExample />
+  </ComponentExample>
+</ComponentSection>
+
+#### Ghost
+
+<ComponentSection>
+  <ComponentExample demo="GhostButtonExample">
+    <GhostButtonExample />
+  </ComponentExample>
+</ComponentSection>
+
+#### Destructive
+
+<ComponentSection>
+  <ComponentExample demo="DestructiveButtonExample">
+    <DestructiveButtonExample />
+  </ComponentExample>
+</ComponentSection>
+
+#### Revert
+
+<ComponentSection>
+  <ComponentExample demo="RevertButtonExample">
+    <RevertButtonExample />
+  </ComponentExample>
+</ComponentSection>
+
+### Sizes
+
+Available sizes: `default`, `sm`, `lg`, `icon`, `icon-sm`.
+
+<ComponentSection>
+  <ComponentExample demo="ButtonSizesExample">
+    <ButtonSizesExample />
+  </ComponentExample>
+</ComponentSection>
+
+### Icon
+
+Use the `icon` or `icon-sm` size with an SVG icon inside the button.
+
+<ComponentSection>
+  <ComponentExample demo="IconButtonExample">
+    <IconButtonExample />
+  </ComponentExample>
+</ComponentSection>
+
+### Loading state
+
+Pass the `loading` prop to show a spinner and blur the button content:
+
+<ComponentSection>
+  <ComponentExample demo="LoadingButtonExample">
+    <LoadingButtonExample client:load />
+  </ComponentExample>
+</ComponentSection>
+
+## Installation
+
+Copy the source code below into your project:
+
+<CodeBlock code={buttonSource} lang="tsx" />
+
+## API Reference
+
+<PropsTable component="Button" />
