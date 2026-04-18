@@ -25,6 +25,7 @@ const staticPages: NavItem[] = [
   { label: "Home", href: "/" },
   { label: "Introduction", href: "/introduction" },
   { label: "Colors", href: "/colors" },
+  { label: "Acknowledgements", href: "/acknowledgements" },
 ];
 
 const componentItems: NavItem[] = [
