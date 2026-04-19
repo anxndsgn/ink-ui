@@ -20,7 +20,7 @@ export function ScrollAreaExample() {
 export function ScrollAreaHorizontalExample() {
   return (
     <div className="flex items-start justify-center">
-      <ScrollArea className="w-72 whitespace-nowrap rounded-md bg-muted">
+      <ScrollArea className="w-72 rounded-md bg-muted whitespace-nowrap">
         <div className="flex w-max gap-4 p-4">
           {Array.from({ length: 10 }, (_, i) => (
             <div

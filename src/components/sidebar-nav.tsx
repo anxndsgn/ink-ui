@@ -152,9 +152,7 @@ export function SidebarNav({ currentPath }: SidebarNavProps) {
             <XIcon size={20} />
           </Button>
         </div>
-        <ScrollArea className="min-h-0 grow text-sm text-foreground">
-          {navContent}
-        </ScrollArea>
+        <ScrollArea className="min-h-0 grow text-sm text-foreground">{navContent}</ScrollArea>
       </aside>
 
       {/* Desktop - always visible, panel slides behind it */}
@@ -181,9 +179,7 @@ export function SidebarNav({ currentPath }: SidebarNavProps) {
       >
         <div className="h-12 flex-none border-b border-border" />
 
-        <ScrollArea className="min-h-0 grow text-sm text-foreground">
-          {navContent}
-        </ScrollArea>
+        <ScrollArea className="min-h-0 grow text-sm text-foreground">{navContent}</ScrollArea>
       </aside>
     </>
   );

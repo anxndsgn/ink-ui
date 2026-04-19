@@ -585,7 +585,7 @@ export function ComponentCanvas() {
       <div
         aria-label="Component canvas"
         className={cn(
-          "absolute inset-0 z-0 touch-none select-none overflow-hidden",
+          "absolute inset-0 z-0 touch-none overflow-hidden select-none",
           isDragging ? "cursor-grabbing" : "cursor-grab",
         )}
         onLostPointerCapture={handleLostPointerCapture}
