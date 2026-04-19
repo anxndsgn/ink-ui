@@ -22,7 +22,7 @@ const buttonVariants = cva(
       },
       variant: {
         default:
-          "bg-primary text-primary-foreground not-data-disabled:hover:bg-primary/90 not-data-disabled:active:bg-primary/80 data-popup-open:bg-primary/90",
+          "bg-primary text-primary-foreground not-data-disabled:hover:bg-gray-700 data-popup-open:bg-gray-700 dark:not-data-disabled:hover:bg-gray-300 dark:data-popup-open:bg-gray-300",
         destructive:
           "bg-destructive text-destructive-foreground not-data-disabled:hover:bg-destructive/90 focus-visible:ring-destructive/30 data-popup-open:bg-destructive/90",
         ghost:
@@ -32,7 +32,7 @@ const buttonVariants = cva(
         revert:
           "bg-muted text-foreground not-data-disabled:hover:bg-muted/80 data-popup-open:bg-muted/80",
         secondary:
-          "bg-secondary text-secondary-foreground not-data-disabled:hover:bg-secondary/60 data-popup-open:bg-secondary/60",
+          "bg-secondary text-secondary-foreground not-data-disabled:hover:bg-gray-950/16 data-popup-open:bg-gray-950/16 dark:not-data-disabled:hover:bg-gray-50/16 dark:data-popup-open:bg-gray-50/16",
       },
     },
   },
