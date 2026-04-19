@@ -60,7 +60,7 @@ export function LoadingButtonExample() {
 
 export function RevertButtonExample() {
   return (
-    <div className="flex flex-wrap items-center gap-4">
+    <div className="flex flex-wrap items-center gap-4 bg-gray-950 dark:bg-gray-50 p-4 rounded w-full h-32 justify-center">
       <Button variant="revert">Revert</Button>
     </div>
   );
