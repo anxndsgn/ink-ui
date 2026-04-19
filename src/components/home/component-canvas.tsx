@@ -18,7 +18,7 @@ import {
   AlertDialogTrigger,
 } from "@registry/components/ui/alert-dialog";
 import { Button, buttonVariants } from "@registry/components/ui/button";
-import { Card } from "@registry/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@registry/components/ui/card";
 import { Checkbox } from "@registry/components/ui/checkbox";
 import {
   Dialog,
@@ -146,11 +146,13 @@ const componentPreviews: ComponentPreview[] = [
   {
     label: "Card",
     renderPreview: () => (
-      <Card className="w-44 rounded-lg border-border p-1">
-        <div className="rounded-md border border-border bg-popover p-3">
-          <div className="mb-2 h-2 w-20 rounded-full bg-foreground/80" />
-          <div className="h-2 w-28 rounded-full bg-muted-foreground/40" />
-        </div>
+      <Card className="w-52">
+        <CardHeader>
+          <CardTitle>Card title</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p className="text-sm text-muted-foreground">This is the content of the card.</p>
+        </CardContent>
       </Card>
     ),
   },
