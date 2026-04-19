@@ -24,7 +24,7 @@ const buttonVariants = cva(
         default:
           "bg-primary text-primary-foreground not-data-disabled:hover:bg-gray-700 data-popup-open:bg-gray-700 dark:not-data-disabled:hover:bg-gray-300 dark:data-popup-open:bg-gray-300",
         destructive:
-          "bg-destructive text-destructive-foreground not-data-disabled:hover:bg-destructive/90 focus-visible:ring-destructive/30 data-popup-open:bg-destructive/90",
+          "bg-destructive text-destructive-foreground not-data-disabled:hover:bg-red-600 focus-visible:ring-red-500/30 data-popup-open:bg-red-600 dark:not-data-disabled:hover:bg-red-400 dark:focus-visible:ring-red-500/30 dark:data-popup-open:bg-red-400",
         ghost:
           "bg-transparent text-foreground not-data-disabled:hover:bg-secondary data-popup-open:bg-secondary",
         outline:
