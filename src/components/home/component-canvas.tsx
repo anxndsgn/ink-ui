@@ -531,8 +531,12 @@ export function ComponentCanvas() {
   const hasMoved = Math.abs(offset.x) > 1 || Math.abs(offset.y) > 1;
 
   const handlePointerDown = (event: PointerEvent<HTMLDivElement>) => {
-    if (event.button !== 0) return;
+    if (event.pointerType === "mouse" && event.button !== 0) return;
     if (isInteractiveTarget(event.target)) return;
+
+    if (event.currentTarget.hasPointerCapture(event.pointerId)) {
+      event.currentTarget.releasePointerCapture(event.pointerId);
+    }
 
     event.currentTarget.setPointerCapture(event.pointerId);
     dragRef.current = {
@@ -568,6 +572,14 @@ export function ComponentCanvas() {
     setIsDragging(false);
   };
 
+  const handleLostPointerCapture = (event: PointerEvent<HTMLDivElement>) => {
+    const drag = dragRef.current;
+    if (!drag || drag.pointerId !== event.pointerId) return;
+
+    dragRef.current = null;
+    setIsDragging(false);
+  };
+
   return (
     <main className="relative min-h-dvh overflow-hidden bg-background text-foreground">
       <div
@@ -576,8 +588,10 @@ export function ComponentCanvas() {
           "absolute inset-0 z-0 touch-none select-none overflow-hidden",
           isDragging ? "cursor-grabbing" : "cursor-grab",
         )}
+        onLostPointerCapture={handleLostPointerCapture}
         onPointerCancel={stopDragging}
         onPointerDown={handlePointerDown}
+        onPointerLeave={stopDragging}
         onPointerMove={handlePointerMove}
         onPointerUp={stopDragging}
       >
