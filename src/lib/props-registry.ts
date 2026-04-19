@@ -728,4 +728,31 @@ export const propsRegistry: Record<string, ComponentPropsEntry> = {
     },
     props: [],
   },
+  ScrollArea: {
+    extends: {
+      name: "Base UI ScrollArea.Root",
+      href: "https://base-ui.com/react/components/scroll-area#api-reference",
+    },
+    props: [
+      {
+        name: "viewportProps",
+        type: "BaseScrollArea.Viewport.Props",
+        description: "Props forwarded to the underlying Viewport component.",
+      },
+    ],
+  },
+  ScrollBar: {
+    extends: {
+      name: "Base UI ScrollArea.Scrollbar",
+      href: "https://base-ui.com/react/components/scroll-area#api-reference",
+    },
+    props: [
+      {
+        name: "orientation",
+        type: '"vertical" | "horizontal"',
+        defaultValue: '"vertical"',
+        description: "Orientation of the scrollbar.",
+      },
+    ],
+  },
 };

@@ -3,32 +3,25 @@ import { cn } from "@registry/lib/utils";
 
 function ScrollArea({
   className,
-  rootClassName,
   children,
-  orientation = "both",
+  viewportProps,
   ...props
-}: BaseScrollArea.Root.Props & {
-  orientation?: "horizontal" | "vertical" | "both";
-  rootClassName?: string;
-}) {
+}: { viewportProps?: BaseScrollArea.Viewport.Props } & BaseScrollArea.Root.Props) {
   return (
-    <BaseScrollArea.Root className={cn("size-full min-h-0", rootClassName)} {...props}>
+    <BaseScrollArea.Root className={cn("size-full min-h-0", className)} {...props}>
       <BaseScrollArea.Viewport
+        {...viewportProps}
         className={cn(
-          "size-full overscroll-contain rounded-[inherit] transition-shadow outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-1 focus-visible:ring-offset-background",
-          className,
+          "size-full overscroll-contain rounded-[inherit] outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-1 focus-visible:ring-offset-background",
+          viewportProps?.className,
         )}
         data-slot="scroll-area-viewport"
       >
         {children}
       </BaseScrollArea.Viewport>
-      {(orientation === "vertical" || orientation === "both") && (
-        <ScrollBar orientation="vertical" />
-      )}
-      {(orientation === "horizontal" || orientation === "both") && (
-        <ScrollBar orientation="horizontal" />
-      )}
-      {orientation === "both" && <BaseScrollArea.Corner data-slot="scroll-area-corner" />}
+      <ScrollBar orientation="vertical" />
+      <ScrollBar orientation="horizontal" />
+      <BaseScrollArea.Corner data-slot="scroll-area-corner" />
     </BaseScrollArea.Root>
   );
 }

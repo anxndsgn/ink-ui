@@ -1,0 +1,51 @@
+---
+layout: ~/layouts/mdx-doc-layout.astro
+title: "Scroll Area"
+description: "A scrollable container with custom-styled scrollbars."
+baseUIComponent: "scroll-area"
+---
+
+import { ScrollArea } from "@registry/components/ui/scroll-area";
+import {
+  ScrollAreaExample,
+  ScrollAreaHorizontalExample,
+} from "@registry/example/scroll-area-example";
+import ComponentExample from "~/components/docs/component-example.astro";
+import ComponentSection from "~/components/docs/component-section.astro";
+import PropsTable from "~/components/docs/props-table.astro";
+import CodeBlock from "~/components/docs/code-block.astro";
+import scrollAreaSource from "@registry/components/ui/scroll-area?raw";
+
+<ComponentSection>
+  <ComponentExample demo="ScrollAreaExample">
+    <ScrollAreaExample client:load />
+  </ComponentExample>
+</ComponentSection>
+
+## Examples
+
+### Horizontal scrolling
+
+Use the same `ScrollArea` component for horizontally scrollable content. Scrollbars automatically adapt to the content direction.
+
+<ComponentSection>
+  <ComponentExample demo="ScrollAreaHorizontalExample">
+    <ScrollAreaHorizontalExample client:load />
+  </ComponentExample>
+</ComponentSection>
+
+## Installation
+
+Copy the source code below into your project:
+
+<CodeBlock code={scrollAreaSource} lang="tsx" />
+
+## API Reference
+
+### ScrollArea
+
+<PropsTable component="ScrollArea" />
+
+### ScrollBar
+
+<PropsTable component="ScrollBar" />

@@ -1,5 +1,6 @@
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 import { Button } from "@registry/components/ui/button";
+import { ScrollArea } from "@registry/components/ui/scroll-area";
 import { cn } from "@registry/lib/utils";
 import { CaretDownIcon, XIcon } from "@phosphor-icons/react";
 import { SidebarSimpleIcon } from "@phosphor-icons/react";
@@ -39,6 +40,7 @@ const componentItems: NavItem[] = [
   { label: "Popover", href: "/components/popover" },
   { label: "Radio", href: "/components/radio" },
   { label: "Select", href: "/components/select" },
+  { label: "Scroll Area", href: "/components/scroll-area" },
   { label: "Switch", href: "/components/switch" },
   { label: "Tabs", href: "/components/tabs" },
   { label: "Tag", href: "/components/tag" },
@@ -59,58 +61,12 @@ export function SidebarNav({ currentPath }: SidebarNavProps) {
 
   const activePath = normalizePathname(currentPath);
 
-  // Refs for scroll containers
-  const mobileScrollRef = useRef<HTMLDivElement>(null);
-  const desktopScrollRef = useRef<HTMLDivElement>(null);
-
   const toggleSidebar = () => setSidebarOpen((v) => !v);
   const toggleMobileMenu = () => setMobileMenuOpen((v) => !v);
 
-  // Save scroll position on scroll and navigation
-  useEffect(() => {
-    const STORAGE_KEY = "ink-sidebar-scroll";
-
-    // Save scroll position before navigation
-    const handleBeforeUnload = () => {
-      const scrollPosition =
-        mobileScrollRef.current?.scrollTop || desktopScrollRef.current?.scrollTop || 0;
-      sessionStorage.setItem(STORAGE_KEY, scrollPosition.toString());
-    };
-
-    // Save on scroll for more reliable restoration
-    const handleScroll = (e: Event) => {
-      const target = e.target as HTMLElement;
-      sessionStorage.setItem(STORAGE_KEY, target.scrollTop.toString());
-    };
-
-    // Listen for navigation events
-    window.addEventListener("beforeunload", handleBeforeUnload);
-
-    // Attach scroll listeners to both containers
-    const mobileContainer = mobileScrollRef.current;
-    const desktopContainer = desktopScrollRef.current;
-
-    if (mobileContainer) {
-      mobileContainer.addEventListener("scroll", handleScroll);
-    }
-    if (desktopContainer) {
-      desktopContainer.addEventListener("scroll", handleScroll);
-    }
-
-    return () => {
-      window.removeEventListener("beforeunload", handleBeforeUnload);
-      if (mobileContainer) {
-        mobileContainer.removeEventListener("scroll", handleScroll);
-      }
-      if (desktopContainer) {
-        desktopContainer.removeEventListener("scroll", handleScroll);
-      }
-    };
-  }, []);
-
   // Shared nav content for both mobile and desktop
   const navContent = (
-    <>
+    <div className="px-3 py-4">
       <ul className="flex flex-col gap-px">
         {staticPages.map((item) => (
           <li key={item.href}>
@@ -164,7 +120,7 @@ export function SidebarNav({ currentPath }: SidebarNavProps) {
           ))}
         </ul>
       </div>
-    </>
+    </div>
   );
 
   return (
@@ -196,14 +152,9 @@ export function SidebarNav({ currentPath }: SidebarNavProps) {
             <XIcon size={20} />
           </Button>
         </div>
-        <div
-          ref={mobileScrollRef}
-          data-sidebar-scroll="mobile"
-          className="min-h-0 grow overflow-y-auto overscroll-contain px-3 py-4 text-sm text-foreground"
-          style={{ scrollBehavior: "auto" }}
-        >
+        <ScrollArea className="min-h-0 grow text-sm text-foreground">
           {navContent}
-        </div>
+        </ScrollArea>
       </aside>
 
       {/* Desktop - always visible, panel slides behind it */}
@@ -230,13 +181,9 @@ export function SidebarNav({ currentPath }: SidebarNavProps) {
       >
         <div className="h-12 flex-none border-b border-border" />
 
-        <div
-          ref={desktopScrollRef}
-          data-sidebar-scroll="desktop"
-          className="min-h-0 grow overflow-y-auto overscroll-contain px-3 py-4 text-sm text-foreground"
-        >
+        <ScrollArea className="min-h-0 grow text-sm text-foreground">
           {navContent}
-        </div>
+        </ScrollArea>
       </aside>
     </>
   );
