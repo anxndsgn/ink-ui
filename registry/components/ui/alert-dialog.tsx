@@ -37,7 +37,7 @@ function AlertDialogPopup({ className, ...props }: BaseAlertDialog.Popup.Props) 
         <div className="flex h-dvh flex-col items-center overflow-hidden pt-6 max-sm:before:flex-1 sm:overflow-y-auto sm:p-4 sm:before:basis-[20vh] sm:after:flex-1">
           <BaseAlertDialog.Popup
             className={cn(
-              "row-start-2 grid w-full min-w-0 origin-top overflow-hidden bg-dialog bg-clip-padding text-dialog-foreground shadow-xs transition-[scale,opacity,translate] duration-200 ease-out will-change-transform data-ending-style:opacity-0 data-starting-style:opacity-0 max-sm:overflow-y-auto max-sm:border-none max-sm:opacity-[calc(1-min(var(--nested-dialogs),1))] max-sm:data-ending-style:translate-y-4 max-sm:data-starting-style:translate-y-4 sm:max-w-lg sm:-translate-y-[calc(1.25rem*var(--nested-dialogs))] sm:scale-[calc(1-0.1*var(--nested-dialogs))] sm:rounded-3xl sm:data-ending-style:scale-98 sm:data-starting-style:scale-98",
+              "row-start-2 grid w-full min-w-0 origin-top overflow-hidden bg-dialog bg-clip-padding text-dialog-foreground shadow-xs ring ring-border transition-[scale,opacity,translate] duration-200 ease-out will-change-transform data-ending-style:opacity-0 data-starting-style:opacity-0 max-sm:overflow-y-auto max-sm:border-none max-sm:opacity-[calc(1-min(var(--nested-dialogs),1))] max-sm:data-ending-style:translate-y-4 max-sm:data-starting-style:translate-y-4 sm:max-w-lg sm:-translate-y-[calc(1.25rem*var(--nested-dialogs))] sm:scale-[calc(1-0.1*var(--nested-dialogs))] sm:rounded-3xl sm:data-ending-style:scale-98 sm:data-starting-style:scale-98",
               className,
             )}
             data-slot="alert-dialog-popup"
