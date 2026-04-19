@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project overview
 
-This is the documentation site for **ink ui**, built with **Astro 5**, **React 19**, **Tailwind CSS 4**.
+This is the documentation site for **Ink UI**, built with **Astro 5**, **React 19**, **Tailwind CSS 4**.
 
 ## Common commands
 

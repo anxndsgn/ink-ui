@@ -72,7 +72,7 @@ export function CopyPageButton({ align = "end" }: CopyPageButtonProps) {
   const getAIPromptUrl = (baseUrl: string) => {
     const markdownUrl = getMarkdownUrl();
     const prompt = encodeURIComponent(
-      `Read through this ink ui documentation: ${markdownUrl}. I'll need your help to understand it, so be prepared to explain concepts, share examples, and assist with debugging.`,
+      `Read through this Ink UI documentation: ${markdownUrl}. I'll need your help to understand it, so be prepared to explain concepts, share examples, and assist with debugging.`,
     );
     return `${baseUrl}?q=${prompt}`;
   };

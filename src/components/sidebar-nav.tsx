@@ -135,7 +135,7 @@ export function SidebarNav({ currentPath }: SidebarNavProps) {
         <Button variant="ghost" size="icon" aria-label="Open menu" onClick={toggleMobileMenu}>
           <SidebarSimpleIcon size={20} />
         </Button>
-        <h1 className="text-base font-medium">ink-ui</h1>
+        <h1 className="text-base font-medium">Ink UI</h1>
         <ThemeToggle />
       </div>
 
@@ -148,7 +148,7 @@ export function SidebarNav({ currentPath }: SidebarNavProps) {
         )}
       >
         <div className="flex h-12 flex-none items-center justify-between border-b border-border px-3">
-          <h1 className="text-base font-medium">@anxndsgn/ink-ui</h1>
+          <h1 className="text-base font-medium">Ink UI</h1>
           <Button variant="ghost" size="icon" aria-label="Close menu" onClick={toggleMobileMenu}>
             <XIcon size={20} />
           </Button>
