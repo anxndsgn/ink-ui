@@ -263,6 +263,13 @@ export const propsRegistry: Record<string, ComponentPropsEntry> = {
     },
     props: [],
   },
+  Slider: {
+    extends: {
+      name: "Base UI Slider.Root",
+      href: "https://base-ui.com/react/components/slider#api-reference",
+    },
+    props: [],
+  },
   Switch: {
     extends: {
       name: "Base UI Switch.Root",

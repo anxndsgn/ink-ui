@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import type { PointerEvent, ReactNode } from "react";
+import type { PointerEvent as ReactPointerEvent, ReactNode } from "react";
 import {
   ArrowClockwiseIcon,
   ArrowRightIcon,
@@ -57,6 +57,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@registry/components/ui/select";
+import Slider from "@registry/components/ui/slider";
 import { Switch } from "@registry/components/ui/switch";
 import { Tabs, TabsList, TabsPanel, TabsTab } from "@registry/components/ui/tabs";
 import { Tag } from "@registry/components/ui/tag";
@@ -319,6 +320,10 @@ const componentPreviews: ComponentPreview[] = [
     ),
   },
   {
+    label: "Slider",
+    renderPreview: () => <Slider aria-label="Progress" defaultValue={64} />,
+  },
+  {
     label: "Switch",
     renderPreview: () => <Switch defaultChecked />,
   },
@@ -421,8 +426,10 @@ function isInteractiveTarget(target: EventTarget | null) {
         "[role='combobox']",
         "[role='menuitem']",
         "[role='radio']",
+        "[role='slider']",
         "[role='switch']",
         "[role='tab']",
+        "[data-slot='slider-control']",
       ].join(","),
     ),
   );
@@ -530,7 +537,7 @@ export function ComponentCanvas() {
   };
   const hasMoved = Math.abs(offset.x) > 1 || Math.abs(offset.y) > 1;
 
-  const handlePointerDown = (event: PointerEvent<HTMLDivElement>) => {
+  const handlePointerDown = (event: ReactPointerEvent<HTMLDivElement>) => {
     if (event.pointerType === "mouse" && event.button !== 0) return;
     if (isInteractiveTarget(event.target)) return;
 
@@ -555,7 +562,7 @@ export function ComponentCanvas() {
     setIsDragging(true);
   };
 
-  const handlePointerMove = (event: PointerEvent<HTMLDivElement>) => {
+  const handlePointerMove = (event: ReactPointerEvent<HTMLDivElement>) => {
     const drag = dragRef.current;
     if (!drag || drag.pointerId !== event.pointerId) return;
 
@@ -566,7 +573,7 @@ export function ComponentCanvas() {
     });
   };
 
-  const stopDragging = (event: PointerEvent<HTMLDivElement>) => {
+  const stopDragging = (event: ReactPointerEvent<HTMLDivElement>) => {
     const drag = dragRef.current;
     if (!drag || drag.pointerId !== event.pointerId) return;
 
@@ -580,12 +587,12 @@ export function ComponentCanvas() {
     setIsDragging(false);
   };
 
-  const handlePointerLeave = (event: PointerEvent<HTMLDivElement>) => {
+  const handlePointerLeave = (event: ReactPointerEvent<HTMLDivElement>) => {
     if (event.pointerType !== "mouse") return;
     stopDragging(event);
   };
 
-  const handleLostPointerCapture = (event: PointerEvent<HTMLDivElement>) => {
+  const handleLostPointerCapture = (event: ReactPointerEvent<HTMLDivElement>) => {
     const drag = dragRef.current;
     if (!drag || drag.pointerId !== event.pointerId) return;
 
@@ -594,7 +601,7 @@ export function ComponentCanvas() {
   };
 
   useEffect(() => {
-    const handleWindowPointerUp = (event: PointerEvent) => {
+    const handleWindowPointerUp = (event: globalThis.PointerEvent) => {
       const drag = dragRef.current;
       if (!drag || drag.pointerId !== event.pointerId) return;
       dragRef.current = null;

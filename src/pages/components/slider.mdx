@@ -1,0 +1,78 @@
+---
+layout: ~/layouts/mdx-doc-layout.astro
+title: "Slider"
+description: "A range control for selecting one value or a pair of values."
+baseUIComponent: "slider"
+---
+
+import Slider from "@registry/components/ui/slider";
+import {
+  SliderExample,
+  RangeSliderExample,
+  SteppedSliderExample,
+  DisabledSliderExample,
+  ControlledSliderExample,
+} from "@registry/example/slider-example";
+import ComponentExample from "~/components/docs/component-example.astro";
+import ComponentSection from "~/components/docs/component-section.astro";
+import PropsTable from "~/components/docs/props-table.astro";
+import CodeBlock from "~/components/docs/code-block.astro";
+import sliderSource from "@registry/components/ui/slider?raw";
+
+<ComponentSection>
+  <ComponentExample demo="SliderExample">
+    <SliderExample client:load />
+  </ComponentExample>
+</ComponentSection>
+
+## Examples
+
+### Range
+
+Pass an array to `defaultValue` to render a range slider with multiple thumbs.
+
+<ComponentSection>
+  <ComponentExample demo="RangeSliderExample">
+    <RangeSliderExample client:load />
+  </ComponentExample>
+</ComponentSection>
+
+### Step
+
+Use `step` to control the increment between values.
+
+<ComponentSection>
+  <ComponentExample demo="SteppedSliderExample">
+    <SteppedSliderExample client:load />
+  </ComponentExample>
+</ComponentSection>
+
+### Disabled
+
+Use the `disabled` prop to prevent interaction.
+
+<ComponentSection>
+  <ComponentExample demo="DisabledSliderExample">
+    <DisabledSliderExample client:load />
+  </ComponentExample>
+</ComponentSection>
+
+### Controlled
+
+Manage the slider value with React state using `value` and `onValueChange`.
+
+<ComponentSection>
+  <ComponentExample demo="ControlledSliderExample">
+    <ControlledSliderExample client:load />
+  </ComponentExample>
+</ComponentSection>
+
+## Installation
+
+Copy the source code below into your project:
+
+<CodeBlock code={sliderSource} lang="tsx" />
+
+## API Reference
+
+<PropsTable component="Slider" />
