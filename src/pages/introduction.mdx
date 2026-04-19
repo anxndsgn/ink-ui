@@ -7,14 +7,11 @@ description: "Getting started with Ink UI — a warm component library built on 
 import CodeBlock from "~/components/docs/code-block.astro";
 import Callout from "~/components/docs/callout.astro";
 
-**Ink UI** is a React component library built on top of [Base UI](https://base-ui.com) primitives and styled with [Tailwind CSS v4](https://tailwindcss.com). It provides a cohesive set of accessible, unopinionated UI components with a warm, minimal aesthetic.
+## Why Ink UI?
 
-## Philosophy
-
-- **Built on Base UI** — Every component extends a Base UI primitive, inheriting robust accessibility, keyboard navigation, and focus management.
-- **Copy and paste** — Components live in the `registry/` directory as plain source files. Copy them into your project and customize freely.
-- **Warm minimalism** — A subtle gray and orange palette that feels approachable without being distracting.
-- **Tailwind CSS v4** — Uses the new CSS-first configuration with `@theme` and semantic color tokens.
+- **Ink UI** is a React component library built on top of [Base UI](https://base-ui.com) primitives and styled with [Tailwind CSS v4](https://tailwindcss.com). which provides a solid foundation of accessible and customizable components.
+- The design focuses on warmth and approachability, with a color palette built around warm grays and oranges, and large rounded corners. The goal is to create interfaces that feel more human and inviting. **It is not suited for very professional or complex dashboard-style interfaces**, but rather for less complex, consumer-facing products that want to convey a sense of friendliness and delight.
+- The motion system emphasizes smooth, natural transitions with a focus on micro-interactions that add delight without overwhelming the user. Subtle easing and thoughtful timing are used to create a sense of responsiveness and polish.
 
 ## Prerequisites
 
@@ -165,27 +162,6 @@ export function cn(...inputs: ClassValue[]) {
 ### 4. Copy components
 
 Browse the [Components](/components/button) section and copy any component source into your project. Each component is a self-contained file with no hidden dependencies.
-
-## Components
-
-Ink UI includes the following components:
-
-| Component                                | Description                                                        |
-| ---------------------------------------- | ------------------------------------------------------------------ |
-| [Alert Dialog](/components/alert-dialog) | A modal dialog that interrupts the user for critical confirmations |
-| [Button](/components/button)             | Interactive button with multiple variants and sizes                |
-| [Card](/components/card)                 | Container for grouping related content                             |
-| [Checkbox](/components/checkbox)         | Binary toggle control                                              |
-| [Dialog](/components/dialog)             | Modal window for secondary content                                 |
-| [Input](/components/input)               | Text input field with label support                                |
-| [Menu](/components/menu)                 | Dropdown menu with items and submenus                              |
-| [Popover](/components/popover)           | Floating content panel anchored to a trigger                       |
-| [Radio](/components/radio)               | Single-select option from a group                                  |
-| [Select](/components/select)             | Dropdown list for choosing one option                              |
-| [Slider](/components/slider)             | Range control for selecting one or two values                      |
-| [Switch](/components/switch)             | Toggle switch for on/off states                                    |
-| [Tabs](/components/tabs)                 | Tabbed interface for switching content panels                      |
-| [Tag](/components/tag)                   | Compact label for categories, statuses, or attributes              |
 
 ## Dark mode
 

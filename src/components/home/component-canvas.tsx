@@ -466,16 +466,16 @@ function TitleCard({ primary, x, y }: { primary: boolean; x: number; y: number }
       <div className="grid gap-4">
         {primary ? (
           <h1 className="text-3xl leading-none font-semibold text-balance sm:text-4xl md:text-5xl">
-            Warm components for exacting interfaces.
+            A component library that feels warm
           </h1>
         ) : (
           <p className="text-3xl leading-none font-semibold text-balance sm:text-4xl md:text-5xl">
-            Warm components for exacting interfaces.
+            A component library that feels warm
           </p>
         )}
         <p className="mx-auto max-w-lg text-base leading-7 text-muted-foreground">
-          Base UI primitives shaped for React, Astro, and the details that make product work feel
-          finished.
+          Ink UI is a React component library focused on delivering a warm and delightful experience
+          instead of cold efficiency.
         </p>
       </div>
       <a
@@ -483,7 +483,7 @@ function TitleCard({ primary, x, y }: { primary: boolean; x: number; y: number }
         href="/introduction"
         onPointerDown={(event) => event.stopPropagation()}
       >
-        Read the docs
+        Docs
         <ArrowRightIcon />
       </a>
     </article>
