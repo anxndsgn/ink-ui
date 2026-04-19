@@ -1,4 +1,4 @@
-import { useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import type { PointerEvent, ReactNode } from "react";
 import {
   ArrowClockwiseIcon,
@@ -534,7 +534,17 @@ export function ComponentCanvas() {
     if (event.pointerType === "mouse" && event.button !== 0) return;
     if (isInteractiveTarget(event.target)) return;
 
-    event.currentTarget.setPointerCapture(event.pointerId);
+    if (dragRef.current) {
+      dragRef.current = null;
+      setIsDragging(false);
+    }
+
+    try {
+      event.currentTarget.setPointerCapture(event.pointerId);
+    } catch {
+      // Ignore errors from setPointerCapture.
+    }
+
     dragRef.current = {
       originX: offset.x,
       originY: offset.y,
@@ -560,12 +570,19 @@ export function ComponentCanvas() {
     const drag = dragRef.current;
     if (!drag || drag.pointerId !== event.pointerId) return;
 
-    if (event.currentTarget.hasPointerCapture(event.pointerId)) {
+    try {
       event.currentTarget.releasePointerCapture(event.pointerId);
+    } catch {
+      // Ignore errors from releasePointerCapture.
     }
 
     dragRef.current = null;
     setIsDragging(false);
+  };
+
+  const handlePointerLeave = (event: PointerEvent<HTMLDivElement>) => {
+    if (event.pointerType !== "mouse") return;
+    stopDragging(event);
   };
 
   const handleLostPointerCapture = (event: PointerEvent<HTMLDivElement>) => {
@@ -575,6 +592,22 @@ export function ComponentCanvas() {
     dragRef.current = null;
     setIsDragging(false);
   };
+
+  useEffect(() => {
+    const handleWindowPointerUp = (event: PointerEvent) => {
+      const drag = dragRef.current;
+      if (!drag || drag.pointerId !== event.pointerId) return;
+      dragRef.current = null;
+      setIsDragging(false);
+    };
+
+    window.addEventListener("pointerup", handleWindowPointerUp, true);
+    window.addEventListener("pointercancel", handleWindowPointerUp, true);
+    return () => {
+      window.removeEventListener("pointerup", handleWindowPointerUp, true);
+      window.removeEventListener("pointercancel", handleWindowPointerUp, true);
+    };
+  }, []);
 
   return (
     <main className="relative min-h-dvh overflow-hidden bg-background text-foreground">
@@ -587,7 +620,7 @@ export function ComponentCanvas() {
         onLostPointerCapture={handleLostPointerCapture}
         onPointerCancel={stopDragging}
         onPointerDown={handlePointerDown}
-        onPointerLeave={stopDragging}
+        onPointerLeave={handlePointerLeave}
         onPointerMove={handlePointerMove}
         onPointerUp={stopDragging}
       >
