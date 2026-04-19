@@ -534,10 +534,6 @@ export function ComponentCanvas() {
     if (event.pointerType === "mouse" && event.button !== 0) return;
     if (isInteractiveTarget(event.target)) return;
 
-    if (event.currentTarget.hasPointerCapture(event.pointerId)) {
-      event.currentTarget.releasePointerCapture(event.pointerId);
-    }
-
     event.currentTarget.setPointerCapture(event.pointerId);
     dragRef.current = {
       originX: offset.x,
