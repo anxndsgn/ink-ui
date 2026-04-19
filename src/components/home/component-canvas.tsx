@@ -360,6 +360,11 @@ const titleArea = {
 
 const gridColumns = Array.from({ length: COLUMNS }, (_, index) => index - COLUMNS / 2);
 const gridRows = Array.from({ length: ROWS }, (_, index) => index - ROWS / 2);
+const visibleGridCells = gridRows.flatMap((row) =>
+  gridColumns
+    .filter((column) => !isInsideTitleArea(column, row))
+    .map((column) => ({ column, row })),
+);
 
 function isInsideTitleArea(column: number, row: number) {
   return (
@@ -378,22 +383,18 @@ function getGridItemCenter(column: number, row: number, columnSpan = 1, rowSpan 
 }
 
 const baseItems: BaseCanvasItem[] = [
-  ...gridRows.flatMap((row) =>
-    gridColumns
-      .filter((column) => !isInsideTitleArea(column, row))
-      .map((column, index): BaseCanvasItem => {
-        const componentIndex = (gridRows.indexOf(row) * COLUMNS + index) % componentPreviews.length;
-        const { x, y } = getGridItemCenter(column, row);
+  ...visibleGridCells.map(({ column, row }, index): BaseCanvasItem => {
+    const component = componentPreviews[index % componentPreviews.length];
+    const { x, y } = getGridItemCenter(column, row);
 
-        return {
-          component: componentPreviews[componentIndex],
-          id: `${column}:${row}`,
-          type: "component",
-          x,
-          y,
-        };
-      }),
-  ),
+    return {
+      component,
+      id: `${column}:${row}`,
+      type: "component",
+      x,
+      y,
+    };
+  }),
   {
     type: "title",
     ...getGridItemCenter(titleArea.column, titleArea.row, titleArea.columnSpan, titleArea.rowSpan),
