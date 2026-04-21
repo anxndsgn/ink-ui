@@ -917,4 +917,72 @@ export const propsRegistry: Record<string, ComponentPropsEntry> = {
       },
     ],
   },
+  Tooltip: {
+    extends: {
+      name: "Base UI Tooltip.Root",
+      href: "https://base-ui.com/react/components/tooltip#api-reference",
+    },
+    props: [],
+  },
+  TooltipTrigger: {
+    extends: {
+      name: "Base UI Tooltip.Trigger",
+      href: "https://base-ui.com/react/components/tooltip#api-reference",
+    },
+    props: [
+      {
+        name: "delay",
+        type: "number",
+        defaultValue: "100",
+        description: "Delay in milliseconds before the tooltip opens.",
+      },
+    ],
+  },
+  TooltipContent: {
+    extends: {
+      name: "Base UI Tooltip.Popup",
+      href: "https://base-ui.com/react/components/tooltip#api-reference",
+    },
+    props: [
+      {
+        name: "positionerProps",
+        type: "BaseTooltip.Positioner.Props",
+        description:
+          "Props forwarded to the underlying Positioner component. Includes align, side, sideOffset, alignOffset, collisionPadding, etc.",
+      },
+      {
+        name: "portalProps",
+        type: "BaseTooltip.Portal.Props",
+        description: "Props forwarded to the underlying Portal component.",
+      },
+    ],
+  },
+  TooltipPopup: {
+    extends: {
+      name: "Base UI Tooltip.Popup",
+      href: "https://base-ui.com/react/components/tooltip#api-reference",
+    },
+    props: [],
+  },
+  TooltipPortal: {
+    extends: {
+      name: "Base UI Tooltip.Portal",
+      href: "https://base-ui.com/react/components/tooltip#api-reference",
+    },
+    props: [],
+  },
+  TooltipPositioner: {
+    extends: {
+      name: "Base UI Tooltip.Positioner",
+      href: "https://base-ui.com/react/components/tooltip#api-reference",
+    },
+    props: [],
+  },
+  TooltipProvider: {
+    extends: {
+      name: "Base UI Tooltip.Provider",
+      href: "https://base-ui.com/react/components/tooltip#api-reference",
+    },
+    props: [],
+  },
 };

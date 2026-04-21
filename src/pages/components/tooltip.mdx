@@ -1,0 +1,100 @@
+---
+layout: ~/layouts/mdx-doc-layout.astro
+title: "Tooltip"
+description: "A small popup that appears when a user hovers over or focuses an element."
+baseUIComponent: "tooltip"
+---
+
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+  TooltipProvider,
+  TooltipViewport,
+  createTooltipHandle,
+} from "@registry/components/ui/tooltip";
+import {
+  TooltipExample,
+  TooltipPositionedExample,
+  TooltipWithDelayExample,
+  TooltipAnimatedExample,
+} from "@registry/example/tooltip-example";
+import ComponentExample from "~/components/docs/component-example.astro";
+import ComponentSection from "~/components/docs/component-section.astro";
+import PropsTable from "~/components/docs/props-table.astro";
+import CodeBlock from "~/components/docs/code-block.astro";
+import tooltipSource from "@registry/components/ui/tooltip?raw";
+
+<ComponentSection>
+  <ComponentExample demo="TooltipExample">
+    <TooltipExample client:load />
+  </ComponentExample>
+</ComponentSection>
+
+## Examples
+
+### Positioning
+
+Use `positionerProps` on `TooltipContent` to control which side the tooltip appears on.
+
+<ComponentSection>
+  <ComponentExample demo="TooltipPositionedExample">
+    <TooltipPositionedExample client:load />
+  </ComponentExample>
+</ComponentSection>
+
+### Hover delay
+
+Control the open delay with the `delay` prop on `TooltipTrigger`.
+
+<ComponentSection>
+  <ComponentExample demo="TooltipWithDelayExample">
+    <TooltipWithDelayExample client:load />
+  </ComponentExample>
+</ComponentSection>
+
+### Animated shared tooltip
+
+Use `createTooltipHandle` with `TooltipProvider` to share a single tooltip across multiple triggers. The `TooltipViewport` component animates the content when moving between triggers.
+
+<ComponentSection>
+  <ComponentExample demo="TooltipAnimatedExample">
+    <TooltipAnimatedExample client:load />
+  </ComponentExample>
+</ComponentSection>
+
+## Installation
+
+Copy the source code below into your project:
+
+<CodeBlock code={tooltipSource} lang="tsx" />
+
+## API Reference
+
+### Tooltip
+
+<PropsTable component="Tooltip" />
+
+### TooltipTrigger
+
+<PropsTable component="TooltipTrigger" />
+
+### TooltipContent
+
+<PropsTable component="TooltipContent" />
+
+### TooltipPopup
+
+<PropsTable component="TooltipPopup" />
+
+### TooltipPortal
+
+<PropsTable component="TooltipPortal" />
+
+### TooltipPositioner
+
+<PropsTable component="TooltipPositioner" />
+
+### TooltipProvider
+
+<PropsTable component="TooltipProvider" />

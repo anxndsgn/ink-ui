@@ -46,6 +46,7 @@ const componentItems: NavItem[] = [
   { label: "Switch", href: "/components/switch" },
   { label: "Tabs", href: "/components/tabs" },
   { label: "Tag", href: "/components/tag" },
+  { label: "Tooltip", href: "/components/tooltip" },
 ];
 
 const LI_STYLE =
