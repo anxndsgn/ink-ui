@@ -9,25 +9,25 @@ import ColorToken from "~/components/docs/color-token.astro";
 import CodeBlock from "~/components/docs/code-block.astro";
 import inkCssSource from "@registry/styles/ink.css?raw";
 
-Color can be said to define the visual tone of a design system. Ink UI introduces a reworked palette built around a warm gray and an orange hue, expanded into a full scale within the OKLCH color space to ensure consistency and accessibility across different luminance levels.
+Color defines the visual tone of a design system. Ink UI uses a palette built around warm gray and orange, expanded into full scales in the OKLCH color space for consistent luminance and accessibility across light and dark modes.
 
-Through these adjustments and refinements, Ink UI aims to provide a softer and more comfortable interface experience. The gray carries a slight warm bias, but avoids the pronounced warmth of Tailwind’s default warm palette, Stone, resulting in a more neutral foundation. Orange is chosen as the primary color, largely as a personal preference. It brings a sense of energy and warmth, and pairs effectively with the overall warm-toned system.
+The gray carries a subtle warm bias — warmer than neutral, but less pronounced than Tailwind's Stone — providing a balanced foundation. Orange serves as the primary accent, adding energy and warmth that complements the overall palette.
 
 ## Gray
 
-A warm gray scale is used for text, backgrounds, borders, and subtle fills across light and dark modes.
+A warm gray scale for text, backgrounds, borders, and subtle fills across light and dark modes.
 
 <ColorScale name="gray" />
 
 ## Red
 
-A red scale is used for destructive actions, errors, and warning states.
+A red scale for destructive actions, errors, and warning states.
 
 <ColorScale name="red" />
 
 ## Orange
 
-Orange is used as the primary accent color for focus rings, active states, and blockquote accents.
+The primary accent color for focus rings, active states, and blockquote accents.
 
 <ColorScale name="orange" />
 
@@ -76,10 +76,10 @@ These CSS variables map to the scales above and adapt between light and dark mod
   <ColorToken name="ring" description="Focus ring color" />
 </div>
 
-Common Tailwind utilities like `text-gray-500`, `bg-gray-100`, `border-gray-200`, and `dark:` variants are mapped to the underlying ink theme tokens.
+Common Tailwind utilities like `text-gray-500`, `bg-gray-100`, `border-gray-200`, and `dark:` variants map to the underlying Ink UI theme tokens.
 
 ## Installation
 
-Copy the CSS code into your global stylesheet, and ensure they are wrapped in a selector that applies the appropriate color scheme based on the `data-mode` attribute.
+Copy the CSS code into your global stylesheet, wrapped in a selector that applies the appropriate color scheme based on the `data-mode` attribute.
 
 <CodeBlock code={inkCssSource} lang="css" />
