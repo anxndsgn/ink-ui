@@ -985,4 +985,18 @@ export const propsRegistry: Record<string, ComponentPropsEntry> = {
     },
     props: [],
   },
+  Separator: {
+    extends: {
+      name: "Base UI Separator",
+      href: "https://base-ui.com/react/components/separator",
+    },
+    props: [
+      {
+        name: "orientation",
+        type: '"horizontal" | "vertical"',
+        defaultValue: '"horizontal"',
+        description: "The orientation of the separator.",
+      },
+    ],
+  },
 };

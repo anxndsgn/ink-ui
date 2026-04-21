@@ -42,6 +42,7 @@ const componentItems: NavItem[] = [
   { label: "Radio", href: "/components/radio" },
   { label: "Select", href: "/components/select" },
   { label: "Scroll Area", href: "/components/scroll-area" },
+  { label: "Separator", href: "/components/separator" },
   { label: "Slider", href: "/components/slider" },
   { label: "Switch", href: "/components/switch" },
   { label: "Tabs", href: "/components/tabs" },

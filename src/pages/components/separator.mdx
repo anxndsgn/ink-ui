@@ -1,0 +1,30 @@
+---
+layout: ~/layouts/mdx-doc-layout.astro
+title: "Separator"
+description: "Visually separates content."
+baseUIComponent: "separator"
+---
+
+import { Separator } from "@registry/components/ui/separator";
+import { SeparatorExample } from "@registry/example/separator-example";
+import ComponentExample from "~/components/docs/component-example.astro";
+import ComponentSection from "~/components/docs/component-section.astro";
+import PropsTable from "~/components/docs/props-table.astro";
+import CodeBlock from "~/components/docs/code-block.astro";
+import separatorSource from "@registry/components/ui/separator?raw";
+
+<ComponentSection>
+  <ComponentExample demo="SeparatorExample">
+    <SeparatorExample />
+  </ComponentExample>
+</ComponentSection>
+
+## Installation
+
+Copy the source code below into your project:
+
+<CodeBlock code={separatorSource} lang="tsx" />
+
+## API Reference
+
+<PropsTable component="Separator" />
