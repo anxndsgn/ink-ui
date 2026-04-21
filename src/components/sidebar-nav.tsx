@@ -34,6 +34,7 @@ const componentItems: NavItem[] = [
   { label: "Button", href: "/components/button" },
   { label: "Card", href: "/components/card" },
   { label: "Checkbox", href: "/components/checkbox" },
+  { label: "Combobox", href: "/components/combobox" },
   { label: "Dialog", href: "/components/dialog" },
   { label: "Input", href: "/components/input" },
   { label: "Menu", href: "/components/menu" },

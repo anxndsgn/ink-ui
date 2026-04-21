@@ -762,4 +762,159 @@ export const propsRegistry: Record<string, ComponentPropsEntry> = {
       },
     ],
   },
+  Combobox: {
+    extends: {
+      name: "Base UI Combobox.Root",
+      href: "https://base-ui.com/react/components/combobox#api-reference",
+    },
+    props: [],
+  },
+  ComboboxTrigger: {
+    extends: {
+      name: "Base UI Combobox.Trigger",
+      href: "https://base-ui.com/react/components/combobox#api-reference",
+    },
+    props: [],
+  },
+  ComboboxContent: {
+    extends: {
+      name: "Base UI Combobox.Popup",
+      href: "https://base-ui.com/react/components/combobox#api-reference",
+    },
+    props: [
+      {
+        name: "positionerProps",
+        type: "BaseCombobox.Positioner.Props",
+        description:
+          "Props forwarded to the underlying Positioner component. Includes align, side, sideOffset, alignOffset, collisionPadding, etc.",
+      },
+    ],
+  },
+  ComboboxList: {
+    extends: {
+      name: "Base UI Combobox.List",
+      href: "https://base-ui.com/react/components/combobox#api-reference",
+    },
+    props: [],
+  },
+  ComboboxItem: {
+    extends: {
+      name: "Base UI Combobox.Item",
+      href: "https://base-ui.com/react/components/combobox#api-reference",
+    },
+    props: [],
+  },
+  ComboboxValue: {
+    extends: {
+      name: "Base UI Combobox.Value",
+      href: "https://base-ui.com/react/components/combobox#api-reference",
+    },
+    props: [],
+  },
+  ComboboxInput: {
+    extends: {
+      name: "Base UI Combobox.Input",
+      href: "https://base-ui.com/react/components/combobox#api-reference",
+    },
+    props: [
+      {
+        name: "showRemove",
+        type: "boolean",
+        defaultValue: "true",
+        description: "Whether to show the clear button. Hidden automatically when children are provided.",
+      },
+      {
+        name: "showTrigger",
+        type: "boolean",
+        defaultValue: "true",
+        description: "Whether to show the dropdown trigger button.",
+      },
+    ],
+  },
+  ComboboxEmpty: {
+    extends: {
+      name: "Base UI Combobox.Empty",
+      href: "https://base-ui.com/react/components/combobox#api-reference",
+    },
+    props: [],
+  },
+  ComboboxSeparator: {
+    extends: {
+      name: "Base UI Combobox.Separator",
+      href: "https://base-ui.com/react/components/combobox#api-reference",
+    },
+    props: [],
+  },
+  ComboboxChips: {
+    extends: {
+      name: "Base UI Combobox.Chips",
+      href: "https://base-ui.com/react/components/combobox#api-reference",
+    },
+    props: [],
+  },
+  ComboboxChip: {
+    extends: {
+      name: "Base UI Combobox.Chip",
+      href: "https://base-ui.com/react/components/combobox#api-reference",
+    },
+    props: [
+      {
+        name: "showRemove",
+        type: "boolean",
+        defaultValue: "true",
+        description: "Whether to show the remove button on the chip.",
+      },
+    ],
+  },
+  ComboboxItemIndicator: {
+    extends: {
+      name: "Base UI Combobox.ItemIndicator",
+      href: "https://base-ui.com/react/components/combobox#api-reference",
+    },
+    props: [],
+  },
+  ComboboxGroup: {
+    extends: {
+      name: "Base UI Combobox.Group",
+      href: "https://base-ui.com/react/components/combobox#api-reference",
+    },
+    props: [],
+  },
+  ComboboxGroupLabel: {
+    extends: {
+      name: "Base UI Combobox.GroupLabel",
+      href: "https://base-ui.com/react/components/combobox#api-reference",
+    },
+    props: [],
+  },
+  ComboboxItemLeadingIcon: {
+    props: [
+      {
+        name: "render",
+        type: "React.ReactElement | ((props, state) => React.ReactElement)",
+        description:
+          "Custom element or render function used instead of the default span container.",
+      },
+    ],
+  },
+  ComboboxItemTrailingIcon: {
+    props: [
+      {
+        name: "render",
+        type: "React.ReactElement | ((props, state) => React.ReactElement)",
+        description:
+          "Custom element or render function used instead of the default span container.",
+      },
+    ],
+  },
+  ComboboxItemLabel: {
+    props: [
+      {
+        name: "render",
+        type: "React.ReactElement | ((props, state) => React.ReactElement)",
+        description:
+          "Custom element or render function used instead of the default span container.",
+      },
+    ],
+  },
 };
