@@ -21,6 +21,14 @@ import { Button, buttonVariants } from "@registry/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@registry/components/ui/card";
 import { Checkbox } from "@registry/components/ui/checkbox";
 import {
+  Combobox,
+  ComboboxContent,
+  ComboboxItem,
+  ComboboxList,
+  ComboboxInput,
+  ComboboxEmpty,
+} from "@registry/components/ui/combobox";
+import {
   Dialog,
   DialogBody,
   DialogClose,
@@ -61,6 +69,7 @@ import Slider from "@registry/components/ui/slider";
 import { Switch } from "@registry/components/ui/switch";
 import { Tabs, TabsList, TabsPanel, TabsTab } from "@registry/components/ui/tabs";
 import { Tag } from "@registry/components/ui/tag";
+import { Tooltip, TooltipContent, TooltipTrigger } from "@registry/components/ui/tooltip";
 import { cn } from "@registry/lib/utils";
 
 const TILE_WIDTH = 300;
@@ -170,6 +179,31 @@ const componentPreviews: ComponentPreview[] = [
         </div>
       </div>
     ),
+  },
+  {
+    label: "Combobox",
+    renderPreview: () => {
+      const items = [
+        { value: "astro", label: "Astro" },
+        { value: "react", label: "React" },
+        { value: "base-ui", label: "Base UI" },
+      ];
+      return (
+        <Combobox items={items}>
+          <ComboboxInput className="w-44" placeholder="Pick one" />
+          <ComboboxContent>
+            <ComboboxList>
+              {(item: (typeof items)[number]) => (
+                <ComboboxItem key={item.value} value={item}>
+                  {item.label}
+                </ComboboxItem>
+              )}
+            </ComboboxList>
+            <ComboboxEmpty>No results</ComboboxEmpty>
+          </ComboboxContent>
+        </Combobox>
+      );
+    },
   },
   {
     label: "Dialog",
@@ -354,6 +388,17 @@ const componentPreviews: ComponentPreview[] = [
         <Tag variant="secondary">New</Tag>
         <Tag variant="outline">Beta</Tag>
       </div>
+    ),
+  },
+  {
+    label: "Tooltip",
+    renderPreview: () => (
+      <Tooltip>
+        <TooltipTrigger render={<Button size="sm" variant="outline">Hover</Button>} />
+        <TooltipContent>
+          <p className="text-sm">A helpful tip</p>
+        </TooltipContent>
+      </Tooltip>
     ),
   },
 ];
