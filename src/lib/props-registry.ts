@@ -957,23 +957,9 @@ export const propsRegistry: Record<string, ComponentPropsEntry> = {
       },
     ],
   },
-  TooltipPopup: {
+  TooltipViewport: {
     extends: {
-      name: "Base UI Tooltip.Popup",
-      href: "https://base-ui.com/react/components/tooltip#api-reference",
-    },
-    props: [],
-  },
-  TooltipPortal: {
-    extends: {
-      name: "Base UI Tooltip.Portal",
-      href: "https://base-ui.com/react/components/tooltip#api-reference",
-    },
-    props: [],
-  },
-  TooltipPositioner: {
-    extends: {
-      name: "Base UI Tooltip.Positioner",
+      name: "Base UI Tooltip.Viewport",
       href: "https://base-ui.com/react/components/tooltip#api-reference",
     },
     props: [],
