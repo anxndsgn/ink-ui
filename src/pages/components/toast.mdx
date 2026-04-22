@@ -1,0 +1,98 @@
+---
+layout: ~/layouts/mdx-doc-layout.astro
+title: "Toast"
+description: "A transient notification stack for status updates, actions, and async feedback."
+baseUIComponent: "toast"
+---
+
+import {
+  ToastExample,
+  ToastPositionExample,
+  ToastPromiseExample,
+  ToastVariantsExample,
+} from "@registry/example/toast-example";
+import ComponentExample from "~/components/docs/component-example.astro";
+import ComponentSection from "~/components/docs/component-section.astro";
+import PropsTable from "~/components/docs/props-table.astro";
+import CodeBlock from "~/components/docs/code-block.astro";
+import toastSource from "@registry/components/ui/toast?raw";
+
+export const toastSetupSource = `import { ToastProvider } from "@registry/components/ui/toast";
+
+export function AppShell() {
+  return (
+    <ToastProvider position="bottom-right">
+      <App />
+    </ToastProvider>
+  );
+}`;
+
+export const toastTriggerSource = `import { toastManager } from "@registry/components/ui/toast";
+
+toastManager.add({
+  title: "Changes saved",
+  description: "Your preferences are now up to date.",
+  type: "success",
+});`;
+
+<ComponentSection>
+  <ComponentExample demo="ToastExample">
+    <ToastExample client:load />
+  </ComponentExample>
+</ComponentSection>
+
+## Examples
+
+Toast uses a shared `toastManager`, so render `ToastProvider` once near your app shell, then trigger notifications from anywhere.
+
+### Types and actions
+
+Use the `type` field to select a built-in icon, and pass `actionProps` to render an inline action button.
+
+<ComponentSection>
+  <ComponentExample demo="ToastVariantsExample">
+    <ToastVariantsExample client:load />
+  </ComponentExample>
+</ComponentSection>
+
+### Position
+
+Pass the `position` prop to `ToastProvider` to place the stack at any screen edge or center.
+
+<ComponentSection>
+  <ComponentExample demo="ToastPositionExample">
+    <ToastPositionExample client:load />
+  </ComponentExample>
+</ComponentSection>
+
+### Promise states
+
+Use `toastManager.promise(...)` to keep loading, success, and error feedback tied to the same async flow.
+
+<ComponentSection>
+  <ComponentExample demo="ToastPromiseExample">
+    <ToastPromiseExample client:load />
+  </ComponentExample>
+</ComponentSection>
+
+## Usage
+
+Mount the provider once:
+
+<CodeBlock code={toastSetupSource} lang="tsx" />
+
+Trigger a toast from anywhere you can import the manager:
+
+<CodeBlock code={toastTriggerSource} lang="tsx" />
+
+## Installation
+
+Copy the source code below into your project:
+
+<CodeBlock code={toastSource} lang="tsx" />
+
+## API Reference
+
+### ToastProvider
+
+<PropsTable component="ToastProvider" />

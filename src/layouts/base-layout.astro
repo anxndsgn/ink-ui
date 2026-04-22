@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import { ToastProvider } from "@registry/components/ui/toast";
 
 interface Props {
   title?: string;
@@ -41,6 +42,7 @@ const {
     </script>
   </head>
   <body>
+    <ToastProvider client:only='react' />
     <slot />
   </body>
 </html>

@@ -917,6 +917,21 @@ export const propsRegistry: Record<string, ComponentPropsEntry> = {
       },
     ],
   },
+  ToastProvider: {
+    extends: {
+      name: "Base UI Toast.Provider",
+      href: "https://base-ui.com/react/components/toast#api-reference",
+    },
+    props: [
+      {
+        name: "position",
+        type:
+          '"top-left" | "top-center" | "top-right" | "bottom-left" | "bottom-center" | "bottom-right"',
+        defaultValue: '"bottom-right"',
+        description: "Placement of the toast stack on the screen.",
+      },
+    ],
+  },
   Tooltip: {
     extends: {
       name: "Base UI Tooltip.Root",
