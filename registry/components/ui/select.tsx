@@ -21,8 +21,8 @@ function SelectTrigger({
       className={(state) =>
         cn(
           buttonVariants({ className, size, variant }),
-          "justify-between gap-3 [&_svg]:transition-transform [&_svg]:duration-150",
-          state.open && "[&_svg]:rotate-180",
+          "justify-between gap-3 **:data-[slot=select-icon]:transition-transform **:data-[slot=select-icon]:duration-150",
+          state.open && "**:data-[slot=select-icon]:rotate-180",
           className,
         )
       }
@@ -31,7 +31,7 @@ function SelectTrigger({
     >
       {children}
 
-      <BaseSelect.Icon render={<CaretDownIcon className="size-4" />} />
+      <BaseSelect.Icon render={<CaretDownIcon className="size-4" data-slot="select-icon" />} />
     </BaseSelect.Trigger>
   );
 }

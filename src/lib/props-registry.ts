@@ -821,7 +821,8 @@ export const propsRegistry: Record<string, ComponentPropsEntry> = {
         name: "showRemove",
         type: "boolean",
         defaultValue: "true",
-        description: "Whether to show the clear button. Hidden automatically when children are provided.",
+        description:
+          "Whether to show the clear button. Hidden automatically when children are provided.",
       },
       {
         name: "showTrigger",
