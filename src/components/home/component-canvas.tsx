@@ -585,8 +585,8 @@ function TitleCard({ primary, x, y }: { primary: boolean; x: number; y: number }
           </p>
         )}
         <p className="mx-auto max-w-lg text-base leading-7 text-muted-foreground">
-          Ink UI is a React component library focused on delivering a warm and delightful experience
-          instead of cold efficiency.
+          Ink UI is a React component library focused on delivering a warm and delightful
+          experience, build on top of Base UI.
         </p>
       </div>
       <a
