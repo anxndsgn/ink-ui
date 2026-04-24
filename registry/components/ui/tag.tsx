@@ -19,7 +19,7 @@ const tagVariants = cva(
       variant: {
         default: "border-transparent bg-accent text-accent-foreground [a&]:hover:bg-accent/90",
         outline:
-          "border-input bg-muted text-muted-foreground group-data-highlighted:border-primary group-data-highlighted:bg-primary group-data-highlighted:text-primary-foreground",
+          "border-input bg-muted text-muted-foreground group-data-highlighted:border-gray-700 group-data-highlighted:bg-gray-800 group-data-highlighted:text-white dark:group-data-highlighted:border-gray-200 dark:group-data-highlighted:bg-gray-50 dark:group-data-highlighted:text-gray-900",
         secondary: "border-transparent bg-accent/30 text-accent [a&]:hover:bg-accent/40",
       },
     },
