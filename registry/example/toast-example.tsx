@@ -8,11 +8,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@registry/components/ui/select";
-import {
-  ToastProvider,
-  toastManager,
-  type ToastPosition,
-} from "@registry/components/ui/toast";
+import { ToastProvider, toastManager, type ToastPosition } from "@registry/components/ui/toast";
 
 const positionedToastManager = Toast.createToastManager();
 
