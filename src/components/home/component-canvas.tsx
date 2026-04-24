@@ -81,10 +81,31 @@ const ROWS = 4;
 const CYCLE_WIDTH = CELL_WIDTH * COLUMNS;
 const CYCLE_HEIGHT = CELL_HEIGHT * ROWS;
 const REPEAT_STEPS = [-1, 0, 1];
+const SHOW_INERTIA_PANEL = import.meta.env.DEV;
+const DEFAULT_INERTIA_SETTINGS = {
+  decay: 5.4,
+  ease: 4.2,
+  maxVelocity: 1.2,
+  minVelocity: 0.055,
+  sampleWindow: 70,
+};
 
 type ComponentPreview = {
   label: string;
   renderPreview: () => ReactNode;
+};
+
+type DragSample = {
+  time: number;
+  x: number;
+  y: number;
+};
+
+type InertiaSettings = typeof DEFAULT_INERTIA_SETTINGS;
+
+type Point = {
+  x: number;
+  y: number;
 };
 
 type BaseCanvasItem =
@@ -463,6 +484,26 @@ function wrapOffset(value: number, size: number) {
   return ((((value + size / 2) % size) + size) % size) - size / 2;
 }
 
+function getReleaseVelocity(samples: DragSample[]) {
+  const firstSample = samples[0];
+  const lastSample = samples.at(-1);
+  if (!firstSample || !lastSample || firstSample === lastSample) return { x: 0, y: 0 };
+
+  const elapsed = Math.max(lastSample.time - firstSample.time, 16);
+  return {
+    x: (lastSample.x - firstSample.x) / elapsed,
+    y: (lastSample.y - firstSample.y) / elapsed,
+  };
+}
+
+function clamp(value: number, min: number, max: number) {
+  return Math.min(Math.max(value, min), max);
+}
+
+function easeOut(value: number, power: number) {
+  return 1 - Math.pow(1 - value, power);
+}
+
 function isInteractiveTarget(target: EventTarget | null) {
   if (!(target instanceof Element)) return false;
 
@@ -547,18 +588,75 @@ function TitleCard({ primary, x, y }: { primary: boolean; x: number; y: number }
   );
 }
 
+function InertiaControl({
+  label,
+  max,
+  min,
+  onChange,
+  step,
+  value,
+}: {
+  label: string;
+  max: number;
+  min: number;
+  onChange: (value: number) => void;
+  step: number;
+  value: number;
+}) {
+  const formattedValue = Number.isInteger(step) ? String(value) : value.toFixed(3);
+
+  return (
+    <div className="grid gap-1.5 text-xs font-medium text-muted-foreground">
+      <span className="flex items-center justify-between gap-3">
+        <span>{label}</span>
+        <input
+          aria-label={`${label} value`}
+          className="h-7 w-16 rounded-md border border-border bg-background px-2 text-right font-mono text-[11px] text-foreground"
+          max={max}
+          min={min}
+          onChange={(event) => onChange(Number(event.currentTarget.value))}
+          step={step}
+          type="number"
+          value={formattedValue}
+        />
+      </span>
+      <input
+        aria-label={label}
+        className="h-5 accent-primary"
+        max={max}
+        min={min}
+        onChange={(event) => onChange(Number(event.currentTarget.value))}
+        step={step}
+        type="range"
+        value={value}
+      />
+    </div>
+  );
+}
+
 export function ComponentCanvas() {
   const [hasMoved, setHasMoved] = useState(false);
+  const [inertiaSettings, setInertiaSettings] = useState(DEFAULT_INERTIA_SETTINGS);
   const [isDragging, setIsDragging] = useState(false);
   const dragRef = useRef<{
     originX: number;
     originY: number;
     pointerId: number;
+    samples: DragSample[];
     startX: number;
     startY: number;
   } | null>(null);
   const frameRef = useRef<number | null>(null);
   const hasMovedRef = useRef(false);
+  const inertiaRef = useRef<{
+    duration: number;
+    ease: number;
+    frame: number | null;
+    startOffset: Point;
+    startTime: number;
+    targetOffset: Point;
+  } | null>(null);
+  const inertiaSettingsRef = useRef(inertiaSettings);
   const layerRef = useRef<HTMLDivElement>(null);
   const offsetRef = useRef({ x: 0, y: 0 });
 
@@ -633,9 +731,118 @@ export function ComponentCanvas() {
     setHasMoved(nextHasMoved);
   };
 
+  const updateInertiaSetting = (key: keyof InertiaSettings, value: number) => {
+    setInertiaSettings((currentSettings) => {
+      const nextSettings = {
+        ...currentSettings,
+        [key]: value,
+      };
+      inertiaSettingsRef.current = nextSettings;
+      return nextSettings;
+    });
+  };
+
+  const resetInertiaSettings = () => {
+    inertiaSettingsRef.current = DEFAULT_INERTIA_SETTINGS;
+    setInertiaSettings(DEFAULT_INERTIA_SETTINGS);
+  };
+
+  const cancelInertia = () => {
+    const inertia = inertiaRef.current;
+    if (inertia && inertia.frame !== null) window.cancelAnimationFrame(inertia.frame);
+    inertiaRef.current = null;
+  };
+
+  const pushDragSample = (drag: NonNullable<typeof dragRef.current>, sample: DragSample) => {
+    const sampleWindow = inertiaSettingsRef.current.sampleWindow;
+    drag.samples.push(sample);
+    while (drag.samples.length > 2 && sample.time - drag.samples[0].time > sampleWindow) {
+      drag.samples.shift();
+    }
+  };
+
+  const startInertia = (velocityX: number, velocityY: number) => {
+    const settings = inertiaSettingsRef.current;
+    const speed = Math.hypot(velocityX, velocityY);
+    if (speed < settings.minVelocity) return;
+
+    const velocityScale = Math.min(1, settings.maxVelocity / speed);
+    const cappedVelocity = {
+      x: velocityX * velocityScale,
+      y: velocityY * velocityScale,
+    };
+    const cappedSpeed = speed * velocityScale;
+    const duration = clamp(
+      (Math.log(cappedSpeed / settings.minVelocity) / settings.decay) * 1000,
+      180,
+      1400,
+    );
+    const distanceScale =
+      ((1 - Math.exp(-settings.decay * (duration / 1000))) * 1000) / settings.decay;
+    const startOffset = offsetRef.current;
+    inertiaRef.current = {
+      duration,
+      ease: settings.ease,
+      frame: null,
+      startOffset,
+      startTime: performance.now(),
+      targetOffset: {
+        x: startOffset.x + cappedVelocity.x * distanceScale,
+        y: startOffset.y + cappedVelocity.y * distanceScale,
+      },
+    };
+
+    const animate = (time: number) => {
+      const inertia = inertiaRef.current;
+      if (!inertia) return;
+
+      inertia.frame = null;
+      const progress = clamp((time - inertia.startTime) / inertia.duration, 0, 1);
+      const easedProgress = easeOut(progress, inertia.ease);
+
+      const nextOffset = {
+        x: inertia.startOffset.x + (inertia.targetOffset.x - inertia.startOffset.x) * easedProgress,
+        y: inertia.startOffset.y + (inertia.targetOffset.y - inertia.startOffset.y) * easedProgress,
+      };
+      updateLayerTransform(nextOffset);
+      updateHasMoved(nextOffset);
+
+      if (progress >= 1) {
+        inertiaRef.current = null;
+        return;
+      }
+
+      inertia.frame = window.requestAnimationFrame(animate);
+    };
+
+    inertiaRef.current.frame = window.requestAnimationFrame(animate);
+  };
+
+  const finishDragging = (
+    pointerId: number,
+    shouldStartInertia: boolean,
+    releaseSample?: DragSample,
+  ) => {
+    const drag = dragRef.current;
+    if (!drag || drag.pointerId !== pointerId) return false;
+
+    if (releaseSample) pushDragSample(drag, releaseSample);
+    const releaseVelocity = getReleaseVelocity(drag.samples);
+    dragRef.current = null;
+    setIsDragging(false);
+
+    if (shouldStartInertia) {
+      startInertia(releaseVelocity.x, releaseVelocity.y);
+    }
+
+    return true;
+  };
+
   const handlePointerDown = (event: ReactPointerEvent<HTMLDivElement>) => {
     if (event.pointerType === "mouse" && event.button !== 0) return;
     if (isInteractiveTarget(event.target)) return;
+
+    cancelInertia();
 
     if (dragRef.current) {
       dragRef.current = null;
@@ -648,10 +855,12 @@ export function ComponentCanvas() {
       // Ignore errors from setPointerCapture.
     }
 
+    const startTime = event.timeStamp || performance.now();
     dragRef.current = {
       originX: offsetRef.current.x,
       originY: offsetRef.current.y,
       pointerId: event.pointerId,
+      samples: [{ time: startTime, x: event.clientX, y: event.clientY }],
       startX: event.clientX,
       startY: event.clientY,
     };
@@ -670,11 +879,16 @@ export function ComponentCanvas() {
 
     updateLayerTransform(nextOffset);
     updateHasMoved(nextOffset);
+
+    const now = event.timeStamp || performance.now();
+    pushDragSample(drag, { time: now, x: event.clientX, y: event.clientY });
   };
 
-  const stopDragging = (event: ReactPointerEvent<HTMLDivElement>) => {
-    const drag = dragRef.current;
-    if (!drag || drag.pointerId !== event.pointerId) return;
+  const stopDragging = (
+    event: ReactPointerEvent<HTMLDivElement>,
+    shouldStartInertia = event.type === "pointerup",
+  ) => {
+    if (!dragRef.current || dragRef.current.pointerId !== event.pointerId) return;
 
     try {
       event.currentTarget.releasePointerCapture(event.pointerId);
@@ -682,8 +896,11 @@ export function ComponentCanvas() {
       // Ignore errors from releasePointerCapture.
     }
 
-    dragRef.current = null;
-    setIsDragging(false);
+    finishDragging(event.pointerId, shouldStartInertia, {
+      time: event.timeStamp || performance.now(),
+      x: event.clientX,
+      y: event.clientY,
+    });
   };
 
   const handlePointerLeave = (event: ReactPointerEvent<HTMLDivElement>) => {
@@ -695,28 +912,32 @@ export function ComponentCanvas() {
     const drag = dragRef.current;
     if (!drag || drag.pointerId !== event.pointerId) return;
 
-    dragRef.current = null;
-    setIsDragging(false);
+    finishDragging(event.pointerId, false);
   };
 
   useEffect(() => {
     const handleWindowPointerUp = (event: globalThis.PointerEvent) => {
       const drag = dragRef.current;
       if (!drag || drag.pointerId !== event.pointerId) return;
-      dragRef.current = null;
-      setIsDragging(false);
+      finishDragging(event.pointerId, event.type === "pointerup", {
+        time: event.timeStamp || performance.now(),
+        x: event.clientX,
+        y: event.clientY,
+      });
     };
 
     window.addEventListener("pointerup", handleWindowPointerUp, true);
     window.addEventListener("pointercancel", handleWindowPointerUp, true);
     return () => {
       if (frameRef.current !== null) window.cancelAnimationFrame(frameRef.current);
+      cancelInertia();
       window.removeEventListener("pointerup", handleWindowPointerUp, true);
       window.removeEventListener("pointercancel", handleWindowPointerUp, true);
     };
   }, []);
 
   const resetCanvas = () => {
+    cancelInertia();
     const nextOffset = { x: 0, y: 0 };
     updateLayerTransform(nextOffset);
     updateHasMoved(nextOffset);
@@ -753,6 +974,62 @@ export function ComponentCanvas() {
             Reset
           </Button>
         </div>
+      )}
+
+      {SHOW_INERTIA_PANEL && (
+        <section
+          aria-label="Inertia tuning panel"
+          className="fixed bottom-4 left-4 z-30 grid w-[min(calc(100vw-2rem),22rem)] gap-3 rounded-lg border border-border bg-background/95 p-3 text-foreground shadow-sm backdrop-blur"
+        >
+          <div className="flex items-center justify-between gap-3">
+            <h2 className="text-sm font-semibold">Inertia tuning</h2>
+            <Button onClick={resetInertiaSettings} size="sm" variant="secondary">
+              Defaults
+            </Button>
+          </div>
+          <div className="grid gap-3">
+            <InertiaControl
+              label="Sample window"
+              max={220}
+              min={40}
+              onChange={(value) => updateInertiaSetting("sampleWindow", value)}
+              step={5}
+              value={inertiaSettings.sampleWindow}
+            />
+            <InertiaControl
+              label="Max velocity"
+              max={2.4}
+              min={0.2}
+              onChange={(value) => updateInertiaSetting("maxVelocity", value)}
+              step={0.025}
+              value={inertiaSettings.maxVelocity}
+            />
+            <InertiaControl
+              label="Min velocity"
+              max={0.18}
+              min={0.005}
+              onChange={(value) => updateInertiaSetting("minVelocity", value)}
+              step={0.005}
+              value={inertiaSettings.minVelocity}
+            />
+            <InertiaControl
+              label="Decay"
+              max={12}
+              min={1.5}
+              onChange={(value) => updateInertiaSetting("decay", value)}
+              step={0.1}
+              value={inertiaSettings.decay}
+            />
+            <InertiaControl
+              label="Ease"
+              max={6}
+              min={1}
+              onChange={(value) => updateInertiaSetting("ease", value)}
+              step={0.1}
+              value={inertiaSettings.ease}
+            />
+          </div>
+        </section>
       )}
     </main>
   );
