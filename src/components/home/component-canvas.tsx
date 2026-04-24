@@ -633,14 +633,13 @@ function InertiaControl({
           value={formattedValue}
         />
       </span>
-      <input
+      <Slider
         aria-label={label}
-        className="h-5 accent-primary"
+        className="w-full"
         max={max}
         min={min}
-        onChange={(event) => onChange(Number(event.currentTarget.value))}
+        onValueChange={(values) => onChange(Array.isArray(values) ? values[0] : values)}
         step={step}
-        type="range"
         value={value}
       />
     </div>
