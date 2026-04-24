@@ -1,0 +1,106 @@
+---
+layout: ~/layouts/mdx-doc-layout.astro
+title: "Input Group"
+description: "A composable input container for icons, text, buttons, and multiline controls."
+---
+
+import {
+  InputGroup,
+  InputGroupAddon,
+  InputGroupButton,
+  InputGroupInput,
+  InputGroupText,
+  InputGroupTextarea,
+} from "@registry/components/ui/input-group";
+import {
+  InputGroupExample,
+  InputGroupWithButtonExample,
+  InputGroupWithTextExample,
+  InputGroupTextareaExample,
+  AgentChatInputGroupExample,
+} from "@registry/example/input-group-example";
+import ComponentExample from "~/components/docs/component-example.astro";
+import ComponentSection from "~/components/docs/component-section.astro";
+import PropsTable from "~/components/docs/props-table.astro";
+import CodeBlock from "~/components/docs/code-block.astro";
+import inputGroupSource from "@registry/components/ui/input-group?raw";
+
+<ComponentSection>
+  <ComponentExample demo="InputGroupExample">
+    <InputGroupExample />
+  </ComponentExample>
+</ComponentSection>
+
+## Examples
+
+### Button
+
+Use `InputGroupButton` inside an addon for compact actions that belong to the field.
+
+<ComponentSection>
+  <ComponentExample demo="InputGroupWithButtonExample">
+    <InputGroupWithButtonExample />
+  </ComponentExample>
+</ComponentSection>
+
+### Text
+
+Use `InputGroupText` for static prefixes, suffixes, keyboard hints, and short labels.
+
+<ComponentSection>
+  <ComponentExample demo="InputGroupWithTextExample">
+    <InputGroupWithTextExample />
+  </ComponentExample>
+</ComponentSection>
+
+### Textarea
+
+Use `InputGroupTextarea` when the control needs multiline input.
+
+<ComponentSection>
+  <ComponentExample demo="InputGroupTextareaExample">
+    <InputGroupTextareaExample />
+  </ComponentExample>
+</ComponentSection>
+
+### Agent chat
+
+A common agent chat composer with attachment, mode controls, voice input, and submit actions.
+
+<ComponentSection>
+  <ComponentExample demo="AgentChatInputGroupExample">
+    <AgentChatInputGroupExample client:load />
+  </ComponentExample>
+</ComponentSection>
+
+## Installation
+
+Copy the source code below into your project:
+
+<CodeBlock code={inputGroupSource} lang="tsx" />
+
+## API Reference
+
+### InputGroup
+
+<PropsTable component="InputGroup" />
+
+### InputGroupInput
+
+<PropsTable component="InputGroupInput" />
+
+### InputGroupTextarea
+
+<PropsTable component="InputGroupTextarea" />
+
+### InputGroupAddon
+
+<PropsTable component="InputGroupAddon" />
+
+### InputGroupButton
+
+<PropsTable component="InputGroupButton" />
+
+### InputGroupText
+
+<PropsTable component="InputGroupText" />

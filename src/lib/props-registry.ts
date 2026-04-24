@@ -277,6 +277,26 @@ export const propsRegistry: Record<string, ComponentPropsEntry> = {
     },
     props: [],
   },
+  Toggle: {
+    extends: {
+      name: "Base UI Toggle",
+      href: "https://base-ui.com/react/components/toggle",
+    },
+    props: [
+      {
+        name: "variant",
+        type: '"default"',
+        defaultValue: '"default"',
+        description: "Visual style of the toggle.",
+      },
+      {
+        name: "size",
+        type: '"default" | "sm" | "lg"',
+        defaultValue: '"default"',
+        description: "Size of the toggle.",
+      },
+    ],
+  },
   Tag: {
     props: [
       {
@@ -312,6 +332,66 @@ export const propsRegistry: Record<string, ComponentPropsEntry> = {
         description: "When true, the input stretches to fill its container.",
       },
     ],
+  },
+  Textarea: {
+    extends: {
+      name: "Base UI Textarea",
+      href: "https://base-ui.com/react/components/textarea",
+    },
+    props: [
+      {
+        name: "variant",
+        type: '"default" | "outline"',
+        defaultValue: '"default"',
+        description: "Visual style of the textarea.",
+      },
+      {
+        name: "block",
+        type: "boolean",
+        defaultValue: "true",
+        description: "When true, the textarea stretches to fill its container.",
+      },
+    ],
+  },
+  InputGroup: {
+    props: [],
+  },
+  InputGroupInput: {
+    extends: {
+      name: "Base UI Input",
+      href: "https://base-ui.com/react/components/input",
+    },
+    props: [],
+  },
+  InputGroupTextarea: {
+    props: [],
+  },
+  InputGroupAddon: {
+    props: [
+      {
+        name: "align",
+        type: '"inline-start" | "inline-end" | "block-start" | "block-end"',
+        defaultValue: '"inline-start"',
+        description: "Visual placement of the addon inside the input group.",
+      },
+    ],
+  },
+  InputGroupButton: {
+    extends: {
+      name: "Ink UI Button",
+      href: "/components/button",
+    },
+    props: [
+      {
+        name: "size",
+        type: '"xs" | "sm" | "icon-xs" | "icon-sm"',
+        defaultValue: '"xs"',
+        description: "Compact button size for use inside an input group.",
+      },
+    ],
+  },
+  InputGroupText: {
+    props: [],
   },
   Dialog: {
     extends: {

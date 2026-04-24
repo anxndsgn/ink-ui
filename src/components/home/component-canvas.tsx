@@ -5,6 +5,7 @@ import {
   ArrowRightIcon,
   BellIcon,
   DotsThreeOutlineIcon,
+  MagnifyingGlassIcon,
   WarningOctagonIcon,
 } from "@phosphor-icons/react";
 import {
@@ -40,6 +41,7 @@ import {
   DialogTrigger,
 } from "@registry/components/ui/dialog";
 import { Input } from "@registry/components/ui/input";
+import { InputGroup, InputGroupAddon, InputGroupInput } from "@registry/components/ui/input-group";
 import {
   Menu,
   MenuContent,
@@ -252,6 +254,17 @@ const componentPreviews: ComponentPreview[] = [
   {
     label: "Input",
     renderPreview: () => <Input className="w-44" placeholder="Type something" />,
+  },
+  {
+    label: "Input Group",
+    renderPreview: () => (
+      <InputGroup className="w-48">
+        <InputGroupInput placeholder="Search" />
+        <InputGroupAddon align="inline-end">
+          <MagnifyingGlassIcon />
+        </InputGroupAddon>
+      </InputGroup>
+    ),
   },
   {
     label: "Menu",

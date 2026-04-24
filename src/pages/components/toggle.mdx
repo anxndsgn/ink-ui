@@ -1,0 +1,56 @@
+---
+layout: ~/layouts/mdx-doc-layout.astro
+title: "Toggle"
+description: "A two-state button that can be either on or off."
+baseUIComponent: "toggle"
+---
+
+import { Toggle } from "@registry/components/ui/toggle";
+import {
+  ToggleExample,
+  ToggleSizesExample,
+  ToggleWithIconsExample,
+} from "@registry/example/toggle-example";
+import ComponentExample from "~/components/docs/component-example.astro";
+import ComponentSection from "~/components/docs/component-section.astro";
+import PropsTable from "~/components/docs/props-table.astro";
+import CodeBlock from "~/components/docs/code-block.astro";
+import toggleSource from "@registry/components/ui/toggle?raw";
+
+<ComponentSection>
+  <ComponentExample demo="ToggleExample">
+    <ToggleExample client:load />
+  </ComponentExample>
+</ComponentSection>
+
+## Examples
+
+### Sizes
+
+Available sizes: `default`, `sm`, `lg`.
+
+<ComponentSection>
+  <ComponentExample demo="ToggleSizesExample">
+    <ToggleSizesExample client:load />
+  </ComponentExample>
+</ComponentSection>
+
+### With icons
+
+Use an icon inside the toggle for toolbars and formatting controls.
+
+<ComponentSection>
+  <ComponentExample demo="ToggleWithIconsExample">
+    <ToggleWithIconsExample client:load />
+  </ComponentExample>
+</ComponentSection>
+
+## Installation
+
+Copy the source code below into your project:
+
+<CodeBlock code={toggleSource} lang="tsx" />
+
+## API Reference
+
+<PropsTable component="Toggle" />

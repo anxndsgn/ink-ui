@@ -37,6 +37,7 @@ const componentItems: NavItem[] = [
   { label: "Combobox", href: "/components/combobox" },
   { label: "Dialog", href: "/components/dialog" },
   { label: "Input", href: "/components/input" },
+  { label: "Input Group", href: "/components/input-group" },
   { label: "Menu", href: "/components/menu" },
   { label: "Popover", href: "/components/popover" },
   { label: "Radio", href: "/components/radio" },
@@ -47,7 +48,9 @@ const componentItems: NavItem[] = [
   { label: "Switch", href: "/components/switch" },
   { label: "Tabs", href: "/components/tabs" },
   { label: "Tag", href: "/components/tag" },
+  { label: "Textarea", href: "/components/textarea" },
   { label: "Toast", href: "/components/toast" },
+  { label: "Toggle", href: "/components/toggle" },
   { label: "Tooltip", href: "/components/tooltip" },
 ];
 

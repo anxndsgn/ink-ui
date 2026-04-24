@@ -1,0 +1,58 @@
+---
+layout: ~/layouts/mdx-doc-layout.astro
+title: "Textarea"
+description: "A multi-line text field that allows users to enter and edit longer text."
+baseUIComponent: "textarea"
+---
+
+import { Textarea } from "@registry/components/ui/textarea";
+import {
+  TextareaExample,
+  OutlineTextareaExample,
+  InlineTextareaExample,
+} from "@registry/example/textarea-example";
+import ComponentExample from "~/components/docs/component-example.astro";
+import ComponentSection from "~/components/docs/component-section.astro";
+import PropsTable from "~/components/docs/props-table.astro";
+import CodeBlock from "~/components/docs/code-block.astro";
+import textareaSource from "@registry/components/ui/textarea?raw";
+
+<ComponentSection>
+  <ComponentExample demo="TextareaExample">
+    <TextareaExample />
+  </ComponentExample>
+</ComponentSection>
+
+## Examples
+
+### Variants
+
+Available variants: `default`, `outline`.
+
+#### Outline
+
+<ComponentSection>
+  <ComponentExample demo="OutlineTextareaExample">
+    <OutlineTextareaExample />
+  </ComponentExample>
+</ComponentSection>
+
+### Width
+
+By default, the textarea stretches to fill its container (`block={true}`). Pass `block={false}` to constrain the width.
+
+<ComponentSection>
+  <ComponentExample demo="InlineTextareaExample">
+    <InlineTextareaExample />
+  </ComponentExample>
+</ComponentSection>
+
+## Installation
+
+Copy the source code below into your project:
+
+<CodeBlock code={textareaSource} lang="tsx" />
+
+## API Reference
+
+<PropsTable component="Textarea" />
