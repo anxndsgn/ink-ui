@@ -394,7 +394,13 @@ const componentPreviews: ComponentPreview[] = [
     label: "Tooltip",
     renderPreview: () => (
       <Tooltip>
-        <TooltipTrigger render={<Button size="sm" variant="outline">Hover</Button>} />
+        <TooltipTrigger
+          render={
+            <Button size="sm" variant="outline">
+              Hover
+            </Button>
+          }
+        />
         <TooltipContent>
           <p className="text-sm">A helpful tip</p>
         </TooltipContent>
@@ -488,6 +494,9 @@ function ComponentCard({ component, x, y }: { component: ComponentPreview; x: nu
       aria-label={`${component.label} preview`}
       className="absolute top-1/2 left-1/2 flex items-center justify-center overflow-hidden rounded-2xl bg-muted/40 p-4"
       style={{
+        contain: "layout paint style",
+        containIntrinsicSize: `${TILE_WIDTH}px ${TILE_HEIGHT}px`,
+        contentVisibility: "auto",
         height: TILE_HEIGHT,
         transform: `translate3d(${x - TILE_WIDTH / 2}px, ${y - TILE_HEIGHT / 2}px, 0)`,
         width: TILE_WIDTH,
@@ -503,6 +512,9 @@ function TitleCard({ primary, x, y }: { primary: boolean; x: number; y: number }
     <article
       className="pointer-events-none absolute top-1/2 left-1/2 flex flex-col items-center justify-center gap-5 text-center"
       style={{
+        contain: "layout paint style",
+        containIntrinsicSize: `${CELL_WIDTH * 2}px ${CELL_HEIGHT * 2}px`,
+        contentVisibility: "auto",
         height: CELL_HEIGHT * 2,
         transform: `translate3d(calc(-50% + ${x}px), calc(-50% + ${y}px), 0)`,
         width: `min(${CELL_WIDTH * 2}px, calc(100vw - 2rem))`,
@@ -536,7 +548,7 @@ function TitleCard({ primary, x, y }: { primary: boolean; x: number; y: number }
 }
 
 export function ComponentCanvas() {
-  const [offset, setOffset] = useState({ x: 0, y: 0 });
+  const [hasMoved, setHasMoved] = useState(false);
   const [isDragging, setIsDragging] = useState(false);
   const dragRef = useRef<{
     originX: number;
@@ -545,6 +557,10 @@ export function ComponentCanvas() {
     startX: number;
     startY: number;
   } | null>(null);
+  const frameRef = useRef<number | null>(null);
+  const hasMovedRef = useRef(false);
+  const layerRef = useRef<HTMLDivElement>(null);
+  const offsetRef = useRef({ x: 0, y: 0 });
 
   const repeatedItems = useMemo(
     () =>
@@ -578,11 +594,44 @@ export function ComponentCanvas() {
     [],
   );
 
-  const wrappedOffset = {
-    x: wrapOffset(offset.x, CYCLE_WIDTH),
-    y: wrapOffset(offset.y, CYCLE_HEIGHT),
+  const renderedItems = useMemo(
+    () =>
+      repeatedItems.map((item) =>
+        item.type === "title" ? (
+          <TitleCard key={item.key} primary={Boolean(item.primary)} x={item.x} y={item.y} />
+        ) : (
+          <ComponentCard component={item.component} key={item.key} x={item.x} y={item.y} />
+        ),
+      ),
+    [repeatedItems],
+  );
+
+  const updateLayerTransform = (nextOffset: { x: number; y: number }) => {
+    offsetRef.current = nextOffset;
+
+    if (frameRef.current !== null) return;
+
+    frameRef.current = window.requestAnimationFrame(() => {
+      frameRef.current = null;
+
+      const wrappedOffset = {
+        x: wrapOffset(offsetRef.current.x, CYCLE_WIDTH),
+        y: wrapOffset(offsetRef.current.y, CYCLE_HEIGHT),
+      };
+
+      if (layerRef.current) {
+        layerRef.current.style.transform = `translate3d(${wrappedOffset.x}px, ${wrappedOffset.y}px, 0)`;
+      }
+    });
   };
-  const hasMoved = Math.abs(offset.x) > 1 || Math.abs(offset.y) > 1;
+
+  const updateHasMoved = (nextOffset: { x: number; y: number }) => {
+    const nextHasMoved = Math.abs(nextOffset.x) > 1 || Math.abs(nextOffset.y) > 1;
+    if (nextHasMoved === hasMovedRef.current) return;
+
+    hasMovedRef.current = nextHasMoved;
+    setHasMoved(nextHasMoved);
+  };
 
   const handlePointerDown = (event: ReactPointerEvent<HTMLDivElement>) => {
     if (event.pointerType === "mouse" && event.button !== 0) return;
@@ -600,8 +649,8 @@ export function ComponentCanvas() {
     }
 
     dragRef.current = {
-      originX: offset.x,
-      originY: offset.y,
+      originX: offsetRef.current.x,
+      originY: offsetRef.current.y,
       pointerId: event.pointerId,
       startX: event.clientX,
       startY: event.clientY,
@@ -614,10 +663,13 @@ export function ComponentCanvas() {
     if (!drag || drag.pointerId !== event.pointerId) return;
 
     event.preventDefault();
-    setOffset({
+    const nextOffset = {
       x: drag.originX + event.clientX - drag.startX,
       y: drag.originY + event.clientY - drag.startY,
-    });
+    };
+
+    updateLayerTransform(nextOffset);
+    updateHasMoved(nextOffset);
   };
 
   const stopDragging = (event: ReactPointerEvent<HTMLDivElement>) => {
@@ -658,10 +710,17 @@ export function ComponentCanvas() {
     window.addEventListener("pointerup", handleWindowPointerUp, true);
     window.addEventListener("pointercancel", handleWindowPointerUp, true);
     return () => {
+      if (frameRef.current !== null) window.cancelAnimationFrame(frameRef.current);
       window.removeEventListener("pointerup", handleWindowPointerUp, true);
       window.removeEventListener("pointercancel", handleWindowPointerUp, true);
     };
   }, []);
+
+  const resetCanvas = () => {
+    const nextOffset = { x: 0, y: 0 };
+    updateLayerTransform(nextOffset);
+    updateHasMoved(nextOffset);
+  };
 
   return (
     <main className="relative min-h-dvh overflow-hidden bg-background text-foreground">
@@ -678,32 +737,18 @@ export function ComponentCanvas() {
         onPointerMove={handlePointerMove}
         onPointerUp={stopDragging}
       >
-        {repeatedItems.map((item) =>
-          item.type === "title" ? (
-            <TitleCard
-              key={item.key}
-              primary={Boolean(item.primary)}
-              x={item.x + wrappedOffset.x}
-              y={item.y + wrappedOffset.y}
-            />
-          ) : (
-            <ComponentCard
-              component={item.component}
-              key={item.key}
-              x={item.x + wrappedOffset.x}
-              y={item.y + wrappedOffset.y}
-            />
-          ),
-        )}
+        <div
+          className="absolute inset-0 will-change-transform"
+          ref={layerRef}
+          style={{ transform: "translate3d(0, 0, 0)" }}
+        >
+          {renderedItems}
+        </div>
       </div>
 
       {hasMoved && (
         <div className="fixed right-4 bottom-4 z-30">
-          <Button
-            aria-label="Reset component canvas"
-            onClick={() => setOffset({ x: 0, y: 0 })}
-            size="sm"
-          >
+          <Button aria-label="Reset component canvas" onClick={resetCanvas} size="sm">
             <ArrowClockwiseIcon />
             Reset
           </Button>
