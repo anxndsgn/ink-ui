@@ -55,7 +55,7 @@ const buildInfo = getBuildInfo();
 // https://astro.build/config
 export default defineConfig({
   integrations: [mdx(), react(), sitemap(), markdownPages()],
-  site: "https://ink-ui.anxndsgn.com/",
+  site: "https://ink-ui.com/",
   markdown: {
     shikiConfig: {
       themes: {

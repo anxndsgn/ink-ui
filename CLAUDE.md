@@ -69,4 +69,4 @@ Tests use Vitest. Run `pnpm build` before `pnpm test`.
 
 ### Deployment
 
-`wrangler.jsonc` configures deployment. The site URL is `https://ink-ui.vercel.app/`.
+`wrangler.jsonc` configures deployment. The site URL is `https://ink-ui.com/`.

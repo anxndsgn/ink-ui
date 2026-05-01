@@ -28,6 +28,15 @@ const {
       href='https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=optional'
     />
     <link rel='sitemap' href='/sitemap-index.xml' />
+    <meta property='og:title' content={title} />
+    <meta property='og:description' content={description} />
+    <meta property='og:image' content={`${Astro.site}og-image.svg`} />
+    <meta property='og:type' content='website' />
+    <meta property='og:url' content={Astro.url.href} />
+    <meta name='twitter:card' content='summary_large_image' />
+    <meta name='twitter:title' content={title} />
+    <meta name='twitter:description' content={description} />
+    <meta name='twitter:image' content={`${Astro.site}og-image.svg`} />
     <script defer src='https://umami.anxndsgn.com/script.js' data-website-id='6a1d3b44-2efa-40ef-9416-a44dd62e2889'></script>
     <script is:inline>
       // Initialize theme from localStorage or system preference
