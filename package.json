@@ -18,7 +18,7 @@
   "dependencies": {
     "@astrojs/mdx": "^4.3.14",
     "@astrojs/sitemap": "^3.7.0",
-    "@base-ui/react": "^1.4.0",
+    "@base-ui/react": "^1.5.0",
     "@phosphor-icons/react": "^2.1.10",
     "@tailwindcss/typography": "^0.5.19",
     "@types/turndown": "5.0.6",
