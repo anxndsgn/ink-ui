@@ -28,7 +28,7 @@ const buttonVariants = cva(
         ghost:
           "bg-transparent text-foreground not-data-disabled:hover:bg-secondary data-popup-open:bg-secondary-hover",
         outline:
-          "border border-input text-foreground not-data-disabled:hover:bg-secondary data-popup-open:bg-secondary-hover",
+          "border border-input text-foreground not-data-disabled:hover:bg-secondary data-popup-open:bg-secondary",
         revert:
           "bg-muted text-foreground not-data-disabled:hover:bg-muted-hover data-popup-open:bg-muted-active",
         secondary:
