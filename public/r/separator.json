@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "separator",
+  "title": "Separator",
+  "description": "Ink UI Separator component.",
+  "dependencies": [
+    "@base-ui/react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "theme"
+  ],
+  "files": [
+    {
+      "path": "registry/default/ui/separator.tsx",
+      "content": "import { Separator as BaseSeparator } from \"@base-ui/react/separator\";\nimport { cn } from \"@/lib/utils\";\n\nexport function Separator({ className, ...props }: BaseSeparator.Props) {\n  return (\n    <BaseSeparator\n      className={cn(\n        \"shrink-0 bg-border data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full data-[orientation=vertical]:w-px data-[orientation=vertical]:not-[[class^='h-']]:not-[[class*='_h-']]:self-stretch\",\n        className,\n      )}\n      data-slot=\"separator\"\n      {...props}\n    />\n  );\n}\n",
+      "type": "registry:ui",
+      "target": "components/ui/separator.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

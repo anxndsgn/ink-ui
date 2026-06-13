@@ -1,0 +1,82 @@
+---
+title: Radio
+description: A set of mutually exclusive options where only one can be selected at a time.
+component: Radio
+registry: radio
+---
+
+import { RadioGroup, Radio, RadioGroupItem } from "registry/default/ui/radio";
+import {
+  RadioExample,
+  RadioDisabledExample,
+  RadioControlledExample,
+  RadioGroupItemExample,
+} from "registry/default/examples/radio-example";
+import radioExampleSource from "registry/default/examples/radio-example.tsx?raw";
+import radioSource from "registry/default/ui/radio.tsx?raw";
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="RadioExample">
+      <RadioExample />
+    </ComponentPreview>
+    <ComponentSource code={radioExampleSource} language="tsx" title="radio-example.tsx" />
+  </ComponentTabs>
+</ComponentSection>
+
+## Examples
+
+### Disabled
+
+Use the `disabled` prop on individual radio items to prevent interaction.
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="RadioDisabledExample">
+      <RadioDisabledExample />
+    </ComponentPreview>
+    <ComponentSource code={radioExampleSource} language="tsx" title="radio-example.tsx" />
+  </ComponentTabs>
+</ComponentSection>
+
+### Controlled
+
+Manage the selected value with React state using `value` and `onValueChange` on the group.
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="RadioControlledExample">
+      <RadioControlledExample />
+    </ComponentPreview>
+    <ComponentSource code={radioExampleSource} language="tsx" title="radio-example.tsx" />
+  </ComponentTabs>
+</ComponentSection>
+
+### RadioGroupItem
+
+The `RadioGroupItem` alias is also available if you prefer that naming convention.
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="RadioGroupItemExample">
+      <RadioGroupItemExample />
+    </ComponentPreview>
+    <ComponentSource code={radioExampleSource} language="tsx" title="radio-example.tsx" />
+  </ComponentTabs>
+</ComponentSection>
+
+## Installation
+
+Copy the source code below into your project:
+
+<CodeBlock code={radioSource} language="tsx" />
+
+## API Reference
+
+### RadioGroup
+
+<PropsTable component="RadioGroup" />
+
+### Radio
+
+<PropsTable component="Radio" />

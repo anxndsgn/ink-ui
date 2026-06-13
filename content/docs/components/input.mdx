@@ -1,0 +1,64 @@
+---
+title: Input
+description: A text field that allows users to enter and edit text.
+component: Input
+registry: input
+---
+
+import { Input } from "registry/default/ui/input";
+import {
+  InputExample,
+  OutlineInputExample,
+  InlineInputExample,
+} from "registry/default/examples/input-example";
+import inputExampleSource from "registry/default/examples/input-example.tsx?raw";
+import inputSource from "registry/default/ui/input.tsx?raw";
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="InputExample">
+      <InputExample />
+    </ComponentPreview>
+    <ComponentSource code={inputExampleSource} language="tsx" title="input-example.tsx" />
+  </ComponentTabs>
+</ComponentSection>
+
+## Examples
+
+### Variants
+
+Available variants: `default`, `outline`.
+
+#### Outline
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="OutlineInputExample">
+      <OutlineInputExample />
+    </ComponentPreview>
+    <ComponentSource code={inputExampleSource} language="tsx" title="input-example.tsx" />
+  </ComponentTabs>
+</ComponentSection>
+
+### Width
+
+By default, the input stretches to fill its container (`block={true}`). Pass `block={false}` to constrain the width.
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="InlineInputExample">
+      <InlineInputExample />
+    </ComponentPreview>
+    <ComponentSource code={inputExampleSource} language="tsx" title="input-example.tsx" />
+  </ComponentTabs>
+</ComponentSection>
+
+## Installation
+
+Copy the source code below into your project:
+
+<CodeBlock code={inputSource} language="tsx" />
+
+## API Reference
+
+<PropsTable component="Input" />

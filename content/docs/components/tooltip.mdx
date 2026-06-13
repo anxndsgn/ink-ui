@@ -1,0 +1,101 @@
+---
+title: Tooltip
+description: A small popup that appears when a user hovers over or focuses an element.
+component: Tooltip
+registry: tooltip
+---
+
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+  TooltipProvider,
+  TooltipViewport,
+  createTooltipHandle,
+} from "registry/default/ui/tooltip";
+import {
+  TooltipExample,
+  TooltipPositionedExample,
+  TooltipWithDelayExample,
+  TooltipAnimatedExample,
+} from "registry/default/examples/tooltip-example";
+import tooltipExampleSource from "registry/default/examples/tooltip-example.tsx?raw";
+import tooltipSource from "registry/default/ui/tooltip.tsx?raw";
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="TooltipExample">
+      <TooltipExample />
+    </ComponentPreview>
+    <ComponentSource code={tooltipExampleSource} language="tsx" title="tooltip-example.tsx" />
+  </ComponentTabs>
+</ComponentSection>
+
+## Examples
+
+### Positioning
+
+Use `positionerProps` on `TooltipContent` to control which side the tooltip appears on.
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="TooltipPositionedExample">
+      <TooltipPositionedExample />
+    </ComponentPreview>
+    <ComponentSource code={tooltipExampleSource} language="tsx" title="tooltip-example.tsx" />
+  </ComponentTabs>
+</ComponentSection>
+
+### Hover delay
+
+Control the open delay with the `delay` prop on `TooltipTrigger`.
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="TooltipWithDelayExample">
+      <TooltipWithDelayExample />
+    </ComponentPreview>
+    <ComponentSource code={tooltipExampleSource} language="tsx" title="tooltip-example.tsx" />
+  </ComponentTabs>
+</ComponentSection>
+
+### Animated shared tooltip
+
+Use `createTooltipHandle` with `TooltipProvider` to share a single tooltip across multiple triggers. The `TooltipViewport` component animates the content when moving between triggers.
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="TooltipAnimatedExample">
+      <TooltipAnimatedExample />
+    </ComponentPreview>
+    <ComponentSource code={tooltipExampleSource} language="tsx" title="tooltip-example.tsx" />
+  </ComponentTabs>
+</ComponentSection>
+
+## Installation
+
+Copy the source code below into your project:
+
+<CodeBlock code={tooltipSource} language="tsx" />
+
+## API Reference
+
+### Tooltip
+
+<PropsTable component="Tooltip" />
+
+### TooltipTrigger
+
+<PropsTable component="TooltipTrigger" />
+
+### TooltipContent
+
+<PropsTable component="TooltipContent" />
+
+### TooltipViewport
+
+<PropsTable component="TooltipViewport" />
+
+### TooltipProvider
+
+<PropsTable component="TooltipProvider" />

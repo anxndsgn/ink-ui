@@ -1,9 +1,9 @@
 {
   "$schema": "./node_modules/oxfmt/configuration_schema.json",
-  "ignorePatterns": [],
+  "ignorePatterns": [".source", "public/r", "src/routeTree.gen.ts"],
   "sortTailwindcss": {
-    "stylesheet": "./src/styles/global.css",
-    "functions": ["clsx", "cn", "cva"],
-    "preserveWhitespace": true
+    "attributes": ["class", "className"],
+    "functions": ["clsx", "cn", "cva", "tw"],
+    "stylesheet": "src/styles/app.css"
   }
 }

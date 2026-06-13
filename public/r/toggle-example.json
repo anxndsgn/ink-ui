@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "toggle-example",
+  "title": "Toggle Example",
+  "description": "Examples for the Ink UI Toggle component.",
+  "registryDependencies": [
+    "toggle"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/toggle-example.tsx",
+      "content": "import { Toggle } from \"registry/default/ui/toggle\";\nimport { TextBIcon, TextItalicIcon, TextStrikethroughIcon } from \"@phosphor-icons/react\";\n\nexport function ToggleExample() {\n  return (\n    <div className=\"flex flex-wrap items-center gap-4\">\n      <Toggle>Toggle</Toggle>\n    </div>\n  );\n}\n\nexport function ToggleSizesExample() {\n  return (\n    <div className=\"flex flex-wrap items-center gap-4\">\n      <Toggle size=\"sm\">Small</Toggle>\n      <Toggle size=\"default\">Default</Toggle>\n      <Toggle size=\"lg\">Large</Toggle>\n    </div>\n  );\n}\n\nexport function ToggleWithIconsExample() {\n  return (\n    <div className=\"flex flex-wrap items-center gap-2\">\n      <Toggle size=\"sm\" aria-label=\"Toggle bold\">\n        <TextBIcon />\n      </Toggle>\n      <Toggle size=\"sm\" aria-label=\"Toggle italic\">\n        <TextItalicIcon />\n      </Toggle>\n      <Toggle size=\"sm\" aria-label=\"Toggle strikethrough\">\n        <TextStrikethroughIcon />\n      </Toggle>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/toggle-example.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

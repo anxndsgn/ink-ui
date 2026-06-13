@@ -1,13 +1,15 @@
 {
-  "plugins": ["eslint", "typescript", "unicorn", "oxc", "jsx-a11y"],
-  "categories": {
-    "correctness": "error",
-    "suspicious": "warn"
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "env": {
+    "browser": true,
+    "builtin": true,
+    "node": true
   },
-  "rules": {
-    "typescript/no-unsafe-type-assertion": "off",
-    "typescript/no-unnecessary-template-expression": "off",
-    "typescript/no-unnecessary-type-assertion": "off",
-    "jsx-a11y/label-has-associated-control": "warn"
+  "ignorePatterns": [".source", "public/r", "src/routeTree.gen.ts"],
+  "plugins": ["typescript", "unicorn", "oxc", "import", "react", "jsx-a11y"],
+  "settings": {
+    "react": {
+      "version": "19.2.7"
+    }
   }
 }

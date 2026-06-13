@@ -1,0 +1,138 @@
+---
+title: Button
+description: Displays a button or a component that looks like a button.
+component: Button
+registry: button
+---
+
+import { Button } from "registry/default/ui/button";
+import {
+  LoadingButtonExample,
+  ButtonExample,
+  SecondaryButtonExample,
+  OutlineButtonExample,
+  GhostButtonExample,
+  DestructiveButtonExample,
+  RevertButtonExample,
+  IconButtonExample,
+  ButtonSizesExample,
+} from "registry/default/examples/button-example";
+import buttonExampleSource from "registry/default/examples/button-example.tsx?raw";
+import buttonSource from "registry/default/ui/button.tsx?raw";
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="ButtonExample">
+      <ButtonExample />
+    </ComponentPreview>
+    <ComponentSource code={buttonExampleSource} language="tsx" title="button-example.tsx" />
+  </ComponentTabs>
+</ComponentSection>
+
+## Examples
+
+### Variants
+
+#### Secondary
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="SecondaryButtonExample">
+      <SecondaryButtonExample />
+    </ComponentPreview>
+    <ComponentSource code={buttonExampleSource} language="tsx" title="button-example.tsx" />
+  </ComponentTabs>
+</ComponentSection>
+
+#### Outline
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="OutlineButtonExample">
+      <OutlineButtonExample />
+    </ComponentPreview>
+    <ComponentSource code={buttonExampleSource} language="tsx" title="button-example.tsx" />
+  </ComponentTabs>
+</ComponentSection>
+
+#### Ghost
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="GhostButtonExample">
+      <GhostButtonExample />
+    </ComponentPreview>
+    <ComponentSource code={buttonExampleSource} language="tsx" title="button-example.tsx" />
+  </ComponentTabs>
+</ComponentSection>
+
+#### Destructive
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="DestructiveButtonExample">
+      <DestructiveButtonExample />
+    </ComponentPreview>
+    <ComponentSource code={buttonExampleSource} language="tsx" title="button-example.tsx" />
+  </ComponentTabs>
+</ComponentSection>
+
+#### Revert
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="RevertButtonExample">
+      <RevertButtonExample />
+    </ComponentPreview>
+    <ComponentSource code={buttonExampleSource} language="tsx" title="button-example.tsx" />
+  </ComponentTabs>
+</ComponentSection>
+
+### Sizes
+
+Available sizes: `default`, `sm`, `lg`, `icon`, `icon-sm`.
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="ButtonSizesExample">
+      <ButtonSizesExample />
+    </ComponentPreview>
+    <ComponentSource code={buttonExampleSource} language="tsx" title="button-example.tsx" />
+  </ComponentTabs>
+</ComponentSection>
+
+### Icon
+
+Use the `icon` or `icon-sm` size with an SVG icon inside the button.
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="IconButtonExample">
+      <IconButtonExample />
+    </ComponentPreview>
+    <ComponentSource code={buttonExampleSource} language="tsx" title="button-example.tsx" />
+  </ComponentTabs>
+</ComponentSection>
+
+### Loading state
+
+Pass the `loading` prop to show a spinner and blur the button content:
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="LoadingButtonExample">
+      <LoadingButtonExample />
+    </ComponentPreview>
+    <ComponentSource code={buttonExampleSource} language="tsx" title="button-example.tsx" />
+  </ComponentTabs>
+</ComponentSection>
+
+## Installation
+
+Copy the source code below into your project:
+
+<CodeBlock code={buttonSource} language="tsx" />
+
+## API Reference
+
+<PropsTable component="Button" />

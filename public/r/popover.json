@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "popover",
+  "title": "Popover",
+  "description": "Ink UI Popover component.",
+  "dependencies": [
+    "@base-ui/react",
+    "@phosphor-icons/react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "theme",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/default/ui/popover.tsx",
+      "content": "import { Popover as BasePopover } from \"@base-ui/react/popover\";\nimport { cn } from \"@/lib/utils\";\nimport { XIcon } from \"@phosphor-icons/react\";\n\nimport { Button } from \"./button\";\n\nconst Popover = (props: BasePopover.Root.Props) => (\n  <BasePopover.Root data-slot=\"popover\" {...props} />\n);\n\nfunction PopoverTrigger(props: BasePopover.Trigger.Props) {\n  return <BasePopover.Trigger data-slot=\"popover-trigger\" {...props} />;\n}\n\nconst PopoverPortal = (props: BasePopover.Portal.Props) => (\n  <BasePopover.Portal data-slot=\"popover-portal\" {...props} />\n);\nconst PopoverClose = (props: BasePopover.Close.Props) => (\n  <BasePopover.Close data-slot=\"popover-close\" {...props} />\n);\n\nfunction PopoverContent({\n  className,\n  children,\n  positionerProps,\n  ...props\n}: BasePopover.Popup.Props & {\n  positionerProps?: BasePopover.Positioner.Props;\n}) {\n  return (\n    <BasePopover.Portal>\n      <BasePopover.Positioner\n        {...positionerProps}\n        collisionPadding={positionerProps?.collisionPadding || 8}\n        sideOffset={positionerProps?.sideOffset || 8}\n      >\n        <BasePopover.Popup\n          className={cn(\n            \"z-50 w-80 rounded-2xl bg-popover shadow-lg outline outline-border\",\n            \"origin-(--transform-origin) transition-all duration-150\",\n            \"data-starting-style:scale-90 data-starting-style:opacity-0\",\n            \"data-ending-style:scale-90 data-ending-style:opacity-0\",\n            className,\n          )}\n          data-slot=\"popover-popup\"\n          {...props}\n        >\n          {children}\n        </BasePopover.Popup>\n      </BasePopover.Positioner>\n    </BasePopover.Portal>\n  );\n}\n\nfunction PopoverTitle({ className, ...props }: BasePopover.Title.Props) {\n  return (\n    <BasePopover.Title\n      className={cn(\"text-lg font-bold text-foreground\", className)}\n      data-slot=\"popover-title\"\n      {...props}\n    />\n  );\n}\n\nfunction PopoverHeader({\n  className,\n  children,\n  closeButton = true,\n}: {\n  className?: string;\n  closeButton?: boolean;\n  children?: React.ReactNode;\n}) {\n  return (\n    <div className={cn(\"relative flex flex-col p-4\", className)} data-slot=\"popover-header\">\n      {closeButton && (\n        <PopoverClose\n          className=\"absolute top-3 right-3\"\n          render={<Button className=\"size-5\" size=\"icon\" variant=\"secondary\" />}\n        >\n          <XIcon className=\"size-3\" />\n        </PopoverClose>\n      )}\n      {children}\n    </div>\n  );\n}\n\nfunction PopoverBody({ className, children }: { className?: string; children?: React.ReactNode }) {\n  return (\n    <div className={cn(\"flex flex-col gap-3 px-4 pb-4\", className)} data-slot=\"popover-body\">\n      {children}\n    </div>\n  );\n}\n\nexport {\n  Popover,\n  PopoverTrigger,\n  PopoverPortal,\n  PopoverClose,\n  PopoverContent,\n  PopoverTitle,\n  PopoverHeader,\n  PopoverBody,\n};\n",
+      "type": "registry:ui",
+      "target": "components/ui/popover.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

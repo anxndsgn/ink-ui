@@ -1,0 +1,78 @@
+---
+title: Switch
+description: A toggle control that lets the user turn a setting on or off.
+component: Switch
+registry: switch
+---
+
+import { Switch } from "registry/default/ui/switch";
+import {
+  SwitchExample,
+  SwitchCheckedExample,
+  SwitchDisabledExample,
+  SwitchControlledExample,
+} from "registry/default/examples/switch-example";
+import switchExampleSource from "registry/default/examples/switch-example.tsx?raw";
+import switchSource from "registry/default/ui/switch.tsx?raw";
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="SwitchExample">
+      <SwitchExample />
+    </ComponentPreview>
+    <ComponentSource code={switchExampleSource} language="tsx" title="switch-example.tsx" />
+  </ComponentTabs>
+</ComponentSection>
+
+## Examples
+
+### Default checked
+
+Use `defaultChecked` to set the initial state without controlling the component.
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="SwitchCheckedExample">
+      <SwitchCheckedExample />
+    </ComponentPreview>
+    <ComponentSource code={switchExampleSource} language="tsx" title="switch-example.tsx" />
+  </ComponentTabs>
+</ComponentSection>
+
+### Disabled
+
+Use the `disabled` prop to prevent interaction.
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="SwitchDisabledExample">
+      <SwitchDisabledExample />
+    </ComponentPreview>
+    <ComponentSource code={switchExampleSource} language="tsx" title="switch-example.tsx" />
+  </ComponentTabs>
+</ComponentSection>
+
+### Controlled
+
+Manage the checked state with React state using `checked` and `onCheckedChange`.
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="SwitchControlledExample">
+      <SwitchControlledExample />
+    </ComponentPreview>
+    <ComponentSource code={switchExampleSource} language="tsx" title="switch-example.tsx" />
+  </ComponentTabs>
+</ComponentSection>
+
+## Installation
+
+Copy the source code below into your project:
+
+<CodeBlock code={switchSource} language="tsx" />
+
+## API Reference
+
+### Switch
+
+<PropsTable component="Switch" />

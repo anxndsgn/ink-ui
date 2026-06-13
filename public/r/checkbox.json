@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "checkbox",
+  "title": "Checkbox",
+  "description": "Ink UI Checkbox component.",
+  "dependencies": [
+    "@base-ui/react",
+    "motion"
+  ],
+  "registryDependencies": [
+    "utils",
+    "theme"
+  ],
+  "files": [
+    {
+      "path": "registry/default/ui/checkbox.tsx",
+      "content": "import { Checkbox as BaseCheckbox } from \"@base-ui/react/checkbox\";\nimport { CheckboxGroup as BaseCheckboxGroup } from \"@base-ui/react/checkbox-group\";\nimport { cn } from \"@/lib/utils\";\nimport { AnimatePresence, motion } from \"motion/react\";\n\nfunction CheckboxGroup({ className, ...props }: BaseCheckboxGroup.Props) {\n  return (\n    <BaseCheckboxGroup\n      className={cn(\"flex flex-col gap-2\", className)}\n      data-slot=\"checkbox-group\"\n      {...props}\n    />\n  );\n}\n\nfunction Checkbox({ className, ...props }: BaseCheckbox.Root.Props) {\n  return (\n    <BaseCheckbox.Root\n      className={cn(\n        \"data-disabled:pointer-not-allowed relative inline-flex size-4.5 shrink-0 items-center justify-center rounded-sm border border-input bg-muted ring-ring outline-none before:pointer-events-none focus-visible:ring-2 focus-visible:ring-offset-1 focus-visible:ring-offset-background aria-invalid:border-destructive/36 focus-visible:aria-invalid:border-destructive/64 focus-visible:aria-invalid:ring-destructive/48 data-disabled:opacity-50 sm:size-4 dark:not-data-checked:bg-gray-950/32 dark:aria-invalid:ring-destructive/24\",\n        \"data-checked:bg-accent data-indeterminate:bg-accent\",\n        className,\n      )}\n      data-slot=\"checkbox\"\n      {...props}\n    >\n      <BaseCheckbox.Indicator\n        className=\"absolute inset-0 flex items-center justify-center rounded-sm\"\n        data-slot=\"checkbox-indicator\"\n        keepMounted\n        render={(props, state) => (\n          <span {...props}>\n            <AnimatePresence initial={false}>\n              {(state.checked || state.indeterminate) && (\n                <motion.span\n                  animate={{ filter: \"blur(0px)\", opacity: 1, scale: 1 }}\n                  className=\"absolute inset-0 flex items-center justify-center text-accent-foreground\"\n                  exit={{ filter: \"blur(2px)\", opacity: 0, scale: 0.8 }}\n                  initial={{ filter: \"blur(2px)\", opacity: 0, scale: 0.8 }}\n                  key={state.indeterminate ? \"indeterminate\" : \"checked\"}\n                  transition={{ duration: 0.2, ease: [0.86, 0, 0.07, 1] }}\n                >\n                  {state.indeterminate ? <IndeterminateIcon /> : <CheckmarkIcon />}\n                </motion.span>\n              )}\n            </AnimatePresence>\n          </span>\n        )}\n      />\n    </BaseCheckbox.Root>\n  );\n}\n\nfunction CheckmarkIcon() {\n  return (\n    <motion.svg aria-hidden=\"true\" className=\"size-3.5 sm:size-3\" fill=\"none\" viewBox=\"0 0 14 14\">\n      <motion.path\n        animate={{ pathLength: 1 }}\n        d=\"M3 7.25L5.75 10L11 4\"\n        initial={{ pathLength: 0 }}\n        stroke=\"currentColor\"\n        strokeLinecap=\"round\"\n        strokeLinejoin=\"round\"\n        strokeWidth=\"1.5\"\n        transition={{ duration: 0.2, ease: [0.86, 0, 0.07, 1] }}\n      />\n    </motion.svg>\n  );\n}\n\nfunction IndeterminateIcon() {\n  return (\n    <motion.svg aria-hidden=\"true\" className=\"size-3.5 sm:size-3\" fill=\"none\" viewBox=\"0 0 14 14\">\n      <motion.path\n        animate={{ pathLength: 1 }}\n        d=\"M3.5 7H10.5\"\n        initial={{ pathLength: 0 }}\n        stroke=\"currentColor\"\n        strokeLinecap=\"round\"\n        strokeWidth=\"1.5\"\n        transition={{ duration: 0.2, ease: [0.86, 0, 0.07, 1] }}\n      />\n    </motion.svg>\n  );\n}\n\nexport { CheckboxGroup, Checkbox };\n",
+      "type": "registry:ui",
+      "target": "components/ui/checkbox.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

@@ -1,0 +1,30 @@
+---
+title: Separator
+description: Visually separates content.
+component: Separator
+registry: separator
+---
+
+import { Separator } from "registry/default/ui/separator";
+import { SeparatorExample } from "registry/default/examples/separator-example";
+import separatorExampleSource from "registry/default/examples/separator-example.tsx?raw";
+import separatorSource from "registry/default/ui/separator.tsx?raw";
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="SeparatorExample">
+      <SeparatorExample />
+    </ComponentPreview>
+    <ComponentSource code={separatorExampleSource} language="tsx" title="separator-example.tsx" />
+  </ComponentTabs>
+</ComponentSection>
+
+## Installation
+
+Copy the source code below into your project:
+
+<CodeBlock code={separatorSource} language="tsx" />
+
+## API Reference
+
+<PropsTable component="Separator" />

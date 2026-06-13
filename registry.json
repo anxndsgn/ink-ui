@@ -1,0 +1,676 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "ink-ui",
+  "homepage": "https://ink-ui.com",
+  "items": [
+    {
+      "name": "utils",
+      "type": "registry:lib",
+      "title": "Utils",
+      "description": "Shared className utility.",
+      "dependencies": ["clsx", "tailwind-merge"],
+      "files": [
+        {
+          "path": "registry/default/lib/utils.ts",
+          "type": "registry:lib",
+          "target": "@lib/utils.ts"
+        }
+      ]
+    },
+    {
+      "name": "theme",
+      "type": "registry:theme",
+      "title": "Ink Theme",
+      "description": "Ink UI Tailwind CSS variables and base styles.",
+      "files": [
+        {
+          "path": "registry/default/styles/style.css",
+          "type": "registry:style"
+        }
+      ]
+    },
+    {
+      "name": "alert-dialog",
+      "type": "registry:ui",
+      "title": "Alert Dialog",
+      "description": "Ink UI Alert Dialog component.",
+      "files": [
+        {
+          "path": "registry/default/ui/alert-dialog.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/alert-dialog.tsx"
+        }
+      ],
+      "registryDependencies": ["utils", "theme", "button"],
+      "dependencies": ["@base-ui/react"]
+    },
+    {
+      "name": "button",
+      "type": "registry:ui",
+      "title": "Button",
+      "description": "Ink UI Button component.",
+      "files": [
+        {
+          "path": "registry/default/ui/button.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/button.tsx"
+        }
+      ],
+      "registryDependencies": ["utils", "theme"],
+      "dependencies": [
+        "@base-ui/react",
+        "@phosphor-icons/react",
+        "class-variance-authority",
+        "motion"
+      ]
+    },
+    {
+      "name": "card",
+      "type": "registry:ui",
+      "title": "Card",
+      "description": "Ink UI Card component.",
+      "files": [
+        {
+          "path": "registry/default/ui/card.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/card.tsx"
+        }
+      ],
+      "registryDependencies": ["utils", "theme"],
+      "dependencies": ["@base-ui/react"]
+    },
+    {
+      "name": "checkbox",
+      "type": "registry:ui",
+      "title": "Checkbox",
+      "description": "Ink UI Checkbox component.",
+      "files": [
+        {
+          "path": "registry/default/ui/checkbox.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/checkbox.tsx"
+        }
+      ],
+      "registryDependencies": ["utils", "theme"],
+      "dependencies": ["@base-ui/react", "motion"]
+    },
+    {
+      "name": "combobox",
+      "type": "registry:ui",
+      "title": "Combobox",
+      "description": "Ink UI Combobox component.",
+      "files": [
+        {
+          "path": "registry/default/ui/combobox.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/combobox.tsx"
+        }
+      ],
+      "registryDependencies": ["utils", "theme", "tag"],
+      "dependencies": ["@base-ui/react", "@phosphor-icons/react"]
+    },
+    {
+      "name": "dialog",
+      "type": "registry:ui",
+      "title": "Dialog",
+      "description": "Ink UI Dialog component.",
+      "files": [
+        {
+          "path": "registry/default/ui/dialog.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/dialog.tsx"
+        }
+      ],
+      "registryDependencies": ["utils", "theme", "button"],
+      "dependencies": ["@base-ui/react", "@phosphor-icons/react"]
+    },
+    {
+      "name": "input",
+      "type": "registry:ui",
+      "title": "Input",
+      "description": "Ink UI Input component.",
+      "files": [
+        {
+          "path": "registry/default/ui/input.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/input.tsx"
+        }
+      ],
+      "registryDependencies": ["utils", "theme"],
+      "dependencies": ["@base-ui/react", "class-variance-authority"]
+    },
+    {
+      "name": "input-group",
+      "type": "registry:ui",
+      "title": "Input Group",
+      "description": "Ink UI Input Group component.",
+      "files": [
+        {
+          "path": "registry/default/ui/input-group.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/input-group.tsx"
+        }
+      ],
+      "registryDependencies": ["utils", "theme", "button", "input", "textarea"],
+      "dependencies": ["class-variance-authority"]
+    },
+    {
+      "name": "menu",
+      "type": "registry:ui",
+      "title": "Menu",
+      "description": "Ink UI Menu component.",
+      "files": [
+        {
+          "path": "registry/default/ui/menu.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/menu.tsx"
+        }
+      ],
+      "registryDependencies": ["utils", "theme"],
+      "dependencies": ["@base-ui/react", "@phosphor-icons/react", "class-variance-authority"]
+    },
+    {
+      "name": "popover",
+      "type": "registry:ui",
+      "title": "Popover",
+      "description": "Ink UI Popover component.",
+      "files": [
+        {
+          "path": "registry/default/ui/popover.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/popover.tsx"
+        }
+      ],
+      "registryDependencies": ["utils", "theme", "button"],
+      "dependencies": ["@base-ui/react", "@phosphor-icons/react"]
+    },
+    {
+      "name": "radio",
+      "type": "registry:ui",
+      "title": "Radio",
+      "description": "Ink UI Radio component.",
+      "files": [
+        {
+          "path": "registry/default/ui/radio.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/radio.tsx"
+        }
+      ],
+      "registryDependencies": ["utils", "theme"],
+      "dependencies": ["@base-ui/react"]
+    },
+    {
+      "name": "scroll-area",
+      "type": "registry:ui",
+      "title": "Scroll Area",
+      "description": "Ink UI Scroll Area component.",
+      "files": [
+        {
+          "path": "registry/default/ui/scroll-area.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/scroll-area.tsx"
+        }
+      ],
+      "registryDependencies": ["utils", "theme"],
+      "dependencies": ["@base-ui/react"]
+    },
+    {
+      "name": "select",
+      "type": "registry:ui",
+      "title": "Select",
+      "description": "Ink UI Select component.",
+      "files": [
+        {
+          "path": "registry/default/ui/select.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/select.tsx"
+        }
+      ],
+      "registryDependencies": ["utils", "theme", "button"],
+      "dependencies": ["@base-ui/react", "@phosphor-icons/react", "class-variance-authority"]
+    },
+    {
+      "name": "separator",
+      "type": "registry:ui",
+      "title": "Separator",
+      "description": "Ink UI Separator component.",
+      "files": [
+        {
+          "path": "registry/default/ui/separator.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/separator.tsx"
+        }
+      ],
+      "registryDependencies": ["utils", "theme"],
+      "dependencies": ["@base-ui/react"]
+    },
+    {
+      "name": "slider",
+      "type": "registry:ui",
+      "title": "Slider",
+      "description": "Ink UI Slider component.",
+      "files": [
+        {
+          "path": "registry/default/ui/slider.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/slider.tsx"
+        }
+      ],
+      "registryDependencies": ["utils", "theme"],
+      "dependencies": ["@base-ui/react"]
+    },
+    {
+      "name": "switch",
+      "type": "registry:ui",
+      "title": "Switch",
+      "description": "Ink UI Switch component.",
+      "files": [
+        {
+          "path": "registry/default/ui/switch.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/switch.tsx"
+        }
+      ],
+      "registryDependencies": ["utils", "theme"],
+      "dependencies": ["@base-ui/react"]
+    },
+    {
+      "name": "tabs",
+      "type": "registry:ui",
+      "title": "Tabs",
+      "description": "Ink UI Tabs component.",
+      "files": [
+        {
+          "path": "registry/default/ui/tabs.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/tabs.tsx"
+        }
+      ],
+      "registryDependencies": ["utils", "theme"],
+      "dependencies": ["@base-ui/react", "class-variance-authority"]
+    },
+    {
+      "name": "tag",
+      "type": "registry:ui",
+      "title": "Tag",
+      "description": "Ink UI Tag component.",
+      "files": [
+        {
+          "path": "registry/default/ui/tag.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/tag.tsx"
+        }
+      ],
+      "registryDependencies": ["utils", "theme"],
+      "dependencies": ["@base-ui/react", "class-variance-authority"]
+    },
+    {
+      "name": "textarea",
+      "type": "registry:ui",
+      "title": "Textarea",
+      "description": "Ink UI Textarea component.",
+      "files": [
+        {
+          "path": "registry/default/ui/textarea.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/textarea.tsx"
+        }
+      ],
+      "registryDependencies": ["utils", "theme"],
+      "dependencies": ["class-variance-authority"]
+    },
+    {
+      "name": "toast",
+      "type": "registry:ui",
+      "title": "Toast",
+      "description": "Ink UI Toast component.",
+      "files": [
+        {
+          "path": "registry/default/ui/toast.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/toast.tsx"
+        }
+      ],
+      "registryDependencies": ["utils", "theme", "button"],
+      "dependencies": ["@base-ui/react", "@phosphor-icons/react"]
+    },
+    {
+      "name": "toggle",
+      "type": "registry:ui",
+      "title": "Toggle",
+      "description": "Ink UI Toggle component.",
+      "files": [
+        {
+          "path": "registry/default/ui/toggle.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/toggle.tsx"
+        }
+      ],
+      "registryDependencies": ["utils", "theme"],
+      "dependencies": ["@base-ui/react", "class-variance-authority"]
+    },
+    {
+      "name": "tooltip",
+      "type": "registry:ui",
+      "title": "Tooltip",
+      "description": "Ink UI Tooltip component.",
+      "files": [
+        {
+          "path": "registry/default/ui/tooltip.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/tooltip.tsx"
+        }
+      ],
+      "registryDependencies": ["utils", "theme"],
+      "dependencies": ["@base-ui/react"]
+    },
+    {
+      "name": "alert-dialog-example",
+      "type": "registry:component",
+      "title": "Alert Dialog Example",
+      "description": "Examples for the Ink UI Alert Dialog component.",
+      "registryDependencies": ["alert-dialog"],
+      "files": [
+        {
+          "path": "registry/default/examples/alert-dialog-example.tsx",
+          "type": "registry:component",
+          "target": "components/alert-dialog-example.tsx"
+        }
+      ]
+    },
+    {
+      "name": "button-example",
+      "type": "registry:component",
+      "title": "Button Example",
+      "description": "Examples for the Ink UI Button component.",
+      "registryDependencies": ["button"],
+      "files": [
+        {
+          "path": "registry/default/examples/button-example.tsx",
+          "type": "registry:component",
+          "target": "components/button-example.tsx"
+        }
+      ]
+    },
+    {
+      "name": "card-example",
+      "type": "registry:component",
+      "title": "Card Example",
+      "description": "Examples for the Ink UI Card component.",
+      "registryDependencies": ["card"],
+      "files": [
+        {
+          "path": "registry/default/examples/card-example.tsx",
+          "type": "registry:component",
+          "target": "components/card-example.tsx"
+        }
+      ]
+    },
+    {
+      "name": "checkbox-example",
+      "type": "registry:component",
+      "title": "Checkbox Example",
+      "description": "Examples for the Ink UI Checkbox component.",
+      "registryDependencies": ["checkbox"],
+      "files": [
+        {
+          "path": "registry/default/examples/checkbox-example.tsx",
+          "type": "registry:component",
+          "target": "components/checkbox-example.tsx"
+        }
+      ]
+    },
+    {
+      "name": "combobox-example",
+      "type": "registry:component",
+      "title": "Combobox Example",
+      "description": "Examples for the Ink UI Combobox component.",
+      "registryDependencies": ["combobox"],
+      "files": [
+        {
+          "path": "registry/default/examples/combobox-example.tsx",
+          "type": "registry:component",
+          "target": "components/combobox-example.tsx"
+        }
+      ]
+    },
+    {
+      "name": "dialog-example",
+      "type": "registry:component",
+      "title": "Dialog Example",
+      "description": "Examples for the Ink UI Dialog component.",
+      "registryDependencies": ["dialog"],
+      "files": [
+        {
+          "path": "registry/default/examples/dialog-example.tsx",
+          "type": "registry:component",
+          "target": "components/dialog-example.tsx"
+        }
+      ]
+    },
+    {
+      "name": "input-example",
+      "type": "registry:component",
+      "title": "Input Example",
+      "description": "Examples for the Ink UI Input component.",
+      "registryDependencies": ["input"],
+      "files": [
+        {
+          "path": "registry/default/examples/input-example.tsx",
+          "type": "registry:component",
+          "target": "components/input-example.tsx"
+        }
+      ]
+    },
+    {
+      "name": "input-group-example",
+      "type": "registry:component",
+      "title": "Input Group Example",
+      "description": "Examples for the Ink UI Input Group component.",
+      "registryDependencies": ["input-group"],
+      "files": [
+        {
+          "path": "registry/default/examples/input-group-example.tsx",
+          "type": "registry:component",
+          "target": "components/input-group-example.tsx"
+        }
+      ]
+    },
+    {
+      "name": "menu-example",
+      "type": "registry:component",
+      "title": "Menu Example",
+      "description": "Examples for the Ink UI Menu component.",
+      "registryDependencies": ["menu"],
+      "files": [
+        {
+          "path": "registry/default/examples/menu-example.tsx",
+          "type": "registry:component",
+          "target": "components/menu-example.tsx"
+        }
+      ]
+    },
+    {
+      "name": "popover-example",
+      "type": "registry:component",
+      "title": "Popover Example",
+      "description": "Examples for the Ink UI Popover component.",
+      "registryDependencies": ["popover"],
+      "files": [
+        {
+          "path": "registry/default/examples/popover-example.tsx",
+          "type": "registry:component",
+          "target": "components/popover-example.tsx"
+        }
+      ]
+    },
+    {
+      "name": "radio-example",
+      "type": "registry:component",
+      "title": "Radio Example",
+      "description": "Examples for the Ink UI Radio component.",
+      "registryDependencies": ["radio"],
+      "files": [
+        {
+          "path": "registry/default/examples/radio-example.tsx",
+          "type": "registry:component",
+          "target": "components/radio-example.tsx"
+        }
+      ]
+    },
+    {
+      "name": "scroll-area-example",
+      "type": "registry:component",
+      "title": "Scroll Area Example",
+      "description": "Examples for the Ink UI Scroll Area component.",
+      "registryDependencies": ["scroll-area"],
+      "files": [
+        {
+          "path": "registry/default/examples/scroll-area-example.tsx",
+          "type": "registry:component",
+          "target": "components/scroll-area-example.tsx"
+        }
+      ]
+    },
+    {
+      "name": "select-example",
+      "type": "registry:component",
+      "title": "Select Example",
+      "description": "Examples for the Ink UI Select component.",
+      "registryDependencies": ["select"],
+      "files": [
+        {
+          "path": "registry/default/examples/select-example.tsx",
+          "type": "registry:component",
+          "target": "components/select-example.tsx"
+        }
+      ]
+    },
+    {
+      "name": "separator-example",
+      "type": "registry:component",
+      "title": "Separator Example",
+      "description": "Examples for the Ink UI Separator component.",
+      "registryDependencies": ["separator"],
+      "files": [
+        {
+          "path": "registry/default/examples/separator-example.tsx",
+          "type": "registry:component",
+          "target": "components/separator-example.tsx"
+        }
+      ]
+    },
+    {
+      "name": "slider-example",
+      "type": "registry:component",
+      "title": "Slider Example",
+      "description": "Examples for the Ink UI Slider component.",
+      "registryDependencies": ["slider"],
+      "files": [
+        {
+          "path": "registry/default/examples/slider-example.tsx",
+          "type": "registry:component",
+          "target": "components/slider-example.tsx"
+        }
+      ]
+    },
+    {
+      "name": "switch-example",
+      "type": "registry:component",
+      "title": "Switch Example",
+      "description": "Examples for the Ink UI Switch component.",
+      "registryDependencies": ["switch"],
+      "files": [
+        {
+          "path": "registry/default/examples/switch-example.tsx",
+          "type": "registry:component",
+          "target": "components/switch-example.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tabs-example",
+      "type": "registry:component",
+      "title": "Tabs Example",
+      "description": "Examples for the Ink UI Tabs component.",
+      "registryDependencies": ["tabs"],
+      "files": [
+        {
+          "path": "registry/default/examples/tabs-example.tsx",
+          "type": "registry:component",
+          "target": "components/tabs-example.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tag-example",
+      "type": "registry:component",
+      "title": "Tag Example",
+      "description": "Examples for the Ink UI Tag component.",
+      "registryDependencies": ["tag"],
+      "files": [
+        {
+          "path": "registry/default/examples/tag-example.tsx",
+          "type": "registry:component",
+          "target": "components/tag-example.tsx"
+        }
+      ]
+    },
+    {
+      "name": "textarea-example",
+      "type": "registry:component",
+      "title": "Textarea Example",
+      "description": "Examples for the Ink UI Textarea component.",
+      "registryDependencies": ["textarea"],
+      "files": [
+        {
+          "path": "registry/default/examples/textarea-example.tsx",
+          "type": "registry:component",
+          "target": "components/textarea-example.tsx"
+        }
+      ]
+    },
+    {
+      "name": "toast-example",
+      "type": "registry:component",
+      "title": "Toast Example",
+      "description": "Examples for the Ink UI Toast component.",
+      "registryDependencies": ["toast"],
+      "files": [
+        {
+          "path": "registry/default/examples/toast-example.tsx",
+          "type": "registry:component",
+          "target": "components/toast-example.tsx"
+        }
+      ]
+    },
+    {
+      "name": "toggle-example",
+      "type": "registry:component",
+      "title": "Toggle Example",
+      "description": "Examples for the Ink UI Toggle component.",
+      "registryDependencies": ["toggle"],
+      "files": [
+        {
+          "path": "registry/default/examples/toggle-example.tsx",
+          "type": "registry:component",
+          "target": "components/toggle-example.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tooltip-example",
+      "type": "registry:component",
+      "title": "Tooltip Example",
+      "description": "Examples for the Ink UI Tooltip component.",
+      "registryDependencies": ["tooltip"],
+      "files": [
+        {
+          "path": "registry/default/examples/tooltip-example.tsx",
+          "type": "registry:component",
+          "target": "components/tooltip-example.tsx"
+        }
+      ]
+    }
+  ]
+}

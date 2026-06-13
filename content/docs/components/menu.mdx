@@ -1,0 +1,196 @@
+---
+title: Menu
+description: Displays a menu to the user — typically a list of actions or links triggered by a button.
+component: Menu
+registry: menu
+---
+
+import {
+  Menu,
+  MenuTrigger,
+  MenuContent,
+  MenuItem,
+  MenuItemLabel,
+  MenuItemLeadingIcon,
+  MenuItemTrailingIcon,
+  MenuGroup,
+  MenuGroupLabel,
+  MenuSeparator,
+  MenuCheckboxItem,
+  MenuRadioGroup,
+  MenuRadioItem,
+  MenuSubmenu,
+  MenuSubmenuTrigger,
+} from "registry/default/ui/menu";
+import {
+  MenuExample,
+  MenuWithIconsExample,
+  MenuWithGroupsExample,
+  MenuCheckboxExample,
+  MenuRadioExample,
+  MenuDestructiveExample,
+  MenuSubmenuExample,
+} from "registry/default/examples/menu-example";
+import menuExampleSource from "registry/default/examples/menu-example.tsx?raw";
+import menuSource from "registry/default/ui/menu.tsx?raw";
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="MenuExample">
+      <MenuExample />
+    </ComponentPreview>
+    <ComponentSource code={menuExampleSource} language="tsx" title="menu-example.tsx" />
+  </ComponentTabs>
+</ComponentSection>
+
+## Examples
+
+### With icons
+
+Add icons to menu items using `MenuItemLeadingIcon` and `MenuItemTrailingIcon`.
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="MenuWithIconsExample">
+      <MenuWithIconsExample />
+    </ComponentPreview>
+    <ComponentSource code={menuExampleSource} language="tsx" title="menu-example.tsx" />
+  </ComponentTabs>
+</ComponentSection>
+
+### With groups
+
+Group related items with `MenuGroup` and `MenuGroupLabel`.
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="MenuWithGroupsExample">
+      <MenuWithGroupsExample />
+    </ComponentPreview>
+    <ComponentSource code={menuExampleSource} language="tsx" title="menu-example.tsx" />
+  </ComponentTabs>
+</ComponentSection>
+
+### Checkbox items
+
+Use `MenuCheckboxItem` for toggleable options.
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="MenuCheckboxExample">
+      <MenuCheckboxExample />
+    </ComponentPreview>
+    <ComponentSource code={menuExampleSource} language="tsx" title="menu-example.tsx" />
+  </ComponentTabs>
+</ComponentSection>
+
+### Radio items
+
+Use `MenuRadioGroup` and `MenuRadioItem` for mutually exclusive options.
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="MenuRadioExample">
+      <MenuRadioExample />
+    </ComponentPreview>
+    <ComponentSource code={menuExampleSource} language="tsx" title="menu-example.tsx" />
+  </ComponentTabs>
+</ComponentSection>
+
+### Destructive item
+
+Use the `destructive` variant on `MenuItem` for destructive actions like delete.
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="MenuDestructiveExample">
+      <MenuDestructiveExample />
+    </ComponentPreview>
+    <ComponentSource code={menuExampleSource} language="tsx" title="menu-example.tsx" />
+  </ComponentTabs>
+</ComponentSection>
+
+### Submenu
+
+Nest menus with `MenuSubmenu` and `MenuSubmenuTrigger`.
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="MenuSubmenuExample">
+      <MenuSubmenuExample />
+    </ComponentPreview>
+    <ComponentSource code={menuExampleSource} language="tsx" title="menu-example.tsx" />
+  </ComponentTabs>
+</ComponentSection>
+
+## Installation
+
+Copy the source code below into your project:
+
+<CodeBlock code={menuSource} language="tsx" />
+
+## API Reference
+
+### Menu
+
+<PropsTable component="Menu" />
+
+### MenuTrigger
+
+<PropsTable component="MenuTrigger" />
+
+### MenuContent
+
+<PropsTable component="MenuContent" />
+
+### MenuItem
+
+<PropsTable component="MenuItem" />
+
+### MenuLinkItem
+
+<PropsTable component="MenuLinkItem" />
+
+### MenuGroup
+
+<PropsTable component="MenuGroup" />
+
+### MenuGroupLabel
+
+<PropsTable component="MenuGroupLabel" />
+
+### MenuSeparator
+
+<PropsTable component="MenuSeparator" />
+
+### MenuItemLeadingIcon
+
+<PropsTable component="MenuItemLeadingIcon" />
+
+### MenuItemTrailingIcon
+
+<PropsTable component="MenuItemTrailingIcon" />
+
+### MenuItemLabel
+
+<PropsTable component="MenuItemLabel" />
+
+### MenuSubmenu
+
+<PropsTable component="MenuSubmenu" />
+
+### MenuSubmenuTrigger
+
+<PropsTable component="MenuSubmenuTrigger" />
+
+### MenuRadioGroup
+
+<PropsTable component="MenuRadioGroup" />
+
+### MenuRadioItem
+
+<PropsTable component="MenuRadioItem" />
+
+### MenuCheckboxItem
+
+<PropsTable component="MenuCheckboxItem" />

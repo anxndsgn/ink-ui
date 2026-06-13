@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "card",
+  "title": "Card",
+  "description": "Ink UI Card component.",
+  "dependencies": [
+    "@base-ui/react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "theme"
+  ],
+  "files": [
+    {
+      "path": "registry/default/ui/card.tsx",
+      "content": "import { mergeProps, useRender } from \"@base-ui/react\";\nimport { cn } from \"@/lib/utils\";\n\nfunction Card({ className, ...props }: useRender.ComponentProps<\"div\">) {\n  const cardElement = useRender({\n    defaultTagName: \"div\",\n    props: {\n      ...mergeProps<\"div\">(props, {\n        className: cn(\n          \"relative flex flex-col rounded-3xl border border-transparent bg-card p-1 dark:border-border\",\n          className,\n        ),\n      }),\n      \"data-slot\": \"card\",\n    },\n  });\n  return cardElement;\n}\n\nfunction CardHeader({ className, ...props }: useRender.ComponentProps<\"div\">) {\n  const cardHeaderElement = useRender({\n    defaultTagName: \"div\",\n    props: {\n      ...mergeProps<\"div\">(props, {\n        className: cn(\n          \"@container/card-header grid auto-rows-min grid-rows-[auto_auto] items-start gap-1.5 p-5 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6\",\n          className,\n        ),\n      }),\n      \"data-slot\": \"card-header\",\n    },\n  });\n  return cardHeaderElement;\n}\n\nfunction CardTitle({ className, ...props }: useRender.ComponentProps<\"div\">) {\n  const cardTitleElement = useRender({\n    defaultTagName: \"div\",\n    props: {\n      ...mergeProps<\"div\">(props, {\n        className: cn(\"text-lg leading-none font-semibold\", className),\n      }),\n      \"data-slot\": \"card-title\",\n    },\n  });\n  return cardTitleElement;\n}\n\nfunction CardDescription({ className, ...props }: useRender.ComponentProps<\"div\">) {\n  const cardDescriptionElement = useRender({\n    defaultTagName: \"div\",\n    props: {\n      ...mergeProps<\"div\">(props, {\n        className: cn(\"text-sm text-muted-foreground\", className),\n      }),\n      \"data-slot\": \"card-description\",\n    },\n  });\n  return cardDescriptionElement;\n}\n\nfunction CardAction({ className, ...props }: useRender.ComponentProps<\"div\">) {\n  const cardActionElement = useRender({\n    defaultTagName: \"div\",\n    props: {\n      ...mergeProps<\"div\">(props, {\n        className: cn(\"col-start-2 row-span-2 row-start-1 self-start justify-self-end\", className),\n      }),\n      \"data-slot\": \"card-action\",\n    },\n  });\n  return cardActionElement;\n}\n\nfunction CardPanel({ className, children, ...props }: useRender.ComponentProps<\"div\">) {\n  return (\n    <div\n      className={cn(\n        \"w-full rounded-[calc(var(--radius-3xl)-var(--spacing))] border border-border bg-popover p-5\",\n        className,\n      )}\n      data-slot=\"card-panel\"\n      {...props}\n    >\n      {children}\n    </div>\n  );\n}\n\nfunction CardFooter({\n  className,\n  direction = \"row\",\n  ...props\n}: useRender.ComponentProps<\"div\"> & { direction?: \"row\" | \"column\" }) {\n  const cardFooterElement = useRender({\n    defaultTagName: \"div\",\n    props: {\n      ...mergeProps<\"div\">(props, {\n        className: cn(\n          \"flex items-center gap-2 p-5 [.border-t]:pt-5\",\n          direction === \"row\" && \"flex-row justify-end\",\n          direction === \"column\" && \"flex-col\",\n          className,\n        ),\n      }),\n      \"data-slot\": \"card-footer\",\n    },\n  });\n  return cardFooterElement;\n}\n\nexport {\n  Card,\n  CardHeader,\n  CardFooter,\n  CardTitle,\n  CardAction,\n  CardDescription,\n  CardPanel,\n  CardPanel as CardContent,\n  CardPanel as CardBody,\n};\n",
+      "type": "registry:ui",
+      "target": "components/ui/card.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

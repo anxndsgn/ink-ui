@@ -1,0 +1,64 @@
+---
+title: Textarea
+description: A multi-line text field that allows users to enter and edit longer text.
+component: Textarea
+registry: textarea
+---
+
+import { Textarea } from "registry/default/ui/textarea";
+import {
+  TextareaExample,
+  OutlineTextareaExample,
+  InlineTextareaExample,
+} from "registry/default/examples/textarea-example";
+import textareaExampleSource from "registry/default/examples/textarea-example.tsx?raw";
+import textareaSource from "registry/default/ui/textarea.tsx?raw";
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="TextareaExample">
+      <TextareaExample />
+    </ComponentPreview>
+    <ComponentSource code={textareaExampleSource} language="tsx" title="textarea-example.tsx" />
+  </ComponentTabs>
+</ComponentSection>
+
+## Examples
+
+### Variants
+
+Available variants: `default`, `outline`.
+
+#### Outline
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="OutlineTextareaExample">
+      <OutlineTextareaExample />
+    </ComponentPreview>
+    <ComponentSource code={textareaExampleSource} language="tsx" title="textarea-example.tsx" />
+  </ComponentTabs>
+</ComponentSection>
+
+### Width
+
+By default, the textarea stretches to fill its container (`block={true}`). Pass `block={false}` to constrain the width.
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="InlineTextareaExample">
+      <InlineTextareaExample />
+    </ComponentPreview>
+    <ComponentSource code={textareaExampleSource} language="tsx" title="textarea-example.tsx" />
+  </ComponentTabs>
+</ComponentSection>
+
+## Installation
+
+Copy the source code below into your project:
+
+<CodeBlock code={textareaSource} language="tsx" />
+
+## API Reference
+
+<PropsTable component="Textarea" />

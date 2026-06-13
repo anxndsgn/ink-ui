@@ -1,0 +1,62 @@
+---
+title: Toggle
+description: A two-state button that can be either on or off.
+component: Toggle
+registry: toggle
+---
+
+import { Toggle } from "registry/default/ui/toggle";
+import {
+  ToggleExample,
+  ToggleSizesExample,
+  ToggleWithIconsExample,
+} from "registry/default/examples/toggle-example";
+import toggleExampleSource from "registry/default/examples/toggle-example.tsx?raw";
+import toggleSource from "registry/default/ui/toggle.tsx?raw";
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="ToggleExample">
+      <ToggleExample />
+    </ComponentPreview>
+    <ComponentSource code={toggleExampleSource} language="tsx" title="toggle-example.tsx" />
+  </ComponentTabs>
+</ComponentSection>
+
+## Examples
+
+### Sizes
+
+Available sizes: `default`, `sm`, `lg`.
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="ToggleSizesExample">
+      <ToggleSizesExample />
+    </ComponentPreview>
+    <ComponentSource code={toggleExampleSource} language="tsx" title="toggle-example.tsx" />
+  </ComponentTabs>
+</ComponentSection>
+
+### With icons
+
+Use an icon inside the toggle for toolbars and formatting controls.
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="ToggleWithIconsExample">
+      <ToggleWithIconsExample />
+    </ComponentPreview>
+    <ComponentSource code={toggleExampleSource} language="tsx" title="toggle-example.tsx" />
+  </ComponentTabs>
+</ComponentSection>
+
+## Installation
+
+Copy the source code below into your project:
+
+<CodeBlock code={toggleSource} language="tsx" />
+
+## API Reference
+
+<PropsTable component="Toggle" />

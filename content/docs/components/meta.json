@@ -1,0 +1,27 @@
+{
+  "title": "Components",
+  "pages": [
+    "alert-dialog",
+    "button",
+    "card",
+    "checkbox",
+    "combobox",
+    "dialog",
+    "input-group",
+    "input",
+    "menu",
+    "popover",
+    "radio",
+    "scroll-area",
+    "select",
+    "separator",
+    "slider",
+    "switch",
+    "tabs",
+    "tag",
+    "textarea",
+    "toast",
+    "toggle",
+    "tooltip"
+  ]
+}

@@ -17,10 +17,10 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
   AlertDialogTrigger,
-} from "@registry/components/ui/alert-dialog";
-import { Button, buttonVariants } from "@registry/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@registry/components/ui/card";
-import { Checkbox } from "@registry/components/ui/checkbox";
+} from "registry/default/ui/alert-dialog";
+import { Button, buttonVariants } from "registry/default/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "registry/default/ui/card";
+import { Checkbox } from "registry/default/ui/checkbox";
 import {
   Combobox,
   ComboboxContent,
@@ -28,7 +28,7 @@ import {
   ComboboxList,
   ComboboxInput,
   ComboboxEmpty,
-} from "@registry/components/ui/combobox";
+} from "registry/default/ui/combobox";
 import {
   Dialog,
   DialogBody,
@@ -39,9 +39,9 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@registry/components/ui/dialog";
-import { Input } from "@registry/components/ui/input";
-import { InputGroup, InputGroupAddon, InputGroupInput } from "@registry/components/ui/input-group";
+} from "registry/default/ui/dialog";
+import { Input } from "registry/default/ui/input";
+import { InputGroup, InputGroupAddon, InputGroupInput } from "registry/default/ui/input-group";
 import {
   Menu,
   MenuContent,
@@ -49,7 +49,7 @@ import {
   MenuItemLabel,
   MenuSeparator,
   MenuTrigger,
-} from "@registry/components/ui/menu";
+} from "registry/default/ui/menu";
 import {
   Popover,
   PopoverBody,
@@ -57,22 +57,22 @@ import {
   PopoverHeader,
   PopoverTitle,
   PopoverTrigger,
-} from "@registry/components/ui/popover";
-import { Radio, RadioGroup } from "@registry/components/ui/radio";
-import { ScrollArea } from "@registry/components/ui/scroll-area";
+} from "registry/default/ui/popover";
+import { Radio, RadioGroup } from "registry/default/ui/radio";
+import { ScrollArea } from "registry/default/ui/scroll-area";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@registry/components/ui/select";
-import Slider from "@registry/components/ui/slider";
-import { Switch } from "@registry/components/ui/switch";
-import { Tabs, TabsList, TabsPanel, TabsTab } from "@registry/components/ui/tabs";
-import { Tag } from "@registry/components/ui/tag";
-import { Tooltip, TooltipContent, TooltipTrigger } from "@registry/components/ui/tooltip";
-import { cn } from "@registry/lib/utils";
+} from "registry/default/ui/select";
+import Slider from "registry/default/ui/slider";
+import { Switch } from "registry/default/ui/switch";
+import { Tabs, TabsList, TabsPanel, TabsTab } from "registry/default/ui/tabs";
+import { Tag } from "registry/default/ui/tag";
+import { Tooltip, TooltipContent, TooltipTrigger } from "registry/default/ui/tooltip";
+import { cn } from "@/lib/utils";
 
 const TILE_WIDTH = 300;
 const TILE_HEIGHT = 190;
@@ -591,7 +591,7 @@ function TitleCard({ primary, x, y }: { primary: boolean; x: number; y: number }
       </div>
       <a
         className={cn(buttonVariants({ size: "lg" }), "pointer-events-auto shadow-xs")}
-        href="/introduction"
+        href="/docs"
         onPointerDown={(event) => event.stopPropagation()}
       >
         Docs

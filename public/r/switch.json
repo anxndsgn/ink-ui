@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "switch",
+  "title": "Switch",
+  "description": "Ink UI Switch component.",
+  "dependencies": [
+    "@base-ui/react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "theme"
+  ],
+  "files": [
+    {
+      "path": "registry/default/ui/switch.tsx",
+      "content": "import { Switch as BaseSwitch } from \"@base-ui/react/switch\";\nimport { cn } from \"@/lib/utils\";\n\nfunction Switch({ className, ...props }: BaseSwitch.Root.Props) {\n  return (\n    <BaseSwitch.Root\n      className={cn(\n        \"group/switch inline-flex h-4.5 w-7.5 shrink-0 items-center rounded-full border-[0.5px] border-input p-px outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-1 focus-visible:ring-offset-background disabled:cursor-not-allowed disabled:opacity-50 data-checked:bg-accent data-unchecked:bg-muted\",\n        \"transition-all duration-200\",\n        className,\n      )}\n      data-slot=\"switch\"\n      {...props}\n    >\n      <BaseSwitch.Thumb\n        className={cn(\n          \"pointer-events-none block size-3 rounded-full bg-white transition-[translate,width] group-active/switch:w-3.5 data-checked:translate-x-3.25 data-checked:group-active/switch:translate-x-2.5 data-unchecked:translate-x-0.5\",\n        )}\n        data-slot=\"switch-thumb\"\n      />\n    </BaseSwitch.Root>\n  );\n}\n\nexport { Switch };\n",
+      "type": "registry:ui",
+      "target": "components/ui/switch.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

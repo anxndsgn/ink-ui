@@ -1,0 +1,159 @@
+---
+title: Combobox
+description: Combines a text input with a popup list of options, allowing users to filter and select from a set of choices.
+component: Combobox
+registry: combobox
+---
+
+import {
+  Combobox,
+  ComboboxContent,
+  ComboboxItem,
+  ComboboxList,
+  ComboboxInput,
+  ComboboxEmpty,
+  ComboboxTrigger,
+  ComboboxValue,
+  ComboboxChip,
+  ComboboxChips,
+  ComboboxSeparator,
+  ComboboxItemIndicator,
+  ComboboxGroup,
+  ComboboxGroupLabel,
+} from "registry/default/ui/combobox";
+import {
+  ComboboxExample,
+  ComboboxWithInputExample,
+  ComboboxWithGroupsExample,
+  ComboboxMultiSelectExample,
+  ComboboxControlledExample,
+} from "registry/default/examples/combobox-example";
+import comboboxExampleSource from "registry/default/examples/combobox-example.tsx?raw";
+import comboboxSource from "registry/default/ui/combobox.tsx?raw";
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="ComboboxWithInputExample">
+      <ComboboxWithInputExample />
+    </ComponentPreview>
+    <ComponentSource code={comboboxExampleSource} language="tsx" title="combobox-example.tsx" />
+  </ComponentTabs>
+</ComponentSection>
+
+## Examples
+
+### With trigger
+
+Use `ComboboxTrigger` for a button-style combobox without text input.
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="ComboboxExample">
+      <ComboboxExample />
+    </ComponentPreview>
+    <ComponentSource code={comboboxExampleSource} language="tsx" title="combobox-example.tsx" />
+  </ComponentTabs>
+</ComponentSection>
+
+### With groups
+
+Group related items using `ComboboxGroup` and `ComboboxGroupLabel`.
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="ComboboxWithGroupsExample">
+      <ComboboxWithGroupsExample />
+    </ComponentPreview>
+    <ComponentSource code={comboboxExampleSource} language="tsx" title="combobox-example.tsx" />
+  </ComponentTabs>
+</ComponentSection>
+
+### Multi-select
+
+Enable `multiple` selection and display selected values as chips inside the input.
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="ComboboxMultiSelectExample">
+      <ComboboxMultiSelectExample />
+    </ComponentPreview>
+    <ComponentSource code={comboboxExampleSource} language="tsx" title="combobox-example.tsx" />
+  </ComponentTabs>
+</ComponentSection>
+
+### Controlled
+
+Manage the selected value with React state.
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="ComboboxControlledExample">
+      <ComboboxControlledExample />
+    </ComponentPreview>
+    <ComponentSource code={comboboxExampleSource} language="tsx" title="combobox-example.tsx" />
+  </ComponentTabs>
+</ComponentSection>
+
+## Installation
+
+Copy the source code below into your project:
+
+<CodeBlock code={comboboxSource} language="tsx" />
+
+## API Reference
+
+### Combobox
+
+<PropsTable component="Combobox" />
+
+### ComboboxTrigger
+
+<PropsTable component="ComboboxTrigger" />
+
+### ComboboxContent
+
+<PropsTable component="ComboboxContent" />
+
+### ComboboxList
+
+<PropsTable component="ComboboxList" />
+
+### ComboboxItem
+
+<PropsTable component="ComboboxItem" />
+
+### ComboboxValue
+
+<PropsTable component="ComboboxValue" />
+
+### ComboboxInput
+
+<PropsTable component="ComboboxInput" />
+
+### ComboboxEmpty
+
+<PropsTable component="ComboboxEmpty" />
+
+### ComboboxSeparator
+
+<PropsTable component="ComboboxSeparator" />
+
+### ComboboxChips
+
+<PropsTable component="ComboboxChips" />
+
+### ComboboxChip
+
+<PropsTable component="ComboboxChip" />
+
+### ComboboxItemIndicator
+
+<PropsTable component="ComboboxItemIndicator" />
+
+### ComboboxGroup
+
+<PropsTable component="ComboboxGroup" />
+
+### ComboboxGroupLabel
+
+<PropsTable component="ComboboxGroupLabel" />

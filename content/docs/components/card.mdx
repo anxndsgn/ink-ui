@@ -1,0 +1,112 @@
+---
+title: Card
+description: A container for grouping related content and actions.
+component: Card
+registry: card
+---
+
+import {
+  Card,
+  CardAction,
+  CardBody,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "registry/default/ui/card";
+import {
+  CardExample,
+  CardWithActionExample,
+  CardColumnFooterExample,
+  CardMotionFooterExample,
+} from "registry/default/examples/card-example";
+import cardExampleSource from "registry/default/examples/card-example.tsx?raw";
+import cardSource from "registry/default/ui/card.tsx?raw";
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="CardExample">
+      <CardExample />
+    </ComponentPreview>
+    <ComponentSource code={cardExampleSource} language="tsx" title="card-example.tsx" />
+  </ComponentTabs>
+</ComponentSection>
+
+## Examples
+
+### With action
+
+Use `CardAction` to place an action button in the header.
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="CardWithActionExample">
+      <CardWithActionExample />
+    </ComponentPreview>
+    <ComponentSource code={cardExampleSource} language="tsx" title="card-example.tsx" />
+  </ComponentTabs>
+</ComponentSection>
+
+### Column footer
+
+Use `direction="column"` on `CardFooter` to stack buttons vertically.
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="CardColumnFooterExample">
+      <CardColumnFooterExample />
+    </ComponentPreview>
+    <ComponentSource code={cardExampleSource} language="tsx" title="card-example.tsx" />
+  </ComponentTabs>
+</ComponentSection>
+
+### Motion footer
+
+You can wrap the footer in `motion.div` with `AnimatePresence` to animate it in and out when conditions change.
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="CardMotionFooterExample">
+      <CardMotionFooterExample />
+    </ComponentPreview>
+    <ComponentSource code={cardExampleSource} language="tsx" title="card-example.tsx" />
+  </ComponentTabs>
+</ComponentSection>
+
+## Installation
+
+Copy the source code below into your project:
+
+<CodeBlock code={cardSource} language="tsx" />
+
+## API Reference
+
+### Card
+
+<PropsTable component="Card" />
+
+### CardHeader
+
+<PropsTable component="CardHeader" />
+
+### CardTitle
+
+<PropsTable component="CardTitle" />
+
+### CardDescription
+
+<PropsTable component="CardDescription" />
+
+### CardAction
+
+<PropsTable component="CardAction" />
+
+### CardBody
+
+`CardBody` is an alias for `CardPanel`.
+
+<PropsTable component="CardPanel" />
+
+### CardFooter
+
+<PropsTable component="CardFooter" />

@@ -1,0 +1,100 @@
+---
+title: Popover
+description: An accessible popup anchored to a button.
+component: Popover
+registry: popover
+---
+
+import {
+  Popover,
+  PopoverBody,
+  PopoverClose,
+  PopoverContent,
+  PopoverHeader,
+  PopoverTitle,
+  PopoverTrigger,
+} from "registry/default/ui/popover";
+import {
+  PopoverExample,
+  PopoverNoCloseButtonExample,
+  PopoverWithPositionerPropsExample,
+} from "registry/default/examples/popover-example";
+import popoverExampleSource from "registry/default/examples/popover-example.tsx?raw";
+import popoverSource from "registry/default/ui/popover.tsx?raw";
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="PopoverExample">
+      <PopoverExample />
+    </ComponentPreview>
+    <ComponentSource code={popoverExampleSource} language="tsx" title="popover-example.tsx" />
+  </ComponentTabs>
+</ComponentSection>
+
+## Examples
+
+### Without close button
+
+Set `closeButton={false}` on `PopoverHeader` to hide the default close button.
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="PopoverNoCloseButtonExample">
+      <PopoverNoCloseButtonExample />
+    </ComponentPreview>
+    <ComponentSource code={popoverExampleSource} language="tsx" title="popover-example.tsx" />
+  </ComponentTabs>
+</ComponentSection>
+
+### Custom positioning
+
+Pass `positionerProps` to `PopoverContent` to customize the popup position.
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="PopoverWithPositionerPropsExample">
+      <PopoverWithPositionerPropsExample />
+    </ComponentPreview>
+    <ComponentSource code={popoverExampleSource} language="tsx" title="popover-example.tsx" />
+  </ComponentTabs>
+</ComponentSection>
+
+## Installation
+
+Copy the source code below into your project:
+
+<CodeBlock code={popoverSource} language="tsx" />
+
+## API Reference
+
+### Popover
+
+<PropsTable component="Popover" />
+
+### PopoverTrigger
+
+<PropsTable component="PopoverTrigger" />
+
+### PopoverContent
+
+<PropsTable component="PopoverContent" />
+
+### PopoverHeader
+
+<PropsTable component="PopoverHeader" />
+
+### PopoverBody
+
+<PropsTable component="PopoverBody" />
+
+### PopoverTitle
+
+<PropsTable component="PopoverTitle" />
+
+### PopoverClose
+
+<PropsTable component="PopoverClose" />
+
+### PopoverPortal
+
+<PropsTable component="PopoverPortal" />

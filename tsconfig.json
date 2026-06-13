@@ -1,24 +1,27 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
+    "target": "ES2022",
+    "useDefineForClassFields": true,
+    "lib": ["DOM", "DOM.Iterable", "ES2022"],
+    "allowJs": false,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
     "module": "ESNext",
     "moduleResolution": "Bundler",
-    "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
-    "verbatimModuleSyntax": true,
     "isolatedModules": true,
     "noEmit": true,
-    "forceConsistentCasingInFileNames": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "allowJs": true,
-    "jsx": "preserve",
-    "strict": true,
+    "jsx": "react-jsx",
     "paths": {
+      "@/*": ["./src/*"],
       "~/*": ["./src/*"],
-      "@registry/*": ["./registry/*"]
-    }
+      "collections/*": ["./.source/*"],
+      "registry/*": ["./registry/*"]
+    },
+    "types": ["vite/client"]
   },
-  "include": [".astro/types.d.ts", "**/*"],
-  "exclude": ["dist"]
+  "include": ["src", "content", "registry", "source.config.ts", "vite.config.ts", ".source"]
 }

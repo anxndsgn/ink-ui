@@ -1,0 +1,107 @@
+---
+title: Toast
+description: A transient notification stack for status updates, actions, and async feedback.
+component: Toast
+registry: toast
+---
+
+import {
+  ToastExample,
+  ToastPositionExample,
+  ToastPromiseExample,
+  ToastVariantsExample,
+} from "registry/default/examples/toast-example";
+import toastExampleSource from "registry/default/examples/toast-example.tsx?raw";
+import toastSource from "registry/default/ui/toast.tsx?raw";
+
+export const toastSetupSource = `import { ToastProvider } from "registry/default/ui/toast";
+
+export function AppShell() {
+  return (
+    <ToastProvider position="bottom-right">
+      <App />
+    </ToastProvider>
+  );
+}`;
+
+export const toastTriggerSource = `import { toastManager } from "registry/default/ui/toast";
+
+toastManager.add({
+title: "Changes saved",
+description: "Your preferences are now up to date.",
+type: "success",
+});`;
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="ToastExample">
+      <ToastExample />
+    </ComponentPreview>
+    <ComponentSource code={toastExampleSource} language="tsx" title="toast-example.tsx" />
+  </ComponentTabs>
+</ComponentSection>
+
+## Examples
+
+Toast uses a shared `toastManager`, so render `ToastProvider` once near your app shell, then trigger notifications from anywhere.
+
+### Types and actions
+
+Use the `type` field to select a built-in icon, and pass `actionProps` to render an inline action button.
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="ToastVariantsExample">
+      <ToastVariantsExample />
+    </ComponentPreview>
+    <ComponentSource code={toastExampleSource} language="tsx" title="toast-example.tsx" />
+  </ComponentTabs>
+</ComponentSection>
+
+### Position
+
+Pass the `position` prop to `ToastProvider` to place the stack at any screen edge or center.
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="ToastPositionExample">
+      <ToastPositionExample />
+    </ComponentPreview>
+    <ComponentSource code={toastExampleSource} language="tsx" title="toast-example.tsx" />
+  </ComponentTabs>
+</ComponentSection>
+
+### Promise states
+
+Use `toastManager.promise(...)` to keep loading, success, and error feedback tied to the same async flow.
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="ToastPromiseExample">
+      <ToastPromiseExample />
+    </ComponentPreview>
+    <ComponentSource code={toastExampleSource} language="tsx" title="toast-example.tsx" />
+  </ComponentTabs>
+</ComponentSection>
+
+## Usage
+
+Mount the provider once:
+
+<CodeBlock code={toastSetupSource} language="tsx" />
+
+Trigger a toast from anywhere you can import the manager:
+
+<CodeBlock code={toastTriggerSource} language="tsx" />
+
+## Installation
+
+Copy the source code below into your project:
+
+<CodeBlock code={toastSource} language="tsx" />
+
+## API Reference
+
+### ToastProvider
+
+<PropsTable component="ToastProvider" />
