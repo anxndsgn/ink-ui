@@ -63,6 +63,27 @@
     --border: oklch(0.21 0.002 48.697 / 0.1);
     --input: oklch(0.21 0.002 48.697 / 0.1);
     --ring: oklch(0.63497 0.17 41.5 / 0.3);
+
+    /* surface state variants — stepped down the palette scale */
+    --background-hover: var(--color-gray-100);
+    --background-active: var(--color-gray-200);
+    --card-hover: var(--color-gray-200);
+    --card-active: var(--color-gray-300);
+    --popover-hover: var(--color-gray-50);
+    --popover-active: var(--color-gray-100);
+    --dialog-hover: var(--color-gray-100);
+    --dialog-active: var(--color-gray-200);
+    --primary-hover: var(--color-gray-700);
+    --primary-active: var(--color-gray-600);
+    --secondary-hover: oklch(0.21 0.002 48.697 / 0.16);
+    --secondary-active: oklch(0.21 0.002 48.697 / 0.22);
+    --muted-hover: var(--color-gray-200);
+    --muted-active: var(--color-gray-300);
+    --accent-hover: var(--color-orange-600);
+    --accent-active: var(--color-orange-700);
+    --destructive-hover: var(--color-red-600);
+    --destructive-active: var(--color-red-700);
+
     --chart-1: var(--orange-500, oklch(0.63497 0.17 41.5));
     --chart-2: var(--red-500, oklch(0.63497 0.18 24));
     --chart-3: oklch(0.585 0.003 48.697);
@@ -102,6 +123,27 @@
     --border: oklch(0.98559 0.002 48.697 / 0.1);
     --input: oklch(0.98559 0.002 48.697 / 0.1);
     --ring: oklch(0.63497 0.17 41.5 / 0.3);
+
+    /* surface state variants — stepped toward the lighter end of the palette */
+    --background-hover: var(--color-gray-900);
+    --background-active: var(--color-gray-800);
+    --card-hover: var(--color-gray-900);
+    --card-active: var(--color-gray-800);
+    --popover-hover: var(--color-gray-800);
+    --popover-active: var(--color-gray-700);
+    --dialog-hover: var(--color-gray-800);
+    --dialog-active: var(--color-gray-700);
+    --primary-hover: var(--color-gray-300);
+    --primary-active: var(--color-gray-400);
+    --secondary-hover: oklch(0.98559 0.002 48.697 / 0.16);
+    --secondary-active: oklch(0.98559 0.002 48.697 / 0.22);
+    --muted-hover: var(--color-gray-700);
+    --muted-active: var(--color-gray-600);
+    --accent-hover: var(--color-orange-500);
+    --accent-active: var(--color-orange-400);
+    --destructive-hover: var(--color-red-400);
+    --destructive-active: var(--color-red-300);
+
     --chart-1: oklch(0.50144 0.135 41.5);
     --chart-2: oklch(0.63497 0.18 24);
     --chart-3: oklch(0.7374 0.002 48.697);
@@ -130,23 +172,41 @@
 
 @theme inline {
   --color-background: var(--background);
+  --color-background-hover: var(--background-hover);
+  --color-background-active: var(--background-active);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
+  --color-card-hover: var(--card-hover);
+  --color-card-active: var(--card-active);
   --color-popover: var(--popover);
   --color-popover-foreground: var(--popover-foreground);
+  --color-popover-hover: var(--popover-hover);
+  --color-popover-active: var(--popover-active);
   --color-dialog: var(--dialog);
   --color-dialog-foreground: var(--dialog-foreground);
+  --color-dialog-hover: var(--dialog-hover);
+  --color-dialog-active: var(--dialog-active);
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-active: var(--primary-active);
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary-hover: var(--secondary-hover);
+  --color-secondary-active: var(--secondary-active);
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
+  --color-muted-hover: var(--muted-hover);
+  --color-muted-active: var(--muted-active);
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-active: var(--accent-active);
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
+  --color-destructive-hover: var(--destructive-hover);
+  --color-destructive-active: var(--destructive-active);
   --color-chart-1: var(--chart-1);
   --color-chart-2: var(--chart-2);
   --color-chart-3: var(--chart-3);

@@ -74,6 +74,44 @@ These CSS variables map to the scales above and adapt between light and dark mod
 
 Common Tailwind utilities like `text-gray-500`, `bg-gray-100`, `border-gray-200`, and `dark:` variants map to the underlying Ink UI theme tokens.
 
+## Interactive states
+
+Every surface token ships a `-hover` and `-active` companion for interactive elements. Rather than fading a base color with opacity — which composites unpredictably against whatever sits behind it and muddies stacked surfaces — each state is a fixed, opaque step along the palette scale. The values are deliberately tuned per token: light surfaces darken toward the content, dark surfaces brighten, and solid fills move toward the mid-scale so the state always reads as a real change regardless of background.
+
+Use them directly as Tailwind utilities — `hover:bg-primary-hover`, `data-popup-open:bg-secondary-active`, and so on — so the light/dark logic lives in the theme instead of being restated in every component.
+
+<div class="not-prose grid grid-cols-1 gap-2 sm:grid-cols-3">
+  <ColorToken name="background" description="Base" />
+  <ColorToken name="background-hover" description="Hover" />
+  <ColorToken name="background-active" description="Active" />
+  <ColorToken name="card" description="Base" />
+  <ColorToken name="card-hover" description="Hover" />
+  <ColorToken name="card-active" description="Active" />
+  <ColorToken name="popover" description="Base" />
+  <ColorToken name="popover-hover" description="Hover" />
+  <ColorToken name="popover-active" description="Active" />
+  <ColorToken name="dialog" description="Base" />
+  <ColorToken name="dialog-hover" description="Hover" />
+  <ColorToken name="dialog-active" description="Active" />
+  <ColorToken name="primary" description="Base" />
+  <ColorToken name="primary-hover" description="Hover" />
+  <ColorToken name="primary-active" description="Active" />
+  <ColorToken name="secondary" description="Base (overlay tint)" />
+  <ColorToken name="secondary-hover" description="Hover" />
+  <ColorToken name="secondary-active" description="Active" />
+  <ColorToken name="muted" description="Base" />
+  <ColorToken name="muted-hover" description="Hover" />
+  <ColorToken name="muted-active" description="Active" />
+  <ColorToken name="accent" description="Base" />
+  <ColorToken name="accent-hover" description="Hover" />
+  <ColorToken name="accent-active" description="Active" />
+  <ColorToken name="destructive" description="Base" />
+  <ColorToken name="destructive-hover" description="Hover" />
+  <ColorToken name="destructive-active" description="Active" />
+</div>
+
+`secondary` (and the `ghost` / `outline` surfaces built on it) stays alpha-based on purpose: it's an overlay tint meant to composite over varying backgrounds, so its `-hover` and `-active` steps deepen the alpha rather than swapping to a solid color.
+
 ## Installation
 
 Copy the CSS code into your global stylesheet, wrapped in a selector that applies the appropriate color scheme based on the `data-theme` attribute.

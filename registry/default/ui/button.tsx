@@ -22,17 +22,17 @@ const buttonVariants = cva(
       },
       variant: {
         default:
-          "bg-primary text-primary-foreground not-data-disabled:hover:bg-gray-700 data-popup-open:bg-gray-700 dark:not-data-disabled:hover:bg-gray-300 dark:data-popup-open:bg-gray-300",
+          "bg-primary text-primary-foreground not-data-disabled:hover:bg-primary-hover data-popup-open:bg-primary-active",
         destructive:
-          "bg-destructive text-destructive-foreground not-data-disabled:hover:bg-red-600 focus-visible:ring-red-500/30 data-popup-open:bg-red-600 dark:not-data-disabled:hover:bg-red-400 dark:focus-visible:ring-red-500/30 dark:data-popup-open:bg-red-400",
+          "bg-destructive text-destructive-foreground not-data-disabled:hover:bg-destructive-hover focus-visible:ring-destructive/30 data-popup-open:bg-destructive-active",
         ghost:
-          "bg-transparent text-foreground not-data-disabled:hover:bg-secondary data-popup-open:bg-secondary",
+          "bg-transparent text-foreground not-data-disabled:hover:bg-secondary data-popup-open:bg-secondary-hover",
         outline:
-          "border border-input text-foreground not-data-disabled:hover:bg-secondary data-popup-open:bg-secondary",
+          "border border-input text-foreground not-data-disabled:hover:bg-secondary data-popup-open:bg-secondary-hover",
         revert:
-          "bg-muted text-foreground not-data-disabled:hover:bg-muted/80 data-popup-open:bg-muted/80",
+          "bg-muted text-foreground not-data-disabled:hover:bg-muted-hover data-popup-open:bg-muted-active",
         secondary:
-          "bg-secondary text-secondary-foreground not-data-disabled:hover:bg-gray-950/16 data-popup-open:bg-gray-950/16 dark:not-data-disabled:hover:bg-gray-50/16 dark:data-popup-open:bg-gray-50/16",
+          "bg-secondary text-secondary-foreground not-data-disabled:hover:bg-secondary-hover data-popup-open:bg-secondary-active",
       },
     },
   },
