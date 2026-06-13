@@ -1,11 +1,5 @@
 import { Tag } from "registry/default/ui/tag";
-import {
-  Menu,
-  MenuContent,
-  MenuItem,
-  MenuItemLabel,
-  MenuTrigger,
-} from "registry/default/ui/menu";
+import { Menu, MenuContent, MenuItem, MenuItemLabel, MenuTrigger } from "registry/default/ui/menu";
 import { Button } from "registry/default/ui/button";
 
 export function TagExample() {

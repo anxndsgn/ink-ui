@@ -4,7 +4,15 @@ import { CodeSnippet, CodeSnippetCommand } from "../docs/code-snippet";
 import { ComponentPreview } from "../docs/component-preview";
 import { ComponentSource } from "../docs/component-source";
 import { ComponentTabs } from "../docs/component-tabs";
-import { Callout, ColorScale, ColorSwatch, ColorToken, ComponentSection, KeyboardShortcuts, PropsTable } from "../docs/ink-docs-helpers";
+import {
+  Callout,
+  ColorScale,
+  ColorSwatch,
+  ColorToken,
+  ComponentSection,
+  KeyboardShortcuts,
+  PropsTable,
+} from "../docs/ink-docs-helpers";
 import { MdxTable, MdxTbody, MdxTd, MdxTh, MdxThead, MdxTr } from "./table-components";
 
 export function getMDXComponents(): MDXComponents {

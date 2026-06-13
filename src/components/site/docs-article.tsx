@@ -19,9 +19,7 @@ export function DocsArticle({
           <p className="mt-4 text-sm leading-7 text-pretty text-muted-foreground">{description}</p>
         ) : null}
       </header>
-      <div className="docs-article grid gap-6 *:min-w-0">
-        {children}
-      </div>
+      <div className="docs-article grid gap-6 *:min-w-0">{children}</div>
     </article>
   );
 }

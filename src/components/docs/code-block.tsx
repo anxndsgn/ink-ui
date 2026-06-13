@@ -33,7 +33,15 @@ export type CodeBlockProps = {
   tabIndex?: number;
 };
 
-export function CodeBlock({ code, language, lang, title, children, style, tabIndex }: CodeBlockProps) {
+export function CodeBlock({
+  code,
+  language,
+  lang,
+  title,
+  children,
+  style,
+  tabIndex,
+}: CodeBlockProps) {
   const extracted = extractCode(children);
   const source = stripTrailingNewline(code ?? extracted.code);
   const resolvedLanguage = language ?? lang ?? extracted.language ?? "text";

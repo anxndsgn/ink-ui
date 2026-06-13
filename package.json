@@ -22,24 +22,24 @@
   },
   "dependencies": {
     "@base-ui/react": "^1.5.0",
+    "@phosphor-icons/react": "^2.1.10",
     "@tanstack/react-router": "^1.170.11",
     "@tanstack/react-start": "^1.168.19",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "echarts": "^6.0.0",
     "fumadocs-core": "^16.9.3",
     "fumadocs-mdx": "^15.0.10",
     "lucide-react": "^1.17.0",
-    "react": "^19.2.7",
-    "react-dom": "^19.2.7",
-    "tailwind-merge": "^3.6.0",
-    "zod": "^4.4.3",
-    "zustand": "^5.0.14",
-    "@phosphor-icons/react": "^2.1.10",
-    "echarts": "^6.0.0",
     "match-sorter": "^8.2.0",
     "motion": "^12.38.0",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
     "react-markdown": "10.1.0",
-    "remark-gfm": "4.0.1"
+    "remark-gfm": "4.0.1",
+    "tailwind-merge": "^3.6.0",
+    "zod": "^4.4.3",
+    "zustand": "^5.0.14"
   },
   "devDependencies": {
     "@cloudflare/vite-plugin": "^1.39.2",
@@ -53,10 +53,10 @@
     "oxlint": "^1.68.0",
     "shadcn": "^4.10.0",
     "tailwindcss": "^4.3.0",
+    "tsx": "^4.19.2",
     "typescript": "^6.0.3",
     "vite": "^8.0.16",
-    "wrangler": "^4.97.0",
-    "tsx": "^4.19.2",
-    "vitest": "^4.0.18"
+    "vitest": "^4.0.18",
+    "wrangler": "^4.97.0"
   }
 }

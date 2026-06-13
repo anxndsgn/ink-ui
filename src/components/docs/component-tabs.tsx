@@ -1,4 +1,11 @@
-import { Children, isValidElement, useMemo, useState, type ReactElement, type ReactNode } from "react";
+import {
+  Children,
+  isValidElement,
+  useMemo,
+  useState,
+  type ReactElement,
+  type ReactNode,
+} from "react";
 import { Tabs, TabsList, TabsPanel, TabsTab } from "registry/default/ui/tabs";
 import { ComponentSource } from "./component-source";
 
@@ -25,12 +32,8 @@ export function ComponentTabs({
       onValueChange={(value) => setActiveTab(value as TabValue)}
     >
       <TabsList size="sm" className="w-fit max-w-full self-start" aria-label="Component view">
-        <TabsTab value="preview">
-          Preview
-        </TabsTab>
-        <TabsTab value="source">
-          Source
-        </TabsTab>
+        <TabsTab value="preview">Preview</TabsTab>
+        <TabsTab value="source">Source</TabsTab>
       </TabsList>
       {activeTab === "preview" ? (
         <TabsPanel value="preview" className="block min-h-65">
