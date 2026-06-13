@@ -3,6 +3,7 @@
   "pages": [
     "alert-dialog",
     "button",
+    "button-group",
     "card",
     "checkbox",
     "combobox",

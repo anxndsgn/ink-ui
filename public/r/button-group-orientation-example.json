@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-group-orientation-example",
+  "title": "Button Group Orientation Example",
+  "description": "Atomic example for the Ink UI Button Group component.",
+  "registryDependencies": [
+    "button-group",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/button-group-orientation-example.tsx",
+      "content": "import { Button } from \"registry/default/ui/button\";\nimport { ButtonGroup } from \"registry/default/ui/button-group\";\nexport function ButtonGroupOrientationExample() {\n  return (\n    <ButtonGroup orientation=\"vertical\">\n      <Button variant=\"outline\">Top</Button>\n      <Button variant=\"outline\">Middle</Button>\n      <Button variant=\"outline\">Bottom</Button>\n    </ButtonGroup>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/button-group-orientation-example.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

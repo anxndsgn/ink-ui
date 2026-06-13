@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-group-default-example",
+  "title": "Button Group Default Example",
+  "description": "Atomic example for the Ink UI Button Group component.",
+  "registryDependencies": [
+    "button-group",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/button-group-default-example.tsx",
+      "content": "import { Button } from \"registry/default/ui/button\";\nimport { ButtonGroup } from \"registry/default/ui/button-group\";\nexport function ButtonGroupExample() {\n  return (\n    <ButtonGroup>\n      <Button variant=\"outline\">Previous</Button>\n      <Button variant=\"outline\">Next</Button>\n    </ButtonGroup>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/button-group-default-example.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

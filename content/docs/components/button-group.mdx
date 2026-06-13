@@ -1,0 +1,121 @@
+---
+title: Button Group
+description: A container that groups related buttons together with consistent styling.
+component: Button Group
+registry: button-group
+---
+
+import { ButtonGroupExample } from "registry/default/examples/button-group-default-example";
+import buttonGroupExampleSource from "registry/default/examples/button-group-default-example.tsx?raw";
+import { ButtonGroupOrientationExample } from "registry/default/examples/button-group-orientation-example";
+import buttonGroupOrientationExampleSource from "registry/default/examples/button-group-orientation-example.tsx?raw";
+import { ButtonGroupSeparatorExample } from "registry/default/examples/button-group-separator-example";
+import buttonGroupSeparatorExampleSource from "registry/default/examples/button-group-separator-example.tsx?raw";
+import { ButtonGroupTextExample } from "registry/default/examples/button-group-text-example";
+import buttonGroupTextExampleSource from "registry/default/examples/button-group-text-example.tsx?raw";
+import { ButtonGroupNestedExample } from "registry/default/examples/button-group-nested-example";
+import buttonGroupNestedExampleSource from "registry/default/examples/button-group-nested-example.tsx?raw";
+import buttonGroupSource from "registry/default/ui/button-group.tsx?raw";
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="ButtonGroupExample">
+      <ButtonGroupExample />
+    </ComponentPreview>
+    <ComponentSource
+      code={buttonGroupExampleSource}
+      language="tsx"
+      title="button-group-default-example.tsx"
+    />
+  </ComponentTabs>
+</ComponentSection>
+
+## Examples
+
+### Orientation
+
+Set `orientation="vertical"` to stack buttons instead of placing them in a row.
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="ButtonGroupOrientationExample">
+      <ButtonGroupOrientationExample />
+    </ComponentPreview>
+    <ComponentSource
+      code={buttonGroupOrientationExampleSource}
+      language="tsx"
+      title="button-group-orientation-example.tsx"
+    />
+  </ComponentTabs>
+</ComponentSection>
+
+### Separator
+
+Use `ButtonGroupSeparator` to visually divide buttons. The `outline` variant already has borders, so separators are most useful for solid variants.
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="ButtonGroupSeparatorExample">
+      <ButtonGroupSeparatorExample />
+    </ComponentPreview>
+    <ComponentSource
+      code={buttonGroupSeparatorExampleSource}
+      language="tsx"
+      title="button-group-separator-example.tsx"
+    />
+  </ComponentTabs>
+</ComponentSection>
+
+### Text
+
+Use `ButtonGroupText` for static prefixes and suffixes, and mix in an `Input` to build composed fields.
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="ButtonGroupTextExample">
+      <ButtonGroupTextExample />
+    </ComponentPreview>
+    <ComponentSource
+      code={buttonGroupTextExampleSource}
+      language="tsx"
+      title="button-group-text-example.tsx"
+    />
+  </ComponentTabs>
+</ComponentSection>
+
+### Nested
+
+Nest multiple `ButtonGroup` components to add spacing between clusters of related actions.
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="ButtonGroupNestedExample">
+      <ButtonGroupNestedExample />
+    </ComponentPreview>
+    <ComponentSource
+      code={buttonGroupNestedExampleSource}
+      language="tsx"
+      title="button-group-nested-example.tsx"
+    />
+  </ComponentTabs>
+</ComponentSection>
+
+## Installation
+
+Copy the source code below into your project:
+
+<CodeBlock code={buttonGroupSource} language="tsx" />
+
+## API Reference
+
+### ButtonGroup
+
+<PropsTable component="ButtonGroup" />
+
+### ButtonGroupSeparator
+
+<PropsTable component="ButtonGroupSeparator" />
+
+### ButtonGroupText
+
+<PropsTable component="ButtonGroupText" />

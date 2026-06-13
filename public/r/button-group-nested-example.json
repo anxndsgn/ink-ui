@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-group-nested-example",
+  "title": "Button Group Nested Example",
+  "description": "Atomic example for the Ink UI Button Group component.",
+  "registryDependencies": [
+    "button-group",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/button-group-nested-example.tsx",
+      "content": "import { Button } from \"registry/default/ui/button\";\nimport { ButtonGroup } from \"registry/default/ui/button-group\";\nimport { CaretLeftIcon, CaretRightIcon, PlusIcon } from \"@phosphor-icons/react\";\nexport function ButtonGroupNestedExample() {\n  return (\n    <ButtonGroup>\n      <ButtonGroup>\n        <Button variant=\"outline\" size=\"icon\">\n          <CaretLeftIcon />\n        </Button>\n        <Button variant=\"outline\" size=\"icon\">\n          <CaretRightIcon />\n        </Button>\n      </ButtonGroup>\n      <ButtonGroup>\n        <Button variant=\"outline\">\n          <PlusIcon />\n          New\n        </Button>\n      </ButtonGroup>\n    </ButtonGroup>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/button-group-nested-example.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

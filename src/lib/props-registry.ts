@@ -353,6 +353,39 @@ export const propsRegistry: Record<string, ComponentPropsEntry> = {
       },
     ],
   },
+  ButtonGroup: {
+    props: [
+      {
+        name: "orientation",
+        type: '"horizontal" | "vertical"',
+        defaultValue: '"horizontal"',
+        description: "Layout direction of the grouped buttons.",
+      },
+    ],
+  },
+  ButtonGroupSeparator: {
+    extends: {
+      name: "Ink UI Separator",
+      href: "/components/separator",
+    },
+    props: [
+      {
+        name: "orientation",
+        type: '"horizontal" | "vertical"',
+        defaultValue: '"vertical"',
+        description: "Orientation of the separator within the group.",
+      },
+    ],
+  },
+  ButtonGroupText: {
+    props: [
+      {
+        name: "render",
+        type: "ReactElement | ((props, state) => ReactElement)",
+        description: "Render the text as a custom element instead of a div.",
+      },
+    ],
+  },
   InputGroup: {
     props: [],
   },

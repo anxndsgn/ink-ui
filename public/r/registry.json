@@ -65,6 +65,21 @@
       ]
     },
     {
+      "name": "button-group",
+      "type": "registry:ui",
+      "title": "Button Group",
+      "description": "Ink UI Button Group component.",
+      "files": [
+        {
+          "path": "registry/default/ui/button-group.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/button-group.tsx"
+        }
+      ],
+      "registryDependencies": ["utils", "theme", "separator"],
+      "dependencies": ["@base-ui/react", "class-variance-authority"]
+    },
+    {
       "name": "card",
       "type": "registry:ui",
       "title": "Card",
@@ -530,6 +545,76 @@
           "path": "registry/default/examples/button-sizes-example.tsx",
           "type": "registry:component",
           "target": "components/button-sizes-example.tsx"
+        }
+      ]
+    },
+    {
+      "name": "button-group-default-example",
+      "type": "registry:component",
+      "title": "Button Group Default Example",
+      "description": "Atomic example for the Ink UI Button Group component.",
+      "registryDependencies": ["button-group", "button"],
+      "files": [
+        {
+          "path": "registry/default/examples/button-group-default-example.tsx",
+          "type": "registry:component",
+          "target": "components/button-group-default-example.tsx"
+        }
+      ]
+    },
+    {
+      "name": "button-group-orientation-example",
+      "type": "registry:component",
+      "title": "Button Group Orientation Example",
+      "description": "Atomic example for the Ink UI Button Group component.",
+      "registryDependencies": ["button-group", "button"],
+      "files": [
+        {
+          "path": "registry/default/examples/button-group-orientation-example.tsx",
+          "type": "registry:component",
+          "target": "components/button-group-orientation-example.tsx"
+        }
+      ]
+    },
+    {
+      "name": "button-group-separator-example",
+      "type": "registry:component",
+      "title": "Button Group Separator Example",
+      "description": "Atomic example for the Ink UI Button Group component.",
+      "registryDependencies": ["button-group", "button"],
+      "files": [
+        {
+          "path": "registry/default/examples/button-group-separator-example.tsx",
+          "type": "registry:component",
+          "target": "components/button-group-separator-example.tsx"
+        }
+      ]
+    },
+    {
+      "name": "button-group-text-example",
+      "type": "registry:component",
+      "title": "Button Group Text Example",
+      "description": "Atomic example for the Ink UI Button Group component.",
+      "registryDependencies": ["button-group", "button", "input"],
+      "files": [
+        {
+          "path": "registry/default/examples/button-group-text-example.tsx",
+          "type": "registry:component",
+          "target": "components/button-group-text-example.tsx"
+        }
+      ]
+    },
+    {
+      "name": "button-group-nested-example",
+      "type": "registry:component",
+      "title": "Button Group Nested Example",
+      "description": "Atomic example for the Ink UI Button Group component.",
+      "registryDependencies": ["button-group", "button"],
+      "files": [
+        {
+          "path": "registry/default/examples/button-group-nested-example.tsx",
+          "type": "registry:component",
+          "target": "components/button-group-nested-example.tsx"
         }
       ]
     },
