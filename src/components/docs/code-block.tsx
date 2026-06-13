@@ -88,7 +88,7 @@ export function CodeBlock({
         {collapsed ? (
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute inset-x-0 bottom-10 h-20 bg-linear-to-t from-muted via-muted/80 to-transparent"
+            className="pointer-events-none absolute inset-x-0 bottom-10 h-20 bg-linear-to-t from-muted to-transparent"
           />
         ) : null}
         {isCollapsible ? (
