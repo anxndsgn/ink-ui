@@ -65,7 +65,8 @@ export function CodeBlock({
           className={cn(
             "overflow-x-auto",
             isCollapsible && "pb-10",
-            collapsed && "code-collapse-fade max-h-[calc(1.75rem*16+2rem+2.5rem)] overflow-y-hidden",
+            collapsed &&
+              "max-h-[calc(1.75rem*16+2rem+2.5rem)] overflow-y-hidden code-collapse-fade",
           )}
         >
           <pre
