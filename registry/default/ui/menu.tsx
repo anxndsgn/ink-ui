@@ -1,7 +1,7 @@
 import { mergeProps, useRender } from "@base-ui/react";
 import { Menu as BaseMenu } from "@base-ui/react/menu";
 import { cn } from "@/lib/utils";
-import { CheckIcon } from "@phosphor-icons/react/dist/ssr";
+import { CheckIcon, DotOutlineIcon } from "@phosphor-icons/react/dist/ssr";
 import { cva } from "class-variance-authority";
 import type { VariantProps } from "class-variance-authority";
 
@@ -228,7 +228,7 @@ function MenuRadioItemIndicator({ className, ...props }: BaseMenu.RadioItemIndic
       <BaseMenu.RadioItemIndicator
         className={cn("size-4", className)}
         data-slot="menu-radio-item-indicator"
-        render={<CheckIcon />}
+        render={<DotOutlineIcon weight="fill" />}
         {...props}
       />
     </MenuItemLeadingIcon>
