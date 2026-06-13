@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "autocomplete-with-groups-example",
+  "title": "Autocomplete With Groups Example",
+  "description": "Atomic example for the Ink UI Autocomplete component.",
+  "registryDependencies": [
+    "autocomplete"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/autocomplete-with-groups-example.tsx",
+      "content": "import {\n  Autocomplete,\n  AutocompleteCollection,\n  AutocompleteContent,\n  AutocompleteEmpty,\n  AutocompleteGroup,\n  AutocompleteGroupLabel,\n  AutocompleteInput,\n  AutocompleteInputGroup,\n  AutocompleteItem,\n  AutocompleteList,\n} from \"registry/default/ui/autocomplete\";\n\nconst frameworks = [\n  { value: \"Frontend\", items: [\"React\", \"Vue\", \"Svelte\", \"Solid\"] },\n  { value: \"Backend\", items: [\"Express\", \"Fastify\", \"NestJS\", \"Hono\"] },\n  { value: \"Meta\", items: [\"Next.js\", \"Nuxt\", \"Astro\", \"Remix\"] },\n];\n\nexport function AutocompleteWithGroupsExample() {\n  return (\n    <div className=\"w-full max-w-64\">\n      <Autocomplete items={frameworks}>\n        <AutocompleteInputGroup>\n          <AutocompleteInput placeholder=\"Search a framework\" />\n        </AutocompleteInputGroup>\n        <AutocompleteContent>\n          <AutocompleteEmpty>No frameworks found.</AutocompleteEmpty>\n          <AutocompleteList>\n            {(group: (typeof frameworks)[number]) => (\n              <AutocompleteGroup key={group.value} items={group.items}>\n                <AutocompleteGroupLabel>{group.value}</AutocompleteGroupLabel>\n                <AutocompleteCollection>\n                  {(item: string) => (\n                    <AutocompleteItem key={item} value={item}>\n                      {item}\n                    </AutocompleteItem>\n                  )}\n                </AutocompleteCollection>\n              </AutocompleteGroup>\n            )}\n          </AutocompleteList>\n        </AutocompleteContent>\n      </Autocomplete>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/autocomplete-with-groups-example.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

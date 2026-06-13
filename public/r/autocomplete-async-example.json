@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "autocomplete-async-example",
+  "title": "Autocomplete Async Example",
+  "description": "Atomic example for the Ink UI Autocomplete component.",
+  "registryDependencies": [
+    "autocomplete"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/autocomplete-async-example.tsx",
+      "content": "import * as React from \"react\";\nimport {\n  Autocomplete,\n  AutocompleteClear,\n  AutocompleteContent,\n  AutocompleteEmpty,\n  AutocompleteInput,\n  AutocompleteInputAddon,\n  AutocompleteInputGroup,\n  AutocompleteItem,\n  AutocompleteList,\n  AutocompleteStatus,\n} from \"registry/default/ui/autocomplete\";\nimport { MagnifyingGlassIcon } from \"@phosphor-icons/react\";\n\nconst allUsers = [\n  \"Ada Lovelace\",\n  \"Alan Turing\",\n  \"Grace Hopper\",\n  \"Katherine Johnson\",\n  \"Linus Torvalds\",\n  \"Margaret Hamilton\",\n  \"Tim Berners-Lee\",\n];\n\nexport function AutocompleteAsyncExample() {\n  const [value, setValue] = React.useState(\"\");\n  const [items, setItems] = React.useState<string[]>([]);\n  const [loading, setLoading] = React.useState(false);\n\n  React.useEffect(() => {\n    if (!value) {\n      setItems([]);\n      setLoading(false);\n      return;\n    }\n    setLoading(true);\n    const timeout = setTimeout(() => {\n      setItems(allUsers.filter((u) => u.toLowerCase().includes(value.toLowerCase())));\n      setLoading(false);\n    }, 500);\n    return () => clearTimeout(timeout);\n  }, [value]);\n\n  return (\n    <div className=\"w-full max-w-64\">\n      <Autocomplete items={items} value={value} onValueChange={setValue} mode=\"none\">\n        <AutocompleteInputGroup>\n          <AutocompleteInputAddon>\n            <MagnifyingGlassIcon />\n          </AutocompleteInputAddon>\n          <AutocompleteInput placeholder=\"Search people\" />\n          <AutocompleteClear />\n        </AutocompleteInputGroup>\n        <AutocompleteContent>\n          <AutocompleteStatus>{loading ? \"Loading…\" : null}</AutocompleteStatus>\n          {!loading && value ? <AutocompleteEmpty>No people found.</AutocompleteEmpty> : null}\n          <AutocompleteList>\n            {(item: string) => (\n              <AutocompleteItem key={item} value={item}>\n                {item}\n              </AutocompleteItem>\n            )}\n          </AutocompleteList>\n        </AutocompleteContent>\n      </Autocomplete>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/autocomplete-async-example.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

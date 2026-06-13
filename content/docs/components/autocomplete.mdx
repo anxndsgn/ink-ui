@@ -1,0 +1,169 @@
+---
+title: Autocomplete
+description: A text input with a popup list of suggestions that filter as you type, letting users quickly find and pick a value.
+component: Autocomplete
+registry: autocomplete
+---
+
+import { AutocompleteExample } from "registry/default/examples/autocomplete-default-example";
+import autocompleteExampleSource from "registry/default/examples/autocomplete-default-example.tsx?raw";
+import { AutocompleteWithClearExample } from "registry/default/examples/autocomplete-with-clear-example";
+import autocompleteWithClearExampleSource from "registry/default/examples/autocomplete-with-clear-example.tsx?raw";
+import { AutocompleteSizesExample } from "registry/default/examples/autocomplete-sizes-example";
+import autocompleteSizesExampleSource from "registry/default/examples/autocomplete-sizes-example.tsx?raw";
+import { AutocompleteWithGroupsExample } from "registry/default/examples/autocomplete-with-groups-example";
+import autocompleteWithGroupsExampleSource from "registry/default/examples/autocomplete-with-groups-example.tsx?raw";
+import { AutocompleteAsyncExample } from "registry/default/examples/autocomplete-async-example";
+import autocompleteAsyncExampleSource from "registry/default/examples/autocomplete-async-example.tsx?raw";
+import autocompleteSource from "registry/default/ui/autocomplete.tsx?raw";
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="AutocompleteExample">
+      <AutocompleteExample />
+    </ComponentPreview>
+    <ComponentSource
+      code={autocompleteExampleSource}
+      language="tsx"
+      title="autocomplete-default-example.tsx"
+    />
+  </ComponentTabs>
+</ComponentSection>
+
+## Examples
+
+### With clear and trigger
+
+Compose the input group with `AutocompleteInputAddon` for a leading icon, plus `AutocompleteClear` and `AutocompleteTrigger` buttons.
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="AutocompleteWithClearExample">
+      <AutocompleteWithClearExample />
+    </ComponentPreview>
+    <ComponentSource
+      code={autocompleteWithClearExampleSource}
+      language="tsx"
+      title="autocomplete-with-clear-example.tsx"
+    />
+  </ComponentTabs>
+</ComponentSection>
+
+### Sizes
+
+Use the `size` prop on `AutocompleteInputGroup` to switch between `sm`, `default`, and `lg`.
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="AutocompleteSizesExample">
+      <AutocompleteSizesExample />
+    </ComponentPreview>
+    <ComponentSource
+      code={autocompleteSizesExampleSource}
+      language="tsx"
+      title="autocomplete-sizes-example.tsx"
+    />
+  </ComponentTabs>
+</ComponentSection>
+
+### With groups
+
+Pass grouped items and render them with `AutocompleteGroup`, `AutocompleteGroupLabel`, and `AutocompleteCollection`.
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="AutocompleteWithGroupsExample">
+      <AutocompleteWithGroupsExample />
+    </ComponentPreview>
+    <ComponentSource
+      code={autocompleteWithGroupsExampleSource}
+      language="tsx"
+      title="autocomplete-with-groups-example.tsx"
+    />
+  </ComponentTabs>
+</ComponentSection>
+
+### Async
+
+Fetch suggestions as the user types. Set `mode="none"` to disable built-in filtering and use `AutocompleteStatus` to announce loading state.
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="AutocompleteAsyncExample">
+      <AutocompleteAsyncExample />
+    </ComponentPreview>
+    <ComponentSource
+      code={autocompleteAsyncExampleSource}
+      language="tsx"
+      title="autocomplete-async-example.tsx"
+    />
+  </ComponentTabs>
+</ComponentSection>
+
+## Installation
+
+Copy the source code below into your project:
+
+<CodeBlock code={autocompleteSource} language="tsx" />
+
+## API Reference
+
+### Autocomplete
+
+<PropsTable component="Autocomplete" />
+
+### AutocompleteInputGroup
+
+<PropsTable component="AutocompleteInputGroup" />
+
+### AutocompleteInput
+
+<PropsTable component="AutocompleteInput" />
+
+### AutocompleteInputAddon
+
+<PropsTable component="AutocompleteInputAddon" />
+
+### AutocompleteTrigger
+
+<PropsTable component="AutocompleteTrigger" />
+
+### AutocompleteClear
+
+<PropsTable component="AutocompleteClear" />
+
+### AutocompleteContent
+
+<PropsTable component="AutocompleteContent" />
+
+### AutocompleteList
+
+<PropsTable component="AutocompleteList" />
+
+### AutocompleteItem
+
+<PropsTable component="AutocompleteItem" />
+
+### AutocompleteValue
+
+<PropsTable component="AutocompleteValue" />
+
+### AutocompleteEmpty
+
+<PropsTable component="AutocompleteEmpty" />
+
+### AutocompleteStatus
+
+<PropsTable component="AutocompleteStatus" />
+
+### AutocompleteSeparator
+
+<PropsTable component="AutocompleteSeparator" />
+
+### AutocompleteGroup
+
+<PropsTable component="AutocompleteGroup" />
+
+### AutocompleteGroupLabel
+
+<PropsTable component="AutocompleteGroupLabel" />

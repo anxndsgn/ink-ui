@@ -45,6 +45,21 @@
       "dependencies": ["@base-ui/react"]
     },
     {
+      "name": "autocomplete",
+      "type": "registry:ui",
+      "title": "Autocomplete",
+      "description": "Ink UI Autocomplete component.",
+      "files": [
+        {
+          "path": "registry/default/ui/autocomplete.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/autocomplete.tsx"
+        }
+      ],
+      "registryDependencies": ["utils", "theme"],
+      "dependencies": ["@base-ui/react", "@phosphor-icons/react", "class-variance-authority"]
+    },
+    {
       "name": "button",
       "type": "registry:ui",
       "title": "Button",
@@ -419,6 +434,76 @@
           "path": "registry/default/examples/alert-dialog-destructive-example.tsx",
           "type": "registry:component",
           "target": "components/alert-dialog-destructive-example.tsx"
+        }
+      ]
+    },
+    {
+      "name": "autocomplete-default-example",
+      "type": "registry:component",
+      "title": "Autocomplete Default Example",
+      "description": "Atomic example for the Ink UI Autocomplete component.",
+      "registryDependencies": ["autocomplete"],
+      "files": [
+        {
+          "path": "registry/default/examples/autocomplete-default-example.tsx",
+          "type": "registry:component",
+          "target": "components/autocomplete-default-example.tsx"
+        }
+      ]
+    },
+    {
+      "name": "autocomplete-with-clear-example",
+      "type": "registry:component",
+      "title": "Autocomplete With Clear Example",
+      "description": "Atomic example for the Ink UI Autocomplete component.",
+      "registryDependencies": ["autocomplete"],
+      "files": [
+        {
+          "path": "registry/default/examples/autocomplete-with-clear-example.tsx",
+          "type": "registry:component",
+          "target": "components/autocomplete-with-clear-example.tsx"
+        }
+      ]
+    },
+    {
+      "name": "autocomplete-sizes-example",
+      "type": "registry:component",
+      "title": "Autocomplete Sizes Example",
+      "description": "Atomic example for the Ink UI Autocomplete component.",
+      "registryDependencies": ["autocomplete"],
+      "files": [
+        {
+          "path": "registry/default/examples/autocomplete-sizes-example.tsx",
+          "type": "registry:component",
+          "target": "components/autocomplete-sizes-example.tsx"
+        }
+      ]
+    },
+    {
+      "name": "autocomplete-with-groups-example",
+      "type": "registry:component",
+      "title": "Autocomplete With Groups Example",
+      "description": "Atomic example for the Ink UI Autocomplete component.",
+      "registryDependencies": ["autocomplete"],
+      "files": [
+        {
+          "path": "registry/default/examples/autocomplete-with-groups-example.tsx",
+          "type": "registry:component",
+          "target": "components/autocomplete-with-groups-example.tsx"
+        }
+      ]
+    },
+    {
+      "name": "autocomplete-async-example",
+      "type": "registry:component",
+      "title": "Autocomplete Async Example",
+      "description": "Atomic example for the Ink UI Autocomplete component.",
+      "registryDependencies": ["autocomplete"],
+      "files": [
+        {
+          "path": "registry/default/examples/autocomplete-async-example.tsx",
+          "type": "registry:component",
+          "target": "components/autocomplete-async-example.tsx"
         }
       ]
     },

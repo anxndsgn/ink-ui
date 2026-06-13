@@ -2,6 +2,7 @@
   "title": "Components",
   "pages": [
     "alert-dialog",
+    "autocomplete",
     "button",
     "button-group",
     "card",

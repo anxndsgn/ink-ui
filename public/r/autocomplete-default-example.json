@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "autocomplete-default-example",
+  "title": "Autocomplete Default Example",
+  "description": "Atomic example for the Ink UI Autocomplete component.",
+  "registryDependencies": [
+    "autocomplete"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/autocomplete-default-example.tsx",
+      "content": "import {\n  Autocomplete,\n  AutocompleteContent,\n  AutocompleteEmpty,\n  AutocompleteInput,\n  AutocompleteInputGroup,\n  AutocompleteItem,\n  AutocompleteList,\n} from \"registry/default/ui/autocomplete\";\n\nconst fruits = [\n  \"Apple\",\n  \"Banana\",\n  \"Blueberry\",\n  \"Cherry\",\n  \"Grapes\",\n  \"Mango\",\n  \"Orange\",\n  \"Peach\",\n  \"Pineapple\",\n  \"Strawberry\",\n];\n\nexport function AutocompleteExample() {\n  return (\n    <div className=\"w-full max-w-64\">\n      <Autocomplete items={fruits}>\n        <AutocompleteInputGroup>\n          <AutocompleteInput placeholder=\"Search a fruit\" />\n        </AutocompleteInputGroup>\n        <AutocompleteContent>\n          <AutocompleteEmpty>No fruits found.</AutocompleteEmpty>\n          <AutocompleteList>\n            {(item: string) => (\n              <AutocompleteItem key={item} value={item}>\n                {item}\n              </AutocompleteItem>\n            )}\n          </AutocompleteList>\n        </AutocompleteContent>\n      </Autocomplete>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/autocomplete-default-example.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

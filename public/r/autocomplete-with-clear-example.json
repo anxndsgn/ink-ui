@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "autocomplete-with-clear-example",
+  "title": "Autocomplete With Clear Example",
+  "description": "Atomic example for the Ink UI Autocomplete component.",
+  "registryDependencies": [
+    "autocomplete"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/autocomplete-with-clear-example.tsx",
+      "content": "import {\n  Autocomplete,\n  AutocompleteClear,\n  AutocompleteContent,\n  AutocompleteEmpty,\n  AutocompleteInput,\n  AutocompleteInputAddon,\n  AutocompleteInputGroup,\n  AutocompleteItem,\n  AutocompleteList,\n  AutocompleteTrigger,\n} from \"registry/default/ui/autocomplete\";\nimport { MagnifyingGlassIcon } from \"@phosphor-icons/react\";\n\nconst languages = [\n  \"TypeScript\",\n  \"JavaScript\",\n  \"Python\",\n  \"Rust\",\n  \"Go\",\n  \"Ruby\",\n  \"Swift\",\n  \"Kotlin\",\n  \"Elixir\",\n];\n\nexport function AutocompleteWithClearExample() {\n  return (\n    <div className=\"w-full max-w-64\">\n      <Autocomplete items={languages}>\n        <AutocompleteInputGroup>\n          <AutocompleteInputAddon>\n            <MagnifyingGlassIcon />\n          </AutocompleteInputAddon>\n          <AutocompleteInput placeholder=\"Search a language\" />\n          <AutocompleteClear />\n          <AutocompleteTrigger />\n        </AutocompleteInputGroup>\n        <AutocompleteContent>\n          <AutocompleteEmpty>No languages found.</AutocompleteEmpty>\n          <AutocompleteList>\n            {(item: string) => (\n              <AutocompleteItem key={item} value={item}>\n                {item}\n              </AutocompleteItem>\n            )}\n          </AutocompleteList>\n        </AutocompleteContent>\n      </Autocomplete>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/autocomplete-with-clear-example.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

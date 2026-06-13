@@ -1046,6 +1046,127 @@ export const propsRegistry: Record<string, ComponentPropsEntry> = {
       },
     ],
   },
+  Autocomplete: {
+    extends: {
+      name: "Base UI Autocomplete.Root",
+      href: "https://base-ui.com/react/components/autocomplete#api-reference",
+    },
+    props: [],
+  },
+  AutocompleteInputGroup: {
+    extends: {
+      name: "Base UI Autocomplete.InputGroup",
+      href: "https://base-ui.com/react/components/autocomplete#api-reference",
+    },
+    props: [
+      {
+        name: "size",
+        type: '"sm" | "default" | "lg"',
+        defaultValue: '"default"',
+        description: "Controls the height and text size of the input group.",
+      },
+    ],
+  },
+  AutocompleteInput: {
+    extends: {
+      name: "Base UI Autocomplete.Input",
+      href: "https://base-ui.com/react/components/autocomplete#api-reference",
+    },
+    props: [],
+  },
+  AutocompleteInputAddon: {
+    props: [
+      {
+        name: "className",
+        type: "string",
+        description: "Additional classes for the addon container, used for leading/trailing icons.",
+      },
+    ],
+  },
+  AutocompleteTrigger: {
+    extends: {
+      name: "Base UI Autocomplete.Trigger",
+      href: "https://base-ui.com/react/components/autocomplete#api-reference",
+    },
+    props: [],
+  },
+  AutocompleteClear: {
+    extends: {
+      name: "Base UI Autocomplete.Clear",
+      href: "https://base-ui.com/react/components/autocomplete#api-reference",
+    },
+    props: [],
+  },
+  AutocompleteContent: {
+    extends: {
+      name: "Base UI Autocomplete.Popup",
+      href: "https://base-ui.com/react/components/autocomplete#api-reference",
+    },
+    props: [
+      {
+        name: "positionerProps",
+        type: "BaseAutocomplete.Positioner.Props",
+        description:
+          "Props forwarded to the underlying Positioner component. Includes align, side, sideOffset, alignOffset, collisionPadding, etc.",
+      },
+    ],
+  },
+  AutocompleteList: {
+    extends: {
+      name: "Base UI Autocomplete.List",
+      href: "https://base-ui.com/react/components/autocomplete#api-reference",
+    },
+    props: [],
+  },
+  AutocompleteItem: {
+    extends: {
+      name: "Base UI Autocomplete.Item",
+      href: "https://base-ui.com/react/components/autocomplete#api-reference",
+    },
+    props: [],
+  },
+  AutocompleteValue: {
+    extends: {
+      name: "Base UI Autocomplete.Value",
+      href: "https://base-ui.com/react/components/autocomplete#api-reference",
+    },
+    props: [],
+  },
+  AutocompleteEmpty: {
+    extends: {
+      name: "Base UI Autocomplete.Empty",
+      href: "https://base-ui.com/react/components/autocomplete#api-reference",
+    },
+    props: [],
+  },
+  AutocompleteStatus: {
+    extends: {
+      name: "Base UI Autocomplete.Status",
+      href: "https://base-ui.com/react/components/autocomplete#api-reference",
+    },
+    props: [],
+  },
+  AutocompleteSeparator: {
+    extends: {
+      name: "Base UI Autocomplete.Separator",
+      href: "https://base-ui.com/react/components/autocomplete#api-reference",
+    },
+    props: [],
+  },
+  AutocompleteGroup: {
+    extends: {
+      name: "Base UI Autocomplete.Group",
+      href: "https://base-ui.com/react/components/autocomplete#api-reference",
+    },
+    props: [],
+  },
+  AutocompleteGroupLabel: {
+    extends: {
+      name: "Base UI Autocomplete.GroupLabel",
+      href: "https://base-ui.com/react/components/autocomplete#api-reference",
+    },
+    props: [],
+  },
   Combobox: {
     extends: {
       name: "Base UI Combobox.Root",
