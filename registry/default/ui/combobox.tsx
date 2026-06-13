@@ -30,7 +30,7 @@ function ComboboxContent({
       >
         <BaseCombobox.Popup
           className={cn(
-            "group origin-(--transform-origin) rounded-xl bg-white p-1.5 text-gray-900 shadow-lg outline outline-gray-900/10 transition-[transform,scale,opacity] data-ending-style:scale-90 data-ending-style:opacity-0 data-starting-style:scale-90 data-starting-style:opacity-0 data-[side=none]:data-ending-style:transition-none data-[side=none]:data-starting-style:scale-100 data-[side=none]:data-starting-style:opacity-100 data-[side=none]:data-starting-style:transition-none dark:bg-gray-900 dark:text-gray-50 dark:shadow-none dark:-outline-offset-1 dark:outline-gray-700",
+            "group origin-(--transform-origin) rounded-xl bg-popover p-1.5 text-popover-foreground shadow-lg outline outline-border transition-[transform,scale,opacity] data-ending-style:scale-90 data-ending-style:opacity-0 data-starting-style:scale-90 data-starting-style:opacity-0 data-[side=none]:data-ending-style:transition-none data-[side=none]:data-starting-style:scale-100 data-[side=none]:data-starting-style:opacity-100 data-[side=none]:data-starting-style:transition-none dark:shadow-none",
             className,
           )}
           data-slot="combobox-popup"
@@ -134,7 +134,7 @@ function ComboboxItem({ className, children, ...props }: BaseCombobox.Item.Props
   return (
     <BaseCombobox.Item
       className={cn(
-        "group col-span-full grid min-w-(--anchor-width) cursor-default grid-cols-subgrid items-center p-2 text-sm leading-4 outline-none select-none group-data-[side=none]:min-w-[calc(var(--anchor-width)+1rem)] group-data-[side=none]:pr-12 group-data-[side=none]:text-base group-data-[side=none]:leading-4 data-disabled:pointer-events-none data-disabled:cursor-not-allowed data-disabled:opacity-50 data-highlighted:relative data-highlighted:z-0 data-highlighted:text-gray-50 data-highlighted:before:absolute data-highlighted:before:inset-0 data-highlighted:before:z-[-1] data-highlighted:before:rounded-lg data-highlighted:before:bg-gray-900 dark:data-highlighted:text-gray-900 dark:data-highlighted:before:bg-gray-100 pointer-coarse:py-2.5 pointer-coarse:text-[0.925rem]",
+        "group col-span-full grid min-w-(--anchor-width) cursor-default grid-cols-subgrid items-center p-2 text-sm leading-4 outline-none select-none group-data-[side=none]:min-w-[calc(var(--anchor-width)+1rem)] group-data-[side=none]:pr-12 group-data-[side=none]:text-base group-data-[side=none]:leading-4 data-disabled:pointer-events-none data-disabled:cursor-not-allowed data-disabled:opacity-50 data-highlighted:relative data-highlighted:z-0 data-highlighted:text-primary-foreground data-highlighted:before:absolute data-highlighted:before:inset-0 data-highlighted:before:z-[-1] data-highlighted:before:rounded-lg data-highlighted:before:bg-primary pointer-coarse:py-2.5 pointer-coarse:text-[0.925rem]",
         className,
       )}
       data-slot="combobox-item"
@@ -150,7 +150,7 @@ function ComboboxTrigger({ children, className, ...props }: BaseCombobox.Trigger
   return (
     <BaseCombobox.Trigger
       className={cn(
-        "flex min-h-9 min-w-36 cursor-default items-center justify-between gap-3 rounded-lg border border-gray-200 bg-white p-2 text-sm text-gray-900 transition-all duration-150 select-none hover:bg-gray-100 focus-visible:ring-[3px] focus-visible:ring-orange-500/30 focus-visible:outline focus-visible:-outline-offset-1 focus-visible:outline-orange-500 data-popup-open:bg-gray-100 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-50 dark:hover:bg-gray-800 dark:data-popup-open:bg-gray-800",
+        "flex min-h-9 min-w-36 cursor-default items-center justify-between gap-3 rounded-lg border border-input bg-popover p-2 text-sm text-popover-foreground transition-all duration-150 select-none hover:bg-popover-hover focus-visible:ring-[3px] focus-visible:ring-ring focus-visible:outline focus-visible:-outline-offset-1 focus-visible:outline-accent data-popup-open:bg-popover-active",
         className,
       )}
       data-slot="combobox-trigger"
@@ -177,7 +177,7 @@ function ComboboxInput({
     <BaseCombobox.InputGroup
       className={cn(
         "flex min-h-9 items-center gap-1 rounded-lg border border-input p-2 text-sm text-foreground hover:border-accent",
-        "focus-within:border-orange-500 focus-within:ring-[3px] focus-within:ring-orange-500/30",
+        "focus-within:border-accent focus-within:ring-[3px] focus-within:ring-ring",
         "bg-gray-950/5 dark:bg-gray-950/30",
         "transition-all duration-150",
         className,
@@ -209,7 +209,7 @@ function ComboboxInput({
 function ComboboxEmpty({ className, children, ...props }: BaseCombobox.Empty.Props) {
   return (
     <BaseCombobox.Empty
-      className={cn("px-2.5 py-2 text-sm text-gray-600 empty:hidden dark:text-gray-400", className)}
+      className={cn("px-2.5 py-2 text-sm text-muted-foreground empty:hidden", className)}
       data-slot="combobox-empty"
       {...props}
     >
@@ -221,7 +221,7 @@ function ComboboxEmpty({ className, children, ...props }: BaseCombobox.Empty.Pro
 function ComboboxSeparator(props: BaseCombobox.Separator.Props) {
   return (
     <BaseCombobox.Separator
-      className="h-px w-full bg-gray-200 dark:bg-gray-800"
+      className="h-px w-full bg-border"
       data-slot="combobox-separator"
       {...props}
     />

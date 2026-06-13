@@ -4,6 +4,7 @@ import {
   ComboboxItem,
   ComboboxList,
   ComboboxInput,
+  ComboboxEmpty,
 } from "registry/default/ui/combobox";
 import { useState } from "react";
 const fruits = [
@@ -28,6 +29,7 @@ export function ComboboxControlledExample() {
               </ComboboxItem>
             )}
           </ComboboxList>
+          <ComboboxEmpty>No results.</ComboboxEmpty>
         </ComboboxContent>
       </Combobox>
       {value && <p className="text-sm text-gray-500">Selected: {value.label}</p>}
