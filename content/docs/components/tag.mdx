@@ -1,0 +1,88 @@
+---
+title: Tag
+description: Displays a badge or a label component.
+component: Tag
+registry: tag
+---
+
+import { Tag } from "registry/default/ui/tag";
+import {
+  TagExample,
+  SecondaryTagExample,
+  OutlineTagExample,
+  TagSizesExample,
+  TagInMenuExample,
+} from "registry/default/examples/tag-example";
+import tagExampleSource from "registry/default/examples/tag-example.tsx?raw";
+import tagSource from "registry/default/ui/tag.tsx?raw";
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="TagExample">
+    <TagExample />
+    </ComponentPreview>
+    <ComponentSource code={tagExampleSource} language="tsx" title="tag-example.tsx" />
+  </ComponentTabs>
+</ComponentSection>
+
+## Examples
+
+### Variants
+
+#### Secondary
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="SecondaryTagExample">
+    <SecondaryTagExample />
+    </ComponentPreview>
+    <ComponentSource code={tagExampleSource} language="tsx" title="tag-example.tsx" />
+  </ComponentTabs>
+</ComponentSection>
+
+#### Outline
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="OutlineTagExample">
+    <OutlineTagExample />
+    </ComponentPreview>
+    <ComponentSource code={tagExampleSource} language="tsx" title="tag-example.tsx" />
+  </ComponentTabs>
+</ComponentSection>
+
+### Sizes
+
+Available sizes: `default`, `sm`, `lg`.
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="TagSizesExample">
+    <TagSizesExample />
+    </ComponentPreview>
+    <ComponentSource code={tagExampleSource} language="tsx" title="tag-example.tsx" />
+  </ComponentTabs>
+</ComponentSection>
+
+### In menu
+
+Use a tag inside a `MenuItem` to highlight status or labels.
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="TagInMenuExample">
+    <TagInMenuExample />
+    </ComponentPreview>
+    <ComponentSource code={tagExampleSource} language="tsx" title="tag-example.tsx" />
+  </ComponentTabs>
+</ComponentSection>
+
+## Installation
+
+Copy the source code below into your project:
+
+<CodeBlock code={tagSource} language="tsx" />
+
+## API Reference
+
+<PropsTable component="Tag" />

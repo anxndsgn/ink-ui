@@ -1,0 +1,90 @@
+---
+title: Slider
+description: A range control for selecting one value or a pair of values.
+component: Slider
+registry: slider
+---
+
+import Slider from "registry/default/ui/slider";
+import {
+  SliderExample,
+  RangeSliderExample,
+  SteppedSliderExample,
+  DisabledSliderExample,
+  ControlledSliderExample,
+} from "registry/default/examples/slider-example";
+import sliderExampleSource from "registry/default/examples/slider-example.tsx?raw";
+import sliderSource from "registry/default/ui/slider.tsx?raw";
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="SliderExample">
+    <SliderExample />
+    </ComponentPreview>
+    <ComponentSource code={sliderExampleSource} language="tsx" title="slider-example.tsx" />
+  </ComponentTabs>
+</ComponentSection>
+
+## Examples
+
+### Range
+
+Pass an array to `defaultValue` to render a range slider with multiple thumbs.
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="RangeSliderExample">
+    <RangeSliderExample />
+    </ComponentPreview>
+    <ComponentSource code={sliderExampleSource} language="tsx" title="slider-example.tsx" />
+  </ComponentTabs>
+</ComponentSection>
+
+### Step
+
+Use `step` to control the increment between values.
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="SteppedSliderExample">
+    <SteppedSliderExample />
+    </ComponentPreview>
+    <ComponentSource code={sliderExampleSource} language="tsx" title="slider-example.tsx" />
+  </ComponentTabs>
+</ComponentSection>
+
+### Disabled
+
+Use the `disabled` prop to prevent interaction.
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="DisabledSliderExample">
+    <DisabledSliderExample />
+    </ComponentPreview>
+    <ComponentSource code={sliderExampleSource} language="tsx" title="slider-example.tsx" />
+  </ComponentTabs>
+</ComponentSection>
+
+### Controlled
+
+Manage the slider value with React state using `value` and `onValueChange`.
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="ControlledSliderExample">
+    <ControlledSliderExample />
+    </ComponentPreview>
+    <ComponentSource code={sliderExampleSource} language="tsx" title="slider-example.tsx" />
+  </ComponentTabs>
+</ComponentSection>
+
+## Installation
+
+Copy the source code below into your project:
+
+<CodeBlock code={sliderSource} language="tsx" />
+
+## API Reference
+
+<PropsTable component="Slider" />

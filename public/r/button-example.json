@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-example",
+  "title": "Button Example",
+  "description": "Examples for the Ink UI Button component.",
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/button-example.tsx",
+      "content": "import { Button } from \"registry/default/ui/button\";\nimport { useState } from \"react\";\nimport { PlusIcon } from \"@phosphor-icons/react\";\n\nexport function ButtonExample() {\n  return (\n    <div className=\"flex flex-wrap items-center gap-4\">\n      <Button>Button</Button>\n    </div>\n  );\n}\n\nexport function SecondaryButtonExample() {\n  return (\n    <div className=\"flex flex-wrap items-center gap-4\">\n      <Button variant=\"secondary\">Secondary</Button>\n    </div>\n  );\n}\n\nexport function OutlineButtonExample() {\n  return (\n    <div className=\"flex flex-wrap items-center gap-4\">\n      <Button variant=\"outline\">Outline</Button>\n    </div>\n  );\n}\n\nexport function GhostButtonExample() {\n  return (\n    <div className=\"flex flex-wrap items-center gap-4\">\n      <Button variant=\"ghost\">Ghost</Button>\n    </div>\n  );\n}\n\nexport function DestructiveButtonExample() {\n  return (\n    <div className=\"flex flex-wrap items-center gap-4\">\n      <Button variant=\"destructive\">Destructive</Button>\n    </div>\n  );\n}\n\nexport function LoadingButtonExample() {\n  const [loading, setLoading] = useState(false);\n\n  return (\n    <Button\n      loading={loading}\n      onClick={() => {\n        setLoading(true);\n        setTimeout(() => setLoading(false), 1000);\n      }}\n    >\n      Click me\n    </Button>\n  );\n}\n\nexport function RevertButtonExample() {\n  return (\n    <div className=\"flex h-32 w-full flex-wrap items-center justify-center gap-4 rounded bg-gray-950 p-4 dark:bg-gray-50\">\n      <Button variant=\"revert\">Revert</Button>\n    </div>\n  );\n}\n\nexport function IconButtonExample() {\n  return (\n    <div className=\"flex flex-wrap items-center gap-4\">\n      <Button variant=\"outline\" size=\"icon\">\n        <PlusIcon />\n      </Button>\n    </div>\n  );\n}\n\nexport function ButtonSizesExample() {\n  return (\n    <div className=\"flex flex-wrap items-center gap-4\">\n      <Button size=\"sm\">Small</Button>\n      <Button size=\"default\">Default</Button>\n      <Button size=\"lg\">Large</Button>\n      <Button size=\"icon\">\n        <PlusIcon />\n      </Button>\n      <Button size=\"icon-sm\">\n        <PlusIcon />\n      </Button>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/button-example.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

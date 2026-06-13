@@ -1,0 +1,90 @@
+---
+title: Tabs
+description: A set of layered sections of content, known as tab panels, that display one panel of content at a time.
+component: Tabs
+registry: tabs
+---
+
+import { Tabs, TabsList, TabsTab, TabsPanel } from "registry/default/ui/tabs";
+import {
+  TabsExample,
+  TabsUnderlineExample,
+  TabsSizesExample,
+  TabsVerticalExample,
+} from "registry/default/examples/tabs-example";
+import tabsExampleSource from "registry/default/examples/tabs-example.tsx?raw";
+import tabsSource from "registry/default/ui/tabs.tsx?raw";
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="TabsExample">
+    <TabsExample />
+    </ComponentPreview>
+    <ComponentSource code={tabsExampleSource} language="tsx" title="tabs-example.tsx" />
+  </ComponentTabs>
+</ComponentSection>
+
+## Examples
+
+### Underline variant
+
+Use the `underline` variant for a minimal, border-based indicator style.
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="TabsUnderlineExample">
+    <TabsUnderlineExample />
+    </ComponentPreview>
+    <ComponentSource code={tabsExampleSource} language="tsx" title="tabs-example.tsx" />
+  </ComponentTabs>
+</ComponentSection>
+
+### Sizes
+
+Available sizes: `default`, `sm`, `lg`.
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="TabsSizesExample">
+    <TabsSizesExample />
+    </ComponentPreview>
+    <ComponentSource code={tabsExampleSource} language="tsx" title="tabs-example.tsx" />
+  </ComponentTabs>
+</ComponentSection>
+
+### Vertical orientation
+
+Set `orientation="vertical"` on `Tabs` to arrange tabs and panels side by side.
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="TabsVerticalExample">
+    <TabsVerticalExample />
+    </ComponentPreview>
+    <ComponentSource code={tabsExampleSource} language="tsx" title="tabs-example.tsx" />
+  </ComponentTabs>
+</ComponentSection>
+
+## Installation
+
+Copy the source code below into your project:
+
+<CodeBlock code={tabsSource} language="tsx" />
+
+## API Reference
+
+### Tabs
+
+<PropsTable component="Tabs" />
+
+### TabsList
+
+<PropsTable component="TabsList" />
+
+### TabsTab
+
+<PropsTable component="TabsTab" />
+
+### TabsPanel
+
+<PropsTable component="TabsPanel" />

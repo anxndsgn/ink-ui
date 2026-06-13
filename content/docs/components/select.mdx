@@ -1,0 +1,119 @@
+---
+title: Select
+description: Displays a dropdown list of options for the user to pick from.
+component: Select
+registry: select
+---
+
+import {
+  Select,
+  SelectTrigger,
+  SelectContent,
+  SelectItem,
+  SelectValue,
+  SelectSeparator,
+} from "registry/default/ui/select";
+import {
+  SelectExample,
+  SelectVariantsExample,
+  SelectWithGroupsExample,
+  SelectControlledExample,
+  SelectWithItemsExample,
+} from "registry/default/examples/select-example";
+import selectExampleSource from "registry/default/examples/select-example.tsx?raw";
+import selectSource from "registry/default/ui/select.tsx?raw";
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="SelectExample">
+    <SelectExample />
+    </ComponentPreview>
+    <ComponentSource code={selectExampleSource} language="tsx" title="select-example.tsx" />
+  </ComponentTabs>
+</ComponentSection>
+
+## Examples
+
+### Trigger variants
+
+The trigger supports the same `variant` and `size` props as `Button`.
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="SelectVariantsExample">
+    <SelectVariantsExample />
+    </ComponentPreview>
+    <ComponentSource code={selectExampleSource} language="tsx" title="select-example.tsx" />
+  </ComponentTabs>
+</ComponentSection>
+
+### With separator
+
+Use `SelectSeparator` to visually group related options.
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="SelectWithGroupsExample">
+    <SelectWithGroupsExample />
+    </ComponentPreview>
+    <ComponentSource code={selectExampleSource} language="tsx" title="select-example.tsx" />
+  </ComponentTabs>
+</ComponentSection>
+
+### Controlled
+
+Manage the selected value with React state.
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="SelectControlledExample">
+    <SelectControlledExample />
+    </ComponentPreview>
+    <ComponentSource code={selectExampleSource} language="tsx" title="select-example.tsx" />
+  </ComponentTabs>
+</ComponentSection>
+
+### With items prop
+
+Pass an `items` array to `Select` so `SelectValue` renders the matching label instead of the raw value.
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="SelectWithItemsExample">
+    <SelectWithItemsExample />
+    </ComponentPreview>
+    <ComponentSource code={selectExampleSource} language="tsx" title="select-example.tsx" />
+  </ComponentTabs>
+</ComponentSection>
+
+## Installation
+
+Copy the source code below into your project:
+
+<CodeBlock code={selectSource} language="tsx" />
+
+## API Reference
+
+### Select
+
+<PropsTable component="Select" />
+
+### SelectTrigger
+
+<PropsTable component="SelectTrigger" />
+
+### SelectContent
+
+<PropsTable component="SelectContent" />
+
+### SelectItem
+
+<PropsTable component="SelectItem" />
+
+### SelectValue
+
+<PropsTable component="SelectValue" />
+
+### SelectSeparator
+
+<PropsTable component="SelectSeparator" />

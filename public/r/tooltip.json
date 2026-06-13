@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tooltip",
+  "title": "Tooltip",
+  "description": "Ink UI Tooltip component.",
+  "dependencies": [
+    "@base-ui/react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "theme"
+  ],
+  "files": [
+    {
+      "path": "registry/default/ui/tooltip.tsx",
+      "content": "import { Tooltip as BaseTooltip } from \"@base-ui/react/tooltip\";\nimport { cn } from \"@/lib/utils\";\n\nconst createTooltipHandle = BaseTooltip.createHandle;\n\nfunction Tooltip({ children, ...props }: BaseTooltip.Root.Props) {\n  return (\n    <BaseTooltip.Root data-slot=\"tooltip\" {...props}>\n      {children}\n    </BaseTooltip.Root>\n  );\n}\n\nfunction TooltipProvider({ ...props }: BaseTooltip.Provider.Props) {\n  return <BaseTooltip.Provider data-slot=\"tooltip-provider\" {...props} />;\n}\n\nfunction TooltipTrigger({ delay = 100, ...props }: BaseTooltip.Trigger.Props) {\n  return <BaseTooltip.Trigger delay={delay} data-slot=\"tooltip-trigger\" {...props} />;\n}\n\nfunction TooltipContent({\n  className,\n  children,\n  positionerProps,\n  portalProps,\n  ...props\n}: BaseTooltip.Popup.Props & {\n  positionerProps?: BaseTooltip.Positioner.Props;\n  portalProps?: BaseTooltip.Portal.Props;\n}) {\n  return (\n    <BaseTooltip.Portal {...portalProps}>\n      <BaseTooltip.Positioner\n        alignOffset={positionerProps?.alignOffset || 0}\n        className={cn(\n          \"outline-none\",\n          \"h-(--positioner-height) w-(--positioner-width) max-w-(--available-width) transition-[top,left,right,bottom,transform] duration-[0.35s] ease-[cubic-bezier(0.22,1,0.36,1)] data-instant:transition-none\",\n          positionerProps?.className,\n        )}\n        side={positionerProps?.side || \"top\"}\n        sideOffset={positionerProps?.sideOffset || 4}\n        {...positionerProps}\n      >\n        <BaseTooltip.Popup\n          className={cn(\n            \"flex h-(--popup-height,auto) w-(--popup-width,auto) origin-(--transform-origin) flex-col rounded-lg bg-gray-900 px-3 py-2 text-sm text-gray-50 transition-[transform,scale,opacity] data-ending-style:scale-90 data-ending-style:opacity-0 data-instant:duration-0 data-starting-style:scale-90 data-starting-style:opacity-0 dark:outline dark:-outline-offset-1 dark:outline-gray-700\",\n            className,\n          )}\n          data-slot=\"tooltip-popup\"\n          {...props}\n        >\n          {children}\n        </BaseTooltip.Popup>\n      </BaseTooltip.Positioner>\n    </BaseTooltip.Portal>\n  );\n}\n\nfunction TooltipViewport({\n  children,\n  className: _className,\n  ...props\n}: BaseTooltip.Viewport.Props) {\n  return (\n    <BaseTooltip.Viewport\n      className=\"relative h-full w-full overflow-clip px-(--viewport-inline-padding) py-1 [--viewport-inline-padding:0.5rem] **:data-current:w-[calc(var(--popup-width)-2*var(--viewport-inline-padding))] **:data-current:translate-x-0 **:data-current:opacity-100 **:data-current:transition-[translate,opacity] **:data-current:duration-[350ms,175ms] **:data-current:ease-[cubic-bezier(0.22,1,0.36,1)] **:data-previous:w-[calc(var(--popup-width)-2*var(--viewport-inline-padding))] **:data-previous:translate-x-0 **:data-previous:opacity-100 **:data-previous:transition-[translate,opacity] **:data-previous:duration-[350ms,175ms] **:data-previous:ease-[cubic-bezier(0.22,1,0.36,1)] data-[activation-direction~='left']:[&_[data-current][data-starting-style]]:-translate-x-1/2 data-[activation-direction~='left']:[&_[data-current][data-starting-style]]:opacity-0 data-[activation-direction~='right']:[&_[data-current][data-starting-style]]:translate-x-1/2 data-[activation-direction~='right']:[&_[data-current][data-starting-style]]:opacity-0 data-[activation-direction~='left']:[&_[data-previous][data-ending-style]]:translate-x-1/2 data-[activation-direction~='left']:[&_[data-previous][data-ending-style]]:opacity-0 data-[activation-direction~='right']:[&_[data-previous][data-ending-style]]:-translate-x-1/2 data-[activation-direction~='right']:[&_[data-previous][data-ending-style]]:opacity-0 [[data-instant]_&_[data-current]]:transition-none [[data-instant]_&_[data-previous]]:transition-none\"\n      data-slot=\"tooltip-viewport\"\n      {...props}\n    >\n      {children}\n    </BaseTooltip.Viewport>\n  );\n}\n\nexport {\n  Tooltip,\n  TooltipProvider,\n  TooltipTrigger,\n  TooltipContent,\n  TooltipViewport,\n  createTooltipHandle,\n};\n",
+      "type": "registry:ui",
+      "target": "components/ui/tooltip.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

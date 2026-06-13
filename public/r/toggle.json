@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "toggle",
+  "title": "Toggle",
+  "description": "Ink UI Toggle component.",
+  "dependencies": [
+    "@base-ui/react",
+    "class-variance-authority"
+  ],
+  "registryDependencies": [
+    "utils",
+    "theme"
+  ],
+  "files": [
+    {
+      "path": "registry/default/ui/toggle.tsx",
+      "content": "import { Toggle as BaseToggle } from \"@base-ui/react/toggle\";\nimport { cn } from \"@/lib/utils\";\nimport { cva } from \"class-variance-authority\";\nimport type { VariantProps } from \"class-variance-authority\";\n\nconst toggleVariants = cva(\n  \"relative inline-flex shrink-0 cursor-pointer items-center justify-center gap-2 rounded-lg bg-transparent text-sm font-medium whitespace-nowrap text-foreground outline-none select-none hover:bg-muted focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-1 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50 data-pressed:bg-secondary data-pressed:text-accent pointer-coarse:after:absolute pointer-coarse:after:size-full pointer-coarse:after:min-h-11 pointer-coarse:after:min-w-11 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4\",\n  {\n    defaultVariants: {\n      size: \"default\",\n      variant: \"default\",\n    },\n    variants: {\n      size: {\n        default: \"h-8 min-w-8 px-[calc(--spacing(2)-1px)]\",\n        lg: \"h-9 min-w-9 px-[calc(--spacing(2.5)-1px)]\",\n        sm: \"h-7 min-w-7 px-[calc(--spacing(1.5)-1px)]\",\n      },\n      variant: {\n        default: \"border-transparent\",\n      },\n    },\n  },\n);\n\nfunction Toggle({\n  className,\n  variant,\n  size,\n  ...props\n}: BaseToggle.Props & VariantProps<typeof toggleVariants>) {\n  return (\n    <BaseToggle\n      className={cn(toggleVariants({ className, size, variant }))}\n      data-slot=\"toggle\"\n      {...props}\n    />\n  );\n}\n\nexport { Toggle, toggleVariants };\n",
+      "type": "registry:ui",
+      "target": "components/ui/toggle.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

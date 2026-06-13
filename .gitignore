@@ -1,10 +1,20 @@
-# build output
-dist/
-# generated types
-.astro/
-
 # dependencies
 node_modules/
+
+# generated framework/build output
+.source/
+.astro/
+.output/
+.vinxi/
+.wrangler/
+.tanstack/
+dist/
+artifacts/
+
+# environment variables
+.env
+.env.local
+.env.production
 
 # logs
 npm-debug.log*
@@ -12,13 +22,6 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
-
-# environment variables
-.env
-.env.production
-
-# macOS-specific files
+# OS/editor files
 .DS_Store
-
-# jetbrains setting folder
 .idea/

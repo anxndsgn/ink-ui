@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dialog-example",
+  "title": "Dialog Example",
+  "description": "Examples for the Ink UI Dialog component.",
+  "registryDependencies": [
+    "dialog"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/dialog-example.tsx",
+      "content": "import {\n  Dialog,\n  DialogBody,\n  DialogClose,\n  DialogContent,\n  DialogDescription,\n  DialogFooter,\n  DialogHeader,\n  DialogTitle,\n  DialogTrigger,\n} from \"registry/default/ui/dialog\";\nimport { Button } from \"registry/default/ui/button\";\n\nexport function DialogExample() {\n  return (\n    <Dialog>\n      <DialogTrigger render={<Button variant=\"outline\">Open Dialog</Button>} />\n      <DialogContent>\n        <DialogHeader>\n          <DialogTitle>Confirm Action</DialogTitle>\n          <DialogDescription>\n            Are you sure you want to proceed? This action cannot be undone.\n          </DialogDescription>\n        </DialogHeader>\n        <DialogBody>\n          <p className=\"text-sm text-gray-600 dark:text-gray-400\">\n            Additional context or details about the action can go here.\n          </p>\n        </DialogBody>\n        <DialogFooter>\n          <DialogClose render={<Button variant=\"secondary\">Cancel</Button>} />\n          <Button>Continue</Button>\n        </DialogFooter>\n      </DialogContent>\n    </Dialog>\n  );\n}\n\nexport function DialogNoCloseButtonExample() {\n  return (\n    <Dialog>\n      <DialogTrigger render={<Button variant=\"outline\">No Close Button</Button>} />\n      <DialogContent>\n        <DialogHeader closeButton={false}>\n          <DialogTitle>Notice</DialogTitle>\n          <DialogDescription>\n            This dialog has no close button in the header. Use the action below to dismiss it.\n          </DialogDescription>\n        </DialogHeader>\n        <DialogBody>\n          <p className=\"text-sm text-gray-600 dark:text-gray-400\">\n            You must explicitly choose an action to close this dialog.\n          </p>\n        </DialogBody>\n        <DialogFooter>\n          <DialogClose render={<Button>Got it</Button>} />\n        </DialogFooter>\n      </DialogContent>\n    </Dialog>\n  );\n}\n\nexport function DialogRowFooterExample() {\n  return (\n    <Dialog>\n      <DialogTrigger render={<Button variant=\"outline\">Row Footer</Button>} />\n      <DialogContent>\n        <DialogHeader>\n          <DialogTitle>Save Changes</DialogTitle>\n          <DialogDescription>Your changes will be saved to the cloud.</DialogDescription>\n        </DialogHeader>\n        <DialogBody>\n          <p className=\"text-sm text-gray-600 dark:text-gray-400\">\n            Review your changes before confirming.\n          </p>\n        </DialogBody>\n        <DialogFooter direction=\"row\">\n          <DialogClose render={<Button variant=\"secondary\">Cancel</Button>} />\n          <Button>Save</Button>\n        </DialogFooter>\n      </DialogContent>\n    </Dialog>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/dialog-example.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

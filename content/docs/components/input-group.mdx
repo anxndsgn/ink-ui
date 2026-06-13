@@ -1,0 +1,119 @@
+---
+title: Input Group
+description: A composable input container for icons, text, buttons, and multiline controls.
+component: Input Group
+registry: input-group
+---
+
+import {
+  InputGroup,
+  InputGroupAddon,
+  InputGroupButton,
+  InputGroupInput,
+  InputGroupText,
+  InputGroupTextarea,
+} from "registry/default/ui/input-group";
+import {
+  InputGroupExample,
+  InputGroupWithButtonExample,
+  InputGroupWithTextExample,
+  InputGroupTextareaExample,
+  AgentChatInputGroupExample,
+} from "registry/default/examples/input-group-example";
+import inputGroupExampleSource from "registry/default/examples/input-group-example.tsx?raw";
+import inputGroupSource from "registry/default/ui/input-group.tsx?raw";
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="InputGroupExample">
+    <InputGroupExample />
+    </ComponentPreview>
+    <ComponentSource code={inputGroupExampleSource} language="tsx" title="input-group-example.tsx" />
+  </ComponentTabs>
+</ComponentSection>
+
+## Examples
+
+### Button
+
+Use `InputGroupButton` inside an addon for compact actions that belong to the field.
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="InputGroupWithButtonExample">
+    <InputGroupWithButtonExample />
+    </ComponentPreview>
+    <ComponentSource code={inputGroupExampleSource} language="tsx" title="input-group-example.tsx" />
+  </ComponentTabs>
+</ComponentSection>
+
+### Text
+
+Use `InputGroupText` for static prefixes, suffixes, keyboard hints, and short labels.
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="InputGroupWithTextExample">
+    <InputGroupWithTextExample />
+    </ComponentPreview>
+    <ComponentSource code={inputGroupExampleSource} language="tsx" title="input-group-example.tsx" />
+  </ComponentTabs>
+</ComponentSection>
+
+### Textarea
+
+Use `InputGroupTextarea` when the control needs multiline input.
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="InputGroupTextareaExample">
+    <InputGroupTextareaExample />
+    </ComponentPreview>
+    <ComponentSource code={inputGroupExampleSource} language="tsx" title="input-group-example.tsx" />
+  </ComponentTabs>
+</ComponentSection>
+
+### Agent chat
+
+A common agent chat composer with attachment, mode controls, voice input, and submit actions.
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="AgentChatInputGroupExample">
+    <AgentChatInputGroupExample />
+    </ComponentPreview>
+    <ComponentSource code={inputGroupExampleSource} language="tsx" title="input-group-example.tsx" />
+  </ComponentTabs>
+</ComponentSection>
+
+## Installation
+
+Copy the source code below into your project:
+
+<CodeBlock code={inputGroupSource} language="tsx" />
+
+## API Reference
+
+### InputGroup
+
+<PropsTable component="InputGroup" />
+
+### InputGroupInput
+
+<PropsTable component="InputGroupInput" />
+
+### InputGroupTextarea
+
+<PropsTable component="InputGroupTextarea" />
+
+### InputGroupAddon
+
+<PropsTable component="InputGroupAddon" />
+
+### InputGroupButton
+
+<PropsTable component="InputGroupButton" />
+
+### InputGroupText
+
+<PropsTable component="InputGroupText" />
