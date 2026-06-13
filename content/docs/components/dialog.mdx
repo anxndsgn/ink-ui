@@ -7,6 +7,8 @@ registry: dialog
 
 import { DialogExample } from "registry/default/examples/dialog-default-example";
 import dialogExampleSource from "registry/default/examples/dialog-default-example.tsx?raw";
+import { DialogNestedExample } from "registry/default/examples/dialog-nested-example";
+import dialogNestedExampleSource from "registry/default/examples/dialog-nested-example.tsx?raw";
 import { DialogNoCloseButtonExample } from "registry/default/examples/dialog-no-close-button-example";
 import dialogNoCloseButtonExampleSource from "registry/default/examples/dialog-no-close-button-example.tsx?raw";
 import { DialogRowFooterExample } from "registry/default/examples/dialog-row-footer-example";
@@ -37,6 +39,24 @@ Set `closeButton={false}` on `DialogHeader` to hide the default close button.
       code={dialogNoCloseButtonExampleSource}
       language="tsx"
       title="dialog-no-close-button-example.tsx"
+    />
+  </ComponentTabs>
+</ComponentSection>
+
+### Nested dialog
+
+Dialogs can be nested inside each other. Use `data-nested-dialog-open` and
+`--nested-dialogs` to visually de-emphasize parent dialogs while a child dialog is open.
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="DialogNestedExample">
+      <DialogNestedExample />
+    </ComponentPreview>
+    <ComponentSource
+      code={dialogNestedExampleSource}
+      language="tsx"
+      title="dialog-nested-example.tsx"
     />
   </ComponentTabs>
 </ComponentSection>

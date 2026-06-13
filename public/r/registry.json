@@ -771,6 +771,20 @@
       ]
     },
     {
+      "name": "dialog-nested-example",
+      "type": "registry:component",
+      "title": "Dialog Nested Example",
+      "description": "Atomic example for the Ink UI Dialog component.",
+      "registryDependencies": ["dialog", "button"],
+      "files": [
+        {
+          "path": "registry/default/examples/dialog-nested-example.tsx",
+          "type": "registry:component",
+          "target": "components/dialog-nested-example.tsx"
+        }
+      ]
+    },
+    {
       "name": "dialog-row-footer-example",
       "type": "registry:component",
       "title": "Dialog Row Footer Example",

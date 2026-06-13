@@ -2,16 +2,23 @@ import { mergeProps, useRender } from "@base-ui/react";
 import { Dialog as BaseDialog } from "@base-ui/react/dialog";
 import { cn } from "@/lib/utils";
 import { XIcon } from "@phosphor-icons/react";
-
 import { Button } from "./button";
 
 const Dialog = (props: BaseDialog.Root.Props) => <BaseDialog.Root data-slot="dialog" {...props} />;
+
 const DialogPortal = (props: BaseDialog.Portal.Props) => (
   <BaseDialog.Portal data-slot="dialog-portal" {...props} />
 );
-const DialogClose = (props: BaseDialog.Close.Props) => (
-  <BaseDialog.Close data-slot="dialog-close" {...props} />
-);
+
+function DialogClose({ className, ...props }: BaseDialog.Close.Props) {
+  return (
+    <BaseDialog.Close
+      data-slot="dialog-close"
+      className={cn("in-data-nested-dialog-open:hidden", className)}
+      {...props}
+    />
+  );
+}
 
 function DialogTrigger(props: BaseDialog.Trigger.Props) {
   return <BaseDialog.Trigger data-slot="dialog-trigger" {...props} />;
@@ -61,7 +68,11 @@ function DialogContent({
       <DialogBackdrop {...dialogBackdropProps} />
       <BaseDialog.Popup
         className={cn(
-          "fixed top-1/2 left-1/2 z-50 -mt-8 flex w-96 max-w-[calc(100vw-3rem)] -translate-x-1/2 -translate-y-1/2 flex-col overflow-hidden rounded-3xl bg-dialog text-dialog-foreground shadow-xs ring ring-border transition-all duration-150 data-ending-style:scale-90 data-ending-style:opacity-0 data-starting-style:scale-90 data-starting-style:opacity-0",
+          "fixed top-1/2 left-1/2 z-50 flex w-96 max-w-[calc(100vw-3rem)] -translate-x-1/2 -translate-y-[calc(50%+2rem*var(--nested-dialogs))] flex-col overflow-hidden rounded-3xl bg-dialog text-dialog-foreground shadow-xs ring ring-border",
+          "transition-all duration-200 ease-[cubic-bezier(.22,1,.36,1)] will-change-transform",
+          "scale-[calc(1-0.1*var(--nested-dialogs))] opacity-[calc(1-min(var(--nested-dialogs),1))]",
+          "data-starting-style:translate-y-[calc(-50%+1.5rem)] data-starting-style:scale-90 data-starting-style:opacity-0",
+          "data-ending-style:translate-y-[calc(-50%+1.5rem)] data-ending-style:scale-90 data-ending-style:opacity-0",
           className,
         )}
         data-slot="dialog-popup"
