@@ -31,7 +31,6 @@ export default function Slider({
       value={value}
       min={min}
       max={max}
-      thumbAlignment="edge"
       {...props}
     >
       <BaseSlider.Control
@@ -43,10 +42,7 @@ export default function Slider({
           data-slot="slider-track"
         >
           <BaseSlider.Indicator
-            className={cn(
-              "bg-accent select-none data-disabled:opacity-50",
-              _values.length === 1 ? "rounded-l-full" : "",
-            )}
+            className={cn("rounded-full bg-accent select-none data-disabled:opacity-50")}
             data-slot="slider-indicator"
           />
           {Array.from({ length: _values.length }).map((_, index) => (
@@ -54,8 +50,10 @@ export default function Slider({
               key={index}
               className={(state) =>
                 cn(
-                  "size-4 rounded-full bg-white shadow-xs ring ring-input transition-transform select-none before:hidden data-disabled:cursor-not-allowed data-disabled:bg-muted",
-                  state.dragging && state.activeThumbIndex === index && "scale-110",
+                  "h-4 w-5 rounded-full bg-white shadow-xs ring ring-input transition-transform select-none before:hidden data-disabled:cursor-not-allowed data-disabled:bg-muted",
+                  state.dragging &&
+                    state.activeThumbIndex === index &&
+                    "scale-120 opacity-80 backdrop-blur-md",
                 )
               }
               data-slot="slider-thumb"
