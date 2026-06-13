@@ -1,0 +1,160 @@
+---
+title: Drawer
+description: A panel that slides in from the edge of the screen and supports swipe-to-dismiss gestures.
+component: Drawer
+registry: drawer
+---
+
+import { DrawerExample } from "registry/default/examples/drawer-default-example";
+import drawerExampleSource from "registry/default/examples/drawer-default-example.tsx?raw";
+import { DrawerSideExample } from "registry/default/examples/drawer-side-example";
+import drawerSideExampleSource from "registry/default/examples/drawer-side-example.tsx?raw";
+import { DrawerPositionsExample } from "registry/default/examples/drawer-positions-example";
+import drawerPositionsExampleSource from "registry/default/examples/drawer-positions-example.tsx?raw";
+import { DrawerInsetExample } from "registry/default/examples/drawer-inset-example";
+import drawerInsetExampleSource from "registry/default/examples/drawer-inset-example.tsx?raw";
+import { DrawerNestedExample } from "registry/default/examples/drawer-nested-example";
+import drawerNestedExampleSource from "registry/default/examples/drawer-nested-example.tsx?raw";
+import drawerSource from "registry/default/ui/drawer.tsx?raw";
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="DrawerExample">
+      <DrawerExample />
+    </ComponentPreview>
+    <ComponentSource code={drawerExampleSource} language="tsx" title="drawer-default-example.tsx" />
+  </ComponentTabs>
+</ComponentSection>
+
+## Examples
+
+### Side drawer
+
+Set `position` to `"left"` or `"right"` to slide the drawer in from the side. The
+`swipeDirection` is derived from the position automatically.
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="DrawerSideExample">
+      <DrawerSideExample />
+    </ComponentPreview>
+    <ComponentSource
+      code={drawerSideExampleSource}
+      language="tsx"
+      title="drawer-side-example.tsx"
+    />
+  </ComponentTabs>
+</ComponentSection>
+
+### Positions
+
+The drawer can be anchored to any edge: `top`, `right`, `bottom`, or `left`.
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="DrawerPositionsExample">
+      <DrawerPositionsExample />
+    </ComponentPreview>
+    <ComponentSource
+      code={drawerPositionsExampleSource}
+      language="tsx"
+      title="drawer-positions-example.tsx"
+    />
+  </ComponentTabs>
+</ComponentSection>
+
+### Inset
+
+Use `variant="inset"` on `DrawerContent` to float the drawer away from the screen edges
+with rounded corners on all sides.
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="DrawerInsetExample">
+      <DrawerInsetExample />
+    </ComponentPreview>
+    <ComponentSource
+      code={drawerInsetExampleSource}
+      language="tsx"
+      title="drawer-inset-example.tsx"
+    />
+  </ComponentTabs>
+</ComponentSection>
+
+### Nested
+
+Drawers can be nested by rendering a `Drawer` inside another drawer's content. The parent
+drawer scales back and peeks behind the child while it is open.
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="DrawerNestedExample">
+      <DrawerNestedExample />
+    </ComponentPreview>
+    <ComponentSource
+      code={drawerNestedExampleSource}
+      language="tsx"
+      title="drawer-nested-example.tsx"
+    />
+  </ComponentTabs>
+</ComponentSection>
+
+## Installation
+
+Copy the source code below into your project:
+
+<CodeBlock code={drawerSource} language="tsx" />
+
+## API Reference
+
+### Drawer
+
+<PropsTable component="Drawer" />
+
+### DrawerTrigger
+
+<PropsTable component="DrawerTrigger" />
+
+### DrawerContent
+
+<PropsTable component="DrawerContent" />
+
+### DrawerHeader
+
+<PropsTable component="DrawerHeader" />
+
+### DrawerBody
+
+<PropsTable component="DrawerBody" />
+
+### DrawerFooter
+
+<PropsTable component="DrawerFooter" />
+
+### DrawerTitle
+
+<PropsTable component="DrawerTitle" />
+
+### DrawerDescription
+
+<PropsTable component="DrawerDescription" />
+
+### DrawerBar
+
+<PropsTable component="DrawerBar" />
+
+### DrawerSwipeArea
+
+<PropsTable component="DrawerSwipeArea" />
+
+### DrawerBackdrop
+
+<PropsTable component="DrawerBackdrop" />
+
+### DrawerClose
+
+<PropsTable component="DrawerClose" />
+
+### DrawerPortal
+
+<PropsTable component="DrawerPortal" />

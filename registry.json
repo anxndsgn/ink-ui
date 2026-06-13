@@ -125,6 +125,21 @@
       "dependencies": ["@base-ui/react", "@phosphor-icons/react"]
     },
     {
+      "name": "drawer",
+      "type": "registry:ui",
+      "title": "Drawer",
+      "description": "Ink UI Drawer component.",
+      "files": [
+        {
+          "path": "registry/default/ui/drawer.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/drawer.tsx"
+        }
+      ],
+      "registryDependencies": ["utils", "theme", "button", "scroll-area"],
+      "dependencies": ["@base-ui/react", "@phosphor-icons/react"]
+    },
+    {
       "name": "input",
       "type": "registry:ui",
       "title": "Input",
@@ -795,6 +810,76 @@
           "path": "registry/default/examples/dialog-row-footer-example.tsx",
           "type": "registry:component",
           "target": "components/dialog-row-footer-example.tsx"
+        }
+      ]
+    },
+    {
+      "name": "drawer-default-example",
+      "type": "registry:component",
+      "title": "Drawer Default Example",
+      "description": "Atomic example for the Ink UI Drawer component.",
+      "registryDependencies": ["drawer", "button"],
+      "files": [
+        {
+          "path": "registry/default/examples/drawer-default-example.tsx",
+          "type": "registry:component",
+          "target": "components/drawer-default-example.tsx"
+        }
+      ]
+    },
+    {
+      "name": "drawer-side-example",
+      "type": "registry:component",
+      "title": "Drawer Side Example",
+      "description": "Atomic example for the Ink UI Drawer component.",
+      "registryDependencies": ["drawer", "button"],
+      "files": [
+        {
+          "path": "registry/default/examples/drawer-side-example.tsx",
+          "type": "registry:component",
+          "target": "components/drawer-side-example.tsx"
+        }
+      ]
+    },
+    {
+      "name": "drawer-positions-example",
+      "type": "registry:component",
+      "title": "Drawer Positions Example",
+      "description": "Atomic example for the Ink UI Drawer component.",
+      "registryDependencies": ["drawer", "button"],
+      "files": [
+        {
+          "path": "registry/default/examples/drawer-positions-example.tsx",
+          "type": "registry:component",
+          "target": "components/drawer-positions-example.tsx"
+        }
+      ]
+    },
+    {
+      "name": "drawer-inset-example",
+      "type": "registry:component",
+      "title": "Drawer Inset Example",
+      "description": "Atomic example for the Ink UI Drawer component.",
+      "registryDependencies": ["drawer", "button"],
+      "files": [
+        {
+          "path": "registry/default/examples/drawer-inset-example.tsx",
+          "type": "registry:component",
+          "target": "components/drawer-inset-example.tsx"
+        }
+      ]
+    },
+    {
+      "name": "drawer-nested-example",
+      "type": "registry:component",
+      "title": "Drawer Nested Example",
+      "description": "Atomic example for the Ink UI Drawer component.",
+      "registryDependencies": ["drawer", "button"],
+      "files": [
+        {
+          "path": "registry/default/examples/drawer-nested-example.tsx",
+          "type": "registry:component",
+          "target": "components/drawer-nested-example.tsx"
         }
       ]
     },

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "drawer-nested-example",
+  "title": "Drawer Nested Example",
+  "description": "Atomic example for the Ink UI Drawer component.",
+  "registryDependencies": [
+    "drawer",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/drawer-nested-example.tsx",
+      "content": "import {\n  Drawer,\n  DrawerBody,\n  DrawerClose,\n  DrawerContent,\n  DrawerDescription,\n  DrawerFooter,\n  DrawerHeader,\n  DrawerTitle,\n  DrawerTrigger,\n} from \"registry/default/ui/drawer\";\nimport { Button } from \"registry/default/ui/button\";\nexport function DrawerNestedExample() {\n  return (\n    <Drawer>\n      <DrawerTrigger render={<Button variant=\"outline\">Open Drawer</Button>} />\n      <DrawerContent showBar>\n        <DrawerHeader>\n          <DrawerTitle>Account</DrawerTitle>\n          <DrawerDescription>Manage your account settings.</DrawerDescription>\n        </DrawerHeader>\n        <DrawerBody>\n          <p className=\"text-sm text-muted-foreground\">\n            Drawers can be nested. Opening one from inside another pushes the parent back.\n          </p>\n        </DrawerBody>\n        <DrawerFooter direction=\"row\">\n          <DrawerClose render={<Button variant=\"secondary\">Close</Button>} />\n          <Drawer>\n            <DrawerTrigger render={<Button>Delete account</Button>} />\n            <DrawerContent showBar>\n              <DrawerHeader>\n                <DrawerTitle>Are you sure?</DrawerTitle>\n                <DrawerDescription>\n                  This action cannot be undone. Your account will be permanently removed.\n                </DrawerDescription>\n              </DrawerHeader>\n              <DrawerFooter direction=\"row\">\n                <DrawerClose render={<Button variant=\"secondary\">Cancel</Button>} />\n                <DrawerClose render={<Button>Delete</Button>} />\n              </DrawerFooter>\n            </DrawerContent>\n          </Drawer>\n        </DrawerFooter>\n      </DrawerContent>\n    </Drawer>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/drawer-nested-example.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

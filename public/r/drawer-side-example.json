@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "drawer-side-example",
+  "title": "Drawer Side Example",
+  "description": "Atomic example for the Ink UI Drawer component.",
+  "registryDependencies": [
+    "drawer",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/drawer-side-example.tsx",
+      "content": "import {\n  Drawer,\n  DrawerBody,\n  DrawerContent,\n  DrawerDescription,\n  DrawerHeader,\n  DrawerTitle,\n  DrawerTrigger,\n} from \"registry/default/ui/drawer\";\nimport { Button } from \"registry/default/ui/button\";\nexport function DrawerSideExample() {\n  return (\n    <Drawer position=\"right\">\n      <DrawerTrigger render={<Button variant=\"outline\">Open Side Drawer</Button>} />\n      <DrawerContent showCloseButton>\n        <DrawerHeader>\n          <DrawerTitle>Notifications</DrawerTitle>\n          <DrawerDescription>You have 3 unread notifications.</DrawerDescription>\n        </DrawerHeader>\n        <DrawerBody>\n          {Array.from({ length: 3 }).map((_, i) => (\n            <div key={i} className=\"rounded-lg border border-border p-3 text-sm\">\n              <p className=\"font-medium\">New activity</p>\n              <p className=\"text-muted-foreground\">Someone interacted with your post.</p>\n            </div>\n          ))}\n        </DrawerBody>\n      </DrawerContent>\n    </Drawer>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/drawer-side-example.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

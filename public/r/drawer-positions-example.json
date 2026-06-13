@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "drawer-positions-example",
+  "title": "Drawer Positions Example",
+  "description": "Atomic example for the Ink UI Drawer component.",
+  "registryDependencies": [
+    "drawer",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/drawer-positions-example.tsx",
+      "content": "import {\n  Drawer,\n  DrawerBody,\n  DrawerContent,\n  DrawerDescription,\n  DrawerHeader,\n  DrawerTitle,\n  DrawerTrigger,\n} from \"registry/default/ui/drawer\";\nimport { Button } from \"registry/default/ui/button\";\n\nconst positions = [\"top\", \"right\", \"bottom\", \"left\"] as const;\n\nexport function DrawerPositionsExample() {\n  return (\n    <div className=\"flex flex-wrap gap-2\">\n      {positions.map((position) => (\n        <Drawer key={position} position={position}>\n          <DrawerTrigger render={<Button variant=\"outline\" className=\"capitalize\" />}>\n            {position}\n          </DrawerTrigger>\n          <DrawerContent showBar>\n            <DrawerHeader>\n              <DrawerTitle className=\"capitalize\">{position} drawer</DrawerTitle>\n              <DrawerDescription>This drawer slides in from the {position} edge.</DrawerDescription>\n            </DrawerHeader>\n            <DrawerBody>\n              <p className=\"text-sm text-muted-foreground\">\n                The swipe direction adapts automatically to the chosen position.\n              </p>\n            </DrawerBody>\n          </DrawerContent>\n        </Drawer>\n      ))}\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/drawer-positions-example.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

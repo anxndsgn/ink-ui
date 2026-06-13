@@ -511,6 +511,177 @@ export const propsRegistry: Record<string, ComponentPropsEntry> = {
     },
     props: [],
   },
+  Drawer: {
+    extends: {
+      name: "Base UI Drawer.Root",
+      href: "https://base-ui.com/react/components/drawer#api-reference",
+    },
+    props: [
+      {
+        name: "position",
+        type: '"top" | "right" | "bottom" | "left"',
+        defaultValue: '"bottom"',
+        description:
+          "The edge of the screen the drawer is anchored to. The swipe direction is derived from this automatically.",
+      },
+    ],
+  },
+  DrawerTrigger: {
+    extends: {
+      name: "Base UI Drawer.Trigger",
+      href: "https://base-ui.com/react/components/drawer#api-reference",
+    },
+    props: [],
+  },
+  DrawerContent: {
+    extends: {
+      name: "Base UI Drawer.Popup",
+      href: "https://base-ui.com/react/components/drawer#api-reference",
+    },
+    props: [
+      {
+        name: "position",
+        type: '"top" | "right" | "bottom" | "left"',
+        description: "Overrides the position inherited from the parent Drawer.",
+      },
+      {
+        name: "variant",
+        type: '"default" | "inset"',
+        defaultValue: '"default"',
+        description: "Use `inset` to float the drawer away from the screen edges.",
+      },
+      {
+        name: "showBar",
+        type: "boolean",
+        defaultValue: "false",
+        description: "Whether to render a drag handle bar on the swipe edge.",
+      },
+      {
+        name: "showCloseButton",
+        type: "boolean",
+        defaultValue: "false",
+        description: "Whether to render a close button in the top-right corner.",
+      },
+      {
+        name: "portalProps",
+        type: "BaseDrawer.Portal.Props",
+        description: "Props forwarded to the underlying Portal component.",
+      },
+    ],
+  },
+  DrawerHeader: {
+    props: [
+      {
+        name: "className",
+        type: "string",
+        description: "Additional CSS classes to apply to the header container.",
+      },
+    ],
+  },
+  DrawerBody: {
+    props: [
+      {
+        name: "scrollable",
+        type: "boolean",
+        defaultValue: "true",
+        description: "Whether to wrap the body in a scroll area for overflowing content.",
+      },
+      {
+        name: "className",
+        type: "string",
+        description: "Additional CSS classes to apply to the body container.",
+      },
+    ],
+  },
+  DrawerFooter: {
+    props: [
+      {
+        name: "direction",
+        type: '"row" | "column"',
+        defaultValue: '"column"',
+        description: "Layout direction for the footer actions.",
+      },
+      {
+        name: "className",
+        type: "string",
+        description: "Additional CSS classes to apply to the footer container.",
+      },
+    ],
+  },
+  DrawerTitle: {
+    extends: {
+      name: "Base UI Drawer.Title",
+      href: "https://base-ui.com/react/components/drawer#api-reference",
+    },
+    props: [],
+  },
+  DrawerDescription: {
+    extends: {
+      name: "Base UI Drawer.Description",
+      href: "https://base-ui.com/react/components/drawer#api-reference",
+    },
+    props: [
+      {
+        name: "className",
+        type: "string",
+        description: "Additional CSS classes to apply to the description element.",
+      },
+    ],
+  },
+  DrawerBar: {
+    props: [
+      {
+        name: "position",
+        type: '"top" | "right" | "bottom" | "left"',
+        description: "Overrides the position inherited from the parent Drawer.",
+      },
+      {
+        name: "className",
+        type: "string",
+        description: "Additional CSS classes to apply to the drag bar.",
+      },
+    ],
+  },
+  DrawerSwipeArea: {
+    extends: {
+      name: "Base UI Drawer.SwipeArea",
+      href: "https://base-ui.com/react/components/drawer#api-reference",
+    },
+    props: [
+      {
+        name: "position",
+        type: '"top" | "right" | "bottom" | "left"',
+        description: "Overrides the position inherited from the parent Drawer.",
+      },
+    ],
+  },
+  DrawerBackdrop: {
+    extends: {
+      name: "Base UI Drawer.Backdrop",
+      href: "https://base-ui.com/react/components/drawer#api-reference",
+    },
+    props: [
+      {
+        name: "className",
+        type: "string",
+        description: "Additional CSS classes to apply to the backdrop element.",
+      },
+    ],
+  },
+  DrawerClose: {
+    extends: {
+      name: "Base UI Drawer.Close",
+      href: "https://base-ui.com/react/components/drawer#api-reference",
+    },
+    props: [],
+  },
+  DrawerPortal: {
+    extends: {
+      name: "Base UI Drawer.Portal",
+      href: "https://base-ui.com/react/components/drawer#api-reference",
+    },
+    props: [],
+  },
   Card: {
     props: [
       {
