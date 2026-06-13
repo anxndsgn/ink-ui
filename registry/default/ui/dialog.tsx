@@ -23,7 +23,7 @@ function DialogBackdrop({ className, ...props }: BaseDialog.Backdrop.Props) {
   return (
     <BaseDialog.Backdrop
       className={cn(
-        "fixed inset-0 bg-black/30 backdrop-blur-md transition-all duration-150 data-ending-style:opacity-0 data-starting-style:opacity-0",
+        "fixed inset-0 z-50 bg-black/30 backdrop-blur-md transition-all duration-150 data-ending-style:opacity-0 data-starting-style:opacity-0",
         className,
       )}
       data-slot="dialog-backdrop"
@@ -61,7 +61,7 @@ function DialogContent({
       <DialogBackdrop {...dialogBackdropProps} />
       <BaseDialog.Popup
         className={cn(
-          "fixed top-1/2 left-1/2 -mt-8 flex w-96 max-w-[calc(100vw-3rem)] -translate-x-1/2 -translate-y-1/2 flex-col overflow-hidden rounded-3xl bg-dialog text-dialog-foreground shadow-xs ring ring-border transition-all duration-150 data-ending-style:scale-90 data-ending-style:opacity-0 data-starting-style:scale-90 data-starting-style:opacity-0",
+          "fixed top-1/2 left-1/2 z-50 -mt-8 flex w-96 max-w-[calc(100vw-3rem)] -translate-x-1/2 -translate-y-1/2 flex-col overflow-hidden rounded-3xl bg-dialog text-dialog-foreground shadow-xs ring ring-border transition-all duration-150 data-ending-style:scale-90 data-ending-style:opacity-0 data-starting-style:scale-90 data-starting-style:opacity-0",
           className,
         )}
         data-slot="dialog-popup"
