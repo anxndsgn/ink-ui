@@ -14,7 +14,7 @@ export function DrawerInsetExample() {
   return (
     <Drawer>
       <DrawerTrigger render={<Button variant="outline">Open Inset Drawer</Button>} />
-      <DrawerContent variant="inset" showBar className="w-96">
+      <DrawerContent variant="inset" showBar className="max-w-3xl">
         <DrawerHeader>
           <DrawerTitle>Confirm subscription</DrawerTitle>
           <DrawerDescription>

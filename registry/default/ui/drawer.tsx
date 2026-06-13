@@ -103,7 +103,7 @@ function DrawerViewport({
         position === "top" && "grid grid-rows-[auto_1fr] pb-12",
         position === "left" && "flex justify-start",
         position === "right" && "flex justify-end",
-        variant === "inset" && "px-(--inset) sm:[--inset:--spacing(4)]",
+        variant === "inset" && "px-(--inset) [--inset:--spacing(4)]",
         variant === "inset" && position !== "bottom" && "pt-(--inset)",
         variant === "inset" && position !== "top" && "pb-(--inset)",
         className,
@@ -158,7 +158,7 @@ function DrawerContent({
             position === "left" && "rounded-e-3xl",
             position === "right" && "rounded-s-3xl",
             variant === "inset" &&
-              "**:data-[slot=drawer-footer]:rounded-b-[calc(var(--radius-3xl)-1px)] sm:rounded-3xl sm:after:bg-transparent",
+              "rounded-3xl after:bg-transparent **:data-[slot=drawer-footer]:rounded-b-[calc(var(--radius-3xl)-1px)]",
             (position === "bottom" || position === "top") &&
               "h-(--drawer-height,auto) [--height:max(0px,calc(var(--drawer-frontmost-height,var(--drawer-height))))] data-nested-drawer-open:h-(--height)",
             position === "bottom" &&
