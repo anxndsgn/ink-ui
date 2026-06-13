@@ -1,6 +1,7 @@
 /// <reference types="vite/client" />
 import { HeadContent, Link, Outlet, Scripts, createRootRoute } from "@tanstack/react-router";
 import type { ReactNode } from "react";
+import { ToastProvider } from "registry/default/ui/toast";
 import { DocsSidebarProvider } from "../components/site/docs-sidebar-context";
 import { legacyThemeStorageKey, uiStorageKey } from "../lib/theme";
 import appCss from "../styles/app.css?url";
@@ -66,9 +67,11 @@ function RootDocument({ children }: { children: ReactNode }) {
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
       </head>
       <body>
-        <DocsSidebarProvider>
-          <div className="h-dvh min-h-0 overflow-auto">{children}</div>
-        </DocsSidebarProvider>
+        <ToastProvider position="bottom-right">
+          <DocsSidebarProvider>
+            <div className="h-dvh min-h-0 overflow-auto">{children}</div>
+          </DocsSidebarProvider>
+        </ToastProvider>
         <Scripts />
       </body>
     </html>
@@ -77,7 +80,7 @@ function RootDocument({ children }: { children: ReactNode }) {
 
 function NotFound() {
   return (
-    <main className="mx-auto w-[min(1120px,calc(100vw_-_40px))] py-14 max-md:w-[min(calc(100%_-_28px),940px)] max-md:pt-9">
+    <main className="mx-auto w-[min(1120px,calc(100vw-40px))] py-14 max-md:w-[min(calc(100%-28px),940px)] max-md:pt-9">
       <div className="grid min-h-[420px] content-center gap-4">
         <p className="m-0 text-xs font-bold text-muted-foreground uppercase">404</p>
         <h1 className="m-0 max-w-[780px] text-[clamp(2.25rem,6vw,5.4rem)] leading-[0.96] text-balance max-md:text-4xl max-md:leading-[1.02]">
