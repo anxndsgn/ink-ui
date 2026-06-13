@@ -17,7 +17,7 @@ function Checkbox({ className, ...props }: BaseCheckbox.Root.Props) {
   return (
     <BaseCheckbox.Root
       className={cn(
-        "data-disabled:pointer-not-allowed relative inline-flex size-4.5 shrink-0 items-center justify-center rounded-sm border border-input bg-muted ring-ring outline-none before:pointer-events-none focus-visible:ring-2 focus-visible:ring-offset-1 focus-visible:ring-offset-background aria-invalid:border-destructive/36 focus-visible:aria-invalid:border-destructive/64 focus-visible:aria-invalid:ring-destructive/48 data-disabled:opacity-50 sm:size-4 dark:not-data-checked:bg-gray-950/32 dark:aria-invalid:ring-destructive/24",
+        "data-disabled:pointer-not-allowed relative inline-flex size-4.5 shrink-0 items-center justify-center rounded-sm border border-input bg-muted ring-ring outline-none before:pointer-events-none hover:bg-muted-hover focus-visible:ring-2 focus-visible:ring-offset-1 focus-visible:ring-offset-background aria-invalid:border-destructive/36 focus-visible:aria-invalid:border-destructive/64 focus-visible:aria-invalid:ring-destructive/48 data-disabled:opacity-50 sm:size-4 dark:not-data-checked:bg-gray-950/32 dark:aria-invalid:ring-destructive/24",
         "data-checked:bg-accent data-indeterminate:bg-accent",
         className,
       )}
