@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "number-field-controlled-example",
+  "title": "Number Field Controlled Example",
+  "description": "Atomic example for the Ink UI Number Field component.",
+  "registryDependencies": [
+    "number-field"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/number-field-controlled-example.tsx",
+      "content": "import { useState } from \"react\";\nimport {\n  NumberField,\n  NumberFieldDecrement,\n  NumberFieldGroup,\n  NumberFieldIncrement,\n  NumberFieldInput,\n} from \"registry/default/ui/number-field\";\n\nexport function NumberFieldControlledExample() {\n  const [value, setValue] = useState<number | null>(50);\n\n  return (\n    <div className=\"flex w-full max-w-48 flex-col gap-3\">\n      <NumberField value={value} onValueChange={setValue} step={5} min={0} max={100}>\n        <NumberFieldGroup>\n          <NumberFieldDecrement />\n          <NumberFieldInput />\n          <NumberFieldIncrement />\n        </NumberFieldGroup>\n      </NumberField>\n      <span className=\"text-sm text-muted-foreground\">\n        Value: {value === null ? \"empty\" : value}\n      </span>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/number-field-controlled-example.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

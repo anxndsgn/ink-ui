@@ -1,4 +1,4 @@
-import { Autocomplete as BaseAutocomplete } from "@base-ui/react/autocomplete";
+import { Autocomplete as BaseAutocomplete } from "@base-ui/react";
 import { cn } from "@/lib/utils";
 import { cva } from "class-variance-authority";
 import type { VariantProps } from "class-variance-authority";

@@ -215,6 +215,21 @@
       "dependencies": ["@base-ui/react", "@phosphor-icons/react", "class-variance-authority"]
     },
     {
+      "name": "number-field",
+      "type": "registry:ui",
+      "title": "Number Field",
+      "description": "Ink UI Number Field component.",
+      "files": [
+        {
+          "path": "registry/default/ui/number-field.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/number-field.tsx"
+        }
+      ],
+      "registryDependencies": ["utils", "theme"],
+      "dependencies": ["@base-ui/react", "@phosphor-icons/react", "class-variance-authority"]
+    },
+    {
       "name": "popover",
       "type": "registry:ui",
       "title": "Popover",
@@ -1260,6 +1275,76 @@
           "path": "registry/default/examples/menu-submenu-example.tsx",
           "type": "registry:component",
           "target": "components/menu-submenu-example.tsx"
+        }
+      ]
+    },
+    {
+      "name": "number-field-default-example",
+      "type": "registry:component",
+      "title": "Number Field Default Example",
+      "description": "Atomic example for the Ink UI Number Field component.",
+      "registryDependencies": ["number-field"],
+      "files": [
+        {
+          "path": "registry/default/examples/number-field-default-example.tsx",
+          "type": "registry:component",
+          "target": "components/number-field-default-example.tsx"
+        }
+      ]
+    },
+    {
+      "name": "number-field-sizes-example",
+      "type": "registry:component",
+      "title": "Number Field Sizes Example",
+      "description": "Atomic example for the Ink UI Number Field component.",
+      "registryDependencies": ["number-field"],
+      "files": [
+        {
+          "path": "registry/default/examples/number-field-sizes-example.tsx",
+          "type": "registry:component",
+          "target": "components/number-field-sizes-example.tsx"
+        }
+      ]
+    },
+    {
+      "name": "number-field-controlled-example",
+      "type": "registry:component",
+      "title": "Number Field Controlled Example",
+      "description": "Atomic example for the Ink UI Number Field component.",
+      "registryDependencies": ["number-field"],
+      "files": [
+        {
+          "path": "registry/default/examples/number-field-controlled-example.tsx",
+          "type": "registry:component",
+          "target": "components/number-field-controlled-example.tsx"
+        }
+      ]
+    },
+    {
+      "name": "number-field-format-example",
+      "type": "registry:component",
+      "title": "Number Field Format Example",
+      "description": "Atomic example for the Ink UI Number Field component.",
+      "registryDependencies": ["number-field"],
+      "files": [
+        {
+          "path": "registry/default/examples/number-field-format-example.tsx",
+          "type": "registry:component",
+          "target": "components/number-field-format-example.tsx"
+        }
+      ]
+    },
+    {
+      "name": "number-field-scrub-example",
+      "type": "registry:component",
+      "title": "Number Field Scrub Example",
+      "description": "Atomic example for the Ink UI Number Field component.",
+      "registryDependencies": ["number-field"],
+      "files": [
+        {
+          "path": "registry/default/examples/number-field-scrub-example.tsx",
+          "type": "registry:component",
+          "target": "components/number-field-scrub-example.tsx"
         }
       ]
     },

@@ -1167,6 +1167,62 @@ export const propsRegistry: Record<string, ComponentPropsEntry> = {
     },
     props: [],
   },
+  NumberField: {
+    extends: {
+      name: "Base UI NumberField.Root",
+      href: "https://base-ui.com/react/components/number-field#api-reference",
+    },
+    props: [],
+  },
+  NumberFieldGroup: {
+    extends: {
+      name: "Base UI NumberField.Group",
+      href: "https://base-ui.com/react/components/number-field#api-reference",
+    },
+    props: [
+      {
+        name: "size",
+        type: '"sm" | "default" | "lg"',
+        defaultValue: '"default"',
+        description: "Controls the height and text size of the field.",
+      },
+    ],
+  },
+  NumberFieldInput: {
+    extends: {
+      name: "Base UI NumberField.Input",
+      href: "https://base-ui.com/react/components/number-field#api-reference",
+    },
+    props: [],
+  },
+  NumberFieldDecrement: {
+    extends: {
+      name: "Base UI NumberField.Decrement",
+      href: "https://base-ui.com/react/components/number-field#api-reference",
+    },
+    props: [],
+  },
+  NumberFieldIncrement: {
+    extends: {
+      name: "Base UI NumberField.Increment",
+      href: "https://base-ui.com/react/components/number-field#api-reference",
+    },
+    props: [],
+  },
+  NumberFieldScrubArea: {
+    extends: {
+      name: "Base UI NumberField.ScrubArea",
+      href: "https://base-ui.com/react/components/number-field#api-reference",
+    },
+    props: [],
+  },
+  NumberFieldScrubAreaCursor: {
+    extends: {
+      name: "Base UI NumberField.ScrubAreaCursor",
+      href: "https://base-ui.com/react/components/number-field#api-reference",
+    },
+    props: [],
+  },
   Combobox: {
     extends: {
       name: "Base UI Combobox.Root",

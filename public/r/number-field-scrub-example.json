@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "number-field-scrub-example",
+  "title": "Number Field Scrub Example",
+  "description": "Atomic example for the Ink UI Number Field component.",
+  "registryDependencies": [
+    "number-field"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/number-field-scrub-example.tsx",
+      "content": "import {\n  NumberField,\n  NumberFieldDecrement,\n  NumberFieldGroup,\n  NumberFieldIncrement,\n  NumberFieldInput,\n  NumberFieldScrubArea,\n  NumberFieldScrubAreaCursor,\n} from \"registry/default/ui/number-field\";\n\nexport function NumberFieldScrubExample() {\n  return (\n    <div className=\"w-full max-w-48\">\n      <NumberField defaultValue={100} id=\"scrub-amount\">\n        <NumberFieldScrubArea>\n          <label\n            htmlFor=\"scrub-amount\"\n            className=\"cursor-ew-resize text-sm font-medium text-foreground select-none\"\n          >\n            Amount\n          </label>\n          <NumberFieldScrubAreaCursor />\n        </NumberFieldScrubArea>\n        <NumberFieldGroup className=\"mt-1.5\">\n          <NumberFieldDecrement />\n          <NumberFieldInput />\n          <NumberFieldIncrement />\n        </NumberFieldGroup>\n      </NumberField>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/number-field-scrub-example.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

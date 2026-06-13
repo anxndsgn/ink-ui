@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "number-field-sizes-example",
+  "title": "Number Field Sizes Example",
+  "description": "Atomic example for the Ink UI Number Field component.",
+  "registryDependencies": [
+    "number-field"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/number-field-sizes-example.tsx",
+      "content": "import {\n  NumberField,\n  NumberFieldDecrement,\n  NumberFieldGroup,\n  NumberFieldIncrement,\n  NumberFieldInput,\n} from \"registry/default/ui/number-field\";\n\nexport function NumberFieldSizesExample() {\n  return (\n    <div className=\"flex w-full max-w-48 flex-col gap-4\">\n      {([\"sm\", \"default\", \"lg\"] as const).map((size) => (\n        <NumberField key={size} defaultValue={5}>\n          <NumberFieldGroup size={size}>\n            <NumberFieldDecrement />\n            <NumberFieldInput />\n            <NumberFieldIncrement />\n          </NumberFieldGroup>\n        </NumberField>\n      ))}\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/number-field-sizes-example.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

@@ -1,0 +1,137 @@
+---
+title: Number Field
+description: A numeric input with stepper buttons, keyboard increments, scrubbing, and locale-aware formatting.
+component: NumberField
+registry: number-field
+---
+
+import { NumberFieldExample } from "registry/default/examples/number-field-default-example";
+import numberFieldExampleSource from "registry/default/examples/number-field-default-example.tsx?raw";
+import { NumberFieldSizesExample } from "registry/default/examples/number-field-sizes-example";
+import numberFieldSizesExampleSource from "registry/default/examples/number-field-sizes-example.tsx?raw";
+import { NumberFieldControlledExample } from "registry/default/examples/number-field-controlled-example";
+import numberFieldControlledExampleSource from "registry/default/examples/number-field-controlled-example.tsx?raw";
+import { NumberFieldFormatExample } from "registry/default/examples/number-field-format-example";
+import numberFieldFormatExampleSource from "registry/default/examples/number-field-format-example.tsx?raw";
+import { NumberFieldScrubExample } from "registry/default/examples/number-field-scrub-example";
+import numberFieldScrubExampleSource from "registry/default/examples/number-field-scrub-example.tsx?raw";
+import numberFieldSource from "registry/default/ui/number-field.tsx?raw";
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="NumberFieldExample">
+      <NumberFieldExample />
+    </ComponentPreview>
+    <ComponentSource
+      code={numberFieldExampleSource}
+      language="tsx"
+      title="number-field-default-example.tsx"
+    />
+  </ComponentTabs>
+</ComponentSection>
+
+## Examples
+
+### Sizes
+
+Use the `size` prop on `NumberFieldGroup` to switch between `sm`, `default`, and `lg`.
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="NumberFieldSizesExample">
+      <NumberFieldSizesExample />
+    </ComponentPreview>
+    <ComponentSource
+      code={numberFieldSizesExampleSource}
+      language="tsx"
+      title="number-field-sizes-example.tsx"
+    />
+  </ComponentTabs>
+</ComponentSection>
+
+### Controlled
+
+Manage the value with React state via `value` and `onValueChange`. The value is `null` when the input is empty.
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="NumberFieldControlledExample">
+      <NumberFieldControlledExample />
+    </ComponentPreview>
+    <ComponentSource
+      code={numberFieldControlledExampleSource}
+      language="tsx"
+      title="number-field-controlled-example.tsx"
+    />
+  </ComponentTabs>
+</ComponentSection>
+
+### Formatting
+
+Pass `Intl.NumberFormatOptions` to `format` for currency, percent, or unit display.
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="NumberFieldFormatExample">
+      <NumberFieldFormatExample />
+    </ComponentPreview>
+    <ComponentSource
+      code={numberFieldFormatExampleSource}
+      language="tsx"
+      title="number-field-format-example.tsx"
+    />
+  </ComponentTabs>
+</ComponentSection>
+
+### Scrub area
+
+Wrap a label in `NumberFieldScrubArea` to let users drag horizontally to change the value. `NumberFieldScrubAreaCursor` renders a virtual cursor while scrubbing.
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="NumberFieldScrubExample">
+      <NumberFieldScrubExample />
+    </ComponentPreview>
+    <ComponentSource
+      code={numberFieldScrubExampleSource}
+      language="tsx"
+      title="number-field-scrub-example.tsx"
+    />
+  </ComponentTabs>
+</ComponentSection>
+
+## Installation
+
+Copy the source code below into your project:
+
+<CodeBlock code={numberFieldSource} language="tsx" />
+
+## API Reference
+
+### NumberField
+
+<PropsTable component="NumberField" />
+
+### NumberFieldGroup
+
+<PropsTable component="NumberFieldGroup" />
+
+### NumberFieldInput
+
+<PropsTable component="NumberFieldInput" />
+
+### NumberFieldDecrement
+
+<PropsTable component="NumberFieldDecrement" />
+
+### NumberFieldIncrement
+
+<PropsTable component="NumberFieldIncrement" />
+
+### NumberFieldScrubArea
+
+<PropsTable component="NumberFieldScrubArea" />
+
+### NumberFieldScrubAreaCursor
+
+<PropsTable component="NumberFieldScrubAreaCursor" />

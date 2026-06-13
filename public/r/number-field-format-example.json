@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "number-field-format-example",
+  "title": "Number Field Format Example",
+  "description": "Atomic example for the Ink UI Number Field component.",
+  "registryDependencies": [
+    "number-field"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/number-field-format-example.tsx",
+      "content": "import {\n  NumberField,\n  NumberFieldDecrement,\n  NumberFieldGroup,\n  NumberFieldIncrement,\n  NumberFieldInput,\n} from \"registry/default/ui/number-field\";\n\nexport function NumberFieldFormatExample() {\n  return (\n    <div className=\"flex w-full max-w-56 flex-col gap-4\">\n      <NumberField defaultValue={19.99} step={0.5} format={{ style: \"currency\", currency: \"USD\" }}>\n        <NumberFieldGroup>\n          <NumberFieldDecrement />\n          <NumberFieldInput />\n          <NumberFieldIncrement />\n        </NumberFieldGroup>\n      </NumberField>\n      <NumberField defaultValue={0.25} step={0.05} min={0} max={1} format={{ style: \"percent\" }}>\n        <NumberFieldGroup>\n          <NumberFieldDecrement />\n          <NumberFieldInput />\n          <NumberFieldIncrement />\n        </NumberFieldGroup>\n      </NumberField>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/number-field-format-example.tsx"
+    }
+  ],
+  "type": "registry:component"
+}
