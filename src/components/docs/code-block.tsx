@@ -65,7 +65,7 @@ export function CodeBlock({
           className={cn(
             "overflow-x-auto",
             isCollapsible && "pb-10",
-            collapsed && "max-h-[calc(1.75rem*16+2rem+2.5rem)] overflow-y-hidden",
+            collapsed && "code-collapse-fade max-h-[calc(1.75rem*16+2rem+2.5rem)] overflow-y-hidden",
           )}
         >
           <pre
@@ -85,12 +85,6 @@ export function CodeBlock({
             )}
           </pre>
         </div>
-        {collapsed ? (
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute inset-x-0 bottom-10 h-20 bg-linear-to-t from-muted to-muted/0"
-          />
-        ) : null}
         {isCollapsible ? (
           <div className="absolute inset-x-0 bottom-0 flex justify-center border-t border-border bg-muted p-2">
             <button

@@ -20,6 +20,24 @@
   --font-mono: "SFMono-Regular", "Cascadia Code", "Roboto Mono", Consolas, monospace;
 }
 
+/* Fades the bottom of a collapsed code block toward the "Show more" bar.
+   Uses a mask (alpha-only) instead of a color gradient so it can't bleed a
+   transparent-black band on iOS WebKit and works on any background. */
+@utility code-collapse-fade {
+  --code-fade-start: calc(100% - 7.5rem);
+  --code-fade-end: calc(100% - 2.5rem);
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    black var(--code-fade-start),
+    transparent var(--code-fade-end)
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    black var(--code-fade-start),
+    transparent var(--code-fade-end)
+  );
+}
+
 @layer base {
   :root[data-theme="dark"] {
     --code-token-comment: #8b949e;
