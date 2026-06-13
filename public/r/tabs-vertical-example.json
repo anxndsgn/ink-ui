@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tabs-vertical-example",
+  "title": "Tabs Vertical Example",
+  "description": "Atomic example for the Ink UI Tabs component.",
+  "registryDependencies": [
+    "tabs"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/tabs-vertical-example.tsx",
+      "content": "import { Tabs, TabsList, TabsTab, TabsPanel } from \"registry/default/ui/tabs\";\nconst tabContentClassName =\n  \"w-full rounded-lg bg-gray-100 p-4 text-sm text-gray-600 dark:bg-gray-900 dark:text-gray-400\";\nexport function TabsVerticalExample() {\n  return (\n    <div className=\"flex flex-col items-start justify-center\">\n      <Tabs defaultValue=\"general\" orientation=\"vertical\" className=\"w-full max-w-72\">\n        <TabsList>\n          <TabsTab value=\"general\">General</TabsTab>\n          <TabsTab value=\"display\">Display</TabsTab>\n          <TabsTab value=\"advanced\">Advanced</TabsTab>\n        </TabsList>\n        <TabsPanel value=\"general\">\n          <p className={tabContentClassName}>General settings for your application.</p>\n        </TabsPanel>\n        <TabsPanel value=\"display\">\n          <p className={tabContentClassName}>Customize display and appearance options.</p>\n        </TabsPanel>\n        <TabsPanel value=\"advanced\">\n          <p className={tabContentClassName}>Advanced configuration and experimental features.</p>\n        </TabsPanel>\n      </Tabs>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/tabs-vertical-example.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

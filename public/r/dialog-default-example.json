@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dialog-default-example",
+  "title": "Dialog Default Example",
+  "description": "Atomic example for the Ink UI Dialog component.",
+  "registryDependencies": [
+    "dialog",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/dialog-default-example.tsx",
+      "content": "import {\n  Dialog,\n  DialogBody,\n  DialogClose,\n  DialogContent,\n  DialogDescription,\n  DialogFooter,\n  DialogHeader,\n  DialogTitle,\n  DialogTrigger,\n} from \"registry/default/ui/dialog\";\nimport { Button } from \"registry/default/ui/button\";\nexport function DialogExample() {\n  return (\n    <Dialog>\n      <DialogTrigger render={<Button variant=\"outline\">Open Dialog</Button>} />\n      <DialogContent>\n        <DialogHeader>\n          <DialogTitle>Confirm Action</DialogTitle>\n          <DialogDescription>\n            Are you sure you want to proceed? This action cannot be undone.\n          </DialogDescription>\n        </DialogHeader>\n        <DialogBody>\n          <p className=\"text-sm text-gray-600 dark:text-gray-400\">\n            Additional context or details about the action can go here.\n          </p>\n        </DialogBody>\n        <DialogFooter>\n          <DialogClose render={<Button variant=\"secondary\">Cancel</Button>} />\n          <Button>Continue</Button>\n        </DialogFooter>\n      </DialogContent>\n    </Dialog>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/dialog-default-example.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "menu-checkbox-example",
+  "title": "Menu Checkbox Example",
+  "description": "Atomic example for the Ink UI Menu component.",
+  "registryDependencies": [
+    "menu",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/menu-checkbox-example.tsx",
+      "content": "import {\n  Menu,\n  MenuTrigger,\n  MenuContent,\n  MenuItemLabel,\n  MenuCheckboxItem,\n} from \"registry/default/ui/menu\";\nimport { Button } from \"registry/default/ui/button\";\nimport { useState } from \"react\";\nexport function MenuCheckboxExample() {\n  const [showStatusBar, setShowStatusBar] = useState(true);\n  const [showActivityBar, setShowActivityBar] = useState(false);\n\n  return (\n    <Menu>\n      <MenuTrigger render={<Button variant=\"outline\">Menu</Button>} />\n      <MenuContent>\n        <MenuCheckboxItem checked={showStatusBar} onCheckedChange={setShowStatusBar}>\n          <MenuItemLabel>Show status bar</MenuItemLabel>\n        </MenuCheckboxItem>\n        <MenuCheckboxItem checked={showActivityBar} onCheckedChange={setShowActivityBar}>\n          <MenuItemLabel>Show activity bar</MenuItemLabel>\n        </MenuCheckboxItem>\n      </MenuContent>\n    </Menu>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/menu-checkbox-example.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

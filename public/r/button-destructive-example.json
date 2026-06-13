@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-destructive-example",
+  "title": "Button Destructive Example",
+  "description": "Atomic example for the Ink UI Button component.",
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/button-destructive-example.tsx",
+      "content": "import { Button } from \"registry/default/ui/button\";\nexport function DestructiveButtonExample() {\n  return (\n    <div className=\"flex flex-wrap items-center gap-4\">\n      <Button variant=\"destructive\">Destructive</Button>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/button-destructive-example.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

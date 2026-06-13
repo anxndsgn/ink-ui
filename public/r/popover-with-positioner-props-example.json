@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "popover-with-positioner-props-example",
+  "title": "Popover With Positioner Props Example",
+  "description": "Atomic example for the Ink UI Popover component.",
+  "registryDependencies": [
+    "popover",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/popover-with-positioner-props-example.tsx",
+      "content": "import {\n  Popover,\n  PopoverBody,\n  PopoverContent,\n  PopoverHeader,\n  PopoverTitle,\n  PopoverTrigger,\n} from \"registry/default/ui/popover\";\nimport { Button } from \"registry/default/ui/button\";\nexport function PopoverWithPositionerPropsExample() {\n  return (\n    <Popover>\n      <PopoverTrigger render={<Button variant=\"outline\">Top Aligned</Button>} />\n      <PopoverContent positionerProps={{ side: \"top\", align: \"start\" }}>\n        <PopoverHeader>\n          <PopoverTitle>Positioned Popover</PopoverTitle>\n        </PopoverHeader>\n        <PopoverBody>\n          <p className=\"text-sm text-gray-600 dark:text-gray-400\">\n            This popover is positioned above the trigger with start alignment.\n          </p>\n        </PopoverBody>\n      </PopoverContent>\n    </Popover>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/popover-with-positioner-props-example.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

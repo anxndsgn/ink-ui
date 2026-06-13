@@ -12,8 +12,8 @@ This skill describes the full procedure for documenting a UI component on the in
 A component doc page has these pieces:
 
 1. **Wrapper component** at `registry/default/ui/<component>.tsx` - styled wrapper around Base UI primitives
-2. **Demo examples** at `registry/default/examples/<component>-example.tsx` - exported React functions, one per example
-3. **Registry entry** in `registry.json` - shadcn registry metadata for the component and its example
+2. **Demo examples** at `registry/default/examples/<component>-<example-name>-example.tsx` - one exported React function per file
+3. **Registry entry** in `registry.json` - shadcn registry metadata for the component and each atomic example
 4. **Doc page** at `content/docs/components/<component>.mdx` - MDX page with frontmatter, examples, installation, and API reference
 5. **Props registry** at `src/lib/props-registry.ts` - entries for `<PropsTable>`
 6. **Docs navigation** in `content/docs/components/meta.json` - add the page slug to `pages`
@@ -30,24 +30,26 @@ The wrapper at `registry/default/ui/<component>.tsx` must exist and export named
 
 ## 2. Create/update demo examples
 
-Create or update `registry/default/examples/<component>-example.tsx`. Each example must be an exported function.
+Create or update atomic files in `registry/default/examples/`. Each file must contain exactly one exported example function.
 
 Rules:
 
-- Export one function per example variant: `export function ComponentExample() { ... }`
+- File naming convention: `<component>-<example-name>-example.tsx`, e.g. `button-loading-example.tsx`, `menu-with-icons-example.tsx`
+- Use `default` as the example name for the primary/basic example, e.g. `button-default-example.tsx`
+- Export one function per file: `export function ComponentExample() { ... }`
 - Name convention: `<Feature><Component>Example`, e.g. `LoadingButtonExample`, `MenuWithIconsExample`
 - Import from `registry/default/ui/<component>` and `@phosphor-icons/react` for icons
 - Wrap multiple items in `<div className="flex flex-wrap items-center gap-4">`
 - Keep examples self-contained and client-safe; MDX renders React components directly, without Astro `client:*` directives.
 
-Docs pages import the entire example file with `?raw` and pass it to `<ComponentSource>`, so keep examples readable and grouped by component.
+Docs pages import each atomic example file with `?raw` and pass that file's source to the matching `<ComponentSource>`, so each code snippet shows only the example being previewed.
 
 ## 3. Update `registry.json`
 
 Add or update two registry items:
 
 1. A `registry:ui` item named `<component>` that points at `registry/default/ui/<component>.tsx`.
-2. A `registry:component` item named `<component>-example` that points at `registry/default/examples/<component>-example.tsx` and depends on `<component>`.
+2. A `registry:component` item for each atomic example, named `<component>-<example-name>-example`, that points at `registry/default/examples/<component>-<example-name>-example.tsx`.
 
 Example:
 
@@ -84,8 +86,10 @@ registry: component-name
 ---
 
 import { Component, SubComponent } from "registry/default/ui/component-name";
-import { ComponentExample, VariantExample } from "registry/default/examples/component-name-example";
-import componentExampleSource from "registry/default/examples/component-name-example.tsx?raw";
+import { ComponentExample } from "registry/default/examples/component-name-default-example";
+import componentExampleSource from "registry/default/examples/component-name-default-example.tsx?raw";
+import { VariantExample } from "registry/default/examples/component-name-variant-example";
+import variantExampleSource from "registry/default/examples/component-name-variant-example.tsx?raw";
 import componentSource from "registry/default/ui/component-name.tsx?raw";
 
 <ComponentSection>
@@ -93,7 +97,11 @@ import componentSource from "registry/default/ui/component-name.tsx?raw";
     <ComponentPreview name="ComponentExample">
       <ComponentExample />
     </ComponentPreview>
-    <ComponentSource code={componentExampleSource} language="tsx" title="component-name-example.tsx" />
+    <ComponentSource
+      code={componentExampleSource}
+      language="tsx"
+      title="component-name-default-example.tsx"
+    />
   </ComponentTabs>
 </ComponentSection>
 
@@ -108,7 +116,11 @@ Brief description of what this example demonstrates.
     <ComponentPreview name="VariantExample">
       <VariantExample />
     </ComponentPreview>
-    <ComponentSource code={componentExampleSource} language="tsx" title="component-name-example.tsx" />
+    <ComponentSource
+      code={variantExampleSource}
+      language="tsx"
+      title="component-name-variant-example.tsx"
+    />
   </ComponentTabs>
 </ComponentSection>
 
@@ -134,6 +146,7 @@ Key notes:
 - MDX helper components are globally registered in `src/components/mdx/mdx-components.tsx`; do not import `ComponentSection`, `ComponentTabs`, `ComponentPreview`, `ComponentSource`, `CodeBlock`, or `PropsTable` in each page.
 - Use `component` and `registry` frontmatter to connect the doc page to the component and registry item.
 - Use `<ComponentTabs>` with `<ComponentPreview>` and `<ComponentSource>` for examples.
+- Import each example component and `?raw` source from its own atomic example file.
 - The installation section uses a `?raw` import to show the full wrapper source.
 - Keep component doc pages under `content/docs/components/`, not `src/pages/`.
 
@@ -174,11 +187,7 @@ Add the new component slug to `content/docs/components/meta.json`:
 ```json
 {
   "title": "Components",
-  "pages": [
-    "button",
-    "component-name",
-    "menu"
-  ]
+  "pages": ["button", "component-name", "menu"]
 }
 ```
 

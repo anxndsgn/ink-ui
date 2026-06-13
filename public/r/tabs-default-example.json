@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tabs-default-example",
+  "title": "Tabs Default Example",
+  "description": "Atomic example for the Ink UI Tabs component.",
+  "registryDependencies": [
+    "tabs"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/tabs-default-example.tsx",
+      "content": "import { Tabs, TabsList, TabsTab, TabsPanel } from \"registry/default/ui/tabs\";\nconst tabContentClassName =\n  \"w-full rounded-lg bg-gray-100 p-4 text-sm text-gray-600 dark:bg-gray-900 dark:text-gray-400\";\nexport function TabsExample() {\n  return (\n    <div className=\"flex flex-col items-start justify-center\">\n      <Tabs defaultValue=\"account\" className=\"w-full max-w-72\">\n        <TabsList>\n          <TabsTab value=\"account\">Account</TabsTab>\n          <TabsTab value=\"password\">Password</TabsTab>\n          <TabsTab value=\"settings\">Settings</TabsTab>\n        </TabsList>\n        <TabsPanel value=\"account\">\n          <p className={tabContentClassName}>Manage your account settings.</p>\n        </TabsPanel>\n        <TabsPanel value=\"password\">\n          <p className={tabContentClassName}>Change your password.</p>\n        </TabsPanel>\n        <TabsPanel value=\"settings\">\n          <p className={tabContentClassName}>Configure application settings.</p>\n        </TabsPanel>\n      </Tabs>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/tabs-default-example.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

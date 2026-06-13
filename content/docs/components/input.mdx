@@ -5,13 +5,12 @@ component: Input
 registry: input
 ---
 
-import { Input } from "registry/default/ui/input";
-import {
-  InputExample,
-  OutlineInputExample,
-  InlineInputExample,
-} from "registry/default/examples/input-example";
-import inputExampleSource from "registry/default/examples/input-example.tsx?raw";
+import { InputExample } from "registry/default/examples/input-default-example";
+import inputExampleSource from "registry/default/examples/input-default-example.tsx?raw";
+import { OutlineInputExample } from "registry/default/examples/input-outline-example";
+import outlineInputExampleSource from "registry/default/examples/input-outline-example.tsx?raw";
+import { InlineInputExample } from "registry/default/examples/input-inline-example";
+import inlineInputExampleSource from "registry/default/examples/input-inline-example.tsx?raw";
 import inputSource from "registry/default/ui/input.tsx?raw";
 
 <ComponentSection>
@@ -19,7 +18,7 @@ import inputSource from "registry/default/ui/input.tsx?raw";
     <ComponentPreview name="InputExample">
       <InputExample />
     </ComponentPreview>
-    <ComponentSource code={inputExampleSource} language="tsx" title="input-example.tsx" />
+    <ComponentSource code={inputExampleSource} language="tsx" title="input-default-example.tsx" />
   </ComponentTabs>
 </ComponentSection>
 
@@ -36,7 +35,11 @@ Available variants: `default`, `outline`.
     <ComponentPreview name="OutlineInputExample">
       <OutlineInputExample />
     </ComponentPreview>
-    <ComponentSource code={inputExampleSource} language="tsx" title="input-example.tsx" />
+    <ComponentSource
+      code={outlineInputExampleSource}
+      language="tsx"
+      title="input-outline-example.tsx"
+    />
   </ComponentTabs>
 </ComponentSection>
 
@@ -49,7 +52,11 @@ By default, the input stretches to fill its container (`block={true}`). Pass `bl
     <ComponentPreview name="InlineInputExample">
       <InlineInputExample />
     </ComponentPreview>
-    <ComponentSource code={inputExampleSource} language="tsx" title="input-example.tsx" />
+    <ComponentSource
+      code={inlineInputExampleSource}
+      language="tsx"
+      title="input-inline-example.tsx"
+    />
   </ComponentTabs>
 </ComponentSection>
 

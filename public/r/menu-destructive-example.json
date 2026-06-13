@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "menu-destructive-example",
+  "title": "Menu Destructive Example",
+  "description": "Atomic example for the Ink UI Menu component.",
+  "registryDependencies": [
+    "menu",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/menu-destructive-example.tsx",
+      "content": "import {\n  Menu,\n  MenuTrigger,\n  MenuContent,\n  MenuItem,\n  MenuItemLabel,\n  MenuSeparator,\n} from \"registry/default/ui/menu\";\nimport { Button } from \"registry/default/ui/button\";\nexport function MenuDestructiveExample() {\n  return (\n    <Menu>\n      <MenuTrigger render={<Button variant=\"outline\">Menu</Button>} />\n      <MenuContent>\n        <MenuItem>\n          <MenuItemLabel>Edit</MenuItemLabel>\n        </MenuItem>\n        <MenuItem>\n          <MenuItemLabel>Duplicate</MenuItemLabel>\n        </MenuItem>\n        <MenuSeparator />\n        <MenuItem variant=\"destructive\">\n          <MenuItemLabel>Delete</MenuItemLabel>\n        </MenuItem>\n      </MenuContent>\n    </Menu>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/menu-destructive-example.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "select-with-groups-example",
+  "title": "Select With Groups Example",
+  "description": "Atomic example for the Ink UI Select component.",
+  "registryDependencies": [
+    "select"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/select-with-groups-example.tsx",
+      "content": "import {\n  Select,\n  SelectTrigger,\n  SelectContent,\n  SelectItem,\n  SelectValue,\n  SelectSeparator,\n} from \"registry/default/ui/select\";\nexport function SelectWithGroupsExample() {\n  const items = [\n    { value: \"react\", label: \"React\" },\n    { value: \"vue\", label: \"Vue\" },\n    { value: \"svelte\", label: \"Svelte\" },\n    { value: \"next\", label: \"Next.js\" },\n    { value: \"nuxt\", label: \"Nuxt\" },\n    { value: \"astro\", label: \"Astro\" },\n  ];\n\n  return (\n    <div className=\"flex flex-wrap items-center gap-4\">\n      <Select items={items} defaultValue=\"react\">\n        <SelectTrigger variant=\"outline\" className=\"w-56\">\n          <SelectValue placeholder=\"Select a framework\" />\n        </SelectTrigger>\n        <SelectContent>\n          <SelectItem value=\"react\">React</SelectItem>\n          <SelectItem value=\"vue\">Vue</SelectItem>\n          <SelectItem value=\"svelte\">Svelte</SelectItem>\n          <SelectSeparator />\n          <SelectItem value=\"next\">Next.js</SelectItem>\n          <SelectItem value=\"nuxt\">Nuxt</SelectItem>\n          <SelectItem value=\"astro\">Astro</SelectItem>\n        </SelectContent>\n      </Select>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/select-with-groups-example.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

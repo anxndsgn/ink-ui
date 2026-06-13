@@ -5,21 +5,14 @@ component: Tooltip
 registry: tooltip
 ---
 
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-  TooltipProvider,
-  TooltipViewport,
-  createTooltipHandle,
-} from "registry/default/ui/tooltip";
-import {
-  TooltipExample,
-  TooltipPositionedExample,
-  TooltipWithDelayExample,
-  TooltipAnimatedExample,
-} from "registry/default/examples/tooltip-example";
-import tooltipExampleSource from "registry/default/examples/tooltip-example.tsx?raw";
+import { TooltipExample } from "registry/default/examples/tooltip-default-example";
+import tooltipExampleSource from "registry/default/examples/tooltip-default-example.tsx?raw";
+import { TooltipPositionedExample } from "registry/default/examples/tooltip-positioned-example";
+import tooltipPositionedExampleSource from "registry/default/examples/tooltip-positioned-example.tsx?raw";
+import { TooltipWithDelayExample } from "registry/default/examples/tooltip-with-delay-example";
+import tooltipWithDelayExampleSource from "registry/default/examples/tooltip-with-delay-example.tsx?raw";
+import { TooltipAnimatedExample } from "registry/default/examples/tooltip-animated-example";
+import tooltipAnimatedExampleSource from "registry/default/examples/tooltip-animated-example.tsx?raw";
 import tooltipSource from "registry/default/ui/tooltip.tsx?raw";
 
 <ComponentSection>
@@ -27,7 +20,11 @@ import tooltipSource from "registry/default/ui/tooltip.tsx?raw";
     <ComponentPreview name="TooltipExample">
       <TooltipExample />
     </ComponentPreview>
-    <ComponentSource code={tooltipExampleSource} language="tsx" title="tooltip-example.tsx" />
+    <ComponentSource
+      code={tooltipExampleSource}
+      language="tsx"
+      title="tooltip-default-example.tsx"
+    />
   </ComponentTabs>
 </ComponentSection>
 
@@ -42,7 +39,11 @@ Use `positionerProps` on `TooltipContent` to control which side the tooltip appe
     <ComponentPreview name="TooltipPositionedExample">
       <TooltipPositionedExample />
     </ComponentPreview>
-    <ComponentSource code={tooltipExampleSource} language="tsx" title="tooltip-example.tsx" />
+    <ComponentSource
+      code={tooltipPositionedExampleSource}
+      language="tsx"
+      title="tooltip-positioned-example.tsx"
+    />
   </ComponentTabs>
 </ComponentSection>
 
@@ -55,7 +56,11 @@ Control the open delay with the `delay` prop on `TooltipTrigger`.
     <ComponentPreview name="TooltipWithDelayExample">
       <TooltipWithDelayExample />
     </ComponentPreview>
-    <ComponentSource code={tooltipExampleSource} language="tsx" title="tooltip-example.tsx" />
+    <ComponentSource
+      code={tooltipWithDelayExampleSource}
+      language="tsx"
+      title="tooltip-with-delay-example.tsx"
+    />
   </ComponentTabs>
 </ComponentSection>
 
@@ -68,7 +73,11 @@ Use `createTooltipHandle` with `TooltipProvider` to share a single tooltip acros
     <ComponentPreview name="TooltipAnimatedExample">
       <TooltipAnimatedExample />
     </ComponentPreview>
-    <ComponentSource code={tooltipExampleSource} language="tsx" title="tooltip-example.tsx" />
+    <ComponentSource
+      code={tooltipAnimatedExampleSource}
+      language="tsx"
+      title="tooltip-animated-example.tsx"
+    />
   </ComponentTabs>
 </ComponentSection>
 

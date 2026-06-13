@@ -5,13 +5,14 @@ component: Toast
 registry: toast
 ---
 
-import {
-  ToastExample,
-  ToastPositionExample,
-  ToastPromiseExample,
-  ToastVariantsExample,
-} from "registry/default/examples/toast-example";
-import toastExampleSource from "registry/default/examples/toast-example.tsx?raw";
+import { ToastExample } from "registry/default/examples/toast-default-example";
+import toastExampleSource from "registry/default/examples/toast-default-example.tsx?raw";
+import { ToastVariantsExample } from "registry/default/examples/toast-variants-example";
+import toastVariantsExampleSource from "registry/default/examples/toast-variants-example.tsx?raw";
+import { ToastPromiseExample } from "registry/default/examples/toast-promise-example";
+import toastPromiseExampleSource from "registry/default/examples/toast-promise-example.tsx?raw";
+import { ToastPositionExample } from "registry/default/examples/toast-position-example";
+import toastPositionExampleSource from "registry/default/examples/toast-position-example.tsx?raw";
 import toastSource from "registry/default/ui/toast.tsx?raw";
 
 export const toastSetupSource = `import { ToastProvider } from "registry/default/ui/toast";
@@ -37,7 +38,7 @@ type: "success",
     <ComponentPreview name="ToastExample">
       <ToastExample />
     </ComponentPreview>
-    <ComponentSource code={toastExampleSource} language="tsx" title="toast-example.tsx" />
+    <ComponentSource code={toastExampleSource} language="tsx" title="toast-default-example.tsx" />
   </ComponentTabs>
 </ComponentSection>
 
@@ -54,7 +55,11 @@ Use the `type` field to select a built-in icon, and pass `actionProps` to render
     <ComponentPreview name="ToastVariantsExample">
       <ToastVariantsExample />
     </ComponentPreview>
-    <ComponentSource code={toastExampleSource} language="tsx" title="toast-example.tsx" />
+    <ComponentSource
+      code={toastVariantsExampleSource}
+      language="tsx"
+      title="toast-variants-example.tsx"
+    />
   </ComponentTabs>
 </ComponentSection>
 
@@ -67,7 +72,11 @@ Pass the `position` prop to `ToastProvider` to place the stack at any screen edg
     <ComponentPreview name="ToastPositionExample">
       <ToastPositionExample />
     </ComponentPreview>
-    <ComponentSource code={toastExampleSource} language="tsx" title="toast-example.tsx" />
+    <ComponentSource
+      code={toastPositionExampleSource}
+      language="tsx"
+      title="toast-position-example.tsx"
+    />
   </ComponentTabs>
 </ComponentSection>
 
@@ -80,7 +89,11 @@ Use `toastManager.promise(...)` to keep loading, success, and error feedback tie
     <ComponentPreview name="ToastPromiseExample">
       <ToastPromiseExample />
     </ComponentPreview>
-    <ComponentSource code={toastExampleSource} language="tsx" title="toast-example.tsx" />
+    <ComponentSource
+      code={toastPromiseExampleSource}
+      language="tsx"
+      title="toast-promise-example.tsx"
+    />
   </ComponentTabs>
 </ComponentSection>
 

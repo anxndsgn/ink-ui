@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "checkbox-default-example",
+  "title": "Checkbox Default Example",
+  "description": "Atomic example for the Ink UI Checkbox component.",
+  "registryDependencies": [
+    "checkbox"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/checkbox-default-example.tsx",
+      "content": "import { Checkbox } from \"registry/default/ui/checkbox\";\nexport function CheckboxExample() {\n  return (\n    <div className=\"flex items-center gap-4\">\n      <Checkbox />\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/checkbox-default-example.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

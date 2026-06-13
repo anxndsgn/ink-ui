@@ -5,13 +5,12 @@ component: Textarea
 registry: textarea
 ---
 
-import { Textarea } from "registry/default/ui/textarea";
-import {
-  TextareaExample,
-  OutlineTextareaExample,
-  InlineTextareaExample,
-} from "registry/default/examples/textarea-example";
-import textareaExampleSource from "registry/default/examples/textarea-example.tsx?raw";
+import { TextareaExample } from "registry/default/examples/textarea-default-example";
+import textareaExampleSource from "registry/default/examples/textarea-default-example.tsx?raw";
+import { OutlineTextareaExample } from "registry/default/examples/textarea-outline-example";
+import outlineTextareaExampleSource from "registry/default/examples/textarea-outline-example.tsx?raw";
+import { InlineTextareaExample } from "registry/default/examples/textarea-inline-example";
+import inlineTextareaExampleSource from "registry/default/examples/textarea-inline-example.tsx?raw";
 import textareaSource from "registry/default/ui/textarea.tsx?raw";
 
 <ComponentSection>
@@ -19,7 +18,11 @@ import textareaSource from "registry/default/ui/textarea.tsx?raw";
     <ComponentPreview name="TextareaExample">
       <TextareaExample />
     </ComponentPreview>
-    <ComponentSource code={textareaExampleSource} language="tsx" title="textarea-example.tsx" />
+    <ComponentSource
+      code={textareaExampleSource}
+      language="tsx"
+      title="textarea-default-example.tsx"
+    />
   </ComponentTabs>
 </ComponentSection>
 
@@ -36,7 +39,11 @@ Available variants: `default`, `outline`.
     <ComponentPreview name="OutlineTextareaExample">
       <OutlineTextareaExample />
     </ComponentPreview>
-    <ComponentSource code={textareaExampleSource} language="tsx" title="textarea-example.tsx" />
+    <ComponentSource
+      code={outlineTextareaExampleSource}
+      language="tsx"
+      title="textarea-outline-example.tsx"
+    />
   </ComponentTabs>
 </ComponentSection>
 
@@ -49,7 +56,11 @@ By default, the textarea stretches to fill its container (`block={true}`). Pass 
     <ComponentPreview name="InlineTextareaExample">
       <InlineTextareaExample />
     </ComponentPreview>
-    <ComponentSource code={textareaExampleSource} language="tsx" title="textarea-example.tsx" />
+    <ComponentSource
+      code={inlineTextareaExampleSource}
+      language="tsx"
+      title="textarea-inline-example.tsx"
+    />
   </ComponentTabs>
 </ComponentSection>
 

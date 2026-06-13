@@ -5,22 +5,16 @@ component: Select
 registry: select
 ---
 
-import {
-  Select,
-  SelectTrigger,
-  SelectContent,
-  SelectItem,
-  SelectValue,
-  SelectSeparator,
-} from "registry/default/ui/select";
-import {
-  SelectExample,
-  SelectVariantsExample,
-  SelectWithGroupsExample,
-  SelectControlledExample,
-  SelectWithItemsExample,
-} from "registry/default/examples/select-example";
-import selectExampleSource from "registry/default/examples/select-example.tsx?raw";
+import { SelectExample } from "registry/default/examples/select-default-example";
+import selectExampleSource from "registry/default/examples/select-default-example.tsx?raw";
+import { SelectVariantsExample } from "registry/default/examples/select-variants-example";
+import selectVariantsExampleSource from "registry/default/examples/select-variants-example.tsx?raw";
+import { SelectWithGroupsExample } from "registry/default/examples/select-with-groups-example";
+import selectWithGroupsExampleSource from "registry/default/examples/select-with-groups-example.tsx?raw";
+import { SelectControlledExample } from "registry/default/examples/select-controlled-example";
+import selectControlledExampleSource from "registry/default/examples/select-controlled-example.tsx?raw";
+import { SelectWithItemsExample } from "registry/default/examples/select-with-items-example";
+import selectWithItemsExampleSource from "registry/default/examples/select-with-items-example.tsx?raw";
 import selectSource from "registry/default/ui/select.tsx?raw";
 
 <ComponentSection>
@@ -28,7 +22,7 @@ import selectSource from "registry/default/ui/select.tsx?raw";
     <ComponentPreview name="SelectExample">
       <SelectExample />
     </ComponentPreview>
-    <ComponentSource code={selectExampleSource} language="tsx" title="select-example.tsx" />
+    <ComponentSource code={selectExampleSource} language="tsx" title="select-default-example.tsx" />
   </ComponentTabs>
 </ComponentSection>
 
@@ -43,7 +37,11 @@ The trigger supports the same `variant` and `size` props as `Button`.
     <ComponentPreview name="SelectVariantsExample">
       <SelectVariantsExample />
     </ComponentPreview>
-    <ComponentSource code={selectExampleSource} language="tsx" title="select-example.tsx" />
+    <ComponentSource
+      code={selectVariantsExampleSource}
+      language="tsx"
+      title="select-variants-example.tsx"
+    />
   </ComponentTabs>
 </ComponentSection>
 
@@ -56,7 +54,11 @@ Use `SelectSeparator` to visually group related options.
     <ComponentPreview name="SelectWithGroupsExample">
       <SelectWithGroupsExample />
     </ComponentPreview>
-    <ComponentSource code={selectExampleSource} language="tsx" title="select-example.tsx" />
+    <ComponentSource
+      code={selectWithGroupsExampleSource}
+      language="tsx"
+      title="select-with-groups-example.tsx"
+    />
   </ComponentTabs>
 </ComponentSection>
 
@@ -69,7 +71,11 @@ Manage the selected value with React state.
     <ComponentPreview name="SelectControlledExample">
       <SelectControlledExample />
     </ComponentPreview>
-    <ComponentSource code={selectExampleSource} language="tsx" title="select-example.tsx" />
+    <ComponentSource
+      code={selectControlledExampleSource}
+      language="tsx"
+      title="select-controlled-example.tsx"
+    />
   </ComponentTabs>
 </ComponentSection>
 
@@ -82,7 +88,11 @@ Pass an `items` array to `Select` so `SelectValue` renders the matching label in
     <ComponentPreview name="SelectWithItemsExample">
       <SelectWithItemsExample />
     </ComponentPreview>
-    <ComponentSource code={selectExampleSource} language="tsx" title="select-example.tsx" />
+    <ComponentSource
+      code={selectWithItemsExampleSource}
+      language="tsx"
+      title="select-with-items-example.tsx"
+    />
   </ComponentTabs>
 </ComponentSection>
 

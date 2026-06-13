@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "checkbox-group-indeterminate-example",
+  "title": "Checkbox Group Indeterminate Example",
+  "description": "Atomic example for the Ink UI Checkbox component.",
+  "registryDependencies": [
+    "checkbox"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/checkbox-group-indeterminate-example.tsx",
+      "content": "import { useState } from \"react\";\nimport { Checkbox, CheckboxGroup } from \"registry/default/ui/checkbox\";\nexport function CheckboxGroupIndeterminateExample() {\n  const allValues = [\"fuji\", \"gala\", \"granny-smith\"];\n  const [value, setValue] = useState<string[]>([]);\n\n  return (\n    <CheckboxGroup value={value} onValueChange={setValue} allValues={allValues}>\n      <label className=\"flex items-center gap-2 text-sm font-medium\">\n        <Checkbox parent />\n        <span className=\"text-gray-900 dark:text-gray-100\">Apples</span>\n      </label>\n      <div className=\"flex flex-col gap-2 pl-4\">\n        <label className=\"flex items-center gap-2 text-sm\">\n          <Checkbox value=\"fuji\" />\n          <span className=\"text-gray-900 dark:text-gray-100\">Fuji</span>\n        </label>\n        <label className=\"flex items-center gap-2 text-sm\">\n          <Checkbox value=\"gala\" />\n          <span className=\"text-gray-900 dark:text-gray-100\">Gala</span>\n        </label>\n        <label className=\"flex items-center gap-2 text-sm\">\n          <Checkbox value=\"granny-smith\" />\n          <span className=\"text-gray-900 dark:text-gray-100\">Granny Smith</span>\n        </label>\n      </div>\n    </CheckboxGroup>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/checkbox-group-indeterminate-example.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

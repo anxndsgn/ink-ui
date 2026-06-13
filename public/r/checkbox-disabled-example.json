@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "checkbox-disabled-example",
+  "title": "Checkbox Disabled Example",
+  "description": "Atomic example for the Ink UI Checkbox component.",
+  "registryDependencies": [
+    "checkbox"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/checkbox-disabled-example.tsx",
+      "content": "import { Checkbox } from \"registry/default/ui/checkbox\";\nexport function CheckboxDisabledExample() {\n  return (\n    <div className=\"flex items-center gap-4\">\n      <Checkbox disabled />\n      <Checkbox defaultChecked disabled />\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/checkbox-disabled-example.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

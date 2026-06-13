@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-ghost-example",
+  "title": "Button Ghost Example",
+  "description": "Atomic example for the Ink UI Button component.",
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/button-ghost-example.tsx",
+      "content": "import { Button } from \"registry/default/ui/button\";\nexport function GhostButtonExample() {\n  return (\n    <div className=\"flex flex-wrap items-center gap-4\">\n      <Button variant=\"ghost\">Ghost</Button>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/button-ghost-example.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

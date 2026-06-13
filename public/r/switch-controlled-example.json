@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "switch-controlled-example",
+  "title": "Switch Controlled Example",
+  "description": "Atomic example for the Ink UI Switch component.",
+  "registryDependencies": [
+    "switch"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/switch-controlled-example.tsx",
+      "content": "import { useState } from \"react\";\nimport { Switch } from \"registry/default/ui/switch\";\nexport function SwitchControlledExample() {\n  const [checked, setChecked] = useState(false);\n\n  return (\n    <div className=\"flex items-center gap-4\">\n      <Switch checked={checked} onCheckedChange={setChecked} />\n      <span className=\"text-sm text-gray-600 dark:text-gray-400\">{checked ? \"On\" : \"Off\"}</span>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/switch-controlled-example.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

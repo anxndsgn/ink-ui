@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "card-motion-footer-example",
+  "title": "Card Motion Footer Example",
+  "description": "Atomic example for the Ink UI Card component.",
+  "registryDependencies": [
+    "card",
+    "button",
+    "input"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/card-motion-footer-example.tsx",
+      "content": "import {\n  Card,\n  CardBody,\n  CardDescription,\n  CardFooter,\n  CardHeader,\n  CardTitle,\n} from \"registry/default/ui/card\";\nimport { Button } from \"registry/default/ui/button\";\nimport { AnimatePresence, motion } from \"motion/react\";\nimport { useState } from \"react\";\nimport { Input } from \"registry/default/ui/input\";\nexport function CardMotionFooterExample() {\n  const [name, setName] = useState(\"Alex Doe\");\n  const [originalName] = useState(\"Alex Doe\");\n  const hasChanges = name !== originalName;\n\n  return (\n    <Card className=\"w-full max-w-lg\">\n      <CardHeader>\n        <CardTitle>Profile Settings</CardTitle>\n        <CardDescription>Update your profile information.</CardDescription>\n      </CardHeader>\n      <CardBody className=\"grid gap-4\">\n        <div className=\"grid gap-2\">\n          <label className=\"text-sm font-medium\" htmlFor=\"name\">\n            Name\n          </label>\n          <Input id=\"name\" onChange={(e) => setName(e.target.value)} value={name} />\n        </div>\n      </CardBody>\n      <AnimatePresence>\n        {hasChanges && (\n          <motion.div\n            animate={{ height: \"auto\", opacity: 1 }}\n            className=\"grid min-h-0 overflow-hidden\"\n            exit={{ height: \"0px\", opacity: 0 }}\n            initial={{ height: \"0px\", opacity: 0 }}\n            key=\"save-button\"\n            transition={{\n              duration: 0.3,\n              ease: [0.79, 0.14, 0.15, 0.86],\n            }}\n          >\n            <CardFooter>\n              <AnimatePresence mode=\"wait\">\n                <motion.div\n                  animate={{ filter: \"blur(0px)\", opacity: 1, scale: 1 }}\n                  exit={{ filter: \"blur(6px)\", opacity: 0, scale: 0.95 }}\n                  initial={{ filter: \"blur(6px)\", opacity: 0, scale: 0.95 }}\n                  key=\"reset-button\"\n                  transition={{\n                    duration: 0.3,\n                    ease: [0.79, 0.14, 0.15, 0.86],\n                  }}\n                >\n                  <Button onClick={() => setName(originalName)} type=\"button\" variant=\"ghost\">\n                    Reset\n                  </Button>\n                </motion.div>\n              </AnimatePresence>\n              <AnimatePresence mode=\"wait\">\n                <motion.div\n                  animate={{ filter: \"blur(0px)\", opacity: 1, scale: 1 }}\n                  exit={{ filter: \"blur(6px)\", opacity: 0, scale: 0.95 }}\n                  initial={{ filter: \"blur(6px)\", opacity: 0, scale: 0.95 }}\n                  key=\"save-button\"\n                  transition={{\n                    duration: 0.3,\n                    ease: [0.79, 0.14, 0.15, 0.86],\n                  }}\n                >\n                  <Button type=\"submit\">Save Changes</Button>\n                </motion.div>\n              </AnimatePresence>\n            </CardFooter>\n          </motion.div>\n        )}\n      </AnimatePresence>\n    </Card>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/card-motion-footer-example.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

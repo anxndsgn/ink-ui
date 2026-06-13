@@ -5,21 +5,10 @@ component: Alert Dialog
 registry: alert-dialog
 ---
 
-import {
-  AlertDialog,
-  AlertDialogClose,
-  AlertDialogContent,
-  AlertDialogDescription,
-  AlertDialogFooter,
-  AlertDialogHeader,
-  AlertDialogTitle,
-  AlertDialogTrigger,
-} from "registry/default/ui/alert-dialog";
-import {
-  AlertDialogExample,
-  AlertDialogDestructiveExample,
-} from "registry/default/examples/alert-dialog-example";
-import alertDialogExampleSource from "registry/default/examples/alert-dialog-example.tsx?raw";
+import { AlertDialogExample } from "registry/default/examples/alert-dialog-default-example";
+import alertDialogExampleSource from "registry/default/examples/alert-dialog-default-example.tsx?raw";
+import { AlertDialogDestructiveExample } from "registry/default/examples/alert-dialog-destructive-example";
+import alertDialogDestructiveExampleSource from "registry/default/examples/alert-dialog-destructive-example.tsx?raw";
 import alertDialogSource from "registry/default/ui/alert-dialog.tsx?raw";
 
 <ComponentSection>
@@ -30,7 +19,7 @@ import alertDialogSource from "registry/default/ui/alert-dialog.tsx?raw";
     <ComponentSource
       code={alertDialogExampleSource}
       language="tsx"
-      title="alert-dialog-example.tsx"
+      title="alert-dialog-default-example.tsx"
     />
   </ComponentTabs>
 </ComponentSection>
@@ -47,9 +36,9 @@ Use a destructive button for actions that cannot be undone, such as deleting dat
       <AlertDialogDestructiveExample />
     </ComponentPreview>
     <ComponentSource
-      code={alertDialogExampleSource}
+      code={alertDialogDestructiveExampleSource}
       language="tsx"
-      title="alert-dialog-example.tsx"
+      title="alert-dialog-destructive-example.tsx"
     />
   </ComponentTabs>
 </ComponentSection>

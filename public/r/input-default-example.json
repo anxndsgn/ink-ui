@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-default-example",
+  "title": "Input Default Example",
+  "description": "Atomic example for the Ink UI Input component.",
+  "registryDependencies": [
+    "input"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/input-default-example.tsx",
+      "content": "import { Input } from \"registry/default/ui/input\";\nexport function InputExample() {\n  return (\n    <div className=\"flex flex-wrap items-center gap-4\">\n      <Input placeholder=\"Type something...\" />\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/input-default-example.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

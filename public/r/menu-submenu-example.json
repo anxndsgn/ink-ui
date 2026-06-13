@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "menu-submenu-example",
+  "title": "Menu Submenu Example",
+  "description": "Atomic example for the Ink UI Menu component.",
+  "registryDependencies": [
+    "menu",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/menu-submenu-example.tsx",
+      "content": "import {\n  Menu,\n  MenuTrigger,\n  MenuContent,\n  MenuItem,\n  MenuItemLabel,\n  MenuItemLeadingIcon,\n  MenuItemTrailingIcon,\n  MenuSeparator,\n  MenuSubmenu,\n  MenuSubmenuTrigger,\n} from \"registry/default/ui/menu\";\nimport { Button } from \"registry/default/ui/button\";\nimport { CaretRightIcon, UsersIcon } from \"@phosphor-icons/react\";\nexport function MenuSubmenuExample() {\n  return (\n    <Menu>\n      <MenuTrigger render={<Button variant=\"outline\">Menu</Button>} />\n      <MenuContent>\n        <MenuItem>\n          <MenuItemLabel>New file</MenuItemLabel>\n        </MenuItem>\n        <MenuSubmenu>\n          <MenuSubmenuTrigger>\n            <MenuItemLeadingIcon>\n              <UsersIcon />\n            </MenuItemLeadingIcon>\n            <MenuItemLabel>Share with</MenuItemLabel>\n            <MenuItemTrailingIcon>\n              <CaretRightIcon />\n            </MenuItemTrailingIcon>\n          </MenuSubmenuTrigger>\n          <MenuContent>\n            <MenuItem>\n              <MenuItemLabel>Team</MenuItemLabel>\n            </MenuItem>\n            <MenuItem>\n              <MenuItemLabel>Organization</MenuItemLabel>\n            </MenuItem>\n            <MenuSeparator />\n            <MenuItem>\n              <MenuItemLabel>Get link</MenuItemLabel>\n            </MenuItem>\n          </MenuContent>\n        </MenuSubmenu>\n        <MenuSeparator />\n        <MenuItem>\n          <MenuItemLabel>Settings</MenuItemLabel>\n        </MenuItem>\n      </MenuContent>\n    </Menu>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/menu-submenu-example.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

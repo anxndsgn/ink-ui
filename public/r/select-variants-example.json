@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "select-variants-example",
+  "title": "Select Variants Example",
+  "description": "Atomic example for the Ink UI Select component.",
+  "registryDependencies": [
+    "select"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/select-variants-example.tsx",
+      "content": "import {\n  Select,\n  SelectTrigger,\n  SelectContent,\n  SelectItem,\n  SelectValue,\n} from \"registry/default/ui/select\";\nexport function SelectVariantsExample() {\n  const variants = [\n    { value: \"outline\", label: \"Outline\" },\n    { value: \"solid\", label: \"Solid\" },\n  ];\n\n  const sizes = [\n    { value: \"sm\", label: \"Small\" },\n    { value: \"default\", label: \"Default\" },\n    { value: \"lg\", label: \"Large\" },\n  ];\n\n  return (\n    <div className=\"flex flex-wrap items-center gap-4\">\n      <Select items={variants} defaultValue=\"outline\">\n        <SelectTrigger variant=\"outline\" className=\"w-44\">\n          <SelectValue placeholder=\"Variant\" />\n        </SelectTrigger>\n        <SelectContent>\n          {variants.map((item) => (\n            <SelectItem key={item.value} value={item.value}>\n              {item.label}\n            </SelectItem>\n          ))}\n        </SelectContent>\n      </Select>\n\n      <Select items={sizes} defaultValue=\"sm\">\n        <SelectTrigger variant=\"outline\" size=\"sm\" className=\"w-44\">\n          <SelectValue placeholder=\"Size\" />\n        </SelectTrigger>\n        <SelectContent>\n          {sizes.map((item) => (\n            <SelectItem key={item.value} value={item.value}>\n              {item.label}\n            </SelectItem>\n          ))}\n        </SelectContent>\n      </Select>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/select-variants-example.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

@@ -5,33 +5,20 @@ component: Menu
 registry: menu
 ---
 
-import {
-  Menu,
-  MenuTrigger,
-  MenuContent,
-  MenuItem,
-  MenuItemLabel,
-  MenuItemLeadingIcon,
-  MenuItemTrailingIcon,
-  MenuGroup,
-  MenuGroupLabel,
-  MenuSeparator,
-  MenuCheckboxItem,
-  MenuRadioGroup,
-  MenuRadioItem,
-  MenuSubmenu,
-  MenuSubmenuTrigger,
-} from "registry/default/ui/menu";
-import {
-  MenuExample,
-  MenuWithIconsExample,
-  MenuWithGroupsExample,
-  MenuCheckboxExample,
-  MenuRadioExample,
-  MenuDestructiveExample,
-  MenuSubmenuExample,
-} from "registry/default/examples/menu-example";
-import menuExampleSource from "registry/default/examples/menu-example.tsx?raw";
+import { MenuExample } from "registry/default/examples/menu-default-example";
+import menuExampleSource from "registry/default/examples/menu-default-example.tsx?raw";
+import { MenuWithIconsExample } from "registry/default/examples/menu-with-icons-example";
+import menuWithIconsExampleSource from "registry/default/examples/menu-with-icons-example.tsx?raw";
+import { MenuWithGroupsExample } from "registry/default/examples/menu-with-groups-example";
+import menuWithGroupsExampleSource from "registry/default/examples/menu-with-groups-example.tsx?raw";
+import { MenuCheckboxExample } from "registry/default/examples/menu-checkbox-example";
+import menuCheckboxExampleSource from "registry/default/examples/menu-checkbox-example.tsx?raw";
+import { MenuRadioExample } from "registry/default/examples/menu-radio-example";
+import menuRadioExampleSource from "registry/default/examples/menu-radio-example.tsx?raw";
+import { MenuDestructiveExample } from "registry/default/examples/menu-destructive-example";
+import menuDestructiveExampleSource from "registry/default/examples/menu-destructive-example.tsx?raw";
+import { MenuSubmenuExample } from "registry/default/examples/menu-submenu-example";
+import menuSubmenuExampleSource from "registry/default/examples/menu-submenu-example.tsx?raw";
 import menuSource from "registry/default/ui/menu.tsx?raw";
 
 <ComponentSection>
@@ -39,7 +26,7 @@ import menuSource from "registry/default/ui/menu.tsx?raw";
     <ComponentPreview name="MenuExample">
       <MenuExample />
     </ComponentPreview>
-    <ComponentSource code={menuExampleSource} language="tsx" title="menu-example.tsx" />
+    <ComponentSource code={menuExampleSource} language="tsx" title="menu-default-example.tsx" />
   </ComponentTabs>
 </ComponentSection>
 
@@ -54,7 +41,11 @@ Add icons to menu items using `MenuItemLeadingIcon` and `MenuItemTrailingIcon`.
     <ComponentPreview name="MenuWithIconsExample">
       <MenuWithIconsExample />
     </ComponentPreview>
-    <ComponentSource code={menuExampleSource} language="tsx" title="menu-example.tsx" />
+    <ComponentSource
+      code={menuWithIconsExampleSource}
+      language="tsx"
+      title="menu-with-icons-example.tsx"
+    />
   </ComponentTabs>
 </ComponentSection>
 
@@ -67,7 +58,11 @@ Group related items with `MenuGroup` and `MenuGroupLabel`.
     <ComponentPreview name="MenuWithGroupsExample">
       <MenuWithGroupsExample />
     </ComponentPreview>
-    <ComponentSource code={menuExampleSource} language="tsx" title="menu-example.tsx" />
+    <ComponentSource
+      code={menuWithGroupsExampleSource}
+      language="tsx"
+      title="menu-with-groups-example.tsx"
+    />
   </ComponentTabs>
 </ComponentSection>
 
@@ -80,7 +75,11 @@ Use `MenuCheckboxItem` for toggleable options.
     <ComponentPreview name="MenuCheckboxExample">
       <MenuCheckboxExample />
     </ComponentPreview>
-    <ComponentSource code={menuExampleSource} language="tsx" title="menu-example.tsx" />
+    <ComponentSource
+      code={menuCheckboxExampleSource}
+      language="tsx"
+      title="menu-checkbox-example.tsx"
+    />
   </ComponentTabs>
 </ComponentSection>
 
@@ -93,7 +92,7 @@ Use `MenuRadioGroup` and `MenuRadioItem` for mutually exclusive options.
     <ComponentPreview name="MenuRadioExample">
       <MenuRadioExample />
     </ComponentPreview>
-    <ComponentSource code={menuExampleSource} language="tsx" title="menu-example.tsx" />
+    <ComponentSource code={menuRadioExampleSource} language="tsx" title="menu-radio-example.tsx" />
   </ComponentTabs>
 </ComponentSection>
 
@@ -106,7 +105,11 @@ Use the `destructive` variant on `MenuItem` for destructive actions like delete.
     <ComponentPreview name="MenuDestructiveExample">
       <MenuDestructiveExample />
     </ComponentPreview>
-    <ComponentSource code={menuExampleSource} language="tsx" title="menu-example.tsx" />
+    <ComponentSource
+      code={menuDestructiveExampleSource}
+      language="tsx"
+      title="menu-destructive-example.tsx"
+    />
   </ComponentTabs>
 </ComponentSection>
 
@@ -119,7 +122,11 @@ Nest menus with `MenuSubmenu` and `MenuSubmenuTrigger`.
     <ComponentPreview name="MenuSubmenuExample">
       <MenuSubmenuExample />
     </ComponentPreview>
-    <ComponentSource code={menuExampleSource} language="tsx" title="menu-example.tsx" />
+    <ComponentSource
+      code={menuSubmenuExampleSource}
+      language="tsx"
+      title="menu-submenu-example.tsx"
+    />
   </ComponentTabs>
 </ComponentSection>
 

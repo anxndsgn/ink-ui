@@ -5,12 +5,10 @@ component: Scroll Area
 registry: scroll-area
 ---
 
-import { ScrollArea } from "registry/default/ui/scroll-area";
-import {
-  ScrollAreaExample,
-  ScrollAreaHorizontalExample,
-} from "registry/default/examples/scroll-area-example";
-import scrollAreaExampleSource from "registry/default/examples/scroll-area-example.tsx?raw";
+import { ScrollAreaExample } from "registry/default/examples/scroll-area-default-example";
+import scrollAreaExampleSource from "registry/default/examples/scroll-area-default-example.tsx?raw";
+import { ScrollAreaHorizontalExample } from "registry/default/examples/scroll-area-horizontal-example";
+import scrollAreaHorizontalExampleSource from "registry/default/examples/scroll-area-horizontal-example.tsx?raw";
 import scrollAreaSource from "registry/default/ui/scroll-area.tsx?raw";
 
 <ComponentSection>
@@ -21,7 +19,7 @@ import scrollAreaSource from "registry/default/ui/scroll-area.tsx?raw";
     <ComponentSource
       code={scrollAreaExampleSource}
       language="tsx"
-      title="scroll-area-example.tsx"
+      title="scroll-area-default-example.tsx"
     />
   </ComponentTabs>
 </ComponentSection>
@@ -38,9 +36,9 @@ Use the same `ScrollArea` component for horizontally scrollable content. Scrollb
       <ScrollAreaHorizontalExample />
     </ComponentPreview>
     <ComponentSource
-      code={scrollAreaExampleSource}
+      code={scrollAreaHorizontalExampleSource}
       language="tsx"
-      title="scroll-area-example.tsx"
+      title="scroll-area-horizontal-example.tsx"
     />
   </ComponentTabs>
 </ComponentSection>

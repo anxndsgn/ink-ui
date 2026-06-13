@@ -5,23 +5,12 @@ component: Dialog
 registry: dialog
 ---
 
-import {
-  Dialog,
-  DialogBody,
-  DialogClose,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "registry/default/ui/dialog";
-import {
-  DialogExample,
-  DialogNoCloseButtonExample,
-  DialogRowFooterExample,
-} from "registry/default/examples/dialog-example";
-import dialogExampleSource from "registry/default/examples/dialog-example.tsx?raw";
+import { DialogExample } from "registry/default/examples/dialog-default-example";
+import dialogExampleSource from "registry/default/examples/dialog-default-example.tsx?raw";
+import { DialogNoCloseButtonExample } from "registry/default/examples/dialog-no-close-button-example";
+import dialogNoCloseButtonExampleSource from "registry/default/examples/dialog-no-close-button-example.tsx?raw";
+import { DialogRowFooterExample } from "registry/default/examples/dialog-row-footer-example";
+import dialogRowFooterExampleSource from "registry/default/examples/dialog-row-footer-example.tsx?raw";
 import dialogSource from "registry/default/ui/dialog.tsx?raw";
 
 <ComponentSection>
@@ -29,7 +18,7 @@ import dialogSource from "registry/default/ui/dialog.tsx?raw";
     <ComponentPreview name="DialogExample">
       <DialogExample />
     </ComponentPreview>
-    <ComponentSource code={dialogExampleSource} language="tsx" title="dialog-example.tsx" />
+    <ComponentSource code={dialogExampleSource} language="tsx" title="dialog-default-example.tsx" />
   </ComponentTabs>
 </ComponentSection>
 
@@ -44,7 +33,11 @@ Set `closeButton={false}` on `DialogHeader` to hide the default close button.
     <ComponentPreview name="DialogNoCloseButtonExample">
       <DialogNoCloseButtonExample />
     </ComponentPreview>
-    <ComponentSource code={dialogExampleSource} language="tsx" title="dialog-example.tsx" />
+    <ComponentSource
+      code={dialogNoCloseButtonExampleSource}
+      language="tsx"
+      title="dialog-no-close-button-example.tsx"
+    />
   </ComponentTabs>
 </ComponentSection>
 
@@ -57,7 +50,11 @@ Use `direction="row"` on `DialogFooter` to align buttons horizontally.
     <ComponentPreview name="DialogRowFooterExample">
       <DialogRowFooterExample />
     </ComponentPreview>
-    <ComponentSource code={dialogExampleSource} language="tsx" title="dialog-example.tsx" />
+    <ComponentSource
+      code={dialogRowFooterExampleSource}
+      language="tsx"
+      title="dialog-row-footer-example.tsx"
+    />
   </ComponentTabs>
 </ComponentSection>
 

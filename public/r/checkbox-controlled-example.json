@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "checkbox-controlled-example",
+  "title": "Checkbox Controlled Example",
+  "description": "Atomic example for the Ink UI Checkbox component.",
+  "registryDependencies": [
+    "checkbox"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/checkbox-controlled-example.tsx",
+      "content": "import { useState } from \"react\";\nimport { Checkbox } from \"registry/default/ui/checkbox\";\nexport function CheckboxControlledExample() {\n  const [checked, setChecked] = useState(false);\n\n  return (\n    <div className=\"flex items-center gap-4\">\n      <Checkbox checked={checked} onCheckedChange={setChecked} />\n      <span className=\"text-sm text-gray-600 dark:text-gray-400\">\n        {checked ? \"Checked\" : \"Unchecked\"}\n      </span>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/checkbox-controlled-example.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

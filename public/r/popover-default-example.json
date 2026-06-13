@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "popover-default-example",
+  "title": "Popover Default Example",
+  "description": "Atomic example for the Ink UI Popover component.",
+  "registryDependencies": [
+    "popover",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/popover-default-example.tsx",
+      "content": "import {\n  Popover,\n  PopoverBody,\n  PopoverContent,\n  PopoverHeader,\n  PopoverTitle,\n  PopoverTrigger,\n} from \"registry/default/ui/popover\";\nimport { Button } from \"registry/default/ui/button\";\nexport function PopoverExample() {\n  return (\n    <Popover>\n      <PopoverTrigger render={<Button variant=\"outline\">Open Popover</Button>} />\n      <PopoverContent>\n        <PopoverHeader>\n          <PopoverTitle>Notifications</PopoverTitle>\n        </PopoverHeader>\n        <PopoverBody>\n          <p className=\"text-sm text-gray-600 dark:text-gray-400\">\n            You are all caught up. Good job!\n          </p>\n        </PopoverBody>\n      </PopoverContent>\n    </Popover>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/popover-default-example.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tooltip-positioned-example",
+  "title": "Tooltip Positioned Example",
+  "description": "Atomic example for the Ink UI Tooltip component.",
+  "registryDependencies": [
+    "tooltip",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/tooltip-positioned-example.tsx",
+      "content": "import { Tooltip, TooltipContent, TooltipTrigger } from \"registry/default/ui/tooltip\";\nimport { Button } from \"registry/default/ui/button\";\nexport function TooltipPositionedExample() {\n  return (\n    <div className=\"flex flex-wrap items-center gap-4\">\n      <Tooltip>\n        <TooltipTrigger render={<Button variant=\"outline\">Top</Button>} />\n        <TooltipContent positionerProps={{ side: \"top\" }}>\n          <p>Tooltip on top</p>\n        </TooltipContent>\n      </Tooltip>\n      <Tooltip>\n        <TooltipTrigger render={<Button variant=\"outline\">Bottom</Button>} />\n        <TooltipContent positionerProps={{ side: \"bottom\" }}>\n          <p>Tooltip on bottom</p>\n        </TooltipContent>\n      </Tooltip>\n      <Tooltip>\n        <TooltipTrigger render={<Button variant=\"outline\">Left</Button>} />\n        <TooltipContent positionerProps={{ side: \"left\" }}>\n          <p>Tooltip on left</p>\n        </TooltipContent>\n      </Tooltip>\n      <Tooltip>\n        <TooltipTrigger render={<Button variant=\"outline\">Right</Button>} />\n        <TooltipContent positionerProps={{ side: \"right\" }}>\n          <p>Tooltip on right</p>\n        </TooltipContent>\n      </Tooltip>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/tooltip-positioned-example.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

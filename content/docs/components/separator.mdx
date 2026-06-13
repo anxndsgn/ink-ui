@@ -5,9 +5,8 @@ component: Separator
 registry: separator
 ---
 
-import { Separator } from "registry/default/ui/separator";
-import { SeparatorExample } from "registry/default/examples/separator-example";
-import separatorExampleSource from "registry/default/examples/separator-example.tsx?raw";
+import { SeparatorExample } from "registry/default/examples/separator-default-example";
+import separatorExampleSource from "registry/default/examples/separator-default-example.tsx?raw";
 import separatorSource from "registry/default/ui/separator.tsx?raw";
 
 <ComponentSection>
@@ -15,7 +14,11 @@ import separatorSource from "registry/default/ui/separator.tsx?raw";
     <ComponentPreview name="SeparatorExample">
       <SeparatorExample />
     </ComponentPreview>
-    <ComponentSource code={separatorExampleSource} language="tsx" title="separator-example.tsx" />
+    <ComponentSource
+      code={separatorExampleSource}
+      language="tsx"
+      title="separator-default-example.tsx"
+    />
   </ComponentTabs>
 </ComponentSection>
 

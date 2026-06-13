@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "separator-default-example",
+  "title": "Separator Default Example",
+  "description": "Atomic example for the Ink UI Separator component.",
+  "registryDependencies": [
+    "separator"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/separator-default-example.tsx",
+      "content": "import { Separator } from \"registry/default/ui/separator\";\nexport function SeparatorExample() {\n  return (\n    <div className=\"w-full max-w-xs space-y-4\">\n      <div className=\"space-y-1\">\n        <p className=\"text-sm font-medium\">Project Settings</p>\n        <p className=\"text-sm text-muted-foreground\">Manage your project preferences.</p>\n      </div>\n      <Separator />\n      <div className=\"flex h-5 items-center gap-4 text-sm\">\n        <span>Profile</span>\n        <Separator orientation=\"vertical\" />\n        <span>Settings</span>\n        <Separator orientation=\"vertical\" />\n        <span>Help</span>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/separator-default-example.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

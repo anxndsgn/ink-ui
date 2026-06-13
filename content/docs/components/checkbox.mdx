@@ -5,17 +5,20 @@ component: Checkbox
 registry: checkbox
 ---
 
-import { Checkbox, CheckboxGroup } from "registry/default/ui/checkbox";
-import {
-  CheckboxExample,
-  CheckboxCheckedExample,
-  CheckboxDisabledExample,
-  CheckboxControlledExample,
-  CheckboxGroupExample,
-  CheckboxGroupControlledExample,
-  CheckboxGroupIndeterminateExample,
-} from "registry/default/examples/checkbox-example";
-import checkboxExampleSource from "registry/default/examples/checkbox-example.tsx?raw";
+import { CheckboxExample } from "registry/default/examples/checkbox-default-example";
+import checkboxExampleSource from "registry/default/examples/checkbox-default-example.tsx?raw";
+import { CheckboxCheckedExample } from "registry/default/examples/checkbox-checked-example";
+import checkboxCheckedExampleSource from "registry/default/examples/checkbox-checked-example.tsx?raw";
+import { CheckboxDisabledExample } from "registry/default/examples/checkbox-disabled-example";
+import checkboxDisabledExampleSource from "registry/default/examples/checkbox-disabled-example.tsx?raw";
+import { CheckboxControlledExample } from "registry/default/examples/checkbox-controlled-example";
+import checkboxControlledExampleSource from "registry/default/examples/checkbox-controlled-example.tsx?raw";
+import { CheckboxGroupExample } from "registry/default/examples/checkbox-group-example";
+import checkboxGroupExampleSource from "registry/default/examples/checkbox-group-example.tsx?raw";
+import { CheckboxGroupControlledExample } from "registry/default/examples/checkbox-group-controlled-example";
+import checkboxGroupControlledExampleSource from "registry/default/examples/checkbox-group-controlled-example.tsx?raw";
+import { CheckboxGroupIndeterminateExample } from "registry/default/examples/checkbox-group-indeterminate-example";
+import checkboxGroupIndeterminateExampleSource from "registry/default/examples/checkbox-group-indeterminate-example.tsx?raw";
 import checkboxSource from "registry/default/ui/checkbox.tsx?raw";
 
 <ComponentSection>
@@ -23,7 +26,11 @@ import checkboxSource from "registry/default/ui/checkbox.tsx?raw";
     <ComponentPreview name="CheckboxExample">
       <CheckboxExample />
     </ComponentPreview>
-    <ComponentSource code={checkboxExampleSource} language="tsx" title="checkbox-example.tsx" />
+    <ComponentSource
+      code={checkboxExampleSource}
+      language="tsx"
+      title="checkbox-default-example.tsx"
+    />
   </ComponentTabs>
 </ComponentSection>
 
@@ -38,7 +45,11 @@ Use `defaultChecked` to set the initial state without controlling the component.
     <ComponentPreview name="CheckboxCheckedExample">
       <CheckboxCheckedExample />
     </ComponentPreview>
-    <ComponentSource code={checkboxExampleSource} language="tsx" title="checkbox-example.tsx" />
+    <ComponentSource
+      code={checkboxCheckedExampleSource}
+      language="tsx"
+      title="checkbox-checked-example.tsx"
+    />
   </ComponentTabs>
 </ComponentSection>
 
@@ -51,7 +62,11 @@ Use the `disabled` prop to prevent interaction.
     <ComponentPreview name="CheckboxDisabledExample">
       <CheckboxDisabledExample />
     </ComponentPreview>
-    <ComponentSource code={checkboxExampleSource} language="tsx" title="checkbox-example.tsx" />
+    <ComponentSource
+      code={checkboxDisabledExampleSource}
+      language="tsx"
+      title="checkbox-disabled-example.tsx"
+    />
   </ComponentTabs>
 </ComponentSection>
 
@@ -64,7 +79,11 @@ Manage the checked state with React state using `checked` and `onCheckedChange`.
     <ComponentPreview name="CheckboxControlledExample">
       <CheckboxControlledExample />
     </ComponentPreview>
-    <ComponentSource code={checkboxExampleSource} language="tsx" title="checkbox-example.tsx" />
+    <ComponentSource
+      code={checkboxControlledExampleSource}
+      language="tsx"
+      title="checkbox-controlled-example.tsx"
+    />
   </ComponentTabs>
 </ComponentSection>
 
@@ -77,7 +96,11 @@ Use `CheckboxGroup` to manage multiple related checkboxes. Each child checkbox u
     <ComponentPreview name="CheckboxGroupExample">
       <CheckboxGroupExample />
     </ComponentPreview>
-    <ComponentSource code={checkboxExampleSource} language="tsx" title="checkbox-example.tsx" />
+    <ComponentSource
+      code={checkboxGroupExampleSource}
+      language="tsx"
+      title="checkbox-group-example.tsx"
+    />
   </ComponentTabs>
 </ComponentSection>
 
@@ -90,7 +113,11 @@ Manage the group's selected values with React state using `value` and `onValueCh
     <ComponentPreview name="CheckboxGroupControlledExample">
       <CheckboxGroupControlledExample />
     </ComponentPreview>
-    <ComponentSource code={checkboxExampleSource} language="tsx" title="checkbox-example.tsx" />
+    <ComponentSource
+      code={checkboxGroupControlledExampleSource}
+      language="tsx"
+      title="checkbox-group-controlled-example.tsx"
+    />
   </ComponentTabs>
 </ComponentSection>
 
@@ -103,7 +130,11 @@ Use a parent checkbox with the `parent` prop to control a group of child checkbo
     <ComponentPreview name="CheckboxGroupIndeterminateExample">
       <CheckboxGroupIndeterminateExample />
     </ComponentPreview>
-    <ComponentSource code={checkboxExampleSource} language="tsx" title="checkbox-example.tsx" />
+    <ComponentSource
+      code={checkboxGroupIndeterminateExampleSource}
+      language="tsx"
+      title="checkbox-group-indeterminate-example.tsx"
+    />
   </ComponentTabs>
 </ComponentSection>
 

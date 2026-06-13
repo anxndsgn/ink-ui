@@ -5,22 +5,14 @@ component: Card
 registry: card
 ---
 
-import {
-  Card,
-  CardAction,
-  CardBody,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "registry/default/ui/card";
-import {
-  CardExample,
-  CardWithActionExample,
-  CardColumnFooterExample,
-  CardMotionFooterExample,
-} from "registry/default/examples/card-example";
-import cardExampleSource from "registry/default/examples/card-example.tsx?raw";
+import { CardExample } from "registry/default/examples/card-default-example";
+import cardExampleSource from "registry/default/examples/card-default-example.tsx?raw";
+import { CardWithActionExample } from "registry/default/examples/card-with-action-example";
+import cardWithActionExampleSource from "registry/default/examples/card-with-action-example.tsx?raw";
+import { CardColumnFooterExample } from "registry/default/examples/card-column-footer-example";
+import cardColumnFooterExampleSource from "registry/default/examples/card-column-footer-example.tsx?raw";
+import { CardMotionFooterExample } from "registry/default/examples/card-motion-footer-example";
+import cardMotionFooterExampleSource from "registry/default/examples/card-motion-footer-example.tsx?raw";
 import cardSource from "registry/default/ui/card.tsx?raw";
 
 <ComponentSection>
@@ -28,7 +20,7 @@ import cardSource from "registry/default/ui/card.tsx?raw";
     <ComponentPreview name="CardExample">
       <CardExample />
     </ComponentPreview>
-    <ComponentSource code={cardExampleSource} language="tsx" title="card-example.tsx" />
+    <ComponentSource code={cardExampleSource} language="tsx" title="card-default-example.tsx" />
   </ComponentTabs>
 </ComponentSection>
 
@@ -43,7 +35,11 @@ Use `CardAction` to place an action button in the header.
     <ComponentPreview name="CardWithActionExample">
       <CardWithActionExample />
     </ComponentPreview>
-    <ComponentSource code={cardExampleSource} language="tsx" title="card-example.tsx" />
+    <ComponentSource
+      code={cardWithActionExampleSource}
+      language="tsx"
+      title="card-with-action-example.tsx"
+    />
   </ComponentTabs>
 </ComponentSection>
 
@@ -56,7 +52,11 @@ Use `direction="column"` on `CardFooter` to stack buttons vertically.
     <ComponentPreview name="CardColumnFooterExample">
       <CardColumnFooterExample />
     </ComponentPreview>
-    <ComponentSource code={cardExampleSource} language="tsx" title="card-example.tsx" />
+    <ComponentSource
+      code={cardColumnFooterExampleSource}
+      language="tsx"
+      title="card-column-footer-example.tsx"
+    />
   </ComponentTabs>
 </ComponentSection>
 
@@ -69,7 +69,11 @@ You can wrap the footer in `motion.div` with `AnimatePresence` to animate it in 
     <ComponentPreview name="CardMotionFooterExample">
       <CardMotionFooterExample />
     </ComponentPreview>
-    <ComponentSource code={cardExampleSource} language="tsx" title="card-example.tsx" />
+    <ComponentSource
+      code={cardMotionFooterExampleSource}
+      language="tsx"
+      title="card-motion-footer-example.tsx"
+    />
   </ComponentTabs>
 </ComponentSection>
 

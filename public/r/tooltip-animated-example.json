@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tooltip-animated-example",
+  "title": "Tooltip Animated Example",
+  "description": "Atomic example for the Ink UI Tooltip component.",
+  "registryDependencies": [
+    "tooltip",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/tooltip-animated-example.tsx",
+      "content": "import {\n  Tooltip,\n  TooltipContent,\n  TooltipTrigger,\n  TooltipProvider,\n  TooltipViewport,\n  createTooltipHandle,\n} from \"registry/default/ui/tooltip\";\nimport { Button } from \"registry/default/ui/button\";\nimport {\n  PencilSimpleIcon,\n  TrashIcon,\n  CopyIcon,\n  DownloadSimpleIcon,\n  ShareNetworkIcon,\n} from \"@phosphor-icons/react\";\nexport function TooltipAnimatedExample() {\n  const tooltipHandle = createTooltipHandle<string>();\n\n  return (\n    <TooltipProvider>\n      <div className=\"flex items-center gap-2\">\n        <TooltipTrigger\n          handle={tooltipHandle}\n          payload=\"Edit this item\"\n          render={\n            <Button size=\"icon\" variant=\"ghost\">\n              <PencilSimpleIcon />\n            </Button>\n          }\n        />\n        <TooltipTrigger\n          handle={tooltipHandle}\n          payload=\"Duplicate\"\n          render={\n            <Button size=\"icon\" variant=\"ghost\">\n              <CopyIcon />\n            </Button>\n          }\n        />\n        <TooltipTrigger\n          handle={tooltipHandle}\n          payload=\"Download\"\n          render={\n            <Button size=\"icon\" variant=\"ghost\">\n              <DownloadSimpleIcon />\n            </Button>\n          }\n        />\n        <TooltipTrigger\n          handle={tooltipHandle}\n          payload=\"Share\"\n          render={\n            <Button size=\"icon\" variant=\"ghost\">\n              <ShareNetworkIcon />\n            </Button>\n          }\n        />\n        <TooltipTrigger\n          handle={tooltipHandle}\n          payload=\"Delete\"\n          render={\n            <Button size=\"icon\" variant=\"ghost\">\n              <TrashIcon />\n            </Button>\n          }\n        />\n      </div>\n      <Tooltip handle={tooltipHandle}>\n        {({ payload }) => (\n          <TooltipContent>\n            {typeof payload === \"string\" && (\n              <TooltipViewport>\n                <span>{payload}</span>\n              </TooltipViewport>\n            )}\n          </TooltipContent>\n        )}\n      </Tooltip>\n    </TooltipProvider>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/tooltip-animated-example.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "toast-default-example",
+  "title": "Toast Default Example",
+  "description": "Atomic example for the Ink UI Toast component.",
+  "registryDependencies": [
+    "button",
+    "toast"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/toast-default-example.tsx",
+      "content": "import { Button } from \"registry/default/ui/button\";\nimport { toastManager } from \"registry/default/ui/toast\";\nexport function ToastExample() {\n  return (\n    <Button\n      variant=\"outline\"\n      onClick={() => {\n        toastManager.add({\n          title: \"Changes saved\",\n          description: \"Your profile settings have been updated.\",\n          type: \"success\",\n        });\n      }}\n    >\n      Show toast\n    </Button>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/toast-default-example.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

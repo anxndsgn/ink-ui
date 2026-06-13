@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "menu-default-example",
+  "title": "Menu Default Example",
+  "description": "Atomic example for the Ink UI Menu component.",
+  "registryDependencies": [
+    "menu",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/menu-default-example.tsx",
+      "content": "import {\n  Menu,\n  MenuTrigger,\n  MenuContent,\n  MenuItem,\n  MenuItemLabel,\n  MenuSeparator,\n} from \"registry/default/ui/menu\";\nimport { Button } from \"registry/default/ui/button\";\nexport function MenuExample() {\n  return (\n    <Menu>\n      <MenuTrigger render={<Button variant=\"outline\">Menu</Button>} />\n      <MenuContent>\n        <MenuItem>\n          <MenuItemLabel>Profile</MenuItemLabel>\n        </MenuItem>\n        <MenuItem>\n          <MenuItemLabel>Settings</MenuItemLabel>\n        </MenuItem>\n        <MenuSeparator />\n        <MenuItem>\n          <MenuItemLabel>Log out</MenuItemLabel>\n        </MenuItem>\n      </MenuContent>\n    </Menu>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/menu-default-example.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

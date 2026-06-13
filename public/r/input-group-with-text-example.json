@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-group-with-text-example",
+  "title": "Input Group With Text Example",
+  "description": "Atomic example for the Ink UI Input Group component.",
+  "registryDependencies": [
+    "input-group"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/input-group-with-text-example.tsx",
+      "content": "import {\n  InputGroup,\n  InputGroupAddon,\n  InputGroupInput,\n  InputGroupText,\n} from \"registry/default/ui/input-group\";\nexport function InputGroupWithTextExample() {\n  return (\n    <div className=\"flex w-full max-w-sm flex-wrap items-center gap-4\">\n      <InputGroup>\n        <InputGroupAddon>\n          <InputGroupText>https://</InputGroupText>\n        </InputGroupAddon>\n        <InputGroupInput placeholder=\"ink-ui\" />\n        <InputGroupAddon align=\"inline-end\">\n          <InputGroupText>.com</InputGroupText>\n        </InputGroupAddon>\n      </InputGroup>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/input-group-with-text-example.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

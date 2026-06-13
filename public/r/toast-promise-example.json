@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "toast-promise-example",
+  "title": "Toast Promise Example",
+  "description": "Atomic example for the Ink UI Toast component.",
+  "registryDependencies": [
+    "button",
+    "toast"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/toast-promise-example.tsx",
+      "content": "import { Button } from \"registry/default/ui/button\";\nimport { toastManager } from \"registry/default/ui/toast\";\nfunction sleep(ms: number) {\n  return new Promise((resolve) => {\n    setTimeout(resolve, ms);\n  });\n}\nexport function ToastPromiseExample() {\n  return (\n    <Button\n      variant=\"outline\"\n      onClick={() => {\n        void toastManager.promise(sleep(1500), {\n          loading: {\n            title: \"Uploading asset\",\n            description: \"Please wait while we process your file.\",\n            type: \"loading\",\n          },\n          success: {\n            title: \"Upload complete\",\n            description: \"The asset is ready to use in your library.\",\n            type: \"success\",\n          },\n          error: {\n            title: \"Upload failed\",\n            description: \"Try again after checking your network connection.\",\n            type: \"error\",\n          },\n        });\n      }}\n    >\n      Run async toast\n    </Button>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/toast-promise-example.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

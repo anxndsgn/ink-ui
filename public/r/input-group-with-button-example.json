@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-group-with-button-example",
+  "title": "Input Group With Button Example",
+  "description": "Atomic example for the Ink UI Input Group component.",
+  "registryDependencies": [
+    "input-group"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/input-group-with-button-example.tsx",
+      "content": "import { PaperPlaneTiltIcon } from \"@phosphor-icons/react\";\nimport {\n  InputGroup,\n  InputGroupAddon,\n  InputGroupButton,\n  InputGroupInput,\n} from \"registry/default/ui/input-group\";\nexport function InputGroupWithButtonExample() {\n  return (\n    <div className=\"flex w-full max-w-sm flex-wrap items-center gap-4\">\n      <InputGroup>\n        <InputGroupInput placeholder=\"Ask Ink UI...\" />\n        <InputGroupAddon align=\"inline-end\">\n          <InputGroupButton size=\"icon-xs\" aria-label=\"Send\">\n            <PaperPlaneTiltIcon />\n          </InputGroupButton>\n        </InputGroupAddon>\n      </InputGroup>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/input-group-with-button-example.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

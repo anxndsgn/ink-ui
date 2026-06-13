@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "switch-disabled-example",
+  "title": "Switch Disabled Example",
+  "description": "Atomic example for the Ink UI Switch component.",
+  "registryDependencies": [
+    "switch"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/switch-disabled-example.tsx",
+      "content": "import { Switch } from \"registry/default/ui/switch\";\nexport function SwitchDisabledExample() {\n  return (\n    <div className=\"flex items-center gap-4\">\n      <Switch disabled />\n      <Switch defaultChecked disabled />\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/switch-disabled-example.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

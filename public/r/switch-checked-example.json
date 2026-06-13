@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "switch-checked-example",
+  "title": "Switch Checked Example",
+  "description": "Atomic example for the Ink UI Switch component.",
+  "registryDependencies": [
+    "switch"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/switch-checked-example.tsx",
+      "content": "import { Switch } from \"registry/default/ui/switch\";\nexport function SwitchCheckedExample() {\n  return (\n    <div className=\"flex items-center gap-4\">\n      <Switch defaultChecked />\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/switch-checked-example.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

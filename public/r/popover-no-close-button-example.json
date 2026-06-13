@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "popover-no-close-button-example",
+  "title": "Popover No Close Button Example",
+  "description": "Atomic example for the Ink UI Popover component.",
+  "registryDependencies": [
+    "popover",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/popover-no-close-button-example.tsx",
+      "content": "import {\n  Popover,\n  PopoverBody,\n  PopoverClose,\n  PopoverContent,\n  PopoverHeader,\n  PopoverTitle,\n  PopoverTrigger,\n} from \"registry/default/ui/popover\";\nimport { Button } from \"registry/default/ui/button\";\nexport function PopoverNoCloseButtonExample() {\n  return (\n    <Popover>\n      <PopoverTrigger render={<Button variant=\"outline\">No Close Button</Button>} />\n      <PopoverContent>\n        <PopoverHeader closeButton={false}>\n          <PopoverTitle>Notice</PopoverTitle>\n        </PopoverHeader>\n        <PopoverBody>\n          <p className=\"text-sm text-gray-600 dark:text-gray-400\">\n            This popover has no default close button in the header.\n          </p>\n          <PopoverClose render={<Button size=\"sm\">Dismiss</Button>} />\n        </PopoverBody>\n      </PopoverContent>\n    </Popover>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/popover-no-close-button-example.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

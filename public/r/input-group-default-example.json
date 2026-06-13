@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-group-default-example",
+  "title": "Input Group Default Example",
+  "description": "Atomic example for the Ink UI Input Group component.",
+  "registryDependencies": [
+    "input-group"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/input-group-default-example.tsx",
+      "content": "import { MagnifyingGlassIcon } from \"@phosphor-icons/react\";\nimport { InputGroup, InputGroupAddon, InputGroupInput } from \"registry/default/ui/input-group\";\nexport function InputGroupExample() {\n  return (\n    <div className=\"flex w-full max-w-sm flex-wrap items-center gap-4\">\n      <InputGroup>\n        <InputGroupInput placeholder=\"Search components...\" />\n        <InputGroupAddon>\n          <MagnifyingGlassIcon />\n        </InputGroupAddon>\n      </InputGroup>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/input-group-default-example.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

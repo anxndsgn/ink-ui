@@ -5,15 +5,16 @@ component: Tag
 registry: tag
 ---
 
-import { Tag } from "registry/default/ui/tag";
-import {
-  TagExample,
-  SecondaryTagExample,
-  OutlineTagExample,
-  TagSizesExample,
-  TagInMenuExample,
-} from "registry/default/examples/tag-example";
-import tagExampleSource from "registry/default/examples/tag-example.tsx?raw";
+import { TagExample } from "registry/default/examples/tag-default-example";
+import tagExampleSource from "registry/default/examples/tag-default-example.tsx?raw";
+import { SecondaryTagExample } from "registry/default/examples/tag-secondary-example";
+import secondaryTagExampleSource from "registry/default/examples/tag-secondary-example.tsx?raw";
+import { OutlineTagExample } from "registry/default/examples/tag-outline-example";
+import outlineTagExampleSource from "registry/default/examples/tag-outline-example.tsx?raw";
+import { TagSizesExample } from "registry/default/examples/tag-sizes-example";
+import tagSizesExampleSource from "registry/default/examples/tag-sizes-example.tsx?raw";
+import { TagInMenuExample } from "registry/default/examples/tag-in-menu-example";
+import tagInMenuExampleSource from "registry/default/examples/tag-in-menu-example.tsx?raw";
 import tagSource from "registry/default/ui/tag.tsx?raw";
 
 <ComponentSection>
@@ -21,7 +22,7 @@ import tagSource from "registry/default/ui/tag.tsx?raw";
     <ComponentPreview name="TagExample">
       <TagExample />
     </ComponentPreview>
-    <ComponentSource code={tagExampleSource} language="tsx" title="tag-example.tsx" />
+    <ComponentSource code={tagExampleSource} language="tsx" title="tag-default-example.tsx" />
   </ComponentTabs>
 </ComponentSection>
 
@@ -36,7 +37,11 @@ import tagSource from "registry/default/ui/tag.tsx?raw";
     <ComponentPreview name="SecondaryTagExample">
       <SecondaryTagExample />
     </ComponentPreview>
-    <ComponentSource code={tagExampleSource} language="tsx" title="tag-example.tsx" />
+    <ComponentSource
+      code={secondaryTagExampleSource}
+      language="tsx"
+      title="tag-secondary-example.tsx"
+    />
   </ComponentTabs>
 </ComponentSection>
 
@@ -47,7 +52,11 @@ import tagSource from "registry/default/ui/tag.tsx?raw";
     <ComponentPreview name="OutlineTagExample">
       <OutlineTagExample />
     </ComponentPreview>
-    <ComponentSource code={tagExampleSource} language="tsx" title="tag-example.tsx" />
+    <ComponentSource
+      code={outlineTagExampleSource}
+      language="tsx"
+      title="tag-outline-example.tsx"
+    />
   </ComponentTabs>
 </ComponentSection>
 
@@ -60,7 +69,7 @@ Available sizes: `default`, `sm`, `lg`.
     <ComponentPreview name="TagSizesExample">
       <TagSizesExample />
     </ComponentPreview>
-    <ComponentSource code={tagExampleSource} language="tsx" title="tag-example.tsx" />
+    <ComponentSource code={tagSizesExampleSource} language="tsx" title="tag-sizes-example.tsx" />
   </ComponentTabs>
 </ComponentSection>
 
@@ -73,7 +82,7 @@ Use a tag inside a `MenuItem` to highlight status or labels.
     <ComponentPreview name="TagInMenuExample">
       <TagInMenuExample />
     </ComponentPreview>
-    <ComponentSource code={tagExampleSource} language="tsx" title="tag-example.tsx" />
+    <ComponentSource code={tagInMenuExampleSource} language="tsx" title="tag-in-menu-example.tsx" />
   </ComponentTabs>
 </ComponentSection>
 

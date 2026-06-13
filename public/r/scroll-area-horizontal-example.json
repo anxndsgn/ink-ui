@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "scroll-area-horizontal-example",
+  "title": "Scroll Area Horizontal Example",
+  "description": "Atomic example for the Ink UI Scroll Area component.",
+  "registryDependencies": [
+    "scroll-area"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/scroll-area-horizontal-example.tsx",
+      "content": "import { ScrollArea } from \"registry/default/ui/scroll-area\";\nexport function ScrollAreaHorizontalExample() {\n  return (\n    <div className=\"flex items-start justify-center\">\n      <ScrollArea className=\"w-72 rounded-md bg-muted whitespace-nowrap\">\n        <div className=\"flex w-max gap-4 p-4\">\n          {Array.from({ length: 10 }, (_, i) => (\n            <div\n              key={i}\n              className=\"flex h-16 w-32 shrink-0 items-center justify-center rounded-md bg-secondary text-sm font-medium\"\n            >\n              Item {i + 1}\n            </div>\n          ))}\n        </div>\n      </ScrollArea>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/scroll-area-horizontal-example.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

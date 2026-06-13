@@ -5,14 +5,14 @@ component: Switch
 registry: switch
 ---
 
-import { Switch } from "registry/default/ui/switch";
-import {
-  SwitchExample,
-  SwitchCheckedExample,
-  SwitchDisabledExample,
-  SwitchControlledExample,
-} from "registry/default/examples/switch-example";
-import switchExampleSource from "registry/default/examples/switch-example.tsx?raw";
+import { SwitchExample } from "registry/default/examples/switch-default-example";
+import switchExampleSource from "registry/default/examples/switch-default-example.tsx?raw";
+import { SwitchCheckedExample } from "registry/default/examples/switch-checked-example";
+import switchCheckedExampleSource from "registry/default/examples/switch-checked-example.tsx?raw";
+import { SwitchDisabledExample } from "registry/default/examples/switch-disabled-example";
+import switchDisabledExampleSource from "registry/default/examples/switch-disabled-example.tsx?raw";
+import { SwitchControlledExample } from "registry/default/examples/switch-controlled-example";
+import switchControlledExampleSource from "registry/default/examples/switch-controlled-example.tsx?raw";
 import switchSource from "registry/default/ui/switch.tsx?raw";
 
 <ComponentSection>
@@ -20,7 +20,7 @@ import switchSource from "registry/default/ui/switch.tsx?raw";
     <ComponentPreview name="SwitchExample">
       <SwitchExample />
     </ComponentPreview>
-    <ComponentSource code={switchExampleSource} language="tsx" title="switch-example.tsx" />
+    <ComponentSource code={switchExampleSource} language="tsx" title="switch-default-example.tsx" />
   </ComponentTabs>
 </ComponentSection>
 
@@ -35,7 +35,11 @@ Use `defaultChecked` to set the initial state without controlling the component.
     <ComponentPreview name="SwitchCheckedExample">
       <SwitchCheckedExample />
     </ComponentPreview>
-    <ComponentSource code={switchExampleSource} language="tsx" title="switch-example.tsx" />
+    <ComponentSource
+      code={switchCheckedExampleSource}
+      language="tsx"
+      title="switch-checked-example.tsx"
+    />
   </ComponentTabs>
 </ComponentSection>
 
@@ -48,7 +52,11 @@ Use the `disabled` prop to prevent interaction.
     <ComponentPreview name="SwitchDisabledExample">
       <SwitchDisabledExample />
     </ComponentPreview>
-    <ComponentSource code={switchExampleSource} language="tsx" title="switch-example.tsx" />
+    <ComponentSource
+      code={switchDisabledExampleSource}
+      language="tsx"
+      title="switch-disabled-example.tsx"
+    />
   </ComponentTabs>
 </ComponentSection>
 
@@ -61,7 +69,11 @@ Manage the checked state with React state using `checked` and `onCheckedChange`.
     <ComponentPreview name="SwitchControlledExample">
       <SwitchControlledExample />
     </ComponentPreview>
-    <ComponentSource code={switchExampleSource} language="tsx" title="switch-example.tsx" />
+    <ComponentSource
+      code={switchControlledExampleSource}
+      language="tsx"
+      title="switch-controlled-example.tsx"
+    />
   </ComponentTabs>
 </ComponentSection>
 

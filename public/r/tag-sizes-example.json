@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tag-sizes-example",
+  "title": "Tag Sizes Example",
+  "description": "Atomic example for the Ink UI Tag component.",
+  "registryDependencies": [
+    "tag"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/tag-sizes-example.tsx",
+      "content": "import { Tag } from \"registry/default/ui/tag\";\nexport function TagSizesExample() {\n  return (\n    <div className=\"flex flex-wrap items-center gap-4\">\n      <Tag size=\"sm\">Small</Tag>\n      <Tag size=\"default\">Default</Tag>\n      <Tag size=\"lg\">Large</Tag>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/tag-sizes-example.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

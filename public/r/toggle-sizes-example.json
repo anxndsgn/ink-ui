@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "toggle-sizes-example",
+  "title": "Toggle Sizes Example",
+  "description": "Atomic example for the Ink UI Toggle component.",
+  "registryDependencies": [
+    "toggle"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/toggle-sizes-example.tsx",
+      "content": "import { Toggle } from \"registry/default/ui/toggle\";\nexport function ToggleSizesExample() {\n  return (\n    <div className=\"flex flex-wrap items-center gap-4\">\n      <Toggle size=\"sm\">Small</Toggle>\n      <Toggle size=\"default\">Default</Toggle>\n      <Toggle size=\"lg\">Large</Toggle>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/toggle-sizes-example.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

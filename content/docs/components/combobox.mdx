@@ -5,30 +5,16 @@ component: Combobox
 registry: combobox
 ---
 
-import {
-  Combobox,
-  ComboboxContent,
-  ComboboxItem,
-  ComboboxList,
-  ComboboxInput,
-  ComboboxEmpty,
-  ComboboxTrigger,
-  ComboboxValue,
-  ComboboxChip,
-  ComboboxChips,
-  ComboboxSeparator,
-  ComboboxItemIndicator,
-  ComboboxGroup,
-  ComboboxGroupLabel,
-} from "registry/default/ui/combobox";
-import {
-  ComboboxExample,
-  ComboboxWithInputExample,
-  ComboboxWithGroupsExample,
-  ComboboxMultiSelectExample,
-  ComboboxControlledExample,
-} from "registry/default/examples/combobox-example";
-import comboboxExampleSource from "registry/default/examples/combobox-example.tsx?raw";
+import { ComboboxExample } from "registry/default/examples/combobox-default-example";
+import comboboxExampleSource from "registry/default/examples/combobox-default-example.tsx?raw";
+import { ComboboxWithInputExample } from "registry/default/examples/combobox-with-input-example";
+import comboboxWithInputExampleSource from "registry/default/examples/combobox-with-input-example.tsx?raw";
+import { ComboboxWithGroupsExample } from "registry/default/examples/combobox-with-groups-example";
+import comboboxWithGroupsExampleSource from "registry/default/examples/combobox-with-groups-example.tsx?raw";
+import { ComboboxMultiSelectExample } from "registry/default/examples/combobox-multi-select-example";
+import comboboxMultiSelectExampleSource from "registry/default/examples/combobox-multi-select-example.tsx?raw";
+import { ComboboxControlledExample } from "registry/default/examples/combobox-controlled-example";
+import comboboxControlledExampleSource from "registry/default/examples/combobox-controlled-example.tsx?raw";
 import comboboxSource from "registry/default/ui/combobox.tsx?raw";
 
 <ComponentSection>
@@ -36,7 +22,11 @@ import comboboxSource from "registry/default/ui/combobox.tsx?raw";
     <ComponentPreview name="ComboboxWithInputExample">
       <ComboboxWithInputExample />
     </ComponentPreview>
-    <ComponentSource code={comboboxExampleSource} language="tsx" title="combobox-example.tsx" />
+    <ComponentSource
+      code={comboboxWithInputExampleSource}
+      language="tsx"
+      title="combobox-with-input-example.tsx"
+    />
   </ComponentTabs>
 </ComponentSection>
 
@@ -51,7 +41,11 @@ Use `ComboboxTrigger` for a button-style combobox without text input.
     <ComponentPreview name="ComboboxExample">
       <ComboboxExample />
     </ComponentPreview>
-    <ComponentSource code={comboboxExampleSource} language="tsx" title="combobox-example.tsx" />
+    <ComponentSource
+      code={comboboxExampleSource}
+      language="tsx"
+      title="combobox-default-example.tsx"
+    />
   </ComponentTabs>
 </ComponentSection>
 
@@ -64,7 +58,11 @@ Group related items using `ComboboxGroup` and `ComboboxGroupLabel`.
     <ComponentPreview name="ComboboxWithGroupsExample">
       <ComboboxWithGroupsExample />
     </ComponentPreview>
-    <ComponentSource code={comboboxExampleSource} language="tsx" title="combobox-example.tsx" />
+    <ComponentSource
+      code={comboboxWithGroupsExampleSource}
+      language="tsx"
+      title="combobox-with-groups-example.tsx"
+    />
   </ComponentTabs>
 </ComponentSection>
 
@@ -77,7 +75,11 @@ Enable `multiple` selection and display selected values as chips inside the inpu
     <ComponentPreview name="ComboboxMultiSelectExample">
       <ComboboxMultiSelectExample />
     </ComponentPreview>
-    <ComponentSource code={comboboxExampleSource} language="tsx" title="combobox-example.tsx" />
+    <ComponentSource
+      code={comboboxMultiSelectExampleSource}
+      language="tsx"
+      title="combobox-multi-select-example.tsx"
+    />
   </ComponentTabs>
 </ComponentSection>
 
@@ -90,7 +92,11 @@ Manage the selected value with React state.
     <ComponentPreview name="ComboboxControlledExample">
       <ComboboxControlledExample />
     </ComponentPreview>
-    <ComponentSource code={comboboxExampleSource} language="tsx" title="combobox-example.tsx" />
+    <ComponentSource
+      code={comboboxControlledExampleSource}
+      language="tsx"
+      title="combobox-controlled-example.tsx"
+    />
   </ComponentTabs>
 </ComponentSection>
 

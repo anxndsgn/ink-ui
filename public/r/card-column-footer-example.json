@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "card-column-footer-example",
+  "title": "Card Column Footer Example",
+  "description": "Atomic example for the Ink UI Card component.",
+  "registryDependencies": [
+    "card",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/card-column-footer-example.tsx",
+      "content": "import {\n  Card,\n  CardBody,\n  CardDescription,\n  CardFooter,\n  CardHeader,\n  CardTitle,\n} from \"registry/default/ui/card\";\nimport { Button } from \"registry/default/ui/button\";\nexport function CardColumnFooterExample() {\n  return (\n    <Card className=\"w-full max-w-lg\">\n      <CardHeader>\n        <CardTitle>Subscribe</CardTitle>\n        <CardDescription>Get the latest updates delivered to your inbox.</CardDescription>\n      </CardHeader>\n      <CardBody>\n        <p className=\"text-sm text-gray-600 dark:text-gray-400\">\n          Join our newsletter for weekly insights and product updates.\n        </p>\n      </CardBody>\n      <CardFooter direction=\"column\">\n        <Button className=\"w-full\">Subscribe Now</Button>\n        <Button variant=\"secondary\" className=\"w-full\">\n          Learn More\n        </Button>\n      </CardFooter>\n    </Card>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/card-column-footer-example.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

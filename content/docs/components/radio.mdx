@@ -5,14 +5,14 @@ component: Radio
 registry: radio
 ---
 
-import { RadioGroup, Radio, RadioGroupItem } from "registry/default/ui/radio";
-import {
-  RadioExample,
-  RadioDisabledExample,
-  RadioControlledExample,
-  RadioGroupItemExample,
-} from "registry/default/examples/radio-example";
-import radioExampleSource from "registry/default/examples/radio-example.tsx?raw";
+import { RadioExample } from "registry/default/examples/radio-default-example";
+import radioExampleSource from "registry/default/examples/radio-default-example.tsx?raw";
+import { RadioDisabledExample } from "registry/default/examples/radio-disabled-example";
+import radioDisabledExampleSource from "registry/default/examples/radio-disabled-example.tsx?raw";
+import { RadioControlledExample } from "registry/default/examples/radio-controlled-example";
+import radioControlledExampleSource from "registry/default/examples/radio-controlled-example.tsx?raw";
+import { RadioGroupItemExample } from "registry/default/examples/radio-group-item-example";
+import radioGroupItemExampleSource from "registry/default/examples/radio-group-item-example.tsx?raw";
 import radioSource from "registry/default/ui/radio.tsx?raw";
 
 <ComponentSection>
@@ -20,7 +20,7 @@ import radioSource from "registry/default/ui/radio.tsx?raw";
     <ComponentPreview name="RadioExample">
       <RadioExample />
     </ComponentPreview>
-    <ComponentSource code={radioExampleSource} language="tsx" title="radio-example.tsx" />
+    <ComponentSource code={radioExampleSource} language="tsx" title="radio-default-example.tsx" />
   </ComponentTabs>
 </ComponentSection>
 
@@ -35,7 +35,11 @@ Use the `disabled` prop on individual radio items to prevent interaction.
     <ComponentPreview name="RadioDisabledExample">
       <RadioDisabledExample />
     </ComponentPreview>
-    <ComponentSource code={radioExampleSource} language="tsx" title="radio-example.tsx" />
+    <ComponentSource
+      code={radioDisabledExampleSource}
+      language="tsx"
+      title="radio-disabled-example.tsx"
+    />
   </ComponentTabs>
 </ComponentSection>
 
@@ -48,7 +52,11 @@ Manage the selected value with React state using `value` and `onValueChange` on 
     <ComponentPreview name="RadioControlledExample">
       <RadioControlledExample />
     </ComponentPreview>
-    <ComponentSource code={radioExampleSource} language="tsx" title="radio-example.tsx" />
+    <ComponentSource
+      code={radioControlledExampleSource}
+      language="tsx"
+      title="radio-controlled-example.tsx"
+    />
   </ComponentTabs>
 </ComponentSection>
 
@@ -61,7 +69,11 @@ The `RadioGroupItem` alias is also available if you prefer that naming conventio
     <ComponentPreview name="RadioGroupItemExample">
       <RadioGroupItemExample />
     </ComponentPreview>
-    <ComponentSource code={radioExampleSource} language="tsx" title="radio-example.tsx" />
+    <ComponentSource
+      code={radioGroupItemExampleSource}
+      language="tsx"
+      title="radio-group-item-example.tsx"
+    />
   </ComponentTabs>
 </ComponentSection>
 

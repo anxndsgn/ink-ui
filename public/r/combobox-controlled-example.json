@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "combobox-controlled-example",
+  "title": "Combobox Controlled Example",
+  "description": "Atomic example for the Ink UI Combobox component.",
+  "registryDependencies": [
+    "combobox"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/combobox-controlled-example.tsx",
+      "content": "import {\n  Combobox,\n  ComboboxContent,\n  ComboboxItem,\n  ComboboxList,\n  ComboboxInput,\n} from \"registry/default/ui/combobox\";\nimport { useState } from \"react\";\nconst fruits = [\n  { value: \"apple\", label: \"Apple\" },\n  { value: \"banana\", label: \"Banana\" },\n  { value: \"blueberry\", label: \"Blueberry\" },\n  { value: \"grapes\", label: \"Grapes\" },\n  { value: \"pineapple\", label: \"Pineapple\" },\n];\nexport function ComboboxControlledExample() {\n  const [value, setValue] = useState<(typeof fruits)[number] | null>(null);\n\n  return (\n    <div className=\"flex flex-col gap-3\">\n      <Combobox items={fruits} value={value} onValueChange={(v) => setValue(v)}>\n        <ComboboxInput placeholder=\"Select a fruit\" className=\"w-full\" />\n        <ComboboxContent>\n          <ComboboxList>\n            {(item: (typeof fruits)[number]) => (\n              <ComboboxItem key={item.value} value={item}>\n                {item.label}\n              </ComboboxItem>\n            )}\n          </ComboboxList>\n        </ComboboxContent>\n      </Combobox>\n      {value && <p className=\"text-sm text-gray-500\">Selected: {value.label}</p>}\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/combobox-controlled-example.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

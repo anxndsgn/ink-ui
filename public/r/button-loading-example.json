@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-loading-example",
+  "title": "Button Loading Example",
+  "description": "Atomic example for the Ink UI Button component.",
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/button-loading-example.tsx",
+      "content": "import { Button } from \"registry/default/ui/button\";\nimport { useState } from \"react\";\nexport function LoadingButtonExample() {\n  const [loading, setLoading] = useState(false);\n\n  return (\n    <Button\n      loading={loading}\n      onClick={() => {\n        setLoading(true);\n        setTimeout(() => setLoading(false), 1000);\n      }}\n    >\n      Click me\n    </Button>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/button-loading-example.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

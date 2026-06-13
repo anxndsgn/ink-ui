@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-group-agent-chat-example",
+  "title": "Input Group Agent Chat Example",
+  "description": "Atomic example for the Ink UI Input Group component.",
+  "registryDependencies": [
+    "input-group",
+    "select",
+    "toggle"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/input-group-agent-chat-example.tsx",
+      "content": "import {\n  ArrowUpIcon,\n  GearSixIcon,\n  HandPalmIcon,\n  LightbulbIcon,\n  MicrophoneIcon,\n  PlusIcon,\n} from \"@phosphor-icons/react\";\nimport {\n  InputGroup,\n  InputGroupAddon,\n  InputGroupButton,\n  InputGroupTextarea,\n} from \"registry/default/ui/input-group\";\nimport {\n  Select,\n  SelectContent,\n  SelectItem,\n  SelectTrigger,\n  SelectValue,\n} from \"registry/default/ui/select\";\nimport { Toggle } from \"registry/default/ui/toggle\";\nexport function AgentChatInputGroupExample() {\n  const permissionItems = [\n    { value: \"default\", label: \"Default permissions\" },\n    { value: \"read-only\", label: \"Read only\" },\n    { value: \"full-access\", label: \"Full access\" },\n  ];\n  const modelItems = [\n    { value: \"medium\", label: \"5.5 Medium\" },\n    { value: \"fast\", label: \"5.5 Fast\" },\n    { value: \"deep\", label: \"5.5 Deep\" },\n  ];\n\n  return (\n    <div className=\"flex w-full max-w-2xl flex-wrap items-center gap-4\">\n      <InputGroup className=\"min-h-36 items-stretch rounded-2xl bg-background\">\n        <InputGroupTextarea\n          className=\"min-h-20 py-4 text-base\"\n          placeholder=\"Ask Ink UI anything. @ to mention files or plugins\"\n        />\n        <InputGroupAddon align=\"block-end\" className=\"flex-wrap justify-between gap-3 pt-3\">\n          <div className=\"flex flex-wrap items-center gap-2\">\n            <InputGroupButton size=\"icon-sm\" variant=\"outline\" aria-label=\"Attach file\">\n              <PlusIcon />\n            </InputGroupButton>\n            <Select items={permissionItems} defaultValue=\"default\">\n              <SelectTrigger size=\"sm\" variant=\"ghost\" className=\"justify-start\">\n                <HandPalmIcon />\n                <SelectValue />\n              </SelectTrigger>\n              <SelectContent>\n                {permissionItems.map((item) => (\n                  <SelectItem key={item.value} value={item.value}>\n                    {item.label}\n                  </SelectItem>\n                ))}\n              </SelectContent>\n            </Select>\n            <Toggle aria-label=\"Toggle thinking\" defaultPressed>\n              <LightbulbIcon />\n            </Toggle>\n            <InputGroupButton size=\"icon-sm\" variant=\"ghost\" aria-label=\"Open settings\">\n              <GearSixIcon />\n            </InputGroupButton>\n          </div>\n          <div className=\"flex flex-wrap items-center gap-2\">\n            <Select items={modelItems} defaultValue=\"medium\">\n              <SelectTrigger size=\"sm\" variant=\"ghost\" className=\"justify-between\">\n                <SelectValue />\n              </SelectTrigger>\n              <SelectContent>\n                {modelItems.map((item) => (\n                  <SelectItem key={item.value} value={item.value}>\n                    {item.label}\n                  </SelectItem>\n                ))}\n              </SelectContent>\n            </Select>\n            <InputGroupButton size=\"icon-sm\" variant=\"ghost\" aria-label=\"Use voice input\">\n              <MicrophoneIcon />\n            </InputGroupButton>\n            <InputGroupButton size=\"icon-sm\" aria-label=\"Submit message\" variant=\"default\">\n              <ArrowUpIcon />\n            </InputGroupButton>\n          </div>\n        </InputGroupAddon>\n      </InputGroup>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/input-group-agent-chat-example.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

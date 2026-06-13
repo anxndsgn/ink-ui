@@ -5,21 +5,12 @@ component: Popover
 registry: popover
 ---
 
-import {
-  Popover,
-  PopoverBody,
-  PopoverClose,
-  PopoverContent,
-  PopoverHeader,
-  PopoverTitle,
-  PopoverTrigger,
-} from "registry/default/ui/popover";
-import {
-  PopoverExample,
-  PopoverNoCloseButtonExample,
-  PopoverWithPositionerPropsExample,
-} from "registry/default/examples/popover-example";
-import popoverExampleSource from "registry/default/examples/popover-example.tsx?raw";
+import { PopoverExample } from "registry/default/examples/popover-default-example";
+import popoverExampleSource from "registry/default/examples/popover-default-example.tsx?raw";
+import { PopoverNoCloseButtonExample } from "registry/default/examples/popover-no-close-button-example";
+import popoverNoCloseButtonExampleSource from "registry/default/examples/popover-no-close-button-example.tsx?raw";
+import { PopoverWithPositionerPropsExample } from "registry/default/examples/popover-with-positioner-props-example";
+import popoverWithPositionerPropsExampleSource from "registry/default/examples/popover-with-positioner-props-example.tsx?raw";
 import popoverSource from "registry/default/ui/popover.tsx?raw";
 
 <ComponentSection>
@@ -27,7 +18,11 @@ import popoverSource from "registry/default/ui/popover.tsx?raw";
     <ComponentPreview name="PopoverExample">
       <PopoverExample />
     </ComponentPreview>
-    <ComponentSource code={popoverExampleSource} language="tsx" title="popover-example.tsx" />
+    <ComponentSource
+      code={popoverExampleSource}
+      language="tsx"
+      title="popover-default-example.tsx"
+    />
   </ComponentTabs>
 </ComponentSection>
 
@@ -42,7 +37,11 @@ Set `closeButton={false}` on `PopoverHeader` to hide the default close button.
     <ComponentPreview name="PopoverNoCloseButtonExample">
       <PopoverNoCloseButtonExample />
     </ComponentPreview>
-    <ComponentSource code={popoverExampleSource} language="tsx" title="popover-example.tsx" />
+    <ComponentSource
+      code={popoverNoCloseButtonExampleSource}
+      language="tsx"
+      title="popover-no-close-button-example.tsx"
+    />
   </ComponentTabs>
 </ComponentSection>
 
@@ -55,7 +54,11 @@ Pass `positionerProps` to `PopoverContent` to customize the popup position.
     <ComponentPreview name="PopoverWithPositionerPropsExample">
       <PopoverWithPositionerPropsExample />
     </ComponentPreview>
-    <ComponentSource code={popoverExampleSource} language="tsx" title="popover-example.tsx" />
+    <ComponentSource
+      code={popoverWithPositionerPropsExampleSource}
+      language="tsx"
+      title="popover-with-positioner-props-example.tsx"
+    />
   </ComponentTabs>
 </ComponentSection>
 

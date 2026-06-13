@@ -5,13 +5,12 @@ component: Toggle
 registry: toggle
 ---
 
-import { Toggle } from "registry/default/ui/toggle";
-import {
-  ToggleExample,
-  ToggleSizesExample,
-  ToggleWithIconsExample,
-} from "registry/default/examples/toggle-example";
-import toggleExampleSource from "registry/default/examples/toggle-example.tsx?raw";
+import { ToggleExample } from "registry/default/examples/toggle-default-example";
+import toggleExampleSource from "registry/default/examples/toggle-default-example.tsx?raw";
+import { ToggleSizesExample } from "registry/default/examples/toggle-sizes-example";
+import toggleSizesExampleSource from "registry/default/examples/toggle-sizes-example.tsx?raw";
+import { ToggleWithIconsExample } from "registry/default/examples/toggle-with-icons-example";
+import toggleWithIconsExampleSource from "registry/default/examples/toggle-with-icons-example.tsx?raw";
 import toggleSource from "registry/default/ui/toggle.tsx?raw";
 
 <ComponentSection>
@@ -19,7 +18,7 @@ import toggleSource from "registry/default/ui/toggle.tsx?raw";
     <ComponentPreview name="ToggleExample">
       <ToggleExample />
     </ComponentPreview>
-    <ComponentSource code={toggleExampleSource} language="tsx" title="toggle-example.tsx" />
+    <ComponentSource code={toggleExampleSource} language="tsx" title="toggle-default-example.tsx" />
   </ComponentTabs>
 </ComponentSection>
 
@@ -34,7 +33,11 @@ Available sizes: `default`, `sm`, `lg`.
     <ComponentPreview name="ToggleSizesExample">
       <ToggleSizesExample />
     </ComponentPreview>
-    <ComponentSource code={toggleExampleSource} language="tsx" title="toggle-example.tsx" />
+    <ComponentSource
+      code={toggleSizesExampleSource}
+      language="tsx"
+      title="toggle-sizes-example.tsx"
+    />
   </ComponentTabs>
 </ComponentSection>
 
@@ -47,7 +50,11 @@ Use an icon inside the toggle for toolbars and formatting controls.
     <ComponentPreview name="ToggleWithIconsExample">
       <ToggleWithIconsExample />
     </ComponentPreview>
-    <ComponentSource code={toggleExampleSource} language="tsx" title="toggle-example.tsx" />
+    <ComponentSource
+      code={toggleWithIconsExampleSource}
+      language="tsx"
+      title="toggle-with-icons-example.tsx"
+    />
   </ComponentTabs>
 </ComponentSection>
 

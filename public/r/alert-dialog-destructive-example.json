@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert-dialog-destructive-example",
+  "title": "Alert Dialog Destructive Example",
+  "description": "Atomic example for the Ink UI Alert Dialog component.",
+  "registryDependencies": [
+    "alert-dialog",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/alert-dialog-destructive-example.tsx",
+      "content": "import {\n  AlertDialog,\n  AlertDialogClose,\n  AlertDialogContent,\n  AlertDialogDescription,\n  AlertDialogFooter,\n  AlertDialogHeader,\n  AlertDialogTitle,\n  AlertDialogTrigger,\n} from \"registry/default/ui/alert-dialog\";\nimport { Button } from \"registry/default/ui/button\";\nexport function AlertDialogDestructiveExample() {\n  return (\n    <AlertDialog>\n      <AlertDialogTrigger render={<Button variant=\"destructive\">Delete Project</Button>} />\n      <AlertDialogContent>\n        <AlertDialogHeader>\n          <AlertDialogTitle>Delete project</AlertDialogTitle>\n        </AlertDialogHeader>\n        <AlertDialogDescription>\n          Are you sure you want to delete this project? All associated data, including deployments\n          and environment variables, will be permanently removed.\n        </AlertDialogDescription>\n        <AlertDialogFooter>\n          <AlertDialogClose render={<Button variant=\"secondary\">Cancel</Button>} />\n          <Button variant=\"destructive\">Delete</Button>\n        </AlertDialogFooter>\n      </AlertDialogContent>\n    </AlertDialog>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/alert-dialog-destructive-example.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

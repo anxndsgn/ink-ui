@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "combobox-with-input-example",
+  "title": "Combobox With Input Example",
+  "description": "Atomic example for the Ink UI Combobox component.",
+  "registryDependencies": [
+    "combobox"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/combobox-with-input-example.tsx",
+      "content": "import {\n  Combobox,\n  ComboboxContent,\n  ComboboxItem,\n  ComboboxList,\n  ComboboxInput,\n  ComboboxEmpty,\n} from \"registry/default/ui/combobox\";\nconst fruits = [\n  { value: \"apple\", label: \"Apple\" },\n  { value: \"banana\", label: \"Banana\" },\n  { value: \"blueberry\", label: \"Blueberry\" },\n  { value: \"grapes\", label: \"Grapes\" },\n  { value: \"pineapple\", label: \"Pineapple\" },\n];\nexport function ComboboxWithInputExample() {\n  return (\n    <div className=\"flex flex-wrap items-center gap-4\">\n      <Combobox items={fruits}>\n        <ComboboxInput placeholder=\"Select fruits\" className=\"w-56\" />\n        <ComboboxContent>\n          <ComboboxList>\n            {(item: (typeof fruits)[number]) => (\n              <ComboboxItem key={item.value} value={item}>\n                {item.label}\n              </ComboboxItem>\n            )}\n          </ComboboxList>\n          <ComboboxEmpty>No results found</ComboboxEmpty>\n        </ComboboxContent>\n      </Combobox>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/combobox-with-input-example.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

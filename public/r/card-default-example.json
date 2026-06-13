@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "card-default-example",
+  "title": "Card Default Example",
+  "description": "Atomic example for the Ink UI Card component.",
+  "registryDependencies": [
+    "card",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/card-default-example.tsx",
+      "content": "import {\n  Card,\n  CardBody,\n  CardDescription,\n  CardFooter,\n  CardHeader,\n  CardTitle,\n} from \"registry/default/ui/card\";\nimport { Button } from \"registry/default/ui/button\";\nexport function CardExample() {\n  return (\n    <Card className=\"w-full max-w-lg\">\n      <CardHeader>\n        <CardTitle>Project Update</CardTitle>\n        <CardDescription>Deploy your new project in one click.</CardDescription>\n      </CardHeader>\n      <CardBody>\n        <p className=\"text-sm text-gray-600 dark:text-gray-400\">\n          Your project is ready for deployment. Review the settings and click deploy to go live.\n        </p>\n      </CardBody>\n      <CardFooter>\n        <Button variant=\"secondary\">Cancel</Button>\n        <Button>Deploy</Button>\n      </CardFooter>\n    </Card>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/card-default-example.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

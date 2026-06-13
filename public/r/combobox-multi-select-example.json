@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "combobox-multi-select-example",
+  "title": "Combobox Multi Select Example",
+  "description": "Atomic example for the Ink UI Combobox component.",
+  "registryDependencies": [
+    "combobox"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/combobox-multi-select-example.tsx",
+      "content": "import {\n  Combobox,\n  ComboboxContent,\n  ComboboxItem,\n  ComboboxList,\n  ComboboxInput,\n  ComboboxValue,\n  ComboboxChip,\n} from \"registry/default/ui/combobox\";\nimport { useState } from \"react\";\nconst fruits = [\n  { value: \"apple\", label: \"Apple\" },\n  { value: \"banana\", label: \"Banana\" },\n  { value: \"blueberry\", label: \"Blueberry\" },\n  { value: \"grapes\", label: \"Grapes\" },\n  { value: \"pineapple\", label: \"Pineapple\" },\n];\nexport function ComboboxMultiSelectExample() {\n  const [value, setValue] = useState<(typeof fruits)[number][]>([]);\n\n  return (\n    <div className=\"flex flex-col gap-3\">\n      <Combobox items={fruits} value={value} onValueChange={(v) => setValue(v ?? [])} multiple>\n        <ComboboxInput\n          className=\"w-56\"\n          placeholder={value.length > 0 ? \"\" : \"Select fruits\"}\n          showRemove={false}\n        >\n          <ComboboxValue>\n            {(selectedValue: (typeof fruits)[number][]) =>\n              selectedValue.map((item) => (\n                <ComboboxChip key={item.value}>{item.label}</ComboboxChip>\n              ))\n            }\n          </ComboboxValue>\n        </ComboboxInput>\n        <ComboboxContent>\n          <ComboboxList>\n            {(item: (typeof fruits)[number]) => (\n              <ComboboxItem key={item.value} value={item}>\n                {item.label}\n              </ComboboxItem>\n            )}\n          </ComboboxList>\n        </ComboboxContent>\n      </Combobox>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/combobox-multi-select-example.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

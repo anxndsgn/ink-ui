@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "radio-controlled-example",
+  "title": "Radio Controlled Example",
+  "description": "Atomic example for the Ink UI Radio component.",
+  "registryDependencies": [
+    "radio"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/radio-controlled-example.tsx",
+      "content": "import { useState } from \"react\";\nimport { RadioGroup, Radio } from \"registry/default/ui/radio\";\nexport function RadioControlledExample() {\n  const [value, setValue] = useState(\"system\");\n\n  return (\n    <div className=\"flex flex-col gap-4\">\n      <RadioGroup value={value} onValueChange={setValue}>\n        <label className=\"flex items-center gap-2 text-sm\">\n          <Radio value=\"system\" />\n          System\n        </label>\n        <label className=\"flex items-center gap-2 text-sm\">\n          <Radio value=\"light\" />\n          Light\n        </label>\n        <label className=\"flex items-center gap-2 text-sm\">\n          <Radio value=\"dark\" />\n          Dark\n        </label>\n      </RadioGroup>\n      <span className=\"text-sm text-gray-600 dark:text-gray-400\">Selected: {value}</span>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/radio-controlled-example.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

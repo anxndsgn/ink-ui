@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert-dialog-default-example",
+  "title": "Alert Dialog Default Example",
+  "description": "Atomic example for the Ink UI Alert Dialog component.",
+  "registryDependencies": [
+    "alert-dialog",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/alert-dialog-default-example.tsx",
+      "content": "import {\n  AlertDialog,\n  AlertDialogClose,\n  AlertDialogContent,\n  AlertDialogDescription,\n  AlertDialogFooter,\n  AlertDialogHeader,\n  AlertDialogTitle,\n  AlertDialogTrigger,\n} from \"registry/default/ui/alert-dialog\";\nimport { Button } from \"registry/default/ui/button\";\nexport function AlertDialogExample() {\n  return (\n    <AlertDialog>\n      <AlertDialogTrigger render={<Button variant=\"outline\">Open Alert Dialog</Button>} />\n      <AlertDialogContent>\n        <AlertDialogHeader>\n          <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>\n        </AlertDialogHeader>\n        <AlertDialogDescription>\n          This action cannot be undone. This will permanently delete your account and remove your\n          data from our servers.\n        </AlertDialogDescription>\n        <AlertDialogFooter>\n          <AlertDialogClose render={<Button variant=\"secondary\">Cancel</Button>} />\n          <Button variant=\"destructive\">Continue</Button>\n        </AlertDialogFooter>\n      </AlertDialogContent>\n    </AlertDialog>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/alert-dialog-default-example.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

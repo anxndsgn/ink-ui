@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-group-textarea-example",
+  "title": "Input Group Textarea Example",
+  "description": "Atomic example for the Ink UI Input Group component.",
+  "registryDependencies": [
+    "input-group"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/input-group-textarea-example.tsx",
+      "content": "import {\n  InputGroup,\n  InputGroupAddon,\n  InputGroupText,\n  InputGroupTextarea,\n} from \"registry/default/ui/input-group\";\nexport function InputGroupTextareaExample() {\n  return (\n    <div className=\"flex w-full max-w-sm flex-wrap items-center gap-4\">\n      <InputGroup>\n        <InputGroupTextarea placeholder=\"Write a short message...\" />\n        <InputGroupAddon align=\"block-end\">\n          <InputGroupText>Press Cmd + Enter to send</InputGroupText>\n        </InputGroupAddon>\n      </InputGroup>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/input-group-textarea-example.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

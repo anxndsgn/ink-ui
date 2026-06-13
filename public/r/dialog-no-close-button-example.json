@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dialog-no-close-button-example",
+  "title": "Dialog No Close Button Example",
+  "description": "Atomic example for the Ink UI Dialog component.",
+  "registryDependencies": [
+    "dialog",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/dialog-no-close-button-example.tsx",
+      "content": "import {\n  Dialog,\n  DialogBody,\n  DialogClose,\n  DialogContent,\n  DialogDescription,\n  DialogFooter,\n  DialogHeader,\n  DialogTitle,\n  DialogTrigger,\n} from \"registry/default/ui/dialog\";\nimport { Button } from \"registry/default/ui/button\";\nexport function DialogNoCloseButtonExample() {\n  return (\n    <Dialog>\n      <DialogTrigger render={<Button variant=\"outline\">No Close Button</Button>} />\n      <DialogContent>\n        <DialogHeader closeButton={false}>\n          <DialogTitle>Notice</DialogTitle>\n          <DialogDescription>\n            This dialog has no close button in the header. Use the action below to dismiss it.\n          </DialogDescription>\n        </DialogHeader>\n        <DialogBody>\n          <p className=\"text-sm text-gray-600 dark:text-gray-400\">\n            You must explicitly choose an action to close this dialog.\n          </p>\n        </DialogBody>\n        <DialogFooter>\n          <DialogClose render={<Button>Got it</Button>} />\n        </DialogFooter>\n      </DialogContent>\n    </Dialog>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/dialog-no-close-button-example.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "slider-controlled-example",
+  "title": "Slider Controlled Example",
+  "description": "Atomic example for the Ink UI Slider component.",
+  "registryDependencies": [
+    "slider"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/slider-controlled-example.tsx",
+      "content": "import { useState } from \"react\";\nimport Slider from \"registry/default/ui/slider\";\nexport function ControlledSliderExample() {\n  const [value, setValue] = useState(40);\n\n  return (\n    <div className=\"flex flex-col gap-4\">\n      <Slider\n        aria-label=\"Volume\"\n        value={value}\n        onValueChange={(nextValue) => {\n          setValue(Array.isArray(nextValue) ? (nextValue[0] ?? 0) : nextValue);\n        }}\n      />\n      <span className=\"text-sm text-gray-600 dark:text-gray-400\">Volume: {value}</span>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/slider-controlled-example.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

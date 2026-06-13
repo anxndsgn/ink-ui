@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tag-outline-example",
+  "title": "Tag Outline Example",
+  "description": "Atomic example for the Ink UI Tag component.",
+  "registryDependencies": [
+    "tag"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/tag-outline-example.tsx",
+      "content": "import { Tag } from \"registry/default/ui/tag\";\nexport function OutlineTagExample() {\n  return (\n    <div className=\"flex flex-wrap items-center gap-4\">\n      <Tag variant=\"outline\">Outline</Tag>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/tag-outline-example.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

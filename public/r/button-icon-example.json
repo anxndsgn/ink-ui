@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-icon-example",
+  "title": "Button Icon Example",
+  "description": "Atomic example for the Ink UI Button component.",
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/button-icon-example.tsx",
+      "content": "import { Button } from \"registry/default/ui/button\";\nimport { PlusIcon } from \"@phosphor-icons/react\";\nexport function IconButtonExample() {\n  return (\n    <div className=\"flex flex-wrap items-center gap-4\">\n      <Button variant=\"outline\" size=\"icon\">\n        <PlusIcon />\n      </Button>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/button-icon-example.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

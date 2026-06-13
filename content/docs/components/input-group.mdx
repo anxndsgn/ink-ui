@@ -5,22 +5,16 @@ component: Input Group
 registry: input-group
 ---
 
-import {
-  InputGroup,
-  InputGroupAddon,
-  InputGroupButton,
-  InputGroupInput,
-  InputGroupText,
-  InputGroupTextarea,
-} from "registry/default/ui/input-group";
-import {
-  InputGroupExample,
-  InputGroupWithButtonExample,
-  InputGroupWithTextExample,
-  InputGroupTextareaExample,
-  AgentChatInputGroupExample,
-} from "registry/default/examples/input-group-example";
-import inputGroupExampleSource from "registry/default/examples/input-group-example.tsx?raw";
+import { InputGroupExample } from "registry/default/examples/input-group-default-example";
+import inputGroupExampleSource from "registry/default/examples/input-group-default-example.tsx?raw";
+import { InputGroupWithButtonExample } from "registry/default/examples/input-group-with-button-example";
+import inputGroupWithButtonExampleSource from "registry/default/examples/input-group-with-button-example.tsx?raw";
+import { InputGroupWithTextExample } from "registry/default/examples/input-group-with-text-example";
+import inputGroupWithTextExampleSource from "registry/default/examples/input-group-with-text-example.tsx?raw";
+import { InputGroupTextareaExample } from "registry/default/examples/input-group-textarea-example";
+import inputGroupTextareaExampleSource from "registry/default/examples/input-group-textarea-example.tsx?raw";
+import { AgentChatInputGroupExample } from "registry/default/examples/input-group-agent-chat-example";
+import agentChatInputGroupExampleSource from "registry/default/examples/input-group-agent-chat-example.tsx?raw";
 import inputGroupSource from "registry/default/ui/input-group.tsx?raw";
 
 <ComponentSection>
@@ -31,7 +25,7 @@ import inputGroupSource from "registry/default/ui/input-group.tsx?raw";
     <ComponentSource
       code={inputGroupExampleSource}
       language="tsx"
-      title="input-group-example.tsx"
+      title="input-group-default-example.tsx"
     />
   </ComponentTabs>
 </ComponentSection>
@@ -48,9 +42,9 @@ Use `InputGroupButton` inside an addon for compact actions that belong to the fi
       <InputGroupWithButtonExample />
     </ComponentPreview>
     <ComponentSource
-      code={inputGroupExampleSource}
+      code={inputGroupWithButtonExampleSource}
       language="tsx"
-      title="input-group-example.tsx"
+      title="input-group-with-button-example.tsx"
     />
   </ComponentTabs>
 </ComponentSection>
@@ -65,9 +59,9 @@ Use `InputGroupText` for static prefixes, suffixes, keyboard hints, and short la
       <InputGroupWithTextExample />
     </ComponentPreview>
     <ComponentSource
-      code={inputGroupExampleSource}
+      code={inputGroupWithTextExampleSource}
       language="tsx"
-      title="input-group-example.tsx"
+      title="input-group-with-text-example.tsx"
     />
   </ComponentTabs>
 </ComponentSection>
@@ -82,9 +76,9 @@ Use `InputGroupTextarea` when the control needs multiline input.
       <InputGroupTextareaExample />
     </ComponentPreview>
     <ComponentSource
-      code={inputGroupExampleSource}
+      code={inputGroupTextareaExampleSource}
       language="tsx"
-      title="input-group-example.tsx"
+      title="input-group-textarea-example.tsx"
     />
   </ComponentTabs>
 </ComponentSection>
@@ -99,9 +93,9 @@ A common agent chat composer with attachment, mode controls, voice input, and su
       <AgentChatInputGroupExample />
     </ComponentPreview>
     <ComponentSource
-      code={inputGroupExampleSource}
+      code={agentChatInputGroupExampleSource}
       language="tsx"
-      title="input-group-example.tsx"
+      title="input-group-agent-chat-example.tsx"
     />
   </ComponentTabs>
 </ComponentSection>

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-inline-example",
+  "title": "Input Inline Example",
+  "description": "Atomic example for the Ink UI Input component.",
+  "registryDependencies": [
+    "input"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/input-inline-example.tsx",
+      "content": "import { Input } from \"registry/default/ui/input\";\nexport function InlineInputExample() {\n  return (\n    <div className=\"flex flex-wrap items-center gap-4\">\n      <Input block={false} placeholder=\"Inline width...\" />\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/input-inline-example.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

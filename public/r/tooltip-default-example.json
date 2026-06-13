@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tooltip-default-example",
+  "title": "Tooltip Default Example",
+  "description": "Atomic example for the Ink UI Tooltip component.",
+  "registryDependencies": [
+    "tooltip",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/tooltip-default-example.tsx",
+      "content": "import { Tooltip, TooltipContent, TooltipTrigger } from \"registry/default/ui/tooltip\";\nimport { Button } from \"registry/default/ui/button\";\nexport function TooltipExample() {\n  return (\n    <Tooltip>\n      <TooltipTrigger render={<Button variant=\"outline\">Hover me</Button>} />\n      <TooltipContent>\n        <p>Add to library</p>\n      </TooltipContent>\n    </Tooltip>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/tooltip-default-example.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

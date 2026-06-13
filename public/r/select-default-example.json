@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "select-default-example",
+  "title": "Select Default Example",
+  "description": "Atomic example for the Ink UI Select component.",
+  "registryDependencies": [
+    "select"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/select-default-example.tsx",
+      "content": "import {\n  Select,\n  SelectTrigger,\n  SelectContent,\n  SelectItem,\n  SelectValue,\n} from \"registry/default/ui/select\";\nexport function SelectExample() {\n  const items = [\n    { value: \"apple\", label: \"Apple\" },\n    { value: \"banana\", label: \"Banana\" },\n    { value: \"blueberry\", label: \"Blueberry\" },\n    { value: \"grapes\", label: \"Grapes\" },\n    { value: \"pineapple\", label: \"Pineapple\" },\n  ];\n\n  return (\n    <div className=\"flex flex-wrap items-center gap-4\">\n      <Select items={items}>\n        <SelectTrigger className=\"w-44\">\n          <SelectValue placeholder=\"Select a fruit\" />\n        </SelectTrigger>\n        <SelectContent>\n          {items.map((item) => (\n            <SelectItem key={item.value} value={item.value}>\n              {item.label}\n            </SelectItem>\n          ))}\n        </SelectContent>\n      </Select>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/select-default-example.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

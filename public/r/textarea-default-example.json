@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "textarea-default-example",
+  "title": "Textarea Default Example",
+  "description": "Atomic example for the Ink UI Textarea component.",
+  "registryDependencies": [
+    "textarea"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/textarea-default-example.tsx",
+      "content": "import { Textarea } from \"registry/default/ui/textarea\";\nexport function TextareaExample() {\n  return (\n    <div className=\"flex flex-wrap items-center gap-4\">\n      <Textarea placeholder=\"Type something...\" />\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/textarea-default-example.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

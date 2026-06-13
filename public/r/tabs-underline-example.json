@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tabs-underline-example",
+  "title": "Tabs Underline Example",
+  "description": "Atomic example for the Ink UI Tabs component.",
+  "registryDependencies": [
+    "tabs"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/tabs-underline-example.tsx",
+      "content": "import { Tabs, TabsList, TabsTab, TabsPanel } from \"registry/default/ui/tabs\";\nconst tabContentClassName =\n  \"w-full rounded-lg bg-gray-100 p-4 text-sm text-gray-600 dark:bg-gray-900 dark:text-gray-400\";\nexport function TabsUnderlineExample() {\n  return (\n    <div className=\"flex flex-col items-start justify-center\">\n      <Tabs defaultValue=\"overview\" className=\"w-full max-w-72\">\n        <TabsList variant=\"underline\">\n          <TabsTab value=\"overview\">Overview</TabsTab>\n          <TabsTab value=\"analytics\">Analytics</TabsTab>\n          <TabsTab value=\"reports\">Reports</TabsTab>\n        </TabsList>\n        <TabsPanel value=\"overview\">\n          <p className={tabContentClassName}>View your project overview and key metrics.</p>\n        </TabsPanel>\n        <TabsPanel value=\"analytics\">\n          <p className={tabContentClassName}>Dive into detailed analytics and trends.</p>\n        </TabsPanel>\n        <TabsPanel value=\"reports\">\n          <p className={tabContentClassName}>Generate and download custom reports.</p>\n        </TabsPanel>\n      </Tabs>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/tabs-underline-example.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

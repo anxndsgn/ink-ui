@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "combobox-with-groups-example",
+  "title": "Combobox With Groups Example",
+  "description": "Atomic example for the Ink UI Combobox component.",
+  "registryDependencies": [
+    "combobox"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/combobox-with-groups-example.tsx",
+      "content": "import {\n  Combobox,\n  ComboboxContent,\n  ComboboxItem,\n  ComboboxList,\n  ComboboxTrigger,\n  ComboboxValue,\n  ComboboxGroup,\n  ComboboxGroupLabel,\n} from \"registry/default/ui/combobox\";\nexport function ComboboxWithGroupsExample() {\n  const frontend = [\n    { value: \"react\", label: \"React\" },\n    { value: \"vue\", label: \"Vue\" },\n    { value: \"svelte\", label: \"Svelte\" },\n  ];\n\n  const backend = [\n    { value: \"next\", label: \"Next.js\" },\n    { value: \"nuxt\", label: \"Nuxt\" },\n    { value: \"astro\", label: \"Astro\" },\n  ];\n\n  const allItems = [\n    { group: \"Frontend\", items: frontend },\n    { group: \"Backend\", items: backend },\n  ];\n\n  return (\n    <div className=\"flex flex-wrap items-center gap-4\">\n      <Combobox items={allItems}>\n        <ComboboxTrigger className=\"w-56\">\n          <ComboboxValue placeholder=\"Select a framework\" />\n        </ComboboxTrigger>\n        <ComboboxContent>\n          <ComboboxList>\n            {(group: (typeof allItems)[number]) => (\n              <ComboboxGroup key={group.group}>\n                <ComboboxGroupLabel>{group.group}</ComboboxGroupLabel>\n                {group.items.map((item) => (\n                  <ComboboxItem key={item.value} value={item.value}>\n                    {item.label}\n                  </ComboboxItem>\n                ))}\n              </ComboboxGroup>\n            )}\n          </ComboboxList>\n        </ComboboxContent>\n      </Combobox>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/combobox-with-groups-example.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

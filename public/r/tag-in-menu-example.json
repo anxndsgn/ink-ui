@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tag-in-menu-example",
+  "title": "Tag In Menu Example",
+  "description": "Atomic example for the Ink UI Tag component.",
+  "registryDependencies": [
+    "tag",
+    "menu",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/tag-in-menu-example.tsx",
+      "content": "import { Tag } from \"registry/default/ui/tag\";\nimport { Menu, MenuContent, MenuItem, MenuItemLabel, MenuTrigger } from \"registry/default/ui/menu\";\nimport { Button } from \"registry/default/ui/button\";\nexport function TagInMenuExample() {\n  return (\n    <Menu>\n      <MenuTrigger render={<Button variant=\"outline\">Menu</Button>} />\n      <MenuContent>\n        <MenuItem>\n          <MenuItemLabel>Profile</MenuItemLabel>\n          <Tag size=\"sm\" variant=\"secondary\">\n            New\n          </Tag>\n        </MenuItem>\n        <MenuItem>\n          <MenuItemLabel>Settings</MenuItemLabel>\n          <Tag size=\"sm\" variant=\"outline\">\n            Beta\n          </Tag>\n        </MenuItem>\n        <MenuItem>\n          <MenuItemLabel>Billing</MenuItemLabel>\n        </MenuItem>\n      </MenuContent>\n    </Menu>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/tag-in-menu-example.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

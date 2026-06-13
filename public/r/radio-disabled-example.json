@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "radio-disabled-example",
+  "title": "Radio Disabled Example",
+  "description": "Atomic example for the Ink UI Radio component.",
+  "registryDependencies": [
+    "radio"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/radio-disabled-example.tsx",
+      "content": "import { RadioGroup, Radio } from \"registry/default/ui/radio\";\nexport function RadioDisabledExample() {\n  return (\n    <RadioGroup defaultValue=\"system\">\n      <label className=\"flex items-center gap-2 text-sm\">\n        <Radio value=\"system\" />\n        System\n      </label>\n      <label className=\"flex items-center gap-2 text-sm\">\n        <Radio value=\"light\" disabled />\n        Light\n      </label>\n      <label className=\"flex items-center gap-2 text-sm\">\n        <Radio value=\"dark\" />\n        Dark\n      </label>\n    </RadioGroup>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/radio-disabled-example.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

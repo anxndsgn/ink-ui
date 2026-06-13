@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "menu-with-groups-example",
+  "title": "Menu With Groups Example",
+  "description": "Atomic example for the Ink UI Menu component.",
+  "registryDependencies": [
+    "menu",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/menu-with-groups-example.tsx",
+      "content": "import {\n  Menu,\n  MenuTrigger,\n  MenuContent,\n  MenuItem,\n  MenuItemLabel,\n  MenuItemLeadingIcon,\n  MenuGroup,\n  MenuGroupLabel,\n  MenuSeparator,\n} from \"registry/default/ui/menu\";\nimport { Button } from \"registry/default/ui/button\";\nimport { UserIcon, BellIcon, ShieldIcon, FileTextIcon } from \"@phosphor-icons/react\";\nexport function MenuWithGroupsExample() {\n  return (\n    <Menu>\n      <MenuTrigger render={<Button variant=\"outline\">Menu</Button>} />\n      <MenuContent>\n        <MenuGroup>\n          <MenuGroupLabel>Account</MenuGroupLabel>\n          <MenuItem>\n            <MenuItemLeadingIcon>\n              <UserIcon />\n            </MenuItemLeadingIcon>\n            <MenuItemLabel>Profile</MenuItemLabel>\n          </MenuItem>\n          <MenuItem>\n            <MenuItemLeadingIcon>\n              <BellIcon />\n            </MenuItemLeadingIcon>\n            <MenuItemLabel>Notifications</MenuItemLabel>\n          </MenuItem>\n        </MenuGroup>\n        <MenuSeparator />\n        <MenuGroup>\n          <MenuGroupLabel>Preferences</MenuGroupLabel>\n          <MenuItem>\n            <MenuItemLeadingIcon>\n              <ShieldIcon />\n            </MenuItemLeadingIcon>\n            <MenuItemLabel>Privacy</MenuItemLabel>\n          </MenuItem>\n          <MenuItem>\n            <MenuItemLeadingIcon>\n              <FileTextIcon />\n            </MenuItemLeadingIcon>\n            <MenuItemLabel>Terms</MenuItemLabel>\n          </MenuItem>\n        </MenuGroup>\n      </MenuContent>\n    </Menu>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/menu-with-groups-example.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

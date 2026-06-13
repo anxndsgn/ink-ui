@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-outline-example",
+  "title": "Input Outline Example",
+  "description": "Atomic example for the Ink UI Input component.",
+  "registryDependencies": [
+    "input"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/input-outline-example.tsx",
+      "content": "import { Input } from \"registry/default/ui/input\";\nexport function OutlineInputExample() {\n  return (\n    <div className=\"flex flex-wrap items-center gap-4\">\n      <Input variant=\"outline\" placeholder=\"Outline variant...\" />\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/input-outline-example.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dialog-row-footer-example",
+  "title": "Dialog Row Footer Example",
+  "description": "Atomic example for the Ink UI Dialog component.",
+  "registryDependencies": [
+    "dialog",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/dialog-row-footer-example.tsx",
+      "content": "import {\n  Dialog,\n  DialogBody,\n  DialogClose,\n  DialogContent,\n  DialogDescription,\n  DialogFooter,\n  DialogHeader,\n  DialogTitle,\n  DialogTrigger,\n} from \"registry/default/ui/dialog\";\nimport { Button } from \"registry/default/ui/button\";\nexport function DialogRowFooterExample() {\n  return (\n    <Dialog>\n      <DialogTrigger render={<Button variant=\"outline\">Row Footer</Button>} />\n      <DialogContent>\n        <DialogHeader>\n          <DialogTitle>Save Changes</DialogTitle>\n          <DialogDescription>Your changes will be saved to the cloud.</DialogDescription>\n        </DialogHeader>\n        <DialogBody>\n          <p className=\"text-sm text-gray-600 dark:text-gray-400\">\n            Review your changes before confirming.\n          </p>\n        </DialogBody>\n        <DialogFooter direction=\"row\">\n          <DialogClose render={<Button variant=\"secondary\">Cancel</Button>} />\n          <Button>Save</Button>\n        </DialogFooter>\n      </DialogContent>\n    </Dialog>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/dialog-row-footer-example.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

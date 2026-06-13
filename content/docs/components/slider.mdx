@@ -6,14 +6,16 @@ registry: slider
 ---
 
 import Slider from "registry/default/ui/slider";
-import {
-  SliderExample,
-  RangeSliderExample,
-  SteppedSliderExample,
-  DisabledSliderExample,
-  ControlledSliderExample,
-} from "registry/default/examples/slider-example";
-import sliderExampleSource from "registry/default/examples/slider-example.tsx?raw";
+import { SliderExample } from "registry/default/examples/slider-default-example";
+import sliderExampleSource from "registry/default/examples/slider-default-example.tsx?raw";
+import { RangeSliderExample } from "registry/default/examples/slider-range-example";
+import rangeSliderExampleSource from "registry/default/examples/slider-range-example.tsx?raw";
+import { SteppedSliderExample } from "registry/default/examples/slider-stepped-example";
+import steppedSliderExampleSource from "registry/default/examples/slider-stepped-example.tsx?raw";
+import { DisabledSliderExample } from "registry/default/examples/slider-disabled-example";
+import disabledSliderExampleSource from "registry/default/examples/slider-disabled-example.tsx?raw";
+import { ControlledSliderExample } from "registry/default/examples/slider-controlled-example";
+import controlledSliderExampleSource from "registry/default/examples/slider-controlled-example.tsx?raw";
 import sliderSource from "registry/default/ui/slider.tsx?raw";
 
 <ComponentSection>
@@ -21,7 +23,7 @@ import sliderSource from "registry/default/ui/slider.tsx?raw";
     <ComponentPreview name="SliderExample">
       <SliderExample />
     </ComponentPreview>
-    <ComponentSource code={sliderExampleSource} language="tsx" title="slider-example.tsx" />
+    <ComponentSource code={sliderExampleSource} language="tsx" title="slider-default-example.tsx" />
   </ComponentTabs>
 </ComponentSection>
 
@@ -36,7 +38,11 @@ Pass an array to `defaultValue` to render a range slider with multiple thumbs.
     <ComponentPreview name="RangeSliderExample">
       <RangeSliderExample />
     </ComponentPreview>
-    <ComponentSource code={sliderExampleSource} language="tsx" title="slider-example.tsx" />
+    <ComponentSource
+      code={rangeSliderExampleSource}
+      language="tsx"
+      title="slider-range-example.tsx"
+    />
   </ComponentTabs>
 </ComponentSection>
 
@@ -49,7 +55,11 @@ Use `step` to control the increment between values.
     <ComponentPreview name="SteppedSliderExample">
       <SteppedSliderExample />
     </ComponentPreview>
-    <ComponentSource code={sliderExampleSource} language="tsx" title="slider-example.tsx" />
+    <ComponentSource
+      code={steppedSliderExampleSource}
+      language="tsx"
+      title="slider-stepped-example.tsx"
+    />
   </ComponentTabs>
 </ComponentSection>
 
@@ -62,7 +72,11 @@ Use the `disabled` prop to prevent interaction.
     <ComponentPreview name="DisabledSliderExample">
       <DisabledSliderExample />
     </ComponentPreview>
-    <ComponentSource code={sliderExampleSource} language="tsx" title="slider-example.tsx" />
+    <ComponentSource
+      code={disabledSliderExampleSource}
+      language="tsx"
+      title="slider-disabled-example.tsx"
+    />
   </ComponentTabs>
 </ComponentSection>
 
@@ -75,7 +89,11 @@ Manage the slider value with React state using `value` and `onValueChange`.
     <ComponentPreview name="ControlledSliderExample">
       <ControlledSliderExample />
     </ComponentPreview>
-    <ComponentSource code={sliderExampleSource} language="tsx" title="slider-example.tsx" />
+    <ComponentSource
+      code={controlledSliderExampleSource}
+      language="tsx"
+      title="slider-controlled-example.tsx"
+    />
   </ComponentTabs>
 </ComponentSection>
 

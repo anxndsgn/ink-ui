@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "slider-disabled-example",
+  "title": "Slider Disabled Example",
+  "description": "Atomic example for the Ink UI Slider component.",
+  "registryDependencies": [
+    "slider"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/slider-disabled-example.tsx",
+      "content": "import Slider from \"registry/default/ui/slider\";\nexport function DisabledSliderExample() {\n  return (\n    <div className=\"flex flex-wrap items-center gap-4\">\n      <Slider aria-label=\"Disabled volume\" defaultValue={40} disabled />\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/slider-disabled-example.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

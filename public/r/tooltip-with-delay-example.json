@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tooltip-with-delay-example",
+  "title": "Tooltip With Delay Example",
+  "description": "Atomic example for the Ink UI Tooltip component.",
+  "registryDependencies": [
+    "tooltip",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/tooltip-with-delay-example.tsx",
+      "content": "import { Tooltip, TooltipContent, TooltipTrigger } from \"registry/default/ui/tooltip\";\nimport { Button } from \"registry/default/ui/button\";\nexport function TooltipWithDelayExample() {\n  return (\n    <div className=\"flex flex-wrap items-center gap-4\">\n      <Tooltip>\n        <TooltipTrigger delay={0} render={<Button variant=\"outline\">Instant</Button>} />\n        <TooltipContent>\n          <p>Appears immediately</p>\n        </TooltipContent>\n      </Tooltip>\n      <Tooltip>\n        <TooltipTrigger delay={500} render={<Button variant=\"outline\">Delayed</Button>} />\n        <TooltipContent>\n          <p>Appears after 500ms</p>\n        </TooltipContent>\n      </Tooltip>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/tooltip-with-delay-example.tsx"
+    }
+  ],
+  "type": "registry:component"
+}
