@@ -21,6 +21,8 @@ import { MenuDestructiveExample } from "registry/default/examples/menu-destructi
 import menuDestructiveExampleSource from "registry/default/examples/menu-destructive-example.tsx?raw";
 import { MenuSubmenuExample } from "registry/default/examples/menu-submenu-example";
 import menuSubmenuExampleSource from "registry/default/examples/menu-submenu-example.tsx?raw";
+import { MenuComplexExample } from "registry/default/examples/menu-complex-example";
+import menuComplexExampleSource from "registry/default/examples/menu-complex-example.tsx?raw";
 import menuSource from "registry/default/ui/menu.tsx?raw";
 
 <ComponentSection>
@@ -34,9 +36,11 @@ import menuSource from "registry/default/ui/menu.tsx?raw";
 
 ## Examples
 
-### With icons
+### With addons
 
-Add icons to menu items using `MenuItemLeadingIcon` and `MenuItemTrailingIcon`.
+Add icons, text, or other supplementary content with `MenuItemAddon`. Place it before
+`MenuItemLabel` for a leading addon or after the label for a trailing addon. Use one addon
+container per side and group multiple elements inside it.
 
 <ComponentSection>
   <ComponentTabs>
@@ -53,7 +57,7 @@ Add icons to menu items using `MenuItemLeadingIcon` and `MenuItemTrailingIcon`.
 
 ### With shortcuts
 
-Display keyboard shortcuts on menu items using `Kbd`.
+Display keyboard shortcuts by placing `Kbd` inside a trailing `MenuItemAddon`.
 
 <ComponentSection>
   <ComponentTabs>
@@ -89,6 +93,9 @@ Group related items with `MenuGroup` and `MenuGroupLabel`.
 
 Use `MenuCheckboxItem` for toggleable options.
 
+> **Note:** The checkbox indicator occupies the leading addon column. Avoid adding a leading
+> `MenuItemAddon`; place any supplementary content after `MenuItemLabel` instead.
+
 <ComponentSection>
   <ComponentTabs>
     <ComponentPreview name="MenuCheckboxExample">
@@ -105,6 +112,9 @@ Use `MenuCheckboxItem` for toggleable options.
 ### Radio items
 
 Use `MenuRadioGroup` and `MenuRadioItem` for mutually exclusive options.
+
+> **Note:** The radio indicator occupies the leading addon column. Avoid adding a leading
+> `MenuItemAddon`; place any supplementary content after `MenuItemLabel` instead.
 
 <ComponentSection>
   <ComponentTabs>
@@ -149,6 +159,23 @@ Nest menus with `MenuSubmenu` and `MenuSubmenuTrigger`.
   </ComponentTabs>
 </ComponentSection>
 
+### Complex menu
+
+A comprehensive menu combining groups, icons, keyboard shortcuts, links, submenus, radio items, checkbox items, and a destructive action.
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="MenuComplexExample">
+      <MenuComplexExample />
+    </ComponentPreview>
+    <ComponentSource
+      code={menuComplexExampleSource}
+      language="tsx"
+      title="menu-complex-example.tsx"
+    />
+  </ComponentTabs>
+</ComponentSection>
+
 ## Installation
 
 Copy the source code below into your project:
@@ -189,13 +216,9 @@ Copy the source code below into your project:
 
 <PropsTable component="MenuSeparator" />
 
-### MenuItemLeadingIcon
+### MenuItemAddon
 
-<PropsTable component="MenuItemLeadingIcon" />
-
-### MenuItemTrailingIcon
-
-<PropsTable component="MenuItemTrailingIcon" />
+<PropsTable component="MenuItemAddon" />
 
 ### MenuItemLabel
 

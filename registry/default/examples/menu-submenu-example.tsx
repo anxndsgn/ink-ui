@@ -3,9 +3,8 @@ import {
   MenuTrigger,
   MenuContent,
   MenuItem,
+  MenuItemAddon,
   MenuItemLabel,
-  MenuItemLeadingIcon,
-  MenuItemTrailingIcon,
   MenuSeparator,
   MenuSubmenu,
   MenuSubmenuTrigger,
@@ -22,13 +21,13 @@ export function MenuSubmenuExample() {
         </MenuItem>
         <MenuSubmenu>
           <MenuSubmenuTrigger>
-            <MenuItemLeadingIcon>
+            <MenuItemAddon>
               <UsersIcon />
-            </MenuItemLeadingIcon>
+            </MenuItemAddon>
             <MenuItemLabel>Share with</MenuItemLabel>
-            <MenuItemTrailingIcon>
+            <MenuItemAddon>
               <CaretRightIcon />
-            </MenuItemTrailingIcon>
+            </MenuItemAddon>
           </MenuSubmenuTrigger>
           <MenuContent>
             <MenuItem>

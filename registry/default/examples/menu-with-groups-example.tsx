@@ -3,8 +3,8 @@ import {
   MenuTrigger,
   MenuContent,
   MenuItem,
+  MenuItemAddon,
   MenuItemLabel,
-  MenuItemLeadingIcon,
   MenuGroup,
   MenuGroupLabel,
   MenuSeparator,
@@ -19,15 +19,15 @@ export function MenuWithGroupsExample() {
         <MenuGroup>
           <MenuGroupLabel>Account</MenuGroupLabel>
           <MenuItem>
-            <MenuItemLeadingIcon>
+            <MenuItemAddon>
               <UserIcon />
-            </MenuItemLeadingIcon>
+            </MenuItemAddon>
             <MenuItemLabel>Profile</MenuItemLabel>
           </MenuItem>
           <MenuItem>
-            <MenuItemLeadingIcon>
+            <MenuItemAddon>
               <BellIcon />
-            </MenuItemLeadingIcon>
+            </MenuItemAddon>
             <MenuItemLabel>Notifications</MenuItemLabel>
           </MenuItem>
         </MenuGroup>
@@ -35,15 +35,15 @@ export function MenuWithGroupsExample() {
         <MenuGroup>
           <MenuGroupLabel>Preferences</MenuGroupLabel>
           <MenuItem>
-            <MenuItemLeadingIcon>
+            <MenuItemAddon>
               <ShieldIcon />
-            </MenuItemLeadingIcon>
+            </MenuItemAddon>
             <MenuItemLabel>Privacy</MenuItemLabel>
           </MenuItem>
           <MenuItem>
-            <MenuItemLeadingIcon>
+            <MenuItemAddon>
               <FileTextIcon />
-            </MenuItemLeadingIcon>
+            </MenuItemAddon>
             <MenuItemLabel>Terms</MenuItemLabel>
           </MenuItem>
         </MenuGroup>

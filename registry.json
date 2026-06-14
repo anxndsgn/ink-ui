@@ -1336,6 +1336,20 @@
       ]
     },
     {
+      "name": "menu-complex-example",
+      "type": "registry:component",
+      "title": "Menu Complex Example",
+      "description": "Comprehensive example showcasing all Ink UI Menu subcomponents.",
+      "registryDependencies": ["menu", "button", "kbd"],
+      "files": [
+        {
+          "path": "registry/default/examples/menu-complex-example.tsx",
+          "type": "registry:component",
+          "target": "components/menu-complex-example.tsx"
+        }
+      ]
+    },
+    {
       "name": "number-field-default-example",
       "type": "registry:component",
       "title": "Number Field Default Example",

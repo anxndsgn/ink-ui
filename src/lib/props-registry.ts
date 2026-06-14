@@ -117,17 +117,7 @@ export const propsRegistry: Record<string, ComponentPropsEntry> = {
     },
     props: [],
   },
-  MenuItemLeadingIcon: {
-    props: [
-      {
-        name: "render",
-        type: "React.ReactElement | ((props, state) => React.ReactElement)",
-        description:
-          "Custom element or render function used instead of the default span container.",
-      },
-    ],
-  },
-  MenuItemTrailingIcon: {
+  MenuItemAddon: {
     props: [
       {
         name: "render",

@@ -26,7 +26,7 @@ function MenuGroup({ className, ...props }: BaseMenu.Group.Props) {
 function MenuGroupLabel({ className, ...props }: BaseMenu.GroupLabel.Props) {
   return (
     <BaseMenu.GroupLabel
-      className={cn("col-start-3 py-1.5 text-sm text-muted-foreground select-none", className)}
+      className={cn("col-start-2 py-1.5 text-sm text-muted-foreground select-none", className)}
       data-slot="menu-group-label"
       {...props}
     />
@@ -34,6 +34,7 @@ function MenuGroupLabel({ className, ...props }: BaseMenu.GroupLabel.Props) {
 }
 
 function MenuContent({
+  children,
   className,
   positionerProps,
   ...props
@@ -46,24 +47,31 @@ function MenuContent({
         {...positionerProps}
         align={positionerProps?.align ?? "start"}
         alignOffset={positionerProps?.alignOffset ?? -5}
-        className={cn("outline-none", positionerProps?.className)}
+        className={cn("z-50 outline-none", positionerProps?.className)}
         sideOffset={positionerProps?.sideOffset ?? 12}
       >
         <BaseMenu.Popup
           className={cn(
-            "grid min-w-40 origin-(--transform-origin) grid-cols-[auto_auto_1fr_auto] rounded-xl bg-popover p-1.5 text-popover-foreground shadow-lg outline outline-border transition-[transform,scale,opacity] data-ending-style:scale-90 data-ending-style:opacity-0 data-starting-style:scale-90 data-starting-style:opacity-0 dark:shadow-none",
+            "min-w-40 origin-(--transform-origin) overflow-hidden rounded-xl bg-popover text-popover-foreground shadow-lg outline outline-border transition-[transform,scale,opacity] data-ending-style:scale-90 data-ending-style:opacity-0 data-starting-style:scale-90 data-starting-style:opacity-0 dark:shadow-none",
             className,
           )}
           data-slot="menu-popup"
           {...props}
-        />
+        >
+          <div
+            className="grid max-h-(--available-height) grid-cols-[auto_1fr_auto] overflow-y-auto p-1.5"
+            data-slot="menu-scroll-container"
+          >
+            {children}
+          </div>
+        </BaseMenu.Popup>
       </BaseMenu.Positioner>
     </BaseMenu.Portal>
   );
 }
 
 const menuItemVariants = cva(
-  "group col-span-full grid cursor-default grid-cols-subgrid items-center p-2 text-sm leading-4 outline-none select-none data-disabled:pointer-events-none data-disabled:cursor-not-allowed data-disabled:opacity-50 data-highlighted:relative data-highlighted:z-0 data-highlighted:before:absolute data-highlighted:before:inset-0 data-highlighted:before:inset-y-0 data-highlighted:before:z-[-1] data-highlighted:before:rounded-lg",
+  "group col-span-full grid cursor-default grid-cols-subgrid items-center p-2 text-sm leading-4 outline-none select-none data-disabled:pointer-events-none data-disabled:cursor-not-allowed data-disabled:opacity-50 data-highlighted:relative data-highlighted:z-0 data-highlighted:before:absolute data-highlighted:before:inset-0 data-highlighted:before:inset-y-0 data-highlighted:before:z-[-1] data-highlighted:before:rounded-lg [&>[data-slot=menu-item-label]~[data-slot=menu-item-addon]]:col-start-3 [&>[data-slot=menu-item-label]~[data-slot=menu-item-addon]]:ms-2 [&>[data-slot=menu-item-label]~[data-slot=menu-item-addon]]:me-0",
   {
     defaultVariants: {
       variant: "default",
@@ -71,9 +79,9 @@ const menuItemVariants = cva(
     variants: {
       variant: {
         default:
-          "text-popover-foreground data-highlighted:text-primary-foreground data-highlighted:before:bg-primary [&_svg]:text-muted-foreground data-highlighted:[&_svg]:text-primary-foreground",
+          "text-popover-foreground data-highlighted:text-primary-foreground data-highlighted:before:bg-primary [&>[data-slot=menu-item-addon]]:text-muted-foreground data-highlighted:[&>[data-slot=menu-item-addon]]:text-primary-foreground",
         destructive:
-          "text-destructive data-highlighted:text-destructive-foreground data-highlighted:before:bg-destructive [&_svg]:text-destructive/80 data-highlighted:[&_svg]:text-destructive-foreground",
+          "text-destructive data-highlighted:text-destructive-foreground data-highlighted:before:bg-destructive [&>[data-slot=menu-item-addon]]:text-destructive/80 data-highlighted:[&>[data-slot=menu-item-addon]]:text-destructive-foreground",
       },
     },
   },
@@ -114,38 +122,24 @@ function MenuLinkItem({ variant, className, ...props }: MenuLinkItemProps) {
   );
 }
 
-function MenuItemLeadingIcon({ className, render, ...props }: useRender.ComponentProps<"span">) {
-  const iconElement = useRender({
+function MenuItemAddon({ className, render, ...props }: useRender.ComponentProps<"span">) {
+  const addonElement = useRender({
     defaultTagName: "span",
     props: {
       ...mergeProps<"span">(
         {
-          className: cn("mr-2 inline-flex size-4 shrink-0", className),
+          className: cn(
+            "col-start-1 me-2 inline-flex shrink-0 items-center justify-center gap-1.5 whitespace-nowrap [&_svg:not([class*='size-'])]:size-4",
+            className,
+          ),
         },
         props,
       ),
-      "data-slot": "menu-item-icon",
+      "data-slot": "menu-item-addon",
     },
     render,
   });
-  return iconElement;
-}
-
-function MenuItemTrailingIcon({ className, render, ...props }: useRender.ComponentProps<"span">) {
-  const iconElement = useRender({
-    defaultTagName: "span",
-    props: {
-      ...mergeProps<"span">(
-        {
-          className: cn("ml-2 inline-flex size-4 shrink-0", className),
-        },
-        props,
-      ),
-      "data-slot": "menu-item-trailing-icon",
-    },
-    render,
-  });
-  return iconElement;
+  return addonElement;
 }
 
 function MenuItemLabel({ className, render, ...props }: useRender.ComponentProps<"span">) {
@@ -154,7 +148,7 @@ function MenuItemLabel({ className, render, ...props }: useRender.ComponentProps
     props: {
       ...mergeProps<"span">(
         {
-          className: cn("col-start-3 flex items-center", className),
+          className: cn("col-start-2 flex items-center", className),
         },
         props,
       ),
@@ -183,9 +177,8 @@ function MenuSubmenuTrigger({ className, ...props }: BaseMenu.SubmenuTrigger.Pro
   return (
     <BaseMenu.SubmenuTrigger
       className={cn(
-        "group col-span-full grid cursor-default grid-cols-subgrid items-center p-2 text-sm leading-4 text-popover-foreground outline-none select-none data-highlighted:relative data-highlighted:z-0 data-highlighted:text-primary-foreground data-highlighted:before:absolute data-highlighted:before:inset-0 data-highlighted:before:inset-y-0 data-highlighted:before:z-[-1] data-highlighted:before:rounded-lg data-highlighted:before:bg-primary",
+        menuItemVariants(),
         "data-popup-open:relative data-popup-open:z-0 data-popup-open:before:absolute data-popup-open:before:inset-0 data-popup-open:before:inset-y-0 data-popup-open:before:z-[-1] data-popup-open:before:rounded-lg data-popup-open:before:bg-muted data-highlighted:data-popup-open:text-primary-foreground data-highlighted:data-popup-open:before:bg-primary",
-        "[&_svg]:text-muted-foreground data-highlighted:[&_svg]:text-primary-foreground",
         className,
       )}
       data-slot="menu-submenu-trigger"
@@ -207,11 +200,7 @@ function MenuRadioGroup({ className, ...props }: BaseMenu.RadioGroup.Props) {
 function MenuRadioItem({ className, children, ...props }: BaseMenu.RadioItem.Props) {
   return (
     <BaseMenu.RadioItem
-      className={cn(
-        "group col-span-full grid cursor-default grid-cols-subgrid items-center p-2 text-sm leading-4 text-popover-foreground outline-none select-none data-highlighted:relative data-highlighted:z-0 data-highlighted:text-primary-foreground data-highlighted:before:absolute data-highlighted:before:inset-0 data-highlighted:before:inset-y-0 data-highlighted:before:z-[-1] data-highlighted:before:rounded-lg data-highlighted:before:bg-primary",
-        "[&_svg]:text-muted-foreground data-highlighted:[&_svg]:text-primary-foreground",
-        className,
-      )}
+      className={cn(menuItemVariants(), className)}
       data-slot="menu-radio-item"
       {...props}
     >
@@ -224,25 +213,21 @@ function MenuRadioItem({ className, children, ...props }: BaseMenu.RadioItem.Pro
 
 function MenuRadioItemIndicator({ className, ...props }: BaseMenu.RadioItemIndicator.Props) {
   return (
-    <MenuItemLeadingIcon>
+    <MenuItemAddon className="size-4">
       <BaseMenu.RadioItemIndicator
         className={cn("size-4", className)}
         data-slot="menu-radio-item-indicator"
         render={<DotOutlineIcon weight="fill" />}
         {...props}
       />
-    </MenuItemLeadingIcon>
+    </MenuItemAddon>
   );
 }
 
 function MenuCheckboxItem({ className, children, ...props }: BaseMenu.CheckboxItem.Props) {
   return (
     <BaseMenu.CheckboxItem
-      className={cn(
-        "group col-span-full grid cursor-default grid-cols-subgrid items-center p-2 text-sm leading-4 text-popover-foreground outline-none select-none data-highlighted:relative data-highlighted:z-0 data-highlighted:text-primary-foreground data-highlighted:before:absolute data-highlighted:before:inset-0 data-highlighted:before:inset-y-0 data-highlighted:before:z-[-1] data-highlighted:before:rounded-lg data-highlighted:before:bg-primary",
-        "[&_svg]:text-muted-foreground data-highlighted:[&_svg]:text-primary-foreground",
-        className,
-      )}
+      className={cn(menuItemVariants(), className)}
       data-slot="menu-checkbox-item"
       {...props}
     >
@@ -254,14 +239,14 @@ function MenuCheckboxItem({ className, children, ...props }: BaseMenu.CheckboxIt
 
 function MenuCheckboxItemIndicator({ className, ...props }: BaseMenu.CheckboxItemIndicator.Props) {
   return (
-    <MenuItemLeadingIcon>
+    <MenuItemAddon className="size-4">
       <BaseMenu.CheckboxItemIndicator
         className={cn("size-4", className)}
         data-slot="menu-checkbox-item-indicator"
         render={<CheckIcon />}
         {...props}
       />
-    </MenuItemLeadingIcon>
+    </MenuItemAddon>
   );
 }
 
@@ -274,9 +259,7 @@ export {
   MenuGroup,
   MenuGroupLabel,
   MenuSeparator,
-  MenuItemLeadingIcon,
-  MenuItemLeadingIcon as MenuItemIcon,
-  MenuItemTrailingIcon,
+  MenuItemAddon,
   MenuItemLabel,
   MenuSubmenu,
   MenuSubmenuTrigger,

@@ -3,6 +3,7 @@ import {
   MenuTrigger,
   MenuContent,
   MenuItem,
+  MenuItemAddon,
   MenuItemLabel,
   MenuSeparator,
 } from "registry/default/ui/menu";
@@ -16,20 +17,28 @@ export function MenuWithKbdExample() {
       <MenuContent>
         <MenuItem>
           <MenuItemLabel>New tab</MenuItemLabel>
-          <Kbd className="col-start-4">⌘T</Kbd>
+          <MenuItemAddon>
+            <Kbd>⌘T</Kbd>
+          </MenuItemAddon>
         </MenuItem>
         <MenuItem>
           <MenuItemLabel>New window</MenuItemLabel>
-          <Kbd className="col-start-4">⌘N</Kbd>
+          <MenuItemAddon>
+            <Kbd>⌘N</Kbd>
+          </MenuItemAddon>
         </MenuItem>
         <MenuItem>
           <MenuItemLabel>Downloads</MenuItemLabel>
-          <Kbd className="col-start-4">⌘J</Kbd>
+          <MenuItemAddon>
+            <Kbd>⌘J</Kbd>
+          </MenuItemAddon>
         </MenuItem>
         <MenuSeparator />
         <MenuItem>
           <MenuItemLabel>Settings</MenuItemLabel>
-          <Kbd className="col-start-4">⌘,</Kbd>
+          <MenuItemAddon>
+            <Kbd>⌘,</Kbd>
+          </MenuItemAddon>
         </MenuItem>
       </MenuContent>
     </Menu>

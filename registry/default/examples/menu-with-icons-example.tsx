@@ -3,8 +3,8 @@ import {
   MenuTrigger,
   MenuContent,
   MenuItem,
+  MenuItemAddon,
   MenuItemLabel,
-  MenuItemLeadingIcon,
   MenuSeparator,
 } from "registry/default/ui/menu";
 import { Button } from "registry/default/ui/button";
@@ -15,22 +15,23 @@ export function MenuWithIconsExample() {
       <MenuTrigger render={<Button variant="outline">Menu</Button>} />
       <MenuContent>
         <MenuItem>
-          <MenuItemLeadingIcon>
+          <MenuItemAddon>
             <UserIcon />
-          </MenuItemLeadingIcon>
+          </MenuItemAddon>
           <MenuItemLabel>Profile</MenuItemLabel>
+          <MenuItemAddon>Personal</MenuItemAddon>
         </MenuItem>
         <MenuItem>
-          <MenuItemLeadingIcon>
+          <MenuItemAddon>
             <GearIcon />
-          </MenuItemLeadingIcon>
+          </MenuItemAddon>
           <MenuItemLabel>Settings</MenuItemLabel>
         </MenuItem>
         <MenuSeparator />
         <MenuItem>
-          <MenuItemLeadingIcon>
+          <MenuItemAddon>
             <SignOutIcon />
-          </MenuItemLeadingIcon>
+          </MenuItemAddon>
           <MenuItemLabel>Log out</MenuItemLabel>
         </MenuItem>
       </MenuContent>
