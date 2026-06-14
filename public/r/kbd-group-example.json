@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "kbd-group-example",
+  "title": "KBD Group Example",
+  "description": "Atomic example for the Ink UI KBD component.",
+  "registryDependencies": [
+    "kbd"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/kbd-group-example.tsx",
+      "content": "import { Kbd, KbdGroup } from \"registry/default/ui/kbd\";\n\nexport function KbdGroupExample() {\n  return (\n    <div className=\"flex items-center gap-4\">\n      <KbdGroup>\n        <Kbd>⌘</Kbd>\n        <span className=\"text-muted-foreground\">+</span>\n        <Kbd>K</Kbd>\n      </KbdGroup>\n      <KbdGroup>\n        <Kbd>Ctrl</Kbd>\n        <span className=\"text-muted-foreground\">+</span>\n        <Kbd>Shift</Kbd>\n        <span className=\"text-muted-foreground\">+</span>\n        <Kbd>B</Kbd>\n      </KbdGroup>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/kbd-group-example.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

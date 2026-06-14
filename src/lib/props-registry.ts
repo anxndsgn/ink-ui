@@ -1461,4 +1461,30 @@ export const propsRegistry: Record<string, ComponentPropsEntry> = {
       },
     ],
   },
+  Kbd: {
+    extends: {
+      name: "HTML kbd element",
+      href: "https://developer.mozilla.org/en-US/docs/Web/HTML/Element/kbd",
+    },
+    props: [
+      {
+        name: "className",
+        type: "string",
+        description: "Additional CSS classes to apply to the keyboard key.",
+      },
+    ],
+  },
+  KbdGroup: {
+    extends: {
+      name: "HTML kbd element",
+      href: "https://developer.mozilla.org/en-US/docs/Web/HTML/Element/kbd",
+    },
+    props: [
+      {
+        name: "className",
+        type: "string",
+        description: "Additional CSS classes to apply to the keyboard key group.",
+      },
+    ],
+  },
 };

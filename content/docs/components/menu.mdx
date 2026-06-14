@@ -9,6 +9,8 @@ import { MenuExample } from "registry/default/examples/menu-default-example";
 import menuExampleSource from "registry/default/examples/menu-default-example.tsx?raw";
 import { MenuWithIconsExample } from "registry/default/examples/menu-with-icons-example";
 import menuWithIconsExampleSource from "registry/default/examples/menu-with-icons-example.tsx?raw";
+import { MenuWithKbdExample } from "registry/default/examples/menu-with-kbd-example";
+import menuWithKbdExampleSource from "registry/default/examples/menu-with-kbd-example.tsx?raw";
 import { MenuWithGroupsExample } from "registry/default/examples/menu-with-groups-example";
 import menuWithGroupsExampleSource from "registry/default/examples/menu-with-groups-example.tsx?raw";
 import { MenuCheckboxExample } from "registry/default/examples/menu-checkbox-example";
@@ -45,6 +47,23 @@ Add icons to menu items using `MenuItemLeadingIcon` and `MenuItemTrailingIcon`.
       code={menuWithIconsExampleSource}
       language="tsx"
       title="menu-with-icons-example.tsx"
+    />
+  </ComponentTabs>
+</ComponentSection>
+
+### With shortcuts
+
+Display keyboard shortcuts on menu items using `Kbd`.
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="MenuWithKbdExample">
+      <MenuWithKbdExample />
+    </ComponentPreview>
+    <ComponentSource
+      code={menuWithKbdExampleSource}
+      language="tsx"
+      title="menu-with-kbd-example.tsx"
     />
   </ComponentTabs>
 </ComponentSection>

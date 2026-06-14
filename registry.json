@@ -200,6 +200,21 @@
       "dependencies": ["class-variance-authority"]
     },
     {
+      "name": "kbd",
+      "type": "registry:ui",
+      "title": "KBD",
+      "description": "Ink UI KBD component.",
+      "files": [
+        {
+          "path": "registry/default/ui/kbd.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/kbd.tsx"
+        }
+      ],
+      "registryDependencies": ["utils", "theme"],
+      "dependencies": []
+    },
+    {
       "name": "menu",
       "type": "registry:ui",
       "title": "Menu",
@@ -1181,6 +1196,34 @@
       ]
     },
     {
+      "name": "kbd-default-example",
+      "type": "registry:component",
+      "title": "KBD Default Example",
+      "description": "Atomic example for the Ink UI KBD component.",
+      "registryDependencies": ["kbd"],
+      "files": [
+        {
+          "path": "registry/default/examples/kbd-default-example.tsx",
+          "type": "registry:component",
+          "target": "components/kbd-default-example.tsx"
+        }
+      ]
+    },
+    {
+      "name": "kbd-group-example",
+      "type": "registry:component",
+      "title": "KBD Group Example",
+      "description": "Atomic example for the Ink UI KBD component.",
+      "registryDependencies": ["kbd"],
+      "files": [
+        {
+          "path": "registry/default/examples/kbd-group-example.tsx",
+          "type": "registry:component",
+          "target": "components/kbd-group-example.tsx"
+        }
+      ]
+    },
+    {
       "name": "menu-default-example",
       "type": "registry:component",
       "title": "Menu Default Example",
@@ -1205,6 +1248,20 @@
           "path": "registry/default/examples/menu-with-icons-example.tsx",
           "type": "registry:component",
           "target": "components/menu-with-icons-example.tsx"
+        }
+      ]
+    },
+    {
+      "name": "menu-with-kbd-example",
+      "type": "registry:component",
+      "title": "Menu With Kbd Example",
+      "description": "Atomic example for the Ink UI Menu component.",
+      "registryDependencies": ["menu", "button", "kbd"],
+      "files": [
+        {
+          "path": "registry/default/examples/menu-with-kbd-example.tsx",
+          "type": "registry:component",
+          "target": "components/menu-with-kbd-example.tsx"
         }
       ]
     },

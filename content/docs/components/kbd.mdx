@@ -1,0 +1,47 @@
+---
+title: KBD
+description: Displays keyboard keys and shortcuts.
+component: Kbd
+registry: kbd
+---
+
+import { KbdExample } from "registry/default/examples/kbd-default-example";
+import kbdExampleSource from "registry/default/examples/kbd-default-example.tsx?raw";
+import { KbdGroupExample } from "registry/default/examples/kbd-group-example";
+import kbdGroupExampleSource from "registry/default/examples/kbd-group-example.tsx?raw";
+import kbdSource from "registry/default/ui/kbd.tsx?raw";
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="KbdExample">
+      <KbdExample />
+    </ComponentPreview>
+    <ComponentSource code={kbdExampleSource} language="tsx" title="kbd-default-example.tsx" />
+  </ComponentTabs>
+</ComponentSection>
+
+## Examples
+
+### Group
+
+Group multiple keys together to represent keyboard shortcuts.
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="KbdGroupExample">
+      <KbdGroupExample />
+    </ComponentPreview>
+    <ComponentSource code={kbdGroupExampleSource} language="tsx" title="kbd-group-example.tsx" />
+  </ComponentTabs>
+</ComponentSection>
+
+## Installation
+
+Copy the source code below into your project:
+
+<CodeBlock code={kbdSource} language="tsx" />
+
+## API Reference
+
+<PropsTable component="Kbd" />
+<PropsTable component="KbdGroup" />
