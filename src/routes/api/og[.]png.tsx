@@ -55,8 +55,16 @@ export const Route = createFileRoute("/api/og.png")({
 
         try {
           const renderer = await getRenderer();
+          // NOTE: Takumi's `tw` parser uses its own built-in Tailwind defaults — it
+          // does NOT read this project's `@theme` / palette overrides. ink-ui overrides
+          // the `gray` palette (e.g. `--color-gray-900: oklch(0.265 0.001 48.697)`), so
+          // we set the brand colors as explicit hex here to match the site; `tw` is kept
+          // only for layout/sizing/type.
           const { node, stylesheets } = await fromJsx(
-            <div tw="flex h-full w-full flex-col bg-gray-900 p-20 text-neutral-50">
+            <div
+              tw="flex h-full w-full flex-col p-20"
+              style={{ backgroundColor: "#262525", color: "#fafafa" }}
+            >
               <div tw="flex flex-1 flex-col justify-center">
                 <div
                   tw="text-8xl tracking-tight"
@@ -65,12 +73,15 @@ export const Route = createFileRoute("/api/og.png")({
                   {title}
                 </div>
                 {description ? (
-                  <div tw="mt-8 text-3xl leading-snug text-neutral-400" style={{ fontWeight: 400 }}>
+                  <div
+                    tw="mt-8 text-3xl leading-snug"
+                    style={{ fontWeight: 400, color: "#a1a1a1" }}
+                  >
                     {description}
                   </div>
                 ) : null}
               </div>
-              <div tw="text-2xl text-neutral-500" style={{ fontWeight: 500 }}>
+              <div tw="text-2xl" style={{ fontWeight: 500, color: "#737373" }}>
                 {SITE_NAME}
               </div>
             </div>,
