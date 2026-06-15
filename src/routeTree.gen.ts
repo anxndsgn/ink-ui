@@ -13,6 +13,7 @@ import { Route as DocsRouteImport } from './routes/docs'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as DocsIndexRouteImport } from './routes/docs.index'
 import { Route as DocsSplatRouteImport } from './routes/docs.$'
+import { Route as ApiOgDotpngRouteImport } from './routes/api/og[.]png'
 
 const DocsRoute = DocsRouteImport.update({
   id: '/docs',
@@ -34,15 +35,22 @@ const DocsSplatRoute = DocsSplatRouteImport.update({
   path: '/$',
   getParentRoute: () => DocsRoute,
 } as any)
+const ApiOgDotpngRoute = ApiOgDotpngRouteImport.update({
+  id: '/api/og.png',
+  path: '/api/og.png',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/docs': typeof DocsRouteWithChildren
+  '/api/og.png': typeof ApiOgDotpngRoute
   '/docs/$': typeof DocsSplatRoute
   '/docs/': typeof DocsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/api/og.png': typeof ApiOgDotpngRoute
   '/docs/$': typeof DocsSplatRoute
   '/docs': typeof DocsIndexRoute
 }
@@ -50,20 +58,22 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/docs': typeof DocsRouteWithChildren
+  '/api/og.png': typeof ApiOgDotpngRoute
   '/docs/$': typeof DocsSplatRoute
   '/docs/': typeof DocsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/docs' | '/docs/$' | '/docs/'
+  fullPaths: '/' | '/docs' | '/api/og.png' | '/docs/$' | '/docs/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/docs/$' | '/docs'
-  id: '__root__' | '/' | '/docs' | '/docs/$' | '/docs/'
+  to: '/' | '/api/og.png' | '/docs/$' | '/docs'
+  id: '__root__' | '/' | '/docs' | '/api/og.png' | '/docs/$' | '/docs/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   DocsRoute: typeof DocsRouteWithChildren
+  ApiOgDotpngRoute: typeof ApiOgDotpngRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -96,6 +106,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DocsSplatRouteImport
       parentRoute: typeof DocsRoute
     }
+    '/api/og.png': {
+      id: '/api/og.png'
+      path: '/api/og.png'
+      fullPath: '/api/og.png'
+      preLoaderRoute: typeof ApiOgDotpngRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -114,6 +131,7 @@ const DocsRouteWithChildren = DocsRoute._addFileChildren(DocsRouteChildren)
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   DocsRoute: DocsRouteWithChildren,
+  ApiOgDotpngRoute: ApiOgDotpngRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

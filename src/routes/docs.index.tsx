@@ -3,6 +3,7 @@ import { createServerFn } from "@tanstack/react-start";
 import { DocsShell } from "../components/site/docs-shell";
 import { docsClientLoader } from "../lib/docs-client-loader";
 import { getDocPage } from "../lib/docs-page-data";
+import { buildSeoMeta, ogImageUrl } from "../lib/seo";
 
 const getIndexDoc = createServerFn({ method: "GET" }).handler(async () => getDocPage([]));
 
@@ -14,17 +15,17 @@ export const Route = createFileRoute("/docs/")({
 
     return data;
   },
-  head: ({ loaderData }) => ({
-    meta: [
-      {
-        title: `${loaderData?.title ?? "Docs"} - Components Site Template`,
-      },
-      {
-        name: "description",
-        content: loaderData?.description ?? "Component documentation page.",
-      },
-    ],
-  }),
+  head: ({ loaderData }) => {
+    const title = loaderData?.title ?? "Docs";
+    const description = loaderData?.description ?? "Component documentation page.";
+
+    return {
+      meta: [
+        { title: `${title} - Ink UI` },
+        ...buildSeoMeta({ title, description, image: ogImageUrl({ title, description }) }),
+      ],
+    };
+  },
   component: DocsIndexPage,
 });
 
