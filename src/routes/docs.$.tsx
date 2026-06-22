@@ -16,7 +16,7 @@ import { buildSeoMeta, ogImageUrl } from "../lib/seo";
 import { cn } from "registry/default/lib/utils";
 
 const getDoc = createServerFn({ method: "GET" })
-  .inputValidator((slugs: Array<string>) => slugs)
+  .validator((slugs: Array<string>) => slugs)
   .handler(async ({ data: slugs }) => getDocPage(slugs));
 
 export const Route = createFileRoute("/docs/$")({
