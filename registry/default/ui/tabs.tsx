@@ -43,7 +43,8 @@ const tabsListVariants = cva(
         lg: "",
       },
       variant: {
-        default: "w-fit justify-center rounded-lg bg-muted",
+        default:
+          "w-fit justify-center bg-muted data-[orientation=horizontal]:rounded-full data-[orientation=vertical]:rounded-3xl",
         underline:
           "border-border data-[orientation=horizontal]:border-b data-[orientation=vertical]:border-l *:data-[slot=tabs-trigger]:hover:bg-muted",
       },
@@ -82,7 +83,7 @@ const tabIndicatorVariants = cva(
         sm: "",
       },
       variant: {
-        default: "-z-1 rounded-md bg-popover",
+        default: "-z-1 rounded-full bg-popover",
         underline:
           "z-10 bg-accent data-[orientation=horizontal]:translate-y-px data-[orientation=vertical]:-translate-x-px",
       },
@@ -98,7 +99,7 @@ const tabsTabVariants = cva(
     },
     variants: {
       size: {
-        default: "gap-1.5 px-2 py-1.5 text-sm",
+        default: "gap-1.5 px-3 py-1.5 text-sm",
         lg: "gap-2 px-3 py-2 text-base",
         sm: "gap-1 px-1.5 py-1.5 text-xs",
       },
