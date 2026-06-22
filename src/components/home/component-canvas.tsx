@@ -20,7 +20,17 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "registry/default/ui/alert-dialog";
+import {
+  Autocomplete,
+  AutocompleteContent,
+  AutocompleteEmpty,
+  AutocompleteInput,
+  AutocompleteInputGroup,
+  AutocompleteItem,
+  AutocompleteList,
+} from "registry/default/ui/autocomplete";
 import { Button, buttonVariants } from "registry/default/ui/button";
+import { ButtonGroup, ButtonGroupText } from "registry/default/ui/button-group";
 import { Card, CardContent, CardHeader, CardTitle } from "registry/default/ui/card";
 import { Checkbox } from "registry/default/ui/checkbox";
 import {
@@ -42,7 +52,19 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "registry/default/ui/dialog";
+import {
+  Drawer,
+  DrawerBody,
+  DrawerClose,
+  DrawerContent,
+  DrawerDescription,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from "registry/default/ui/drawer";
 import { Input } from "registry/default/ui/input";
+import { Kbd, KbdGroup } from "registry/default/ui/kbd";
 import {
   NumberField,
   NumberFieldDecrement,
@@ -69,6 +91,7 @@ import {
 } from "registry/default/ui/popover";
 import { Radio, RadioGroup } from "registry/default/ui/radio";
 import { ScrollArea } from "registry/default/ui/scroll-area";
+import { Separator } from "registry/default/ui/separator";
 import {
   Select,
   SelectContent,
@@ -80,6 +103,9 @@ import Slider from "registry/default/ui/slider";
 import { Switch } from "registry/default/ui/switch";
 import { Tabs, TabsList, TabsPanel, TabsTab } from "registry/default/ui/tabs";
 import { Tag } from "registry/default/ui/tag";
+import { Textarea } from "registry/default/ui/textarea";
+import { toastManager } from "registry/default/ui/toast";
+import { Toggle } from "registry/default/ui/toggle";
 import { Tooltip, TooltipContent, TooltipTrigger } from "registry/default/ui/tooltip";
 import { cn } from "@/lib/utils";
 
@@ -181,8 +207,41 @@ const componentPreviews: ComponentPreview[] = [
     ),
   },
   {
+    label: "Autocomplete",
+    renderPreview: () => {
+      const fruits = ["Apple", "Banana", "Cherry", "Grape", "Orange"];
+      return (
+        <Autocomplete items={fruits}>
+          <AutocompleteInputGroup className="w-44">
+            <AutocompleteInput placeholder="Search fruit" />
+          </AutocompleteInputGroup>
+          <AutocompleteContent>
+            <AutocompleteEmpty>No fruits found.</AutocompleteEmpty>
+            <AutocompleteList>
+              {(item: string) => (
+                <AutocompleteItem key={item} value={item}>
+                  {item}
+                </AutocompleteItem>
+              )}
+            </AutocompleteList>
+          </AutocompleteContent>
+        </Autocomplete>
+      );
+    },
+  },
+  {
     label: "Button",
     renderPreview: () => <Button>Button</Button>,
+  },
+  {
+    label: "Button Group",
+    renderPreview: () => (
+      <ButtonGroup>
+        <ButtonGroupText>https://</ButtonGroupText>
+        <Input className="w-24" placeholder="ink-ui.com" />
+        <Button variant="outline">Go</Button>
+      </ButtonGroup>
+    ),
   },
   {
     label: "Card",
@@ -261,6 +320,29 @@ const componentPreviews: ComponentPreview[] = [
     ),
   },
   {
+    label: "Drawer",
+    renderPreview: () => (
+      <Drawer>
+        <DrawerTrigger render={<Button variant="outline">Open drawer</Button>} />
+        <DrawerContent showBar>
+          <DrawerHeader>
+            <DrawerTitle>Edit profile</DrawerTitle>
+            <DrawerDescription>Swipe down or tap outside to dismiss.</DrawerDescription>
+          </DrawerHeader>
+          <DrawerBody scrollable={false}>
+            <p className="text-sm text-muted-foreground">
+              Drawers slide in from the edge and support swipe gestures.
+            </p>
+          </DrawerBody>
+          <DrawerFooter direction="row">
+            <DrawerClose render={<Button variant="secondary">Cancel</Button>} />
+            <DrawerClose render={<Button>Save</Button>} />
+          </DrawerFooter>
+        </DrawerContent>
+      </Drawer>
+    ),
+  },
+  {
     label: "Input",
     renderPreview: () => <Input className="w-44" placeholder="Type something" />,
   },
@@ -273,6 +355,16 @@ const componentPreviews: ComponentPreview[] = [
           <MagnifyingGlassIcon />
         </InputGroupAddon>
       </InputGroup>
+    ),
+  },
+  {
+    label: "Kbd",
+    renderPreview: () => (
+      <KbdGroup>
+        <Kbd>⌘</Kbd>
+        <span className="text-muted-foreground">+</span>
+        <Kbd>K</Kbd>
+      </KbdGroup>
     ),
   },
   {
@@ -329,6 +421,18 @@ const componentPreviews: ComponentPreview[] = [
     ),
   },
   {
+    label: "Number Field",
+    renderPreview: () => (
+      <NumberField defaultValue={3} max={10} min={0}>
+        <NumberFieldGroup className="w-44">
+          <NumberFieldDecrement />
+          <NumberFieldInput />
+          <NumberFieldIncrement />
+        </NumberFieldGroup>
+      </NumberField>
+    ),
+  },
+  {
     label: "Popover",
     renderPreview: () => (
       <Popover>
@@ -382,6 +486,20 @@ const componentPreviews: ComponentPreview[] = [
     ),
   },
   {
+    label: "Separator",
+    renderPreview: () => (
+      <div className="grid w-44 gap-3 text-sm">
+        <p className="font-medium">Settings</p>
+        <Separator />
+        <div className="flex h-5 items-center gap-3 text-muted-foreground">
+          <span>Profile</span>
+          <Separator orientation="vertical" />
+          <span>Help</span>
+        </div>
+      </div>
+    ),
+  },
+  {
     label: "Select",
     renderPreview: () => (
       <Select defaultValue="astro" items={selectItems}>
@@ -432,6 +550,34 @@ const componentPreviews: ComponentPreview[] = [
         <Tag variant="outline">Beta</Tag>
       </div>
     ),
+  },
+  {
+    label: "Textarea",
+    renderPreview: () => (
+      <Textarea block={false} className="h-16 w-44" placeholder="Write a note" />
+    ),
+  },
+  {
+    label: "Toast",
+    renderPreview: () => (
+      <Button
+        onClick={() => {
+          toastManager.add({
+            description: "Your profile settings have been updated.",
+            title: "Changes saved",
+            type: "success",
+          });
+        }}
+        size="sm"
+        variant="outline"
+      >
+        Show toast
+      </Button>
+    ),
+  },
+  {
+    label: "Toggle",
+    renderPreview: () => <Toggle size="sm">Toggle</Toggle>,
   },
   {
     label: "Tooltip",
