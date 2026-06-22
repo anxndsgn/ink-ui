@@ -4,6 +4,8 @@ import {
   ArrowClockwiseIcon,
   ArrowRightIcon,
   BellIcon,
+  CaretDownIcon,
+  CaretUpIcon,
   DotsThreeOutlineIcon,
   MagnifyingGlassIcon,
   WarningOctagonIcon,
@@ -41,6 +43,13 @@ import {
   DialogTrigger,
 } from "registry/default/ui/dialog";
 import { Input } from "registry/default/ui/input";
+import {
+  NumberField,
+  NumberFieldDecrement,
+  NumberFieldGroup,
+  NumberFieldIncrement,
+  NumberFieldInput,
+} from "registry/default/ui/number-field";
 import { InputGroup, InputGroupAddon, InputGroupInput } from "registry/default/ui/input-group";
 import {
   Menu,
@@ -616,22 +625,25 @@ function InertiaControl({
   step: number;
   value: number;
 }) {
-  const formattedValue = Number.isInteger(step) ? String(value) : value.toFixed(3);
-
   return (
-    <div className="grid gap-1.5 text-xs font-medium text-muted-foreground">
+    <div className="grid gap-3 text-xs font-medium text-muted-foreground">
       <span className="flex items-center justify-between gap-3">
         <span>{label}</span>
-        <input
-          aria-label={`${label} value`}
-          className="h-7 w-16 rounded-md border border-border bg-background px-2 text-right font-mono text-[11px] text-foreground"
+        <NumberField
           max={max}
           min={min}
-          onChange={(event) => onChange(Number(event.currentTarget.value))}
+          onValueChange={(nextValue) => {
+            if (nextValue !== null) onChange(nextValue);
+          }}
           step={step}
-          type="number"
-          value={formattedValue}
-        />
+          value={value}
+        >
+          <NumberFieldGroup className="w-32 shrink-0" size="sm">
+            <NumberFieldDecrement />
+            <NumberFieldInput aria-label={`${label} value`} className="font-mono text-[11px]" />
+            <NumberFieldIncrement />
+          </NumberFieldGroup>
+        </NumberField>
       </span>
       <Slider
         aria-label={label}
@@ -650,6 +662,7 @@ export function ComponentCanvas() {
   const [hasMoved, setHasMoved] = useState(false);
   const [inertiaSettings, setInertiaSettings] = useState(DEFAULT_INERTIA_SETTINGS);
   const [isDragging, setIsDragging] = useState(false);
+  const [isInertiaPanelExpanded, setIsInertiaPanelExpanded] = useState(true);
   const dragRef = useRef<{
     originX: number;
     originY: number;
@@ -995,52 +1008,67 @@ export function ComponentCanvas() {
         >
           <div className="flex items-center justify-between gap-3">
             <h2 className="text-sm font-semibold">Inertia tuning</h2>
-            <Button onClick={resetInertiaSettings} size="sm" variant="secondary">
-              Defaults
-            </Button>
+            <div className="flex items-center gap-1">
+              {isInertiaPanelExpanded ? (
+                <Button onClick={resetInertiaSettings} size="sm" variant="secondary">
+                  Defaults
+                </Button>
+              ) : null}
+              <Button
+                aria-expanded={isInertiaPanelExpanded}
+                aria-label={isInertiaPanelExpanded ? "Collapse panel" : "Expand panel"}
+                onClick={() => setIsInertiaPanelExpanded((expanded) => !expanded)}
+                size="icon-sm"
+                variant="ghost"
+              >
+                {isInertiaPanelExpanded ? <CaretDownIcon /> : <CaretUpIcon />}
+              </Button>
+            </div>
           </div>
-          <div className="grid gap-3">
-            <InertiaControl
-              label="Sample window"
-              max={220}
-              min={40}
-              onChange={(value) => updateInertiaSetting("sampleWindow", value)}
-              step={5}
-              value={inertiaSettings.sampleWindow}
-            />
-            <InertiaControl
-              label="Max velocity"
-              max={2.4}
-              min={0.2}
-              onChange={(value) => updateInertiaSetting("maxVelocity", value)}
-              step={0.025}
-              value={inertiaSettings.maxVelocity}
-            />
-            <InertiaControl
-              label="Min velocity"
-              max={0.18}
-              min={0.005}
-              onChange={(value) => updateInertiaSetting("minVelocity", value)}
-              step={0.005}
-              value={inertiaSettings.minVelocity}
-            />
-            <InertiaControl
-              label="Decay"
-              max={12}
-              min={1.5}
-              onChange={(value) => updateInertiaSetting("decay", value)}
-              step={0.1}
-              value={inertiaSettings.decay}
-            />
-            <InertiaControl
-              label="Ease"
-              max={6}
-              min={1}
-              onChange={(value) => updateInertiaSetting("ease", value)}
-              step={0.1}
-              value={inertiaSettings.ease}
-            />
-          </div>
+          {isInertiaPanelExpanded ? (
+            <div className="grid gap-3">
+              <InertiaControl
+                label="Sample window"
+                max={220}
+                min={40}
+                onChange={(value) => updateInertiaSetting("sampleWindow", value)}
+                step={5}
+                value={inertiaSettings.sampleWindow}
+              />
+              <InertiaControl
+                label="Max velocity"
+                max={2.4}
+                min={0.2}
+                onChange={(value) => updateInertiaSetting("maxVelocity", value)}
+                step={0.025}
+                value={inertiaSettings.maxVelocity}
+              />
+              <InertiaControl
+                label="Min velocity"
+                max={0.18}
+                min={0.005}
+                onChange={(value) => updateInertiaSetting("minVelocity", value)}
+                step={0.005}
+                value={inertiaSettings.minVelocity}
+              />
+              <InertiaControl
+                label="Decay"
+                max={12}
+                min={1.5}
+                onChange={(value) => updateInertiaSetting("decay", value)}
+                step={0.1}
+                value={inertiaSettings.decay}
+              />
+              <InertiaControl
+                label="Ease"
+                max={6}
+                min={1}
+                onChange={(value) => updateInertiaSetting("ease", value)}
+                step={0.1}
+                value={inertiaSettings.ease}
+              />
+            </div>
+          ) : null}
         </section>
       )}
     </main>
