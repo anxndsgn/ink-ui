@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "context-menu-radio-example",
+  "title": "Context Menu Radio Example",
+  "description": "Atomic example for the Ink UI Context Menu component.",
+  "registryDependencies": [
+    "context-menu"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/context-menu-radio-example.tsx",
+      "content": "import {\n  ContextMenu,\n  ContextMenuTrigger,\n  ContextMenuContent,\n  ContextMenuItemLabel,\n  ContextMenuGroup,\n  ContextMenuGroupLabel,\n  ContextMenuRadioGroup,\n  ContextMenuRadioItem,\n} from \"registry/default/ui/context-menu\";\nimport { useState } from \"react\";\n\nexport function ContextMenuRadioExample() {\n  const [view, setView] = useState(\"list\");\n\n  return (\n    <ContextMenu>\n      <ContextMenuTrigger className=\"flex h-36 w-72 items-center justify-center rounded-xl border border-dashed text-sm text-muted-foreground\">\n        Right click here\n      </ContextMenuTrigger>\n      <ContextMenuContent>\n        <ContextMenuGroup>\n          <ContextMenuGroupLabel>View</ContextMenuGroupLabel>\n          <ContextMenuRadioGroup value={view} onValueChange={setView}>\n            <ContextMenuRadioItem value=\"list\">\n              <ContextMenuItemLabel>List</ContextMenuItemLabel>\n            </ContextMenuRadioItem>\n            <ContextMenuRadioItem value=\"grid\">\n              <ContextMenuItemLabel>Grid</ContextMenuItemLabel>\n            </ContextMenuRadioItem>\n            <ContextMenuRadioItem value=\"calendar\">\n              <ContextMenuItemLabel>Calendar</ContextMenuItemLabel>\n            </ContextMenuRadioItem>\n          </ContextMenuRadioGroup>\n        </ContextMenuGroup>\n      </ContextMenuContent>\n    </ContextMenu>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/context-menu-radio-example.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

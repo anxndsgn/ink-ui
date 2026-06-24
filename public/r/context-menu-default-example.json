@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "context-menu-default-example",
+  "title": "Context Menu Default Example",
+  "description": "Atomic example for the Ink UI Context Menu component.",
+  "registryDependencies": [
+    "context-menu"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/context-menu-default-example.tsx",
+      "content": "import {\n  ContextMenu,\n  ContextMenuTrigger,\n  ContextMenuContent,\n  ContextMenuItem,\n  ContextMenuItemLabel,\n  ContextMenuSeparator,\n} from \"registry/default/ui/context-menu\";\n\nexport function ContextMenuExample() {\n  return (\n    <ContextMenu>\n      <ContextMenuTrigger className=\"flex h-36 w-72 items-center justify-center rounded-xl border border-dashed text-sm text-muted-foreground\">\n        Right click here\n      </ContextMenuTrigger>\n      <ContextMenuContent>\n        <ContextMenuItem>\n          <ContextMenuItemLabel>Back</ContextMenuItemLabel>\n        </ContextMenuItem>\n        <ContextMenuItem>\n          <ContextMenuItemLabel>Reload</ContextMenuItemLabel>\n        </ContextMenuItem>\n        <ContextMenuSeparator />\n        <ContextMenuItem>\n          <ContextMenuItemLabel>Save as…</ContextMenuItemLabel>\n        </ContextMenuItem>\n      </ContextMenuContent>\n    </ContextMenu>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/context-menu-default-example.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

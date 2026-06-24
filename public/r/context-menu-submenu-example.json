@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "context-menu-submenu-example",
+  "title": "Context Menu Submenu Example",
+  "description": "Atomic example for the Ink UI Context Menu component.",
+  "registryDependencies": [
+    "context-menu"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/context-menu-submenu-example.tsx",
+      "content": "import {\n  ContextMenu,\n  ContextMenuTrigger,\n  ContextMenuContent,\n  ContextMenuItem,\n  ContextMenuItemAddon,\n  ContextMenuItemLabel,\n  ContextMenuSeparator,\n  ContextMenuSubmenu,\n  ContextMenuSubmenuTrigger,\n} from \"registry/default/ui/context-menu\";\nimport { CaretRightIcon } from \"@phosphor-icons/react\";\n\nexport function ContextMenuSubmenuExample() {\n  return (\n    <ContextMenu>\n      <ContextMenuTrigger className=\"flex h-36 w-72 items-center justify-center rounded-xl border border-dashed text-sm text-muted-foreground\">\n        Right click here\n      </ContextMenuTrigger>\n      <ContextMenuContent>\n        <ContextMenuItem>\n          <ContextMenuItemLabel>Back</ContextMenuItemLabel>\n        </ContextMenuItem>\n        <ContextMenuItem>\n          <ContextMenuItemLabel>Reload</ContextMenuItemLabel>\n        </ContextMenuItem>\n        <ContextMenuSeparator />\n        <ContextMenuSubmenu>\n          <ContextMenuSubmenuTrigger>\n            <ContextMenuItemLabel>Share</ContextMenuItemLabel>\n            <ContextMenuItemAddon>\n              <CaretRightIcon />\n            </ContextMenuItemAddon>\n          </ContextMenuSubmenuTrigger>\n          <ContextMenuContent>\n            <ContextMenuItem>\n              <ContextMenuItemLabel>Copy link</ContextMenuItemLabel>\n            </ContextMenuItem>\n            <ContextMenuItem>\n              <ContextMenuItemLabel>Email</ContextMenuItemLabel>\n            </ContextMenuItem>\n            <ContextMenuItem>\n              <ContextMenuItemLabel>Messages</ContextMenuItemLabel>\n            </ContextMenuItem>\n          </ContextMenuContent>\n        </ContextMenuSubmenu>\n      </ContextMenuContent>\n    </ContextMenu>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/context-menu-submenu-example.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "context-menu-checkbox-example",
+  "title": "Context Menu Checkbox Example",
+  "description": "Atomic example for the Ink UI Context Menu component.",
+  "registryDependencies": [
+    "context-menu"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/context-menu-checkbox-example.tsx",
+      "content": "import {\n  ContextMenu,\n  ContextMenuTrigger,\n  ContextMenuContent,\n  ContextMenuItemLabel,\n  ContextMenuCheckboxItem,\n} from \"registry/default/ui/context-menu\";\nimport { useState } from \"react\";\n\nexport function ContextMenuCheckboxExample() {\n  const [showStatusBar, setShowStatusBar] = useState(true);\n  const [showActivityBar, setShowActivityBar] = useState(false);\n\n  return (\n    <ContextMenu>\n      <ContextMenuTrigger className=\"flex h-36 w-72 items-center justify-center rounded-xl border border-dashed text-sm text-muted-foreground\">\n        Right click here\n      </ContextMenuTrigger>\n      <ContextMenuContent>\n        <ContextMenuCheckboxItem checked={showStatusBar} onCheckedChange={setShowStatusBar}>\n          <ContextMenuItemLabel>Show status bar</ContextMenuItemLabel>\n        </ContextMenuCheckboxItem>\n        <ContextMenuCheckboxItem checked={showActivityBar} onCheckedChange={setShowActivityBar}>\n          <ContextMenuItemLabel>Show activity bar</ContextMenuItemLabel>\n        </ContextMenuCheckboxItem>\n      </ContextMenuContent>\n    </ContextMenu>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/context-menu-checkbox-example.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

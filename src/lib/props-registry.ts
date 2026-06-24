@@ -186,6 +186,138 @@ export const propsRegistry: Record<string, ComponentPropsEntry> = {
     },
     props: [],
   },
+  ContextMenu: {
+    extends: {
+      name: "Base UI ContextMenu.Root",
+      href: "https://base-ui.com/react/components/context-menu#api-reference",
+    },
+    props: [],
+  },
+  ContextMenuTrigger: {
+    extends: {
+      name: "Base UI ContextMenu.Trigger",
+      href: "https://base-ui.com/react/components/context-menu#api-reference",
+    },
+    props: [],
+  },
+  ContextMenuContent: {
+    extends: {
+      name: "Base UI ContextMenu.Popup",
+      href: "https://base-ui.com/react/components/context-menu#api-reference",
+    },
+    props: [
+      {
+        name: "positionerProps",
+        type: "BaseContextMenu.Positioner.Props",
+        description:
+          "Props forwarded to the underlying Positioner component. Includes align, side, sideOffset, alignOffset, collisionPadding, etc.",
+      },
+    ],
+  },
+  ContextMenuItem: {
+    extends: {
+      name: "Base UI ContextMenu.Item",
+      href: "https://base-ui.com/react/components/context-menu#api-reference",
+    },
+    props: [
+      {
+        name: "variant",
+        type: '"default" | "destructive"',
+        defaultValue: '"default"',
+        description: "Visual style of the menu item.",
+      },
+    ],
+  },
+  ContextMenuLinkItem: {
+    extends: {
+      name: "Base UI ContextMenu.LinkItem",
+      href: "https://base-ui.com/react/components/context-menu#api-reference",
+    },
+    props: [
+      {
+        name: "variant",
+        type: '"default" | "destructive"',
+        defaultValue: '"default"',
+        description: "Visual style of the menu item.",
+      },
+    ],
+  },
+  ContextMenuGroup: {
+    extends: {
+      name: "Base UI ContextMenu.Group",
+      href: "https://base-ui.com/react/components/context-menu#api-reference",
+    },
+    props: [],
+  },
+  ContextMenuGroupLabel: {
+    extends: {
+      name: "Base UI ContextMenu.GroupLabel",
+      href: "https://base-ui.com/react/components/context-menu#api-reference",
+    },
+    props: [],
+  },
+  ContextMenuSeparator: {
+    extends: {
+      name: "Base UI ContextMenu.Separator",
+      href: "https://base-ui.com/react/components/context-menu#api-reference",
+    },
+    props: [],
+  },
+  ContextMenuItemAddon: {
+    props: [
+      {
+        name: "render",
+        type: "React.ReactElement | ((props, state) => React.ReactElement)",
+        description:
+          "Custom element or render function used instead of the default span container.",
+      },
+    ],
+  },
+  ContextMenuItemLabel: {
+    props: [
+      {
+        name: "render",
+        type: "React.ReactElement | ((props, state) => React.ReactElement)",
+        description:
+          "Custom element or render function used instead of the default span container.",
+      },
+    ],
+  },
+  ContextMenuSubmenu: {
+    extends: {
+      name: "Base UI ContextMenu.SubmenuRoot",
+      href: "https://base-ui.com/react/components/context-menu#api-reference",
+    },
+    props: [],
+  },
+  ContextMenuSubmenuTrigger: {
+    extends: {
+      name: "Base UI ContextMenu.SubmenuTrigger",
+      href: "https://base-ui.com/react/components/context-menu#api-reference",
+    },
+    props: [],
+  },
+  ContextMenuRadioGroup: {
+    extends: {
+      name: "Base UI ContextMenu.RadioGroup",
+      href: "https://base-ui.com/react/components/context-menu#api-reference",
+    },
+    props: [],
+  },
+  ContextMenuRadioItem: {
+    extends: {
+      name: "Base UI ContextMenu.RadioItem",
+      href: "https://base-ui.com/react/components/context-menu#api-reference",
+    },
+    props: [],
+  },
+  ContextMenuCheckboxItem: {
+    extends: {
+      name: "Base UI ContextMenu.CheckboxItem",
+      href: "https://base-ui.com/react/components/context-menu#api-reference",
+    },
+    props: [],
+  },
   Select: {
     extends: {
       name: "Base UI Select.Root",

@@ -230,6 +230,21 @@
       "dependencies": ["@base-ui/react", "@phosphor-icons/react", "class-variance-authority"]
     },
     {
+      "name": "context-menu",
+      "type": "registry:ui",
+      "title": "Context Menu",
+      "description": "Ink UI Context Menu component.",
+      "files": [
+        {
+          "path": "registry/default/ui/context-menu.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/context-menu.tsx"
+        }
+      ],
+      "registryDependencies": ["utils", "theme"],
+      "dependencies": ["@base-ui/react", "@phosphor-icons/react", "class-variance-authority"]
+    },
+    {
       "name": "number-field",
       "type": "registry:ui",
       "title": "Number Field",
@@ -1220,6 +1235,104 @@
           "path": "registry/default/examples/kbd-group-example.tsx",
           "type": "registry:component",
           "target": "components/kbd-group-example.tsx"
+        }
+      ]
+    },
+    {
+      "name": "context-menu-default-example",
+      "type": "registry:component",
+      "title": "Context Menu Default Example",
+      "description": "Atomic example for the Ink UI Context Menu component.",
+      "registryDependencies": ["context-menu"],
+      "files": [
+        {
+          "path": "registry/default/examples/context-menu-default-example.tsx",
+          "type": "registry:component",
+          "target": "components/context-menu-default-example.tsx"
+        }
+      ]
+    },
+    {
+      "name": "context-menu-with-icons-example",
+      "type": "registry:component",
+      "title": "Context Menu With Icons Example",
+      "description": "Atomic example for the Ink UI Context Menu component.",
+      "registryDependencies": ["context-menu"],
+      "files": [
+        {
+          "path": "registry/default/examples/context-menu-with-icons-example.tsx",
+          "type": "registry:component",
+          "target": "components/context-menu-with-icons-example.tsx"
+        }
+      ]
+    },
+    {
+      "name": "context-menu-with-kbd-example",
+      "type": "registry:component",
+      "title": "Context Menu With Kbd Example",
+      "description": "Atomic example for the Ink UI Context Menu component.",
+      "registryDependencies": ["context-menu", "kbd"],
+      "files": [
+        {
+          "path": "registry/default/examples/context-menu-with-kbd-example.tsx",
+          "type": "registry:component",
+          "target": "components/context-menu-with-kbd-example.tsx"
+        }
+      ]
+    },
+    {
+      "name": "context-menu-checkbox-example",
+      "type": "registry:component",
+      "title": "Context Menu Checkbox Example",
+      "description": "Atomic example for the Ink UI Context Menu component.",
+      "registryDependencies": ["context-menu"],
+      "files": [
+        {
+          "path": "registry/default/examples/context-menu-checkbox-example.tsx",
+          "type": "registry:component",
+          "target": "components/context-menu-checkbox-example.tsx"
+        }
+      ]
+    },
+    {
+      "name": "context-menu-radio-example",
+      "type": "registry:component",
+      "title": "Context Menu Radio Example",
+      "description": "Atomic example for the Ink UI Context Menu component.",
+      "registryDependencies": ["context-menu"],
+      "files": [
+        {
+          "path": "registry/default/examples/context-menu-radio-example.tsx",
+          "type": "registry:component",
+          "target": "components/context-menu-radio-example.tsx"
+        }
+      ]
+    },
+    {
+      "name": "context-menu-submenu-example",
+      "type": "registry:component",
+      "title": "Context Menu Submenu Example",
+      "description": "Atomic example for the Ink UI Context Menu component.",
+      "registryDependencies": ["context-menu"],
+      "files": [
+        {
+          "path": "registry/default/examples/context-menu-submenu-example.tsx",
+          "type": "registry:component",
+          "target": "components/context-menu-submenu-example.tsx"
+        }
+      ]
+    },
+    {
+      "name": "context-menu-complex-example",
+      "type": "registry:component",
+      "title": "Context Menu Complex Example",
+      "description": "Comprehensive example showcasing all Ink UI Context Menu subcomponents.",
+      "registryDependencies": ["context-menu", "kbd"],
+      "files": [
+        {
+          "path": "registry/default/examples/context-menu-complex-example.tsx",
+          "type": "registry:component",
+          "target": "components/context-menu-complex-example.tsx"
         }
       ]
     },

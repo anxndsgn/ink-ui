@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "context-menu-with-icons-example",
+  "title": "Context Menu With Icons Example",
+  "description": "Atomic example for the Ink UI Context Menu component.",
+  "registryDependencies": [
+    "context-menu"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/context-menu-with-icons-example.tsx",
+      "content": "import {\n  ContextMenu,\n  ContextMenuTrigger,\n  ContextMenuContent,\n  ContextMenuItem,\n  ContextMenuItemAddon,\n  ContextMenuItemLabel,\n  ContextMenuSeparator,\n} from \"registry/default/ui/context-menu\";\nimport { CopyIcon, PencilIcon, ShareIcon, TrashIcon } from \"@phosphor-icons/react\";\n\nexport function ContextMenuWithIconsExample() {\n  return (\n    <ContextMenu>\n      <ContextMenuTrigger className=\"flex h-36 w-72 items-center justify-center rounded-xl border border-dashed text-sm text-muted-foreground\">\n        Right click here\n      </ContextMenuTrigger>\n      <ContextMenuContent>\n        <ContextMenuItem>\n          <ContextMenuItemAddon>\n            <PencilIcon />\n          </ContextMenuItemAddon>\n          <ContextMenuItemLabel>Edit</ContextMenuItemLabel>\n        </ContextMenuItem>\n        <ContextMenuItem>\n          <ContextMenuItemAddon>\n            <CopyIcon />\n          </ContextMenuItemAddon>\n          <ContextMenuItemLabel>Duplicate</ContextMenuItemLabel>\n        </ContextMenuItem>\n        <ContextMenuItem>\n          <ContextMenuItemAddon>\n            <ShareIcon />\n          </ContextMenuItemAddon>\n          <ContextMenuItemLabel>Share</ContextMenuItemLabel>\n        </ContextMenuItem>\n        <ContextMenuSeparator />\n        <ContextMenuItem variant=\"destructive\">\n          <ContextMenuItemAddon>\n            <TrashIcon />\n          </ContextMenuItemAddon>\n          <ContextMenuItemLabel>Delete</ContextMenuItemLabel>\n        </ContextMenuItem>\n      </ContextMenuContent>\n    </ContextMenu>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/context-menu-with-icons-example.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

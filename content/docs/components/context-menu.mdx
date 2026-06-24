@@ -1,0 +1,214 @@
+---
+title: Context Menu
+description: Displays a menu of actions or links triggered by right-clicking (or long-pressing) an area.
+component: ContextMenu
+registry: context-menu
+---
+
+import { ContextMenuExample } from "registry/default/examples/context-menu-default-example";
+import contextMenuExampleSource from "registry/default/examples/context-menu-default-example.tsx?raw";
+import { ContextMenuWithIconsExample } from "registry/default/examples/context-menu-with-icons-example";
+import contextMenuWithIconsExampleSource from "registry/default/examples/context-menu-with-icons-example.tsx?raw";
+import { ContextMenuWithKbdExample } from "registry/default/examples/context-menu-with-kbd-example";
+import contextMenuWithKbdExampleSource from "registry/default/examples/context-menu-with-kbd-example.tsx?raw";
+import { ContextMenuCheckboxExample } from "registry/default/examples/context-menu-checkbox-example";
+import contextMenuCheckboxExampleSource from "registry/default/examples/context-menu-checkbox-example.tsx?raw";
+import { ContextMenuRadioExample } from "registry/default/examples/context-menu-radio-example";
+import contextMenuRadioExampleSource from "registry/default/examples/context-menu-radio-example.tsx?raw";
+import { ContextMenuSubmenuExample } from "registry/default/examples/context-menu-submenu-example";
+import contextMenuSubmenuExampleSource from "registry/default/examples/context-menu-submenu-example.tsx?raw";
+import { ContextMenuComplexExample } from "registry/default/examples/context-menu-complex-example";
+import contextMenuComplexExampleSource from "registry/default/examples/context-menu-complex-example.tsx?raw";
+import contextMenuSource from "registry/default/ui/context-menu.tsx?raw";
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="ContextMenuExample">
+      <ContextMenuExample />
+    </ComponentPreview>
+    <ComponentSource
+      code={contextMenuExampleSource}
+      language="tsx"
+      title="context-menu-default-example.tsx"
+    />
+  </ComponentTabs>
+</ComponentSection>
+
+## Examples
+
+### With addons
+
+Add icons, text, or other supplementary content with `ContextMenuItemAddon`. Place it before
+`ContextMenuItemLabel` for a leading addon or after the label for a trailing addon.
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="ContextMenuWithIconsExample">
+      <ContextMenuWithIconsExample />
+    </ComponentPreview>
+    <ComponentSource
+      code={contextMenuWithIconsExampleSource}
+      language="tsx"
+      title="context-menu-with-icons-example.tsx"
+    />
+  </ComponentTabs>
+</ComponentSection>
+
+### With shortcuts
+
+Display keyboard shortcuts by placing `Kbd` inside a trailing `ContextMenuItemAddon`.
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="ContextMenuWithKbdExample">
+      <ContextMenuWithKbdExample />
+    </ComponentPreview>
+    <ComponentSource
+      code={contextMenuWithKbdExampleSource}
+      language="tsx"
+      title="context-menu-with-kbd-example.tsx"
+    />
+  </ComponentTabs>
+</ComponentSection>
+
+### Checkbox items
+
+Use `ContextMenuCheckboxItem` for toggleable options.
+
+> **Note:** The checkbox indicator occupies the leading addon column. Avoid adding a leading
+> `ContextMenuItemAddon`; place any supplementary content after `ContextMenuItemLabel` instead.
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="ContextMenuCheckboxExample">
+      <ContextMenuCheckboxExample />
+    </ComponentPreview>
+    <ComponentSource
+      code={contextMenuCheckboxExampleSource}
+      language="tsx"
+      title="context-menu-checkbox-example.tsx"
+    />
+  </ComponentTabs>
+</ComponentSection>
+
+### Radio items
+
+Use `ContextMenuRadioGroup` and `ContextMenuRadioItem` for mutually exclusive options.
+
+> **Note:** The radio indicator occupies the leading addon column. Avoid adding a leading
+> `ContextMenuItemAddon`; place any supplementary content after `ContextMenuItemLabel` instead.
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="ContextMenuRadioExample">
+      <ContextMenuRadioExample />
+    </ComponentPreview>
+    <ComponentSource
+      code={contextMenuRadioExampleSource}
+      language="tsx"
+      title="context-menu-radio-example.tsx"
+    />
+  </ComponentTabs>
+</ComponentSection>
+
+### Submenu
+
+Nest menus with `ContextMenuSubmenu` and `ContextMenuSubmenuTrigger`.
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="ContextMenuSubmenuExample">
+      <ContextMenuSubmenuExample />
+    </ComponentPreview>
+    <ComponentSource
+      code={contextMenuSubmenuExampleSource}
+      language="tsx"
+      title="context-menu-submenu-example.tsx"
+    />
+  </ComponentTabs>
+</ComponentSection>
+
+### Complex context menu
+
+A comprehensive context menu combining groups, icons, keyboard shortcuts, links, submenus, radio items, checkbox items, and a destructive action.
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="ContextMenuComplexExample">
+      <ContextMenuComplexExample />
+    </ComponentPreview>
+    <ComponentSource
+      code={contextMenuComplexExampleSource}
+      language="tsx"
+      title="context-menu-complex-example.tsx"
+    />
+  </ComponentTabs>
+</ComponentSection>
+
+## Installation
+
+Copy the source code below into your project:
+
+<CodeBlock code={contextMenuSource} language="tsx" />
+
+## API Reference
+
+### ContextMenu
+
+<PropsTable component="ContextMenu" />
+
+### ContextMenuTrigger
+
+<PropsTable component="ContextMenuTrigger" />
+
+### ContextMenuContent
+
+<PropsTable component="ContextMenuContent" />
+
+### ContextMenuItem
+
+<PropsTable component="ContextMenuItem" />
+
+### ContextMenuLinkItem
+
+<PropsTable component="ContextMenuLinkItem" />
+
+### ContextMenuGroup
+
+<PropsTable component="ContextMenuGroup" />
+
+### ContextMenuGroupLabel
+
+<PropsTable component="ContextMenuGroupLabel" />
+
+### ContextMenuSeparator
+
+<PropsTable component="ContextMenuSeparator" />
+
+### ContextMenuItemAddon
+
+<PropsTable component="ContextMenuItemAddon" />
+
+### ContextMenuItemLabel
+
+<PropsTable component="ContextMenuItemLabel" />
+
+### ContextMenuSubmenu
+
+<PropsTable component="ContextMenuSubmenu" />
+
+### ContextMenuSubmenuTrigger
+
+<PropsTable component="ContextMenuSubmenuTrigger" />
+
+### ContextMenuRadioGroup
+
+<PropsTable component="ContextMenuRadioGroup" />
+
+### ContextMenuRadioItem
+
+<PropsTable component="ContextMenuRadioItem" />
+
+### ContextMenuCheckboxItem
+
+<PropsTable component="ContextMenuCheckboxItem" />

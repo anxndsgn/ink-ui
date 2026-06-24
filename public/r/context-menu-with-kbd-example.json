@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "context-menu-with-kbd-example",
+  "title": "Context Menu With Kbd Example",
+  "description": "Atomic example for the Ink UI Context Menu component.",
+  "registryDependencies": [
+    "context-menu",
+    "kbd"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/context-menu-with-kbd-example.tsx",
+      "content": "import {\n  ContextMenu,\n  ContextMenuTrigger,\n  ContextMenuContent,\n  ContextMenuItem,\n  ContextMenuItemAddon,\n  ContextMenuItemLabel,\n  ContextMenuSeparator,\n} from \"registry/default/ui/context-menu\";\nimport { Kbd } from \"registry/default/ui/kbd\";\n\nexport function ContextMenuWithKbdExample() {\n  return (\n    <ContextMenu>\n      <ContextMenuTrigger className=\"flex h-36 w-72 items-center justify-center rounded-xl border border-dashed text-sm text-muted-foreground\">\n        Right click here\n      </ContextMenuTrigger>\n      <ContextMenuContent className=\"min-w-52\">\n        <ContextMenuItem>\n          <ContextMenuItemLabel>Cut</ContextMenuItemLabel>\n          <ContextMenuItemAddon>\n            <Kbd>⌘X</Kbd>\n          </ContextMenuItemAddon>\n        </ContextMenuItem>\n        <ContextMenuItem>\n          <ContextMenuItemLabel>Copy</ContextMenuItemLabel>\n          <ContextMenuItemAddon>\n            <Kbd>⌘C</Kbd>\n          </ContextMenuItemAddon>\n        </ContextMenuItem>\n        <ContextMenuItem>\n          <ContextMenuItemLabel>Paste</ContextMenuItemLabel>\n          <ContextMenuItemAddon>\n            <Kbd>⌘V</Kbd>\n          </ContextMenuItemAddon>\n        </ContextMenuItem>\n        <ContextMenuSeparator />\n        <ContextMenuItem>\n          <ContextMenuItemLabel>Select all</ContextMenuItemLabel>\n          <ContextMenuItemAddon>\n            <Kbd>⌘A</Kbd>\n          </ContextMenuItemAddon>\n        </ContextMenuItem>\n      </ContextMenuContent>\n    </ContextMenu>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/context-menu-with-kbd-example.tsx"
+    }
+  ],
+  "type": "registry:component"
+}
