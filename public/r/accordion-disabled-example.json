@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "accordion-disabled-example",
+  "title": "Accordion Disabled Example",
+  "description": "Atomic example for the Ink UI Accordion component.",
+  "registryDependencies": [
+    "accordion"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/accordion-disabled-example.tsx",
+      "content": "import {\n  Accordion,\n  AccordionItem,\n  AccordionTrigger,\n  AccordionContent,\n} from \"registry/default/ui/accordion\";\n\nexport function AccordionDisabledExample() {\n  return (\n    <Accordion className=\"w-full max-w-md\" defaultValue={[\"item-1\"]}>\n      <AccordionItem value=\"item-1\">\n        <AccordionTrigger>Available section</AccordionTrigger>\n        <AccordionContent>This item can be toggled open and closed as usual.</AccordionContent>\n      </AccordionItem>\n      <AccordionItem value=\"item-2\" disabled>\n        <AccordionTrigger>Disabled section</AccordionTrigger>\n        <AccordionContent>\n          You should not be able to read this because the item is disabled.\n        </AccordionContent>\n      </AccordionItem>\n      <AccordionItem value=\"item-3\">\n        <AccordionTrigger>Another available section</AccordionTrigger>\n        <AccordionContent>This item is interactive just like the first one.</AccordionContent>\n      </AccordionItem>\n    </Accordion>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/accordion-disabled-example.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

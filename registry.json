@@ -30,6 +30,21 @@
       ]
     },
     {
+      "name": "accordion",
+      "type": "registry:ui",
+      "title": "Accordion",
+      "description": "Ink UI Accordion component.",
+      "files": [
+        {
+          "path": "registry/default/ui/accordion.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/accordion.tsx"
+        }
+      ],
+      "registryDependencies": ["utils", "theme"],
+      "dependencies": ["@base-ui/react", "@phosphor-icons/react"]
+    },
+    {
       "name": "alert-dialog",
       "type": "registry:ui",
       "title": "Alert Dialog",
@@ -453,6 +468,48 @@
       ],
       "registryDependencies": ["utils", "theme"],
       "dependencies": ["@base-ui/react"]
+    },
+    {
+      "name": "accordion-default-example",
+      "type": "registry:component",
+      "title": "Accordion Default Example",
+      "description": "Atomic example for the Ink UI Accordion component.",
+      "registryDependencies": ["accordion"],
+      "files": [
+        {
+          "path": "registry/default/examples/accordion-default-example.tsx",
+          "type": "registry:component",
+          "target": "components/accordion-default-example.tsx"
+        }
+      ]
+    },
+    {
+      "name": "accordion-multiple-example",
+      "type": "registry:component",
+      "title": "Accordion Multiple Example",
+      "description": "Atomic example for the Ink UI Accordion component.",
+      "registryDependencies": ["accordion"],
+      "files": [
+        {
+          "path": "registry/default/examples/accordion-multiple-example.tsx",
+          "type": "registry:component",
+          "target": "components/accordion-multiple-example.tsx"
+        }
+      ]
+    },
+    {
+      "name": "accordion-disabled-example",
+      "type": "registry:component",
+      "title": "Accordion Disabled Example",
+      "description": "Atomic example for the Ink UI Accordion component.",
+      "registryDependencies": ["accordion"],
+      "files": [
+        {
+          "path": "registry/default/examples/accordion-disabled-example.tsx",
+          "type": "registry:component",
+          "target": "components/accordion-disabled-example.tsx"
+        }
+      ]
     },
     {
       "name": "alert-dialog-default-example",

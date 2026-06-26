@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "accordion-multiple-example",
+  "title": "Accordion Multiple Example",
+  "description": "Atomic example for the Ink UI Accordion component.",
+  "registryDependencies": [
+    "accordion"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/accordion-multiple-example.tsx",
+      "content": "import {\n  Accordion,\n  AccordionItem,\n  AccordionTrigger,\n  AccordionContent,\n} from \"registry/default/ui/accordion\";\n\nexport function AccordionMultipleExample() {\n  return (\n    <Accordion className=\"w-full max-w-md\" multiple defaultValue={[\"item-1\", \"item-2\"]}>\n      <AccordionItem value=\"item-1\">\n        <AccordionTrigger>Shipping</AccordionTrigger>\n        <AccordionContent>\n          Orders are processed within 1–2 business days and shipped worldwide.\n        </AccordionContent>\n      </AccordionItem>\n      <AccordionItem value=\"item-2\">\n        <AccordionTrigger>Returns</AccordionTrigger>\n        <AccordionContent>\n          Items can be returned within 30 days of delivery for a full refund.\n        </AccordionContent>\n      </AccordionItem>\n      <AccordionItem value=\"item-3\">\n        <AccordionTrigger>Warranty</AccordionTrigger>\n        <AccordionContent>\n          Every product is covered by a one-year limited warranty against defects.\n        </AccordionContent>\n      </AccordionItem>\n    </Accordion>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/accordion-multiple-example.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

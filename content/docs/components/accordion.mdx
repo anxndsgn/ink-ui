@@ -1,0 +1,87 @@
+---
+title: Accordion
+description: A vertically stacked set of interactive headings that each reveal a section of content.
+component: Accordion
+registry: accordion
+---
+
+import { AccordionExample } from "registry/default/examples/accordion-default-example";
+import accordionExampleSource from "registry/default/examples/accordion-default-example.tsx?raw";
+import { AccordionMultipleExample } from "registry/default/examples/accordion-multiple-example";
+import accordionMultipleExampleSource from "registry/default/examples/accordion-multiple-example.tsx?raw";
+import { AccordionDisabledExample } from "registry/default/examples/accordion-disabled-example";
+import accordionDisabledExampleSource from "registry/default/examples/accordion-disabled-example.tsx?raw";
+import accordionSource from "registry/default/ui/accordion.tsx?raw";
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="AccordionExample">
+      <AccordionExample />
+    </ComponentPreview>
+    <ComponentSource
+      code={accordionExampleSource}
+      language="tsx"
+      title="accordion-default-example.tsx"
+    />
+  </ComponentTabs>
+</ComponentSection>
+
+## Examples
+
+### Multiple
+
+Allow more than one item to be open at the same time with the `multiple` prop.
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="AccordionMultipleExample">
+      <AccordionMultipleExample />
+    </ComponentPreview>
+    <ComponentSource
+      code={accordionMultipleExampleSource}
+      language="tsx"
+      title="accordion-multiple-example.tsx"
+    />
+  </ComponentTabs>
+</ComponentSection>
+
+### Disabled item
+
+Disable an individual section by setting `disabled` on its `AccordionItem`.
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="AccordionDisabledExample">
+      <AccordionDisabledExample />
+    </ComponentPreview>
+    <ComponentSource
+      code={accordionDisabledExampleSource}
+      language="tsx"
+      title="accordion-disabled-example.tsx"
+    />
+  </ComponentTabs>
+</ComponentSection>
+
+## Installation
+
+Copy the source code below into your project:
+
+<CodeBlock code={accordionSource} language="tsx" />
+
+## API Reference
+
+### Accordion
+
+<PropsTable component="Accordion" />
+
+### AccordionItem
+
+<PropsTable component="AccordionItem" />
+
+### AccordionTrigger
+
+<PropsTable component="AccordionTrigger" />
+
+### AccordionContent
+
+<PropsTable component="AccordionContent" />

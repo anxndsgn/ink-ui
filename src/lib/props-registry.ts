@@ -14,6 +14,34 @@ export interface ComponentPropsEntry {
 }
 
 export const propsRegistry: Record<string, ComponentPropsEntry> = {
+  Accordion: {
+    extends: {
+      name: "Base UI Accordion.Root",
+      href: "https://base-ui.com/react/components/accordion#api-reference",
+    },
+    props: [],
+  },
+  AccordionItem: {
+    extends: {
+      name: "Base UI Accordion.Item",
+      href: "https://base-ui.com/react/components/accordion#api-reference",
+    },
+    props: [],
+  },
+  AccordionTrigger: {
+    extends: {
+      name: "Base UI Accordion.Trigger",
+      href: "https://base-ui.com/react/components/accordion#api-reference",
+    },
+    props: [],
+  },
+  AccordionContent: {
+    extends: {
+      name: "Base UI Accordion.Panel",
+      href: "https://base-ui.com/react/components/accordion#api-reference",
+    },
+    props: [],
+  },
   Button: {
     extends: {
       name: "Base UI Button",

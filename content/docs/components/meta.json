@@ -1,6 +1,7 @@
 {
   "title": "Components",
   "pages": [
+    "accordion",
     "alert-dialog",
     "autocomplete",
     "button",

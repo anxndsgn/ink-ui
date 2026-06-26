@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "accordion-default-example",
+  "title": "Accordion Default Example",
+  "description": "Atomic example for the Ink UI Accordion component.",
+  "registryDependencies": [
+    "accordion"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/accordion-default-example.tsx",
+      "content": "import {\n  Accordion,\n  AccordionItem,\n  AccordionTrigger,\n  AccordionContent,\n} from \"registry/default/ui/accordion\";\n\nexport function AccordionExample() {\n  return (\n    <Accordion className=\"w-full max-w-md\" defaultValue={[\"item-1\"]}>\n      <AccordionItem value=\"item-1\">\n        <AccordionTrigger>Is it accessible?</AccordionTrigger>\n        <AccordionContent>\n          Yes. It adheres to the WAI-ARIA design pattern and is fully keyboard navigable.\n        </AccordionContent>\n      </AccordionItem>\n      <AccordionItem value=\"item-2\">\n        <AccordionTrigger>Is it styled?</AccordionTrigger>\n        <AccordionContent>\n          Yes. It comes with default styles that match the rest of Ink UI and can be customized.\n        </AccordionContent>\n      </AccordionItem>\n      <AccordionItem value=\"item-3\">\n        <AccordionTrigger>Is it animated?</AccordionTrigger>\n        <AccordionContent>\n          Yes. The panel height animates smoothly as items open and close.\n        </AccordionContent>\n      </AccordionItem>\n    </Accordion>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/accordion-default-example.tsx"
+    }
+  ],
+  "type": "registry:component"
+}
