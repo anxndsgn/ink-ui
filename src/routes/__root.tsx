@@ -44,6 +44,13 @@ export const Route = createRootRoute({
       { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
       { rel: "stylesheet", href: appCss },
     ],
+    scripts: [
+      {
+        defer: true,
+        src: "https://umami.anxndsgn.com/script.js",
+        "data-website-id": "6a1d3b44-2efa-40ef-9416-a44dd62e2889",
+      },
+    ],
   }),
   component: RootComponent,
   notFoundComponent: NotFound,
