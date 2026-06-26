@@ -27,7 +27,7 @@ function AccordionTrigger({ className, children, ...props }: BaseAccordion.Trigg
     <BaseAccordion.Header className="flex" data-slot="accordion-header">
       <BaseAccordion.Trigger
         className={cn(
-          "group flex flex-1 items-center justify-between gap-4 px-4 py-2 text-left text-sm font-medium text-foreground transition-colors outline-none hover:text-foreground/80 focus-visible:ring-2 focus-visible:ring-ring data-disabled:pointer-events-none data-disabled:opacity-50",
+          "group flex flex-1 items-center justify-between gap-4 px-4 pt-4 pb-4 text-left text-sm font-medium text-foreground transition-[color,padding-bottom] duration-200 ease-out outline-none hover:text-foreground/80 focus-visible:ring-2 focus-visible:ring-ring data-disabled:pointer-events-none data-disabled:opacity-50 data-panel-open:pb-2",
           className,
         )}
         data-slot="accordion-trigger"
@@ -46,11 +46,11 @@ function AccordionTrigger({ className, children, ...props }: BaseAccordion.Trigg
 function AccordionContent({ className, children, ...props }: BaseAccordion.Panel.Props) {
   return (
     <BaseAccordion.Panel
-      className="h-(--accordion-panel-height) overflow-hidden pb-4 text-sm text-muted-foreground transition-[height] duration-200 ease-out data-ending-style:h-0 data-starting-style:h-0"
+      className="h-(--accordion-panel-height) overflow-hidden text-sm text-muted-foreground transition-[height] duration-200 ease-out data-ending-style:h-0 data-starting-style:h-0"
       data-slot="accordion-content"
       {...props}
     >
-      {children}
+      <div className={cn("px-4 pb-4", className)}>{children}</div>
     </BaseAccordion.Panel>
   );
 }
