@@ -1180,14 +1180,7 @@ export const propsRegistry: Record<string, ComponentPropsEntry> = {
       name: "Base UI Autocomplete.InputGroup",
       href: "https://base-ui.com/react/components/autocomplete#api-reference",
     },
-    props: [
-      {
-        name: "size",
-        type: '"sm" | "default" | "lg"',
-        defaultValue: '"default"',
-        description: "Controls the height and text size of the input group.",
-      },
-    ],
+    props: [],
   },
   AutocompleteInput: {
     extends: {
@@ -1471,17 +1464,7 @@ export const propsRegistry: Record<string, ComponentPropsEntry> = {
     },
     props: [],
   },
-  ComboboxItemLeadingIcon: {
-    props: [
-      {
-        name: "render",
-        type: "React.ReactElement | ((props, state) => React.ReactElement)",
-        description:
-          "Custom element or render function used instead of the default span container.",
-      },
-    ],
-  },
-  ComboboxItemTrailingIcon: {
+  ComboboxItemAddon: {
     props: [
       {
         name: "render",

@@ -1,7 +1,5 @@
 import { Autocomplete as BaseAutocomplete } from "@base-ui/react";
 import { cn } from "@/lib/utils";
-import { cva } from "class-variance-authority";
-import type { VariantProps } from "class-variance-authority";
 import { CaretUpDownIcon, XIcon } from "@phosphor-icons/react";
 
 const Autocomplete = BaseAutocomplete.Root;
@@ -10,30 +8,17 @@ function AutocompleteValue({ ...props }: BaseAutocomplete.Value.Props) {
   return <BaseAutocomplete.Value data-slot="autocomplete-value" {...props} />;
 }
 
-const autocompleteInputGroupVariants = cva(
-  "flex w-full min-w-0 items-center gap-1 rounded-lg border border-input bg-gray-950/5 text-foreground transition-all duration-150 focus-within:border-accent focus-within:ring-[3px] focus-within:ring-ring hover:border-accent data-disabled:cursor-not-allowed data-disabled:opacity-50 dark:bg-gray-950/30",
-  {
-    defaultVariants: {
-      size: "default",
-    },
-    variants: {
-      size: {
-        sm: "min-h-8 px-2 text-sm",
-        default: "min-h-9 px-2 text-sm",
-        lg: "min-h-10 px-2.5 text-base",
-      },
-    },
-  },
-);
-
-function AutocompleteInputGroup({
-  className,
-  size,
-  ...props
-}: BaseAutocomplete.InputGroup.Props & VariantProps<typeof autocompleteInputGroupVariants>) {
+function AutocompleteInputGroup({ className, ...props }: BaseAutocomplete.InputGroup.Props) {
   return (
     <BaseAutocomplete.InputGroup
-      className={cn(autocompleteInputGroupVariants({ size }), className)}
+      className={cn(
+        "flex min-h-9 items-center gap-1 rounded-lg border border-input py-2 pr-2 pl-3 text-sm text-foreground hover:border-accent",
+        "has-data-[slot=autocomplete-input-addon]:pl-2",
+        "focus-within:border-accent focus-within:ring-[3px] focus-within:ring-ring",
+        "bg-gray-950/5 dark:bg-gray-950/30",
+        "transition-all duration-150",
+        className,
+      )}
       data-slot="autocomplete-input-group"
       {...props}
     />
@@ -43,10 +28,7 @@ function AutocompleteInputGroup({
 function AutocompleteInput({ className, ...props }: BaseAutocomplete.Input.Props) {
   return (
     <BaseAutocomplete.Input
-      className={cn(
-        "min-w-0 flex-1 bg-transparent py-1 leading-4 outline-none placeholder:text-muted-foreground disabled:cursor-not-allowed",
-        className,
-      )}
+      className={cn("w-full leading-4 outline-none", className)}
       data-slot="autocomplete-input"
       {...props}
     />

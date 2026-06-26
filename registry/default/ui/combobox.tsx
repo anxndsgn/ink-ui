@@ -58,46 +58,24 @@ function ComboboxList({ className, children, ...props }: BaseCombobox.List.Props
   );
 }
 
-function ComboboxItemLeadingIcon({
-  className,
-  render,
-  ...props
-}: useRender.ComponentProps<"span">) {
-  const iconElement = useRender({
+function ComboboxItemAddon({ className, render, ...props }: useRender.ComponentProps<"span">) {
+  const addonElement = useRender({
     defaultTagName: "span",
     props: {
       ...mergeProps<"span">(
         {
-          className: cn("mr-2 inline-flex size-4 shrink-0", className),
+          className: cn(
+            "col-start-2 me-2 inline-flex shrink-0 items-center justify-center gap-1.5 whitespace-nowrap [&_svg:not([class*='size-'])]:size-4",
+            className,
+          ),
         },
         props,
       ),
-      "data-slot": "combobox-item-leading-icon",
+      "data-slot": "combobox-item-addon",
     },
     render,
   });
-  return iconElement;
-}
-
-function ComboboxItemTrailingIcon({
-  className,
-  render,
-  ...props
-}: useRender.ComponentProps<"span">) {
-  const iconElement = useRender({
-    defaultTagName: "span",
-    props: {
-      ...mergeProps<"span">(
-        {
-          className: cn("ml-2 inline-flex size-4 shrink-0", className),
-        },
-        props,
-      ),
-      "data-slot": "combobox-item-trailing-icon",
-    },
-    render,
-  });
-  return iconElement;
+  return addonElement;
 }
 
 function ComboboxItemLabel({ className, render, ...props }: useRender.ComponentProps<"span">) {
@@ -119,14 +97,14 @@ function ComboboxItemLabel({ className, render, ...props }: useRender.ComponentP
 
 function ComboboxItemIndicator({ className, ...props }: BaseCombobox.ItemIndicator.Props) {
   return (
-    <ComboboxItemLeadingIcon>
+    <ComboboxItemAddon className="col-start-1 size-4">
       <BaseCombobox.ItemIndicator
         className={cn("size-4", className)}
         data-slot="combobox-item-indicator"
         render={<CheckIcon className="size-4" />}
         {...props}
       />
-    </ComboboxItemLeadingIcon>
+    </ComboboxItemAddon>
   );
 }
 
@@ -134,7 +112,7 @@ function ComboboxItem({ className, children, ...props }: BaseCombobox.Item.Props
   return (
     <BaseCombobox.Item
       className={cn(
-        "group col-span-full grid min-w-(--anchor-width) cursor-default grid-cols-subgrid items-center p-2 text-sm leading-4 outline-none select-none group-data-[side=none]:min-w-[calc(var(--anchor-width)+1rem)] group-data-[side=none]:pr-12 group-data-[side=none]:text-base group-data-[side=none]:leading-4 data-disabled:pointer-events-none data-disabled:cursor-not-allowed data-disabled:opacity-50 data-highlighted:relative data-highlighted:z-0 data-highlighted:text-primary-foreground data-highlighted:before:absolute data-highlighted:before:inset-0 data-highlighted:before:z-[-1] data-highlighted:before:rounded-lg data-highlighted:before:bg-primary pointer-coarse:py-2.5 pointer-coarse:text-[0.925rem]",
+        "group col-span-full grid min-w-(--anchor-width) cursor-default grid-cols-subgrid items-center p-2 text-sm leading-4 outline-none select-none group-data-[side=none]:min-w-[calc(var(--anchor-width)+1rem)] group-data-[side=none]:pr-12 group-data-[side=none]:text-base group-data-[side=none]:leading-4 data-disabled:pointer-events-none data-disabled:cursor-not-allowed data-disabled:opacity-50 data-highlighted:relative data-highlighted:z-0 data-highlighted:text-primary-foreground data-highlighted:before:absolute data-highlighted:before:inset-0 data-highlighted:before:z-[-1] data-highlighted:before:rounded-lg data-highlighted:before:bg-primary pointer-coarse:py-2.5 pointer-coarse:text-[0.925rem] [&>[data-slot=combobox-item-addon]]:text-muted-foreground data-highlighted:[&>[data-slot=combobox-item-addon]]:text-primary-foreground [&>[data-slot=combobox-item-label]~[data-slot=combobox-item-addon]]:col-start-4 [&>[data-slot=combobox-item-label]~[data-slot=combobox-item-addon]]:ms-2 [&>[data-slot=combobox-item-label]~[data-slot=combobox-item-addon]]:me-0",
         className,
       )}
       data-slot="combobox-item"
@@ -176,7 +154,8 @@ function ComboboxInput({
   return (
     <BaseCombobox.InputGroup
       className={cn(
-        "flex min-h-9 items-center gap-1 rounded-lg border border-input p-2 text-sm text-foreground hover:border-accent",
+        "flex min-h-9 items-center gap-1 rounded-lg border border-input py-2 pr-2 pl-3 text-sm text-foreground hover:border-accent",
+        "has-data-[slot=combobox-chips]:pl-2",
         "focus-within:border-accent focus-within:ring-[3px] focus-within:ring-ring",
         "bg-gray-950/5 dark:bg-gray-950/30",
         "transition-all duration-150",
@@ -185,10 +164,10 @@ function ComboboxInput({
       data-slot="combobox-input"
     >
       {children ? (
-        <BaseCombobox.Chips className="flex flex-1 flex-wrap items-center gap-1">
+        <ComboboxChips className="flex flex-1 flex-wrap items-center gap-1">
           {children}
           <BaseCombobox.Input className="min-w-12 flex-1 leading-4 outline-none" {...props} />
-        </BaseCombobox.Chips>
+        </ComboboxChips>
       ) : (
         <BaseCombobox.Input className="w-full leading-4 outline-none" {...props} />
       )}
@@ -296,7 +275,6 @@ export {
   ComboboxItemIndicator,
   ComboboxGroup,
   ComboboxGroupLabel,
-  ComboboxItemLeadingIcon,
-  ComboboxItemTrailingIcon,
+  ComboboxItemAddon,
   ComboboxItemLabel,
 };
