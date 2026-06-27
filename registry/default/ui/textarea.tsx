@@ -10,8 +10,8 @@ const textareaVariants = cva(
     },
     variants: {
       variant: {
-        default: "border-input bg-gray-950/5 dark:bg-gray-950/30",
-        outline: "border-input",
+        default: "border-border bg-field",
+        outline: "border-border",
       },
     },
   },

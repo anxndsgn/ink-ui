@@ -7,7 +7,7 @@ import { MinusIcon, PlusIcon } from "@phosphor-icons/react";
 const NumberField = BaseNumberField.Root;
 
 const numberFieldGroupVariants = cva(
-  "flex w-full min-w-0 items-center overflow-visible rounded-lg bg-gray-950/5 text-foreground data-disabled:cursor-not-allowed data-disabled:opacity-50 dark:bg-gray-950/30",
+  "flex w-full min-w-0 items-center overflow-visible rounded-lg bg-field text-foreground data-disabled:cursor-not-allowed data-disabled:opacity-50",
   {
     defaultVariants: {
       size: "default",
@@ -40,7 +40,7 @@ function NumberFieldInput({ className, ...props }: BaseNumberField.Input.Props) 
   return (
     <BaseNumberField.Input
       className={cn(
-        "z-10 h-full min-w-0 flex-1 border border-input bg-transparent px-3 text-center tabular-nums transition-all duration-150 outline-none placeholder:text-muted-foreground not-data-disabled:hover:border-accent focus-visible:border-accent focus-visible:ring-[3px] focus-visible:ring-ring disabled:cursor-not-allowed",
+        "z-10 h-full min-w-0 flex-1 border border-border bg-transparent px-3 text-center tabular-nums transition-all duration-150 outline-none placeholder:text-muted-foreground not-data-disabled:hover:border-accent focus-visible:border-accent focus-visible:ring-[3px] focus-visible:ring-ring disabled:cursor-not-allowed",
         className,
       )}
       data-slot="number-field-input"
@@ -50,7 +50,7 @@ function NumberFieldInput({ className, ...props }: BaseNumberField.Input.Props) 
 }
 
 const numberFieldStepperClassName =
-  "flex h-full shrink-0 bg-background cursor-default items-center justify-center self-stretch px-2.5 text-muted-foreground not-data-disabled:hover:bg-background-hover not-data-disabled:hover:text-foreground data-disabled:pointer-events-none data-disabled:opacity-50 [&_svg]:size-4 border border-input";
+  "flex h-full shrink-0 bg-background cursor-default items-center justify-center self-stretch px-2.5 text-muted-foreground not-data-disabled:hover:bg-background-hover not-data-disabled:hover:text-foreground data-disabled:pointer-events-none data-disabled:opacity-50 [&_svg]:size-4 border border-border";
 
 function NumberFieldDecrement({ children, className, ...props }: BaseNumberField.Decrement.Props) {
   return (

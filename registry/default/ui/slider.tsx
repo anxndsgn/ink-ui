@@ -38,7 +38,9 @@ export default function Slider({
         data-slot="slider-control"
       >
         <BaseSlider.Track
-          className={cn("h-1 w-full rounded-full bg-muted inset-ring inset-ring-input select-none")}
+          className={cn(
+            "h-1 w-full rounded-full bg-muted inset-ring inset-ring-border select-none",
+          )}
           data-slot="slider-track"
         >
           <BaseSlider.Indicator
@@ -50,7 +52,7 @@ export default function Slider({
               key={index}
               className={(state) =>
                 cn(
-                  "h-4 w-5 rounded-full bg-white shadow-xs ring ring-input transition-transform select-none before:hidden data-disabled:cursor-not-allowed data-disabled:bg-muted",
+                  "h-4 w-5 rounded-full bg-white shadow-xs ring ring-border transition-transform select-none before:hidden data-disabled:cursor-not-allowed data-disabled:bg-muted",
                   state.dragging &&
                     state.activeThumbIndex === index &&
                     "scale-120 opacity-80 backdrop-blur-md",

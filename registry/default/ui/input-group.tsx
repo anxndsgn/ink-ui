@@ -10,7 +10,7 @@ function InputGroup({ className, ...props }: ComponentProps<"div">) {
   return (
     <div
       className={cn(
-        "group/input-group relative flex min-h-9 w-full min-w-0 items-center rounded-lg border border-input bg-gray-950/5 text-foreground transition-all duration-150 outline-none dark:bg-gray-950/30",
+        "group/input-group relative flex min-h-9 w-full min-w-0 items-center rounded-lg border border-border bg-field text-foreground transition-all duration-150 outline-none",
         "has-[>textarea]:h-auto",
         "has-[>[data-align=inline-start]]:*:data-[slot=input-group-control]:pl-2",
         "has-[>[data-align=inline-end]]:*:data-[slot=input-group-control]:pr-2",

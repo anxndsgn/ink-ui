@@ -42,6 +42,7 @@ These CSS variables map to the scales above and adapt between light and dark mod
   <ColorToken name="popover-foreground" description="Text inside popovers" />
   <ColorToken name="dialog" description="Dialog surface background" />
   <ColorToken name="dialog-foreground" description="Text inside dialogs" />
+  <ColorToken name="field" description="Translucent fill for input-like controls" />
 </div>
 
 ### Actions
@@ -68,7 +69,6 @@ These CSS variables map to the scales above and adapt between light and dark mod
 
 <div class="not-prose grid grid-cols-1 gap-2 sm:grid-cols-2">
   <ColorToken name="border" description="Default border color" />
-  <ColorToken name="input" description="Form input border color" />
   <ColorToken name="ring" description="Focus ring color" />
 </div>
 
@@ -76,7 +76,7 @@ Common Tailwind utilities like `text-gray-500`, `bg-gray-100`, `border-gray-200`
 
 ## Interactive states
 
-Every surface token ships a `-hover` and `-active` companion for interactive elements. Rather than fading a base color with opacity — which composites unpredictably against whatever sits behind it and muddies stacked surfaces — each state is a fixed, opaque step along the palette scale. The values are deliberately tuned per token: light surfaces darken toward the content, dark surfaces brighten, and solid fills move toward the mid-scale so the state always reads as a real change regardless of background.
+Every surface token ships a `-hover` and `-active` companion for interactive elements. Rather than fading a base color with opacity — which composites unpredictably against whatever sits behind it and muddies stacked surfaces — each state is a fixed, opaque step derived from the base token with `color-mix`. Each opaque surface is mixed toward `--foreground`, so the same formula darkens it in light mode and brightens it in dark mode automatically (solid fills like `primary` mix toward their own foreground instead). The result is always a real, opaque change that reads regardless of background.
 
 Use them directly as Tailwind utilities — `hover:bg-primary-hover`, `data-popup-open:bg-secondary-active`, and so on — so the light/dark logic lives in the theme instead of being restated in every component.
 

@@ -12,10 +12,10 @@ function AutocompleteInputGroup({ className, ...props }: BaseAutocomplete.InputG
   return (
     <BaseAutocomplete.InputGroup
       className={cn(
-        "flex min-h-9 items-center gap-1 rounded-lg border border-input py-2 pr-2 pl-3 text-sm text-foreground hover:border-accent",
+        "flex min-h-9 items-center gap-1 rounded-lg border border-border py-2 pr-2 pl-3 text-sm text-foreground hover:border-accent",
         "has-data-[slot=autocomplete-input-addon]:pl-2",
         "focus-within:border-accent focus-within:ring-[3px] focus-within:ring-ring",
-        "bg-gray-950/5 dark:bg-gray-950/30",
+        "bg-field",
         "transition-all duration-150",
         className,
       )}
