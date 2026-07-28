@@ -9,20 +9,25 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as DocsRouteImport } from './routes/docs'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as DocsRouteImport } from './routes/docs'
+import { Route as ApiOgDotpngRouteImport } from './routes/api/og[.]png'
 import { Route as DocsIndexRouteImport } from './routes/docs.index'
 import { Route as DocsSplatRouteImport } from './routes/docs.$'
-import { Route as ApiOgDotpngRouteImport } from './routes/api/og[.]png'
 
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const DocsRoute = DocsRouteImport.update({
   id: '/docs',
   path: '/docs',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const ApiOgDotpngRoute = ApiOgDotpngRouteImport.update({
+  id: '/api/og.png',
+  path: '/api/og.png',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DocsIndexRoute = DocsIndexRouteImport.update({
@@ -34,11 +39,6 @@ const DocsSplatRoute = DocsSplatRouteImport.update({
   id: '/$',
   path: '/$',
   getParentRoute: () => DocsRoute,
-} as any)
-const ApiOgDotpngRoute = ApiOgDotpngRouteImport.update({
-  id: '/api/og.png',
-  path: '/api/og.png',
-  getParentRoute: () => rootRouteImport,
 } as any)
 
 export interface FileRoutesByFullPath {
@@ -78,6 +78,13 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/docs': {
       id: '/docs'
       path: '/docs'
@@ -85,11 +92,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DocsRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+    '/api/og.png': {
+      id: '/api/og.png'
+      path: '/api/og.png'
+      fullPath: '/api/og.png'
+      preLoaderRoute: typeof ApiOgDotpngRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/docs/': {
@@ -105,13 +112,6 @@ declare module '@tanstack/react-router' {
       fullPath: '/docs/$'
       preLoaderRoute: typeof DocsSplatRouteImport
       parentRoute: typeof DocsRoute
-    }
-    '/api/og.png': {
-      id: '/api/og.png'
-      path: '/api/og.png'
-      fullPath: '/api/og.png'
-      preLoaderRoute: typeof ApiOgDotpngRouteImport
-      parentRoute: typeof rootRouteImport
     }
   }
 }
