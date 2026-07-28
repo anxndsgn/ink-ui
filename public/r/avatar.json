@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "avatar",
+  "title": "Avatar",
+  "description": "Ink UI Avatar component.",
+  "dependencies": [
+    "@base-ui/react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "theme"
+  ],
+  "files": [
+    {
+      "path": "registry/default/ui/avatar.tsx",
+      "content": "import { Avatar as BaseAvatar } from \"@base-ui/react/avatar\";\nimport { cn } from \"@/lib/utils\";\n\nfunction Avatar({\n  className,\n  size = \"default\",\n  ...props\n}: BaseAvatar.Root.Props & {\n  size?: \"sm\" | \"default\" | \"lg\";\n}) {\n  return (\n    <BaseAvatar.Root\n      className={cn(\n        \"group/avatar relative inline-flex shrink-0 items-center justify-center overflow-hidden rounded-full align-middle select-none\",\n        \"size-8 data-[size=sm]:size-6 data-[size=lg]:size-10\",\n        className,\n      )}\n      data-size={size}\n      data-slot=\"avatar\"\n      {...props}\n    />\n  );\n}\n\nfunction AvatarImage({ className, ...props }: BaseAvatar.Image.Props) {\n  return (\n    <BaseAvatar.Image\n      className={cn(\"aspect-square size-full object-cover\", className)}\n      data-slot=\"avatar-image\"\n      {...props}\n    />\n  );\n}\n\nfunction AvatarFallback({ className, ...props }: BaseAvatar.Fallback.Props) {\n  return (\n    <BaseAvatar.Fallback\n      className={cn(\n        \"flex size-full items-center justify-center rounded-full bg-muted text-sm font-medium text-muted-foreground\",\n        \"group-data-[size=sm]/avatar:text-xs group-data-[size=lg]/avatar:text-base\",\n        className,\n      )}\n      data-slot=\"avatar-fallback\"\n      {...props}\n    />\n  );\n}\n\nexport { Avatar, AvatarImage, AvatarFallback };\n",
+      "type": "registry:ui",
+      "target": "components/ui/avatar.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

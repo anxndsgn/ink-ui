@@ -75,6 +75,21 @@
       "dependencies": ["@base-ui/react", "@phosphor-icons/react", "class-variance-authority"]
     },
     {
+      "name": "avatar",
+      "type": "registry:ui",
+      "title": "Avatar",
+      "description": "Ink UI Avatar component.",
+      "files": [
+        {
+          "path": "registry/default/ui/avatar.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/avatar.tsx"
+        }
+      ],
+      "registryDependencies": ["utils", "theme"],
+      "dependencies": ["@base-ui/react"]
+    },
+    {
       "name": "button",
       "type": "registry:ui",
       "title": "Button",
@@ -606,6 +621,48 @@
           "path": "registry/default/examples/autocomplete-async-example.tsx",
           "type": "registry:component",
           "target": "components/autocomplete-async-example.tsx"
+        }
+      ]
+    },
+    {
+      "name": "avatar-default-example",
+      "type": "registry:component",
+      "title": "Avatar Default Example",
+      "description": "Atomic example for the Ink UI Avatar component.",
+      "registryDependencies": ["avatar"],
+      "files": [
+        {
+          "path": "registry/default/examples/avatar-default-example.tsx",
+          "type": "registry:component",
+          "target": "components/avatar-default-example.tsx"
+        }
+      ]
+    },
+    {
+      "name": "avatar-fallback-example",
+      "type": "registry:component",
+      "title": "Avatar Fallback Example",
+      "description": "Atomic example for the Ink UI Avatar component.",
+      "registryDependencies": ["avatar"],
+      "files": [
+        {
+          "path": "registry/default/examples/avatar-fallback-example.tsx",
+          "type": "registry:component",
+          "target": "components/avatar-fallback-example.tsx"
+        }
+      ]
+    },
+    {
+      "name": "avatar-sizes-example",
+      "type": "registry:component",
+      "title": "Avatar Sizes Example",
+      "description": "Atomic example for the Ink UI Avatar component.",
+      "registryDependencies": ["avatar"],
+      "files": [
+        {
+          "path": "registry/default/examples/avatar-sizes-example.tsx",
+          "type": "registry:component",
+          "target": "components/avatar-sizes-example.tsx"
         }
       ]
     },

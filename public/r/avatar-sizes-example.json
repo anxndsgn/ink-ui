@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "avatar-sizes-example",
+  "title": "Avatar Sizes Example",
+  "description": "Atomic example for the Ink UI Avatar component.",
+  "registryDependencies": [
+    "avatar"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/avatar-sizes-example.tsx",
+      "content": "import { Avatar, AvatarFallback, AvatarImage } from \"registry/default/ui/avatar\";\n\nexport function AvatarSizesExample() {\n  return (\n    <div className=\"flex flex-wrap items-center gap-4\">\n      <Avatar size=\"sm\">\n        <AvatarImage alt=\"@ink-ui\" src=\"https://github.com/shadcn.png\" />\n        <AvatarFallback>IU</AvatarFallback>\n      </Avatar>\n      <Avatar>\n        <AvatarImage alt=\"@ink-ui\" src=\"https://github.com/shadcn.png\" />\n        <AvatarFallback>IU</AvatarFallback>\n      </Avatar>\n      <Avatar size=\"lg\">\n        <AvatarImage alt=\"@ink-ui\" src=\"https://github.com/shadcn.png\" />\n        <AvatarFallback>IU</AvatarFallback>\n      </Avatar>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/avatar-sizes-example.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

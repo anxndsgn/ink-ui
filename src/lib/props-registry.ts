@@ -42,6 +42,34 @@ export const propsRegistry: Record<string, ComponentPropsEntry> = {
     },
     props: [],
   },
+  Avatar: {
+    extends: {
+      name: "Base UI Avatar.Root",
+      href: "https://base-ui.com/react/components/avatar#api-reference",
+    },
+    props: [
+      {
+        name: "size",
+        type: '"sm" | "default" | "lg"',
+        defaultValue: '"default"',
+        description: "Size of the avatar.",
+      },
+    ],
+  },
+  AvatarImage: {
+    extends: {
+      name: "Base UI Avatar.Image",
+      href: "https://base-ui.com/react/components/avatar#api-reference",
+    },
+    props: [],
+  },
+  AvatarFallback: {
+    extends: {
+      name: "Base UI Avatar.Fallback",
+      href: "https://base-ui.com/react/components/avatar#api-reference",
+    },
+    props: [],
+  },
   Button: {
     extends: {
       name: "Base UI Button",

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "avatar-fallback-example",
+  "title": "Avatar Fallback Example",
+  "description": "Atomic example for the Ink UI Avatar component.",
+  "registryDependencies": [
+    "avatar"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/avatar-fallback-example.tsx",
+      "content": "import { Avatar, AvatarFallback, AvatarImage } from \"registry/default/ui/avatar\";\n\nexport function AvatarFallbackExample() {\n  return (\n    <div className=\"flex flex-wrap items-center gap-4\">\n      <Avatar>\n        <AvatarFallback>IU</AvatarFallback>\n      </Avatar>\n      <Avatar>\n        <AvatarImage alt=\"Broken image\" src=\"https://invalid-url/avatar.png\" />\n        <AvatarFallback>ER</AvatarFallback>\n      </Avatar>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/avatar-fallback-example.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

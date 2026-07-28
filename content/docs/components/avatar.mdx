@@ -1,0 +1,79 @@
+---
+title: Avatar
+description: Displays a user's profile picture, initials, or fallback icon.
+component: Avatar
+registry: avatar
+---
+
+import { AvatarExample } from "registry/default/examples/avatar-default-example";
+import avatarExampleSource from "registry/default/examples/avatar-default-example.tsx?raw";
+import { AvatarFallbackExample } from "registry/default/examples/avatar-fallback-example";
+import avatarFallbackExampleSource from "registry/default/examples/avatar-fallback-example.tsx?raw";
+import { AvatarSizesExample } from "registry/default/examples/avatar-sizes-example";
+import avatarSizesExampleSource from "registry/default/examples/avatar-sizes-example.tsx?raw";
+import avatarSource from "registry/default/ui/avatar.tsx?raw";
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="AvatarExample">
+      <AvatarExample />
+    </ComponentPreview>
+    <ComponentSource code={avatarExampleSource} language="tsx" title="avatar-default-example.tsx" />
+  </ComponentTabs>
+</ComponentSection>
+
+## Examples
+
+### Fallback
+
+Render initials when the image fails to load or is not provided.
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="AvatarFallbackExample">
+      <AvatarFallbackExample />
+    </ComponentPreview>
+    <ComponentSource
+      code={avatarFallbackExampleSource}
+      language="tsx"
+      title="avatar-fallback-example.tsx"
+    />
+  </ComponentTabs>
+</ComponentSection>
+
+### Sizes
+
+Use the `size` prop to change the avatar size. Available sizes are `sm`, `default`, and `lg`.
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="AvatarSizesExample">
+      <AvatarSizesExample />
+    </ComponentPreview>
+    <ComponentSource
+      code={avatarSizesExampleSource}
+      language="tsx"
+      title="avatar-sizes-example.tsx"
+    />
+  </ComponentTabs>
+</ComponentSection>
+
+## Installation
+
+Copy the source code below into your project:
+
+<CodeBlock code={avatarSource} language="tsx" />
+
+## API Reference
+
+### Avatar
+
+<PropsTable component="Avatar" />
+
+### AvatarImage
+
+<PropsTable component="AvatarImage" />
+
+### AvatarFallback
+
+<PropsTable component="AvatarFallback" />
