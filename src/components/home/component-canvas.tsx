@@ -1011,6 +1011,9 @@ export function ComponentCanvas() {
 
   const handlePointerDown = (event: ReactPointerEvent<HTMLDivElement>) => {
     if (event.pointerType === "mouse" && event.button !== 0) return;
+    // Ignore presses that bubble through React portals (e.g. dialog backdrops)
+    // so they don't start a canvas drag or capture the pointer.
+    if (!event.currentTarget.contains(event.target as Node)) return;
     if (isInteractiveTarget(event.target)) return;
 
     cancelInertia();
