@@ -1,3 +1,5 @@
+
+
 # Ink UI
 
 A warm, approachable React component library built on [Base UI](https://base-ui.com) primitives and styled with [Tailwind CSS v4](https://tailwindcss.com) — distributed through the [shadcn registry](https://ui.shadcn.com/docs/registry) system.
@@ -74,7 +76,7 @@ The dev server runs at http://localhost:3000.
 ## Adding a New Component
 
 1. Create the component in `registry/default/ui/<component-name>.tsx`
-2. Create a demo in `registry/default/examples/<component-name>-demo.tsx`
+2. Create a demo in `registry/default/examples/<component-name>-default-example.tsx`
 3. Add an entry to `registry.json`
 4. Run `pnpm registry:build`
 5. Write the docs page at `content/docs/components/<component-name>.mdx`
