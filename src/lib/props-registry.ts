@@ -78,7 +78,7 @@ export const propsRegistry: Record<string, ComponentPropsEntry> = {
     props: [
       {
         name: "variant",
-        type: '"default" | "secondary" | "outline" | "ghost" | "destructive" | "revert"',
+        type: '"default" | "secondary" | "outline" | "ghost" | "destructive" | "invert"',
         defaultValue: '"default"',
         description: "Visual style of the button.",
       },
@@ -389,7 +389,7 @@ export const propsRegistry: Record<string, ComponentPropsEntry> = {
     props: [
       {
         name: "variant",
-        type: '"default" | "secondary" | "outline" | "ghost" | "destructive" | "revert"',
+        type: '"default" | "secondary" | "outline" | "ghost" | "destructive" | "invert"',
         defaultValue: '"outline"',
         description: "Visual style of the trigger button.",
       },

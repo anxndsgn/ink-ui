@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-invert-example",
+  "title": "Button Invert Example",
+  "description": "Atomic example for the Ink UI Button component.",
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/button-invert-example.tsx",
+      "content": "import { Button } from \"registry/default/ui/button\";\nexport function InvertButtonExample() {\n  return (\n    <div className=\"flex h-32 w-full flex-wrap items-center justify-center gap-4 rounded bg-gray-950 p-4 dark:bg-gray-50\">\n      <Button variant=\"invert\">Invert</Button>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/button-invert-example.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

@@ -130,7 +130,7 @@ function ToastHost({ position, isTop }: { position: ToastPosition; isTop: boolea
                 {toast.actionProps && (
                   <Toast.Action
                     className={cn(
-                      buttonVariants({ size: "sm", variant: "revert" }),
+                      buttonVariants({ size: "sm", variant: "invert" }),
                       "rounded-full",
                     )}
                     data-slot="toast-action"

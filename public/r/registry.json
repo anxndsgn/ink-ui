@@ -751,16 +751,16 @@
       ]
     },
     {
-      "name": "button-revert-example",
+      "name": "button-invert-example",
       "type": "registry:component",
-      "title": "Button Revert Example",
+      "title": "Button Invert Example",
       "description": "Atomic example for the Ink UI Button component.",
       "registryDependencies": ["button"],
       "files": [
         {
-          "path": "registry/default/examples/button-revert-example.tsx",
+          "path": "registry/default/examples/button-invert-example.tsx",
           "type": "registry:component",
-          "target": "components/button-revert-example.tsx"
+          "target": "components/button-invert-example.tsx"
         }
       ]
     },

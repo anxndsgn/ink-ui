@@ -29,7 +29,7 @@ const buttonVariants = cva(
           "bg-transparent text-foreground not-data-disabled:hover:bg-secondary data-popup-open:bg-secondary-hover",
         outline:
           "border border-border text-foreground not-data-disabled:hover:bg-secondary data-popup-open:bg-secondary",
-        revert:
+        invert:
           "bg-muted text-foreground not-data-disabled:hover:bg-muted-hover data-popup-open:bg-muted-hover",
         secondary:
           "bg-secondary text-secondary-foreground not-data-disabled:hover:bg-secondary-hover data-popup-open:bg-secondary-hover",
