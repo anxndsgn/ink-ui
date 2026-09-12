@@ -113,7 +113,7 @@ function AutocompleteContent({
       >
         <BaseAutocomplete.Popup
           className={cn(
-            "group max-h-(--available-height) origin-(--transform-origin) overflow-y-auto rounded-xl bg-popover p-1.5 text-popover-foreground shadow-lg outline outline-border transition-[transform,scale,opacity] data-ending-style:scale-90 data-ending-style:opacity-0 data-starting-style:scale-90 data-starting-style:opacity-0 dark:shadow-none",
+            "group max-h-(--available-height) origin-(--transform-origin) overflow-y-auto rounded-xl bg-popover p-1.5 text-popover-foreground shadow-lg outline outline-border transition-[transform,scale,opacity] data-ending-style:scale-90 data-ending-style:opacity-0 data-ending-style:transition-none data-starting-style:scale-90 data-starting-style:opacity-0 dark:shadow-none",
             className,
           )}
           data-slot="autocomplete-popup"
