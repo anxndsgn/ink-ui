@@ -1,24 +1,39 @@
 import { Autocomplete as BaseAutocomplete } from "@base-ui/react";
 import { cn } from "@/lib/utils";
+import { cva } from "class-variance-authority";
+import type { VariantProps } from "class-variance-authority";
 import { CaretUpDownIcon, XIcon } from "@phosphor-icons/react";
 
 const Autocomplete = BaseAutocomplete.Root;
+
+const autocompleteInputGroupVariants = cva(
+  "flex items-center gap-1 rounded-lg border border-border bg-field py-2 pr-2 pl-3 text-foreground transition-all duration-150 focus-within:border-accent focus-within:ring-[3px] focus-within:ring-ring hover:border-accent has-data-[slot=autocomplete-input-addon]:pl-2",
+  {
+    defaultVariants: {
+      size: "default",
+    },
+    variants: {
+      size: {
+        sm: "min-h-8 text-sm",
+        default: "min-h-9 text-sm",
+        lg: "min-h-10 text-base",
+      },
+    },
+  },
+);
 
 function AutocompleteValue({ ...props }: BaseAutocomplete.Value.Props) {
   return <BaseAutocomplete.Value data-slot="autocomplete-value" {...props} />;
 }
 
-function AutocompleteInputGroup({ className, ...props }: BaseAutocomplete.InputGroup.Props) {
+function AutocompleteInputGroup({
+  className,
+  size,
+  ...props
+}: BaseAutocomplete.InputGroup.Props & VariantProps<typeof autocompleteInputGroupVariants>) {
   return (
     <BaseAutocomplete.InputGroup
-      className={cn(
-        "flex min-h-9 items-center gap-1 rounded-lg border border-border py-2 pr-2 pl-3 text-sm text-foreground hover:border-accent",
-        "has-data-[slot=autocomplete-input-addon]:pl-2",
-        "focus-within:border-accent focus-within:ring-[3px] focus-within:ring-ring",
-        "bg-field",
-        "transition-all duration-150",
-        className,
-      )}
+      className={cn(autocompleteInputGroupVariants({ size }), className)}
       data-slot="autocomplete-input-group"
       {...props}
     />
@@ -67,7 +82,7 @@ function AutocompleteClear({ children, className, ...props }: BaseAutocomplete.C
   return (
     <BaseAutocomplete.Clear
       className={cn(
-        "flex shrink-0 cursor-default items-center rounded p-0.5 text-muted-foreground transition-colors hover:text-foreground data-[empty]:invisible",
+        "flex shrink-0 cursor-default items-center rounded p-0.5 text-muted-foreground transition-colors hover:text-foreground data-empty:invisible",
         className,
       )}
       data-slot="autocomplete-clear"
