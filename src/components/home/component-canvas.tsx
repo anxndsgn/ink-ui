@@ -701,7 +701,7 @@ function ComponentCard({ component, x, y }: { component: ComponentPreview; x: nu
   return (
     <article
       aria-label={`${component.label} preview`}
-      className="absolute top-1/2 left-1/2 flex items-center justify-center overflow-hidden rounded-2xl bg-muted/40 p-4"
+      className="absolute top-1/2 left-1/2 flex items-center justify-center overflow-hidden rounded-2xl bg-muted p-4"
       style={{
         contain: "layout paint style",
         containIntrinsicSize: `${TILE_WIDTH}px ${TILE_HEIGHT}px`,
