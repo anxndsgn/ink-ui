@@ -50,14 +50,7 @@ export default function Slider({
           {Array.from({ length: _values.length }).map((_, index) => (
             <BaseSlider.Thumb
               key={index}
-              className={(state) =>
-                cn(
-                  "h-4 w-5 rounded-full bg-white shadow-xs ring ring-border transition-transform select-none before:hidden data-disabled:cursor-not-allowed data-disabled:bg-muted",
-                  state.dragging &&
-                    state.activeThumbIndex === index &&
-                    "scale-120 opacity-80 backdrop-blur-md",
-                )
-              }
+              className="h-4 w-5 rounded-full bg-white shadow-xs ring ring-border transition-[transform,scale,opacity] select-none before:hidden data-disabled:cursor-not-allowed data-disabled:bg-muted focus-within:data-dragging:scale-120 focus-within:data-dragging:opacity-80 focus-within:data-dragging:backdrop-blur-md"
               data-slot="slider-thumb"
               index={index}
             />
