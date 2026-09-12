@@ -14,9 +14,9 @@ const buttonGroupVariants = cva(
     variants: {
       orientation: {
         horizontal:
-          "[&>*:has(+input)]:border-r-0 [&>*:not(:first-child)]:rounded-l-none [&>*:not(:first-child)]:border-l-0 [&>*:not(:last-child)]:rounded-r-none",
+          "[&>*:has(+input)]:border-r-0 [&>*:not(:first-child)]:rounded-l-none [&>*:not(:first-child)]:border-l-0 [&>*:not(:last-child)]:rounded-r-none [&>[data-slot=button]:first-child:not(:only-child)]:origin-right [&>[data-slot=button]:last-child:not(:only-child)]:origin-left",
         vertical:
-          "flex-col [&>*:has(+input)]:border-b-0 [&>*:not(:first-child)]:rounded-t-none [&>*:not(:first-child)]:border-t-0 [&>*:not(:last-child)]:rounded-b-none",
+          "flex-col [&>*:has(+input)]:border-b-0 [&>*:not(:first-child)]:rounded-t-none [&>*:not(:first-child)]:border-t-0 [&>*:not(:last-child)]:rounded-b-none [&>[data-slot=button]:first-child:not(:only-child)]:origin-bottom [&>[data-slot=button]:last-child:not(:only-child)]:origin-top",
       },
     },
   },
