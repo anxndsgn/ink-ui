@@ -83,7 +83,7 @@ const tabIndicatorVariants = cva(
         sm: "",
       },
       variant: {
-        default: "-z-1 rounded-full bg-popover",
+        default: "-z-1 rounded-full border border-border bg-background",
         underline:
           "z-10 bg-accent data-[orientation=horizontal]:translate-y-px data-[orientation=vertical]:-translate-x-px",
       },
