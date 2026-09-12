@@ -737,6 +737,20 @@
       ]
     },
     {
+      "name": "button-destructive-outline-example",
+      "type": "registry:component",
+      "title": "Button Destructive Outline Example",
+      "description": "Atomic example for the Ink UI Button component.",
+      "registryDependencies": ["button"],
+      "files": [
+        {
+          "path": "registry/default/examples/button-destructive-outline-example.tsx",
+          "type": "registry:component",
+          "target": "components/button-destructive-outline-example.tsx"
+        }
+      ]
+    },
+    {
       "name": "button-loading-example",
       "type": "registry:component",
       "title": "Button Loading Example",

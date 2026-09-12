@@ -25,6 +25,8 @@ const buttonVariants = cva(
           "bg-primary text-primary-foreground not-data-disabled:hover:bg-primary-hover data-popup-open:bg-primary-hover",
         destructive:
           "bg-destructive text-destructive-foreground not-data-disabled:hover:bg-destructive-hover focus-visible:ring-destructive/30 data-popup-open:bg-destructive-hover",
+        "destructive-outline":
+          "border border-border text-destructive not-data-disabled:hover:bg-secondary focus-visible:border-destructive/60 focus-visible:ring-destructive/30 data-popup-open:bg-secondary",
         ghost:
           "bg-transparent text-foreground not-data-disabled:hover:bg-secondary data-popup-open:bg-secondary-hover",
         outline:

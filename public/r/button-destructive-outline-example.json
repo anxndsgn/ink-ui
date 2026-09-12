@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-destructive-outline-example",
+  "title": "Button Destructive Outline Example",
+  "description": "Atomic example for the Ink UI Button component.",
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/button-destructive-outline-example.tsx",
+      "content": "import { Button } from \"registry/default/ui/button\";\nexport function DestructiveOutlineButtonExample() {\n  return (\n    <div className=\"flex flex-wrap items-center gap-4\">\n      <Button variant=\"destructive-outline\">Destructive outline</Button>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/button-destructive-outline-example.tsx"
+    }
+  ],
+  "type": "registry:component"
+}
