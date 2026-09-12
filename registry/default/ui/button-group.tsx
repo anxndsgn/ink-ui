@@ -6,7 +6,7 @@ import type { ComponentProps } from "react";
 import type { VariantProps } from "class-variance-authority";
 
 const buttonGroupVariants = cva(
-  "flex w-fit items-stretch has-[>[data-slot=button-group]]:gap-2 [&>*]:focus-visible:relative [&>*]:focus-visible:z-10 [&>[data-slot=select-trigger]:not([class*='w-'])]:w-fit [&>input]:flex-1",
+  "flex w-fit items-stretch has-[>[data-slot=button-group]]:gap-2 [&>*]:focus-visible:relative [&>*]:focus-visible:z-10 [&>[data-slot=select-trigger]:not([class*='w-'])]:w-fit [&>input]:flex-1 [&>input]:not-disabled:hover:relative [&>input]:not-disabled:hover:z-10",
   {
     defaultVariants: {
       orientation: "horizontal",
@@ -14,9 +14,9 @@ const buttonGroupVariants = cva(
     variants: {
       orientation: {
         horizontal:
-          "[&>*:not(:first-child)]:-ms-px [&>*:not(:first-child)]:rounded-l-none [&>*:not(:last-child)]:rounded-r-none",
+          "[&>*:has(+input)]:border-r-0 [&>*:not(:first-child)]:rounded-l-none [&>*:not(:first-child)]:border-l-0 [&>*:not(:last-child)]:rounded-r-none",
         vertical:
-          "flex-col [&>*:not(:first-child)]:-mt-px [&>*:not(:first-child)]:rounded-t-none [&>*:not(:last-child)]:rounded-b-none",
+          "flex-col [&>*:has(+input)]:border-b-0 [&>*:not(:first-child)]:rounded-t-none [&>*:not(:first-child)]:border-t-0 [&>*:not(:last-child)]:rounded-b-none",
       },
     },
   },
@@ -62,7 +62,7 @@ function ButtonGroupSeparator({
   return (
     <Separator
       className={cn(
-        "relative m-0! self-stretch bg-border data-[orientation=vertical]:h-auto",
+        "relative m-0! self-stretch bg-primary/80 data-[orientation=vertical]:h-auto",
         className,
       )}
       data-slot="button-group-separator"

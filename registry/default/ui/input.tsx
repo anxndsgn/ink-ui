@@ -4,15 +4,15 @@ import { cva } from "class-variance-authority";
 import type { VariantProps } from "class-variance-authority";
 
 const inputVariants = cva(
-  "min-h-9 rounded-lg border border-transparent pl-3 text-base text-foreground transition-all duration-150 not-disabled:hover:border-accent focus-visible:border-accent focus-visible:ring-[3px] focus-visible:ring-ring focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50",
+  "min-h-9 rounded-lg border-0 pl-3 text-base text-foreground inset-ring-1 inset-ring-border transition-all duration-150 not-disabled:hover:inset-ring-accent focus-visible:ring-[3px] focus-visible:ring-ring focus-visible:inset-ring-accent focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50",
   {
     defaultVariants: {
       variant: "default",
     },
     variants: {
       variant: {
-        default: "border-border bg-field",
-        outline: "border-border",
+        default: "bg-field",
+        outline: "",
       },
     },
   },

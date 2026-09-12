@@ -133,7 +133,7 @@ function InputGroupInput({ className, ...props }: InputGroupInputProps) {
     <Input
       block
       className={cn(
-        "min-h-9 min-w-0 flex-1 rounded-none border-0 bg-transparent px-3.5 outline-none focus-visible:border-transparent focus-visible:ring-0 dark:bg-transparent",
+        "min-h-9 min-w-0 flex-1 rounded-none border-0 bg-transparent px-3.5 inset-ring-0 outline-none focus-visible:border-transparent focus-visible:ring-0 dark:bg-transparent",
         className,
       )}
       data-slot="input-group-control"
