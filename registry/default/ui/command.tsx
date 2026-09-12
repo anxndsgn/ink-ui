@@ -5,27 +5,14 @@ import { InputGroupInput, InputGroupTextarea } from "./input-group";
 import { ScrollArea } from "./scroll-area";
 
 interface CommandTriggerMatch {
-  /** The text typed after the trigger, used to filter the command list. */
   query: string;
-  /** Index in the input value where the trigger segment starts. */
   start: number;
-  /** Index in the input value where the trigger segment ends. */
   end: number;
 }
 
-/**
- * Decides whether the current input value should open the command list.
- * Return `null` to keep it closed, or the matched segment to open it.
- */
 type CommandTriggerMatcher = (value: string, caret: number) => CommandTriggerMatch | null;
 
 interface CreateCommandTriggerOptions {
-  /**
-   * Where the trigger character may appear.
-   * - `start`: only when the whole value starts with the trigger (e.g. `/model`).
-   * - `anywhere`: after whitespace anywhere before the caret (e.g. `hi @alice`).
-   * @default "start"
-   */
   position?: "start" | "anywhere";
 }
 
@@ -100,11 +87,8 @@ function useCommand() {
 type CommandChangeEventDetails = BaseAutocomplete.Root.ChangeEventDetails;
 
 interface CommandSelectDetails {
-  /** The matched trigger segment, or `null` when the list was opened by a trigger button. */
   match: CommandTriggerMatch | null;
-  /** The query that was typed after the trigger when the item was selected. */
   query: string;
-  /** The input value after the trigger segment has been removed. */
   value: string;
 }
 
@@ -128,28 +112,11 @@ interface CommandProps<ItemValue> extends Omit<
   | "filteredItems"
   | "limit"
 > {
-  /**
-   * What opens the command list while typing.
-   * A string (or array of strings) opens the list when the value starts with it.
-   * Pass a function for custom rules, see `createCommandTrigger`.
-   * @default ["/", "、"]
-   */
   trigger?: string | readonly string[] | CommandTriggerMatcher;
-  /**
-   * Matches an item against the query typed after the trigger.
-   * Defaults to a locale-aware "contains" match.
-   */
   filter?: CommandFilter<ItemValue>;
-  /** The input value. Use when controlled. */
   value?: string;
-  /** The uncontrolled input value when initially rendered. */
   defaultValue?: string;
-  /** Called when the input value changes. */
   onValueChange?: (value: string, eventDetails: CommandChangeEventDetails) => void;
-  /**
-   * Called when a command is selected with the pointer or <kbd>Enter</kbd>.
-   * The trigger segment is removed from the input before this fires.
-   */
   onSelect?: (itemValue: ItemValue, details: CommandSelectDetails) => void;
 }
 
@@ -307,17 +274,12 @@ function Command({
 const PASSTHROUGH_KEYS_WHEN_CLOSED = new Set(["ArrowUp", "ArrowDown", "Home", "End", "Escape"]);
 
 interface CommandInputProps extends BaseAutocomplete.Input.Props {
-  /**
-   * Render an `InputGroupTextarea` instead of an `InputGroupInput`.
-   * @default false
-   */
   multiline?: boolean;
 }
 
 function CommandInput({ multiline = false, onKeyDown, ref, render, ...props }: CommandInputProps) {
   const { open, highlightedRef, inputRef } = useCommandContext();
 
-  // No data-slot here: it would override the input-group-control slot set by InputGroupInput.
   return (
     <BaseAutocomplete.Input
       ref={(element: HTMLInputElement | null) => {
