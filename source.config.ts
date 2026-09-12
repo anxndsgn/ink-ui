@@ -1,6 +1,8 @@
+import { rehypeHighlightCodeBlocks } from "@tanstack/highlight/rehype";
 import { metaSchema, pageSchema } from "fumadocs-core/source/schema";
 import { defineConfig, defineDocs } from "fumadocs-mdx/config";
 import { z } from "zod";
+import { highlighter } from "./src/lib/highlight";
 
 export const docs = defineDocs({
   dir: "content/docs",
@@ -18,12 +20,7 @@ export const docs = defineDocs({
 
 export default defineConfig({
   mdxOptions: {
-    rehypeCodeOptions: {
-      themes: {
-        light: "github-light",
-        dark: "github-dark",
-      },
-      addLanguageClass: true,
-    },
+    rehypeCodeOptions: false,
+    rehypePlugins: [[rehypeHighlightCodeBlocks, { highlighter }]],
   },
 });

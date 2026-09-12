@@ -5,3 +5,6 @@ allowBuilds:
   esbuild: true
   sharp: true
   workerd: true
+
+minimumReleaseAgeExclude:
+  - "@tanstack/highlight@0.1.0"

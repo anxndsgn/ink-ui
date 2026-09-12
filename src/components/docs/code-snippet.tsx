@@ -1,8 +1,8 @@
 import { Tabs } from "@base-ui/react/tabs";
 import { Children, isValidElement, useMemo, type ReactElement, type ReactNode } from "react";
+import { highlightCodeToHtml } from "../../lib/highlight";
 import { defaultPackageManager, useUiStore } from "../../lib/ui-store";
 import { cn } from "../../lib/utils";
-import { highlightCodeToHtml } from "./code-block";
 import { CopyButton } from "./copy-button";
 
 type CodeSnippetSlot = {
@@ -93,7 +93,7 @@ function CodeSnippetCommandLine({
   command: string;
   hasTabs?: boolean;
 }) {
-  const highlightedCommand = highlightCodeToHtml(command, "shellscript");
+  const highlightedCommand = useMemo(() => highlightCodeToHtml(command, "shell"), [command]);
 
   return (
     <span
