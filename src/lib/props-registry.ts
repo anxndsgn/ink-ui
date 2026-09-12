@@ -1269,7 +1269,13 @@ export const propsRegistry: Record<string, ComponentPropsEntry> = {
         name: "onSelect",
         type: "(itemValue, details: { match, query, value }) => void",
         description:
-          "Called when a command is selected with the pointer or Enter. The trigger segment is removed from the input before this fires; details.value is the resulting input value.",
+          "Called when a command is selected with the pointer or the confirm key. The trigger segment is removed from the input before this fires; details.value is the resulting input value.",
+      },
+      {
+        name: "confirmKey",
+        type: '"enter" | "tab" | "both"',
+        defaultValue: '"enter"',
+        description: "Which key confirms the highlighted command.",
       },
       {
         name: "autoHighlight",

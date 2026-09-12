@@ -60,9 +60,12 @@ function createCommandTrigger(
   };
 }
 
+type CommandConfirmKey = "enter" | "tab" | "both";
+
 interface CommandContextValue {
   open: boolean;
   query: string;
+  confirmKey: CommandConfirmKey;
   inputRef: React.RefObject<HTMLInputElement | null>;
   highlightedRef: React.RefObject<unknown>;
   getAnchor: () => Element | null;
@@ -118,6 +121,7 @@ interface CommandProps<ItemValue> extends Omit<
   defaultValue?: string;
   onValueChange?: (value: string, eventDetails: CommandChangeEventDetails) => void;
   onSelect?: (itemValue: ItemValue, details: CommandSelectDetails) => void;
+  confirmKey?: CommandConfirmKey;
 }
 
 function Command<Items extends readonly { items: readonly any[] }[]>(
@@ -135,6 +139,7 @@ function Command({
   onOpenChange,
   onSelect,
   onItemHighlighted,
+  confirmKey = "enter",
   autoHighlight = "always",
   keepHighlight = true,
   itemToStringValue,
@@ -237,6 +242,7 @@ function Command({
     () => ({
       getAnchor: () =>
         inputRef.current?.closest("[data-slot=input-group]") ?? inputRef.current ?? null,
+      confirmKey,
       highlightedRef,
       inputRef,
       open,
@@ -245,7 +251,7 @@ function Command({
         pendingSelectionRef.current = { itemValue };
       },
     }),
-    [open, query],
+    [confirmKey, open, query],
   );
 
   return (
@@ -278,7 +284,7 @@ interface CommandInputProps extends BaseAutocomplete.Input.Props {
 }
 
 function CommandInput({ multiline = false, onKeyDown, ref, render, ...props }: CommandInputProps) {
-  const { open, highlightedRef, inputRef } = useCommandContext();
+  const { open, confirmKey, highlightedRef, inputRef } = useCommandContext();
 
   return (
     <BaseAutocomplete.Input
@@ -296,14 +302,22 @@ function CommandInput({ multiline = false, onKeyDown, ref, render, ...props }: C
 
         if (event.key === "Home" || event.key === "End") event.preventBaseUIHandler();
 
-        const isSelecting =
-          event.key === "Enter" &&
-          highlightedRef.current !== undefined &&
-          !event.shiftKey &&
-          !event.metaKey &&
-          !event.ctrlKey &&
-          !event.altKey;
-        if (!isSelecting) onKeyDown?.(event);
+        const hasModifier = event.shiftKey || event.metaKey || event.ctrlKey || event.altKey;
+        const canConfirm = highlightedRef.current !== undefined && !hasModifier;
+        const isEnter = event.key === "Enter" && confirmKey !== "tab";
+        const isTab = event.key === "Tab" && confirmKey !== "enter";
+
+        if (event.key === "Enter" && !isEnter) event.preventBaseUIHandler();
+
+        if (canConfirm && isTab) {
+          // Base UI only confirms on Enter, so click the highlighted item ourselves.
+          event.preventDefault();
+          const activeId = event.currentTarget.getAttribute("aria-activedescendant");
+          if (activeId) document.getElementById(activeId)?.click();
+          return;
+        }
+
+        if (!(canConfirm && isEnter)) onKeyDown?.(event);
       }}
       render={render ?? (multiline ? <InputGroupTextarea /> : <InputGroupInput />)}
       {...props}
@@ -513,6 +527,7 @@ export {
   useCommand,
 };
 export type {
+  CommandConfirmKey,
   CommandProps,
   CommandInputProps,
   CommandFilter,

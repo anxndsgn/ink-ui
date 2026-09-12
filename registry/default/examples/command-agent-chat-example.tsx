@@ -154,6 +154,7 @@ export function AgentChatCommandExample() {
           : log.map((entry, index) => <p key={index}>{entry}</p>)}
       </div>
       <Command
+        confirmKey="both"
         items={isFileMention ? fileGroups : commandGroups}
         itemToStringValue={(command: CommandItemValue) =>
           "kind" in command && command.kind === "file" ? command.value : command.label

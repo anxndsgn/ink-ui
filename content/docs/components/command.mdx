@@ -31,16 +31,16 @@ import commandSource from "registry/default/ui/command.tsx?raw";
 Unlike a command palette dialog, `Command` lives inside the input the user is already typing in. It is built on Base UI Autocomplete, so filtering, keyboard navigation, and ARIA wiring come for free. Wrap an `InputGroup` with `Command` and replace the control with `CommandInput`, which renders `InputGroupInput` (or `InputGroupTextarea` with `multiline`) by default.
 
 - Typing a trigger (`/` or `、` by default, so Chinese IMEs work too) at the start of the input opens the list; the text after it filters the commands.
-- <kbd>↑</kbd> <kbd>↓</kbd> move the highlight, <kbd>Enter</kbd> selects, <kbd>Esc</kbd> closes.
-  When the list is closed these keys keep their native behaviour, so the user's draft is never
-  touched.
+- <kbd>↑</kbd> <kbd>↓</kbd> move the highlight, <kbd>Enter</kbd> selects (set `confirmKey="tab"` or
+  `"both"` to confirm with <kbd>Tab</kbd>), <kbd>Esc</kbd> closes. When the list is closed these
+  keys keep their native behaviour, so the user's draft is never touched.
 - Selecting a command removes the trigger segment from the input and calls `onSelect`.
 
 ## Examples
 
 ### Agent chat
 
-A multiline chat composer with grouped commands and file references. Type `/` at the start for commands, or `@` at the start or after whitespace to search the example files by name or path. Selecting a file inserts `@path` at the caret and preserves the surrounding text. Press <kbd>Enter</kbd> to submit; while an item is highlighted, <kbd>Enter</kbd> selects it instead. Items in the Skills group keep their name in the input (`/create-pr `) so the user can add arguments and file references before sending.
+A multiline chat composer with grouped commands and file references. Type `/` at the start for commands, or `@` at the start or after whitespace to search the example files by name or path. Selecting a file inserts `@path` at the caret and preserves the surrounding text. Press <kbd>Enter</kbd> to submit; with `confirmKey="both"`, <kbd>Enter</kbd> or <kbd>Tab</kbd> selects the highlighted item instead. Items in the Skills group keep their name in the input (`/create-pr `) so the user can add arguments and file references before sending.
 
 <ComponentSection>
   <ComponentTabs>
