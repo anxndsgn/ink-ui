@@ -6,10 +6,7 @@ function Card({ className, ...props }: useRender.ComponentProps<"div">) {
     defaultTagName: "div",
     props: {
       ...mergeProps<"div">(props, {
-        className: cn(
-          "relative flex flex-col rounded-3xl border border-transparent bg-card p-1 dark:border-border",
-          className,
-        ),
+        className: cn("relative flex flex-col rounded-3xl bg-card p-1", className),
       }),
       "data-slot": "card",
     },
@@ -76,7 +73,7 @@ function CardPanel({ className, children, ...props }: useRender.ComponentProps<"
   return (
     <div
       className={cn(
-        "w-full rounded-[calc(var(--radius-3xl)-var(--spacing))] border border-border bg-popover p-5",
+        "w-full rounded-[calc(var(--radius-3xl)-var(--spacing))] border border-border bg-white p-5 dark:bg-gray-800",
         className,
       )}
       data-slot="card-panel"
