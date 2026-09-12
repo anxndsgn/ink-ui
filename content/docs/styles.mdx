@@ -7,7 +7,7 @@ import inkCssSource from "registry/default/styles/style.css?raw";
 
 Color defines the visual tone of a design system. Ink UI uses a palette built around warm gray and orange, expanded into full scales in the OKLCH color space for consistent luminance and accessibility across light and dark modes.
 
-The gray carries a subtle warm bias — warmer than neutral, but less pronounced than Tailwind's Stone — providing a balanced foundation. Orange serves as the primary accent, adding energy and warmth that complements the overall palette.
+The gray carries a subtle warm bias — warmer than neutral, but less pronounced than Tailwind's Stone — providing a balanced foundation. Orange serves as the primary accent, adding energy and warmth that complements the overall palette, while red and green cover destructive and success feedback.
 
 ## Gray
 
@@ -20,6 +20,12 @@ A warm gray scale for text, backgrounds, borders, and subtle fills across light 
 A red scale for destructive actions, errors, and warning states.
 
 <ColorScale name="red" />
+
+## Green
+
+A green scale for success and confirmation states.
+
+<ColorScale name="green" />
 
 ## Orange
 
@@ -72,7 +78,7 @@ These CSS variables map to the scales above and adapt between light and dark mod
   <ColorToken name="ring" description="Focus ring color" />
 </div>
 
-Common Tailwind utilities like `text-gray-500`, `bg-gray-100`, `border-gray-200`, and `dark:` variants map to the underlying Ink UI theme tokens.
+Common Tailwind utilities like `text-gray-500`, `bg-gray-100`, `border-gray-200`, `text-green-600`, and `dark:` variants map to the underlying Ink UI theme tokens.
 
 ## Interactive states
 

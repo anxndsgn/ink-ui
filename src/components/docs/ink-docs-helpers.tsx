@@ -102,57 +102,17 @@ export function ColorSwatch({
 }
 
 const shades = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950] as const;
-const values = {
-  gray: {
-    50: "oklch(0.98559 0.002 48.697)",
-    100: "oklch(0.95 0.001 48.697)",
-    200: "oklch(0.925 0.002 48.697)",
-    300: "oklch(0.84598 0.002 48.697)",
-    400: "oklch(0.7374 0.002 48.697)",
-    500: "oklch(0.585 0.003 48.697)",
-    600: "oklch(0.46 0.002 48.697)",
-    700: "oklch(0.37 0.002 48.697)",
-    800: "oklch(0.31 0.001 48.697)",
-    900: "oklch(0.265 0.001 48.697)",
-    950: "oklch(0.21 0.002 48.697)",
-  },
-  red: {
-    50: "oklch(0.96453 0.015 24)",
-    100: "oklch(0.95036 0.03 24)",
-    200: "oklch(0.92601 0.045 24)",
-    300: "oklch(0.8455 0.07 24)",
-    400: "oklch(0.73813 0.135 24)",
-    500: "oklch(0.63497 0.18 24)",
-    600: "oklch(0.50144 0.15 24)",
-    700: "oklch(0.38998 0.125 24)",
-    800: "oklch(0.30985 0.095 24)",
-    900: "oklch(0.26461 0.06 24)",
-    950: "oklch(0.21016 0.04 24)",
-  },
-  orange: {
-    50: "oklch(0.96453 0.02 41.5)",
-    100: "oklch(0.95036 0.025 41.5)",
-    200: "oklch(0.92601 0.03 41.5)",
-    300: "oklch(0.8455 0.07 41.5)",
-    400: "oklch(0.73813 0.14 41.5)",
-    500: "oklch(0.63497 0.17 41.5)",
-    600: "oklch(0.50144 0.135 41.5)",
-    700: "oklch(0.38998 0.08 41.5)",
-    800: "oklch(0.30985 0.065 41.5)",
-    900: "oklch(0.26461 0.055 41.5)",
-    950: "oklch(0.21016 0.04 41.5)",
-  },
-} satisfies Record<string, Record<(typeof shades)[number], string>>;
+const scales = ["gray", "red", "green", "orange"] as const;
 
-export function ColorScale({ name }: { name: "gray" | "red" | "orange" }) {
+export function ColorScale({ name }: { name: (typeof scales)[number] }) {
   return (
     <div className="grid grid-cols-6 gap-3 sm:grid-cols-11">
       {shades.map((shade) => (
         <ColorSwatch
           key={shade}
-          bg={values[name][shade]}
+          bg={`var(--color-${name}-${shade})`}
           label={`${shade}`}
-          textColor={shade < 500 ? `text-${name}-900` : "text-white"}
+          textColor={shade < 500 ? "text-gray-950" : "text-white"}
         />
       ))}
     </div>
