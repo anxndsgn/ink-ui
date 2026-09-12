@@ -40,7 +40,7 @@ Unlike a command palette dialog, `Command` lives inside the input the user is al
 
 ### Agent chat
 
-A multiline chat composer with grouped commands and <kbd>Enter</kbd> to submit. While a command is highlighted, <kbd>Enter</kbd> selects it instead of submitting. Items in the Skills group keep their name in the input (`/create-pr `) so the user can add arguments before sending.
+A multiline chat composer with grouped commands and file references. Type `/` at the start for commands, or `@` at the start or after whitespace to search the example files by name or path. Selecting a file inserts `@path` at the caret and preserves the surrounding text. Press <kbd>Enter</kbd> to submit; while an item is highlighted, <kbd>Enter</kbd> selects it instead. Items in the Skills group keep their name in the input (`/create-pr `) so the user can add arguments and file references before sending.
 
 <ComponentSection>
   <ComponentTabs>

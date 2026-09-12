@@ -11,7 +11,7 @@ import {
   SparkleIcon,
   TargetIcon,
 } from "@phosphor-icons/react";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import {
   Command,
   CommandCollection,
@@ -24,6 +24,7 @@ import {
   CommandItemDescription,
   CommandItemLabel,
   CommandList,
+  createCommandTrigger,
 } from "registry/default/ui/command";
 import { InputGroup, InputGroupAddon, InputGroupButton } from "registry/default/ui/input-group";
 
@@ -104,11 +105,38 @@ const commandGroups = [
   },
 ];
 
-type CommandGroupValue = (typeof commandGroups)[number];
+const fileGroups = [
+  {
+    items: [
+      "AGENTS.md",
+      "package.json",
+      "registry/default/ui/command.tsx",
+      "registry/default/ui/input-group.tsx",
+      "registry/default/examples/command-agent-chat-example.tsx",
+      "src/styles/app.css",
+    ].map((path) => ({
+      description: path,
+      icon: FileTextIcon,
+      kind: "file" as const,
+      label: path.split("/").at(-1) ?? path,
+      value: path,
+    })),
+    value: "Files",
+  },
+];
+
+type CommandGroupValue = (typeof commandGroups)[number] | (typeof fileGroups)[number];
 type CommandItemValue = CommandGroupValue["items"][number];
 
+const slashTrigger = createCommandTrigger(["/", "、"]);
+const fileTrigger = createCommandTrigger("@", { position: "anywhere" });
+const chatTrigger = (value: string, caret: number) =>
+  fileTrigger(value, caret) ?? slashTrigger(value, caret);
+
 export function AgentChatCommandExample() {
+  const inputRef = useRef<HTMLInputElement>(null);
   const [value, setValue] = useState("");
+  const [isFileMention, setIsFileMention] = useState(false);
   const [log, setLog] = useState<string[]>([]);
 
   const submit = () => {
@@ -122,19 +150,41 @@ export function AgentChatCommandExample() {
     <div className="flex w-full max-w-2xl flex-col gap-3">
       <div className="min-h-18 text-sm text-muted-foreground">
         {log.length === 0
-          ? "Type / to open the command list, or click the / button."
+          ? "Type / for commands or @ to reference a file."
           : log.map((entry, index) => <p key={index}>{entry}</p>)}
       </div>
       <Command
-        items={commandGroups}
-        onSelect={(command: CommandItemValue) => {
+        items={isFileMention ? fileGroups : commandGroups}
+        itemToStringValue={(command: CommandItemValue) =>
+          "kind" in command && command.kind === "file" ? command.value : command.label
+        }
+        onSelect={(command: CommandItemValue, { match, value: next }) => {
+          if ("kind" in command && command.kind === "file") {
+            const at = match?.start ?? next.length;
+            const reference = `@${command.value}`;
+            const suffix = next.slice(at);
+            const separator = suffix.startsWith(" ") ? "" : " ";
+            setValue(`${next.slice(0, at)}${reference}${separator}${suffix}`);
+            requestAnimationFrame(() => {
+              const caret = at + reference.length + 1;
+              inputRef.current?.setSelectionRange(caret, caret);
+            });
+            return;
+          }
           if ("kind" in command && command.kind === "skill") {
             setValue(`/${command.value} `);
             return;
           }
           setLog((entries) => [...entries, `Ran /${command.value}`].slice(-3));
         }}
-        onValueChange={setValue}
+        onValueChange={(next, eventDetails) => {
+          setValue(next);
+          if (eventDetails.reason === "input-change") {
+            const caret = inputRef.current?.selectionStart ?? next.length;
+            setIsFileMention(fileTrigger(next, caret) !== null);
+          }
+        }}
+        trigger={chatTrigger}
         value={value}
       >
         <InputGroup className="items-stretch rounded-2xl bg-background">
@@ -147,7 +197,8 @@ export function AgentChatCommandExample() {
                 submit();
               }
             }}
-            placeholder="Ask anything. Type / for commands"
+            placeholder="Ask anything. Type / for commands, @ for files"
+            ref={inputRef}
           />
           <InputGroupAddon align="block-end" className="justify-between gap-3 pt-3">
             <div className="flex items-center gap-2">
@@ -166,7 +217,7 @@ export function AgentChatCommandExample() {
           </InputGroupAddon>
         </InputGroup>
         <CommandContent>
-          <CommandEmpty>No commands found.</CommandEmpty>
+          <CommandEmpty>{isFileMention ? "No files found." : "No commands found."}</CommandEmpty>
           <CommandList>
             {(group: CommandGroupValue) => (
               <CommandGroup items={group.items} key={group.value}>
