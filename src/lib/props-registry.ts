@@ -1231,6 +1231,188 @@ export const propsRegistry: Record<string, ComponentPropsEntry> = {
     },
     props: [],
   },
+  Command: {
+    extends: {
+      name: "Base UI Autocomplete.Root",
+      href: "https://base-ui.com/react/components/autocomplete#api-reference",
+    },
+    props: [
+      {
+        name: "trigger",
+        type: "string | string[] | CommandTriggerMatcher",
+        defaultValue: '["/", "、"]',
+        description:
+          "What opens the list while typing. A string or array of strings opens it when the value starts with one of them; a matcher function returns the matched segment or null. See createCommandTrigger.",
+      },
+      {
+        name: "filter",
+        type: "(itemValue, query, itemToStringValue?) => boolean",
+        description:
+          "Matches an item against the query typed after the trigger. Defaults to a locale-aware contains match.",
+      },
+      {
+        name: "value",
+        type: "string",
+        description: "The input value. Use when controlled.",
+      },
+      {
+        name: "defaultValue",
+        type: "string",
+        description: "The uncontrolled input value when initially rendered.",
+      },
+      {
+        name: "onValueChange",
+        type: "(value: string, eventDetails) => void",
+        description: "Called when the input value changes.",
+      },
+      {
+        name: "onSelect",
+        type: "(itemValue, details: { match, query, value }) => void",
+        description:
+          "Called when a command is selected with the pointer or Enter. The trigger segment is removed from the input before this fires; details.value is the resulting input value.",
+      },
+      {
+        name: "autoHighlight",
+        type: 'boolean | "always"',
+        defaultValue: '"always"',
+        description: "Whether the first matching item is highlighted automatically.",
+      },
+    ],
+  },
+  CommandInput: {
+    extends: {
+      name: "Base UI Autocomplete.Input",
+      href: "https://base-ui.com/react/components/autocomplete#api-reference",
+    },
+    props: [
+      {
+        name: "multiline",
+        type: "boolean",
+        defaultValue: "false",
+        description: "Render an InputGroupTextarea instead of an InputGroupInput.",
+      },
+      {
+        name: "render",
+        type: "ReactElement",
+        description:
+          "Custom element to render as the input. Defaults to InputGroupInput, or InputGroupTextarea when multiline is set.",
+      },
+    ],
+  },
+  CommandTrigger: {
+    extends: {
+      name: "Base UI Autocomplete.Trigger",
+      href: "https://base-ui.com/react/components/autocomplete#api-reference",
+    },
+    props: [],
+  },
+  CommandContent: {
+    extends: {
+      name: "Base UI Autocomplete.Popup",
+      href: "https://base-ui.com/react/components/autocomplete#api-reference",
+    },
+    props: [
+      {
+        name: "positionerProps",
+        type: "BaseAutocomplete.Positioner.Props",
+        description:
+          "Props forwarded to the underlying Positioner. Defaults to side top, align start, anchored to the closest InputGroup.",
+      },
+    ],
+  },
+  CommandList: {
+    extends: {
+      name: "Base UI Autocomplete.List",
+      href: "https://base-ui.com/react/components/autocomplete#api-reference",
+    },
+    props: [],
+  },
+  CommandItem: {
+    extends: {
+      name: "Base UI Autocomplete.Item",
+      href: "https://base-ui.com/react/components/autocomplete#api-reference",
+    },
+    props: [],
+  },
+  CommandItemLabel: {
+    props: [
+      {
+        name: "className",
+        type: "string",
+        description: "Additional classes for the label.",
+      },
+    ],
+  },
+  CommandItemDescription: {
+    props: [
+      {
+        name: "className",
+        type: "string",
+        description: "Additional classes for the muted description shown after the label.",
+      },
+    ],
+  },
+  CommandShortcut: {
+    props: [
+      {
+        name: "className",
+        type: "string",
+        description:
+          "Additional classes for the trailing shortcut slot. Place Kbd elements inside.",
+      },
+    ],
+  },
+  CommandEmpty: {
+    extends: {
+      name: "Base UI Autocomplete.Empty",
+      href: "https://base-ui.com/react/components/autocomplete#api-reference",
+    },
+    props: [],
+  },
+  CommandStatus: {
+    extends: {
+      name: "Base UI Autocomplete.Status",
+      href: "https://base-ui.com/react/components/autocomplete#api-reference",
+    },
+    props: [],
+  },
+  CommandSeparator: {
+    extends: {
+      name: "Base UI Autocomplete.Separator",
+      href: "https://base-ui.com/react/components/autocomplete#api-reference",
+    },
+    props: [],
+  },
+  CommandGroup: {
+    extends: {
+      name: "Base UI Autocomplete.Group",
+      href: "https://base-ui.com/react/components/autocomplete#api-reference",
+    },
+    props: [],
+  },
+  CommandGroupLabel: {
+    extends: {
+      name: "Base UI Autocomplete.GroupLabel",
+      href: "https://base-ui.com/react/components/autocomplete#api-reference",
+    },
+    props: [],
+  },
+  createCommandTrigger: {
+    props: [
+      {
+        name: "trigger",
+        type: "string | string[]",
+        description: "The character(s) that open the list.",
+      },
+      {
+        name: "options.position",
+        type: '"start" | "anywhere"',
+        defaultValue: '"start"',
+        description:
+          "start matches only when the whole value starts with the trigger; anywhere matches the trigger after whitespace before the caret.",
+      },
+    ],
+  },
   AutocompleteInputGroup: {
     extends: {
       name: "Base UI Autocomplete.InputGroup",

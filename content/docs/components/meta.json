@@ -10,6 +10,7 @@
     "card",
     "checkbox",
     "combobox",
+    "command",
     "context-menu",
     "dialog",
     "drawer",

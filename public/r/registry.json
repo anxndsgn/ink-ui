@@ -260,6 +260,21 @@
       "dependencies": ["@base-ui/react", "@phosphor-icons/react", "class-variance-authority"]
     },
     {
+      "name": "command",
+      "type": "registry:ui",
+      "title": "Command",
+      "description": "Ink UI Command component.",
+      "files": [
+        {
+          "path": "registry/default/ui/command.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/command.tsx"
+        }
+      ],
+      "registryDependencies": ["utils", "theme", "input-group", "scroll-area"],
+      "dependencies": ["@base-ui/react"]
+    },
+    {
       "name": "context-menu",
       "type": "registry:ui",
       "title": "Context Menu",
@@ -1363,6 +1378,62 @@
           "path": "registry/default/examples/kbd-group-example.tsx",
           "type": "registry:component",
           "target": "components/kbd-group-example.tsx"
+        }
+      ]
+    },
+    {
+      "name": "command-default-example",
+      "type": "registry:component",
+      "title": "Command Default Example",
+      "description": "Atomic example for the Ink UI Command component.",
+      "registryDependencies": ["command", "input-group"],
+      "files": [
+        {
+          "path": "registry/default/examples/command-default-example.tsx",
+          "type": "registry:component",
+          "target": "components/command-default-example.tsx"
+        }
+      ]
+    },
+    {
+      "name": "command-agent-chat-example",
+      "type": "registry:component",
+      "title": "Command Agent Chat Example",
+      "description": "Atomic example for the Ink UI Command component.",
+      "registryDependencies": ["command", "input-group"],
+      "files": [
+        {
+          "path": "registry/default/examples/command-agent-chat-example.tsx",
+          "type": "registry:component",
+          "target": "components/command-agent-chat-example.tsx"
+        }
+      ]
+    },
+    {
+      "name": "command-with-trigger-example",
+      "type": "registry:component",
+      "title": "Command With Trigger Example",
+      "description": "Atomic example for the Ink UI Command component.",
+      "registryDependencies": ["command", "input-group", "kbd"],
+      "files": [
+        {
+          "path": "registry/default/examples/command-with-trigger-example.tsx",
+          "type": "registry:component",
+          "target": "components/command-with-trigger-example.tsx"
+        }
+      ]
+    },
+    {
+      "name": "command-mention-example",
+      "type": "registry:component",
+      "title": "Command Mention Example",
+      "description": "Atomic example for the Ink UI Command component.",
+      "registryDependencies": ["command", "input-group", "avatar"],
+      "files": [
+        {
+          "path": "registry/default/examples/command-mention-example.tsx",
+          "type": "registry:component",
+          "target": "components/command-mention-example.tsx"
         }
       ]
     },

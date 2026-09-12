@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "command-default-example",
+  "title": "Command Default Example",
+  "description": "Atomic example for the Ink UI Command component.",
+  "registryDependencies": [
+    "command",
+    "input-group"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/command-default-example.tsx",
+      "content": "import {\n  BugIcon,\n  ChatCircleIcon,\n  CloudIcon,\n  FileTextIcon,\n  LightningIcon,\n  PlugsIcon,\n} from \"@phosphor-icons/react\";\nimport { useState } from \"react\";\nimport {\n  Command,\n  CommandContent,\n  CommandEmpty,\n  CommandInput,\n  CommandItem,\n  CommandItemDescription,\n  CommandItemLabel,\n  CommandList,\n} from \"registry/default/ui/command\";\nimport { InputGroup } from \"registry/default/ui/input-group\";\n\nconst commands = [\n  { description: \"Don't work in a project\", icon: ChatCircleIcon, label: \"Chat\", value: \"chat\" },\n  { description: \"Run this chat in the cloud\", icon: CloudIcon, label: \"Cloud\", value: \"cloud\" },\n  {\n    description: \"Review uncommitted changes\",\n    icon: BugIcon,\n    label: \"Code review\",\n    value: \"review\",\n  },\n  { description: \"2x speed, increased usage\", icon: LightningIcon, label: \"Fast\", value: \"fast\" },\n  { description: \"Create an AGENTS.md file\", icon: FileTextIcon, label: \"Init\", value: \"init\" },\n  { description: \"Show MCP server status\", icon: PlugsIcon, label: \"MCP\", value: \"mcp\" },\n];\n\ntype CommandItemValue = (typeof commands)[number];\n\nexport function CommandExample() {\n  const [selected, setSelected] = useState<CommandItemValue | null>(null);\n\n  return (\n    <div className=\"flex w-full max-w-md flex-col gap-3\">\n      <Command items={commands} onSelect={setSelected}>\n        <InputGroup>\n          <CommandInput placeholder=\"Type / for commands\" />\n        </InputGroup>\n        <CommandContent>\n          <CommandEmpty>No commands found.</CommandEmpty>\n          <CommandList>\n            {(command: CommandItemValue) => (\n              <CommandItem key={command.value} value={command}>\n                <command.icon />\n                <CommandItemLabel>{command.label}</CommandItemLabel>\n                <CommandItemDescription>{command.description}</CommandItemDescription>\n              </CommandItem>\n            )}\n          </CommandList>\n        </CommandContent>\n      </Command>\n      <p className=\"text-sm text-muted-foreground\">\n        {selected ? `Selected: /${selected.value}` : \"Nothing selected yet.\"}\n      </p>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/command-default-example.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

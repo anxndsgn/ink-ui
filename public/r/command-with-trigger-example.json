@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "command-with-trigger-example",
+  "title": "Command With Trigger Example",
+  "description": "Atomic example for the Ink UI Command component.",
+  "registryDependencies": [
+    "command",
+    "input-group",
+    "kbd"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/command-with-trigger-example.tsx",
+      "content": "import { ArrowsClockwiseIcon, GitBranchIcon, TerminalIcon, TrashIcon } from \"@phosphor-icons/react\";\nimport {\n  Command,\n  CommandContent,\n  CommandEmpty,\n  CommandInput,\n  CommandItem,\n  CommandItemLabel,\n  CommandList,\n  CommandShortcut,\n  CommandTrigger,\n} from \"registry/default/ui/command\";\nimport { InputGroup, InputGroupAddon, InputGroupButton } from \"registry/default/ui/input-group\";\nimport { Kbd } from \"registry/default/ui/kbd\";\n\nconst commands = [\n  { icon: GitBranchIcon, label: \"Branch\", shortcut: \"B\", value: \"branch\" },\n  { icon: TerminalIcon, label: \"Terminal\", shortcut: \"T\", value: \"terminal\" },\n  { icon: ArrowsClockwiseIcon, label: \"Resume\", shortcut: \"R\", value: \"resume\" },\n  { icon: TrashIcon, label: \"Clear\", shortcut: \"C\", value: \"clear\" },\n];\n\ntype CommandItemValue = (typeof commands)[number];\n\nexport function CommandWithTriggerExample() {\n  return (\n    <div className=\"w-full max-w-md\">\n      <Command items={commands}>\n        <InputGroup>\n          <CommandInput placeholder=\"Type / or press the button\" />\n          <InputGroupAddon align=\"inline-end\">\n            <CommandTrigger\n              aria-label=\"Open commands\"\n              render={<InputGroupButton size=\"icon-xs\" variant=\"ghost\" />}\n            >\n              <span className=\"text-sm font-medium\">/</span>\n            </CommandTrigger>\n          </InputGroupAddon>\n        </InputGroup>\n        <CommandContent>\n          <CommandEmpty>No commands found.</CommandEmpty>\n          <CommandList>\n            {(command: CommandItemValue) => (\n              <CommandItem key={command.value} value={command}>\n                <command.icon />\n                <CommandItemLabel>{command.label}</CommandItemLabel>\n                <CommandShortcut>\n                  <Kbd>⌘</Kbd>\n                  <Kbd>{command.shortcut}</Kbd>\n                </CommandShortcut>\n              </CommandItem>\n            )}\n          </CommandList>\n        </CommandContent>\n      </Command>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/command-with-trigger-example.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

@@ -1,0 +1,162 @@
+---
+title: Command
+description: A slash-command list that opens above an input when the user types a trigger like "/" or "、", or presses a trigger button.
+component: Command
+registry: command
+---
+
+import { CommandExample } from "registry/default/examples/command-default-example";
+import commandExampleSource from "registry/default/examples/command-default-example.tsx?raw";
+import { AgentChatCommandExample } from "registry/default/examples/command-agent-chat-example";
+import agentChatCommandExampleSource from "registry/default/examples/command-agent-chat-example.tsx?raw";
+import { CommandWithTriggerExample } from "registry/default/examples/command-with-trigger-example";
+import commandWithTriggerExampleSource from "registry/default/examples/command-with-trigger-example.tsx?raw";
+import { CommandMentionExample } from "registry/default/examples/command-mention-example";
+import commandMentionExampleSource from "registry/default/examples/command-mention-example.tsx?raw";
+import commandSource from "registry/default/ui/command.tsx?raw";
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="CommandExample">
+      <CommandExample />
+    </ComponentPreview>
+    <ComponentSource
+      code={commandExampleSource}
+      language="tsx"
+      title="command-default-example.tsx"
+    />
+  </ComponentTabs>
+</ComponentSection>
+
+Unlike a command palette dialog, `Command` lives inside the input the user is already typing in. It is built on Base UI Autocomplete, so filtering, keyboard navigation, and ARIA wiring come for free. Wrap an `InputGroup` with `Command` and replace the control with `CommandInput`, which renders `InputGroupInput` (or `InputGroupTextarea` with `multiline`) by default.
+
+- Typing a trigger (`/` or `、` by default, so Chinese IMEs work too) at the start of the input opens the list; the text after it filters the commands.
+- <kbd>↑</kbd> <kbd>↓</kbd> move the highlight, <kbd>Enter</kbd> selects, <kbd>Esc</kbd> closes.
+  When the list is closed these keys keep their native behaviour, so the user's draft is never
+  touched.
+- Selecting a command removes the trigger segment from the input and calls `onSelect`.
+
+## Examples
+
+### Agent chat
+
+A multiline chat composer with grouped commands and <kbd>Enter</kbd> to submit. While a command is highlighted, <kbd>Enter</kbd> selects it instead of submitting. Items in the Skills group keep their name in the input (`/create-pr `) so the user can add arguments before sending.
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="AgentChatCommandExample">
+      <AgentChatCommandExample />
+    </ComponentPreview>
+    <ComponentSource
+      code={agentChatCommandExampleSource}
+      language="tsx"
+      title="command-agent-chat-example.tsx"
+    />
+  </ComponentTabs>
+</ComponentSection>
+
+### With trigger
+
+Render `CommandTrigger` as an `InputGroupButton` to open the list with the pointer. When the input is empty, pressing it inserts the trigger character so the user can keep typing to filter.
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="CommandWithTriggerExample">
+      <CommandWithTriggerExample />
+    </ComponentPreview>
+    <ComponentSource
+      code={commandWithTriggerExampleSource}
+      language="tsx"
+      title="command-with-trigger-example.tsx"
+    />
+  </ComponentTabs>
+</ComponentSection>
+
+### Custom trigger
+
+Pass a matcher function as `trigger` to decide which input opens the list. `createCommandTrigger("@", { position: "anywhere" })` matches a mention anywhere before the caret; `onSelect` receives the matched segment so you can insert the result back into the value.
+
+<ComponentSection>
+  <ComponentTabs>
+    <ComponentPreview name="CommandMentionExample">
+      <CommandMentionExample />
+    </ComponentPreview>
+    <ComponentSource
+      code={commandMentionExampleSource}
+      language="tsx"
+      title="command-mention-example.tsx"
+    />
+  </ComponentTabs>
+</ComponentSection>
+
+## Installation
+
+Copy the source code below into your project:
+
+<CodeBlock code={commandSource} language="tsx" />
+
+## API Reference
+
+### Command
+
+<PropsTable component="Command" />
+
+### CommandInput
+
+<PropsTable component="CommandInput" />
+
+### CommandTrigger
+
+<PropsTable component="CommandTrigger" />
+
+### CommandContent
+
+<PropsTable component="CommandContent" />
+
+### CommandList
+
+<PropsTable component="CommandList" />
+
+### CommandItem
+
+<PropsTable component="CommandItem" />
+
+### CommandItemLabel
+
+<PropsTable component="CommandItemLabel" />
+
+### CommandItemDescription
+
+<PropsTable component="CommandItemDescription" />
+
+### CommandShortcut
+
+<PropsTable component="CommandShortcut" />
+
+### CommandEmpty
+
+<PropsTable component="CommandEmpty" />
+
+### CommandStatus
+
+<PropsTable component="CommandStatus" />
+
+### CommandSeparator
+
+<PropsTable component="CommandSeparator" />
+
+### CommandGroup
+
+<PropsTable component="CommandGroup" />
+
+### CommandGroupLabel
+
+<PropsTable component="CommandGroupLabel" />
+
+### createCommandTrigger
+
+<PropsTable component="createCommandTrigger" />
+
+### useCommand
+
+Returns `{ open, query }` for the closest `Command`, useful for showing hints or disabling other shortcuts while the list is open.
