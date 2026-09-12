@@ -355,6 +355,7 @@ function CommandContent({
           <ScrollArea
             className="flex min-h-0 flex-1 flex-col"
             viewportProps={{ className: "min-h-0 flex-1 p-1.5" }}
+            scrollBarProps={{ className: "my-2" }}
           >
             {children}
           </ScrollArea>

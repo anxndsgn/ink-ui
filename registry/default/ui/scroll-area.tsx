@@ -5,22 +5,26 @@ function ScrollArea({
   className,
   children,
   viewportProps,
+  scrollBarProps,
   ...props
-}: { viewportProps?: BaseScrollArea.Viewport.Props } & BaseScrollArea.Root.Props) {
+}: {
+  viewportProps?: BaseScrollArea.Viewport.Props;
+  scrollBarProps?: BaseScrollArea.Scrollbar.Props;
+} & BaseScrollArea.Root.Props) {
   return (
     <BaseScrollArea.Root className={cn("size-full min-h-0", className)} {...props}>
       <BaseScrollArea.Viewport
         {...viewportProps}
         className={cn(
-          "size-full overscroll-contain rounded-[inherit] outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-1 focus-visible:ring-offset-background",
+          "size-full overscroll-contain rounded-[inherit] outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-1 focus-visible:ring-offset-background data-has-overflow-y:pr-3",
           viewportProps?.className,
         )}
         data-slot="scroll-area-viewport"
       >
         {children}
       </BaseScrollArea.Viewport>
-      <ScrollBar orientation="vertical" />
-      <ScrollBar orientation="horizontal" />
+      <ScrollBar orientation="vertical" className={scrollBarProps?.className} />
+      <ScrollBar orientation="horizontal" className={scrollBarProps?.className} />
       <BaseScrollArea.Corner data-slot="scroll-area-corner" />
     </BaseScrollArea.Root>
   );
