@@ -1,15 +1,15 @@
 @theme {
-  --color-gray-50: oklch(98.1% 0.0022 48.7);
-  --color-gray-100: oklch(96.49% 0.0017 48.7);
-  --color-gray-200: oklch(92.65% 0.002 48.7);
-  --color-gray-300: oklch(85.96% 0.0018 48.7);
-  --color-gray-400: oklch(76.81% 0.0026 48.7);
-  --color-gray-500: oklch(65.68% 0.003 48.7);
-  --color-gray-600: oklch(53.97% 0.0024 48.7);
-  --color-gray-700: oklch(42.76% 0.0019 48.7);
-  --color-gray-800: oklch(32.66% 0.0016 48.7);
-  --color-gray-900: oklch(24.1% 0.0024 48.7);
-  --color-gray-950: oklch(18.77% 0.0021 48.7);
+  --color-gray-50: oklch(98.6% 0.0012 48.7);
+  --color-gray-100: oklch(96.13% 0.0037 48.7);
+  --color-gray-200: oklch(92.65% 0.004 48.7);
+  --color-gray-300: oklch(85.96% 0.0038 48.7);
+  --color-gray-400: oklch(76.81% 0.0046 48.7);
+  --color-gray-500: oklch(65.68% 0.005 48.7);
+  --color-gray-600: oklch(53.97% 0.0044 48.7);
+  --color-gray-700: oklch(42.76% 0.0029 48.7);
+  --color-gray-800: oklch(32.66% 0.0026 48.7);
+  --color-gray-900: oklch(24.1% 0.0034 48.7);
+  --color-gray-950: oklch(18.77% 0.0031 48.7);
 
   --color-orange-50: oklch(98.19% 0.0092 41.5);
   --color-orange-100: oklch(96.4% 0.0186 41.5);
@@ -64,7 +64,7 @@
     --secondary: color-mix(in oklch, var(--color-gray-950) 8%, transparent);
     --secondary-foreground: var(--color-gray-900);
     --muted: var(--color-gray-100);
-    --muted-foreground: var(--color-gray-500);
+    --muted-foreground: var(--color-gray-600);
     --accent: var(--color-orange-500);
     --accent-foreground: oklch(1 0 0);
     --destructive: var(--color-red-500);
